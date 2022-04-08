@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content%}
+    <h2>Heart Disease Prediction</h2>
+
+    <h3>Please enter details:</h3>
+    <br>
+    <form method="post" enctype="multipart/form-data" action="">
+        {% csrf_token %}
+        <!--
+        <div class="col-md-4 col-sm-4"><label for="fname">Age:</label> </div> <input name="age"
+            type="text" ><br><br>
+        -->
+        <div class="col-md-4 col-sm-4">{{form.age |as_crispy_field}}</div>
+        <div class="col-md-4 col-sm-4">{{form.sex |as_crispy_field}}</div>
+        <div class="col-md-4 col-sm-4">{{form.chestPainType |as_crispy_field}}</div>
+        <div class="col-md-4 col-sm-4">{{form.restingBP |as_crispy_field}}</div>
+        <div class="col-md-4 col-sm-4">{{form.cholesterol |as_crispy_field}}</div>
+        <div class="col-md-4 col-sm-4">{{form.fastingBS |as_crispy_field}}</div>
+        <div class="col-md-4 col-sm-4">{{form.restingECG |as_crispy_field}}</div>
+        <div class="col-md-4 col-sm-4">{{form.maxHR |as_crispy_field}}</div>
+        <div class="col-md-4 col-sm-4">{{form.exerciseAngina |as_crispy_field}}</div>
+        <div class="col-md-4 col-sm-4">{{form.oldpeak |as_crispy_field}}</div>
+        <div class="col-md-4 col-sm-4">{{form.sT_Slope |as_crispy_field}}</div>
+
+        <!--
+        <div class="col-md-4 col-sm-4"><label for="lname">Sex:</label> </div> <input type="text" id="lname"
+            name="sex" ><br><br>
+        <div class="col-md-4 col-sm-4"><label for="fname">ChestPainType:</label> </div> <input type="text" id="fname"
+            name="chestPainType" ><br><br>
+        <div class="col-md-4 col-sm-4"><label for="lname">RestingBP:</label> </div> <input type="text" id="lname"
+            name="restingBP" ><br><br>
+        <div class="col-md-4 col-sm-4"><label for="fname">Cholesterol:</label></div> <input type="text" id="fname"
+            name="cholesterol"><br><br>
+        <div class="col-md-4 col-sm-4"><label for="lname">FastingBS:</label> </div> <input type="text" id="lname"
+            name="fastingBS" ><br><br>
+        <div class="col-md-4 col-sm-4"><label for="lname">RestingECG:</label> </div> <input type="text" id="lname"
+            name="restingECG" ><br><br>
+            <div class="col-md-4 col-sm-4"><label for="lname">MaxHR:</label> </div> <input type="text" id="lname"
+            name="maxHR" ><br><br>
+        <div class="col-md-4 col-sm-4"><label for="fname">ExerciseAngina:</label></div> <input type="text" id="fname"
+            name="exerciseAngina" ><br><br>
+        <div class="col-md-4 col-sm-4"><label for="lname">Oldpeak:</label> </div> <input type="text" id="lname"
+            name="oldpeak" ><br><br>
+        <div class="col-md-4 col-sm-4"><label for="lname">ST_Slope:</label> </div> <input type="text" id="lname"
+            name="sT_Slope" ><br><br>
+        -->
+        <br>
+
+
+        <input type="submit" value="Submit"></div>
+
+    </form>
+    <br>
+
+    <h1>The prediction is {{prediction}}</h1>
+{% endblock content%}   

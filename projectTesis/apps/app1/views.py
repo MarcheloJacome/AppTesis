@@ -10,6 +10,7 @@ reloadModel = joblib.load('aiModels/LGModel.pkl')
 
 def prediction1(request):
     context = {'a' : 'Hola'}
+    
     if request.method == 'POST':
         print('ola')
         print(type(float(request.POST.get('age'))))

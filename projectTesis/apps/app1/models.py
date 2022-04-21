@@ -35,8 +35,38 @@ ea = [
 ]
 
 
+class Physician(models.Model):
+    date_created = models.DateField(auto_now_add=True)
+    first_name = models.CharField(max_length=30)
+    last_name = models.CharField(max_length=30)
+    id_number = models.CharField(max_length=15)
+    sex = models.IntegerField(choices=sextype)
+    city = models.CharField(max_length=30)
+    address = models.CharField(max_length=200)
+    phone_number = models.CharField(max_length=30)
+    specialty = models.CharField(max_length=100)
+    def __str__(self):
+        return str(self.first_name +' '+self.last_name)
+
+class Patient(models.Model):
+    date_created = models.DateField(auto_now_add=True)
+    first_name = models.CharField(max_length=30)
+    last_name = models.CharField(max_length=30)
+    id_number = models.CharField(max_length=15)
+    sex = models.IntegerField(choices=sextype)
+    city = models.CharField(max_length=30)
+    address = models.CharField(max_length=200)
+    phone_number = models.CharField(max_length=30)
+    age = models.PositiveIntegerField()
+    height = models.DecimalField(max_digits=5, decimal_places=2)
+    weight = models.DecimalField(max_digits=5, decimal_places=1)
+    physician = models.ForeignKey(Physician, on_delete=models.CASCADE)
+    def __str__(self):
+        return str(self.first_name +' '+self.last_name)
+
 # Create your models here.
 class Prediction(models.Model):
+    date_created = models.DateField(auto_now_add=True, null = True)
     age = models.PositiveIntegerField()
     sex = models.IntegerField(choices=sextype)
     chestPainType = models.IntegerField(choices=cpt)
@@ -49,5 +79,6 @@ class Prediction(models.Model):
     oldpeak = models.DecimalField(max_digits=5, decimal_places=2)
     sT_Slope = models.IntegerField(choices=sts)
     heartDisease = models.BooleanField(null=True)
+    Patient = models.ForeignKey(Patient, on_delete=models.CASCADE, null = True)
     def __str__(self):
         return str(self.pk)

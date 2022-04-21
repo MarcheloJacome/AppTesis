@@ -34,6 +34,7 @@ ea = [
     (1, 'Yes'),
 ]
 
+
 # Create your models here.
 class Prediction(models.Model):
     age = models.PositiveIntegerField()

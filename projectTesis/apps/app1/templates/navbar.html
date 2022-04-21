@@ -19,6 +19,13 @@
           <a class="nav-link disabled">Disabled</a>
         </li>
       </ul>
+
     </div>
+    <span class="navbar-text">
+      Hello, {{request.user}}
+    </span>
+    <span class="navbar-text">
+      <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+    </span>
   </div>
 </nav>

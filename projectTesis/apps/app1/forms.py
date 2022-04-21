@@ -4,6 +4,10 @@ from .models import Prediction
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 
+class CreateUserForm(UserCreationForm):
+    class Meta:
+        model = User
+        fields = ['username', 'email', 'password1', 'password2']
 
 class PredictionForm(forms.ModelForm):
     class Meta:
@@ -22,5 +26,4 @@ class PredictionForm(forms.ModelForm):
             'oldpeak':'ST (Numeric value measured in depression)',
             'sT_Slope':'The slope of the peak exercise ST segment',
         }
-
 

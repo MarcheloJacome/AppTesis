@@ -21,11 +21,16 @@
       </ul>
 
     </div>
-    <span class="navbar-text">
-      Hello, {{request.user}}
-    </span>
-    <span class="navbar-text">
-      <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+
+
+    <span class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle link-dark" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Hello, {{ request.user|default:'Guest' }}!
+      </a>
+      <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+        <li><a class="nav-link link-dark" href="{% url 'edit_user' %}">Edit Profile</a></li>
+        <li><a class="nav-link link-dark" href="{% url 'logout' %}">Logout</a></li>
+      </ul>
     </span>
   </div>
 </nav>

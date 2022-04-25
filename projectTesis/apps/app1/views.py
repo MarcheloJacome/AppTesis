@@ -3,9 +3,9 @@ from http.client import HTTPResponse
 from django.shortcuts import render, redirect
 from django.http import response
 from .forms import *
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm, PasswordChangeForm
 from django.contrib import messages
-from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth import authenticate, login, logout, update_session_auth_hash
 import numpy as np
 import joblib
 
@@ -44,6 +44,33 @@ def loginPage(request):
 def logoutUser(request):
     logout(request)
     return redirect('login')
+
+def editUser(request):
+    form = EditUserForm(instance = request.user)
+    print(request.user)
+    if request.method == 'POST':
+        form = EditUserForm(request.POST, instance = request.user)
+        if form.is_valid():
+            form.save()
+            user = form.cleaned_data.get('username')
+            messages.success(request,'Account was updated for '+user)
+            #return redirect('prediction')
+    context = {'form':form}
+    return render(request,'edit_user.html',context)
+
+def changeUserPass(request):
+    if request.user.is_authenticated:
+        if request.method == 'POST':
+            form = CustomPasswordChangeForm(user=request.user, data=request.POST)
+            #form = PasswordChangeForm(user=request.user, data=request.POST)
+            if form.is_valid():
+                form.save()
+                update_session_auth_hash(request, form.user)
+                return redirect('Prediction')
+        else:
+            form = CustomPasswordChangeForm(user=request.user)
+        context = {'form':form}
+        return render(request,'change_user_pass.html',context)
 
 reloadModel = joblib.load('aiModels/LGModel.pkl')
 

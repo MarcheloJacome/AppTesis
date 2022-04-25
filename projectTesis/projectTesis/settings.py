@@ -75,6 +75,7 @@ WSGI_APPLICATION = 'projectTesis.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
+#Must add credential as environmental variables and read their values in Python
 DATABASES = {
     'default': {
         'ENGINE': 'mssql',
@@ -134,6 +135,7 @@ STATICFILES_DIRS = [
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
 
+#Must add credential as environmental variables and read their values in Python
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587

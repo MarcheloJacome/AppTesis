@@ -1,8 +1,10 @@
 {% extends 'base.html' %}
 {% load crispy_forms_tags %}
+{% block title %}
+<h1 class="display-4">Heart Disease Prediction</h1>
+<p class="lead font-italic"></p>
+{% endblock title %}
 {% block content%}
-    <h2>Heart Disease Prediction</h2>
-
     <h3>Please enter details:</h3>
     <br>
     <form method="post" enctype="multipart/form-data" action="">
@@ -12,7 +14,7 @@
             type="text" ><br><br>
         -->
         <div class="col-md-4 col-sm-4">{{form.age |as_crispy_field}}</div>
-        <div class="col-md-4 col-sm-4">{{form.sex |as_crispy_field}}</div>
+        <div class="col-md-12 col-sm-12">{{form.sex |as_crispy_field}}</div>
         <div class="col-md-4 col-sm-4">{{form.chestPainType |as_crispy_field}}</div>
         <div class="col-md-4 col-sm-4">{{form.restingBP |as_crispy_field}}</div>
         <div class="col-md-4 col-sm-4">{{form.cholesterol |as_crispy_field}}</div>

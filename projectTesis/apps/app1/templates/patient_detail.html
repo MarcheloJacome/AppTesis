@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% block title %}
+<h1 class="display-4">Patient Information</h1>
+<p class="lead font-italic"></p>
+{% endblock title %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <h3>First Name:
+                {{patient.first_name}}</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 text-center my-auto">
+            <h4>Last Name:
+                {{patient.last_name}}</h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 text-center my-auto">
+            <h4>ID Number:
+                {{patient.id_number}}</h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 text-center my-auto">
+            <h4>Sex:
+                {{patient.sex}}</h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 text-center my-auto">
+            <h4>City:
+                {{patient.city}}</h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 text-center my-auto">
+            <h4>Address:
+                {{patient.address}}</h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 text-center">
+            <h4>Phone Number:
+                {{patient.phone_number}}</h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 text-center">
+            <h4>Age:
+                {{patient.age}}</h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 text-center">
+            <h4>Height:
+                {{patient.height}}</h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 text-center">
+            <h4>Weight:
+                {{patient.weight}}</h4>
+        </div>
+    </div>
+</div>
+{% endblock content %}

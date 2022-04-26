@@ -1,7 +1,11 @@
 import email
 from http.client import HTTPResponse
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.http import response
+#from matplotlib.style import context
+from .filters import *
+from .models import *
+#from projectTesis.apps.app1.models import Patient
 from .forms import *
 from django.contrib.auth.forms import UserCreationForm, PasswordChangeForm
 from django.contrib import messages
@@ -61,14 +65,14 @@ def editUser(request):
 def changeUserPass(request):
     if request.user.is_authenticated:
         if request.method == 'POST':
-            form = CustomPasswordChangeForm(user=request.user, data=request.POST)
+            form = PasswordChangeForm(user=request.user, data=request.POST)
             #form = PasswordChangeForm(user=request.user, data=request.POST)
             if form.is_valid():
                 form.save()
                 update_session_auth_hash(request, form.user)
                 return redirect('Prediction')
         else:
-            form = CustomPasswordChangeForm(user=request.user)
+            form = PasswordChangeForm(user=request.user)
         context = {'form':form}
         return render(request,'change_user_pass.html',context)
 
@@ -100,6 +104,50 @@ def prediction1(request):
     
     return render(request,'prediction.html',context)
 """
+def patientList(request):
+    user = request.user
+    patients = Patient.objects.filter(user=user)
+    filter = PatientFilter(request.GET,queryset=patients)
+    patients = filter.qs
+    context = {'patient_list':patients,'filter':filter}
+    return render(request,"patient_list.html",context)
+
+def patientCreate(request):
+    form = CreatePatientForm()
+    if request.method == 'POST':
+        form = CreatePatientForm(request.POST)
+        if form.is_valid():
+            patient = form.save(commit=False)
+            patient.user = request.user
+            patient.save()
+            return redirect('patient_list')
+    context = {'form':form}
+    return render(request,'patient_create.html',context)
+
+def patientDetail(request, pk):
+    patient = get_object_or_404(Patient,pk=pk,user=request.user)
+    form = DetailPatientForm(instance=patient)
+    context = {"patient":patient,"form":form}
+    return render(request, 'patient_detail1.html',context)
+
+def patientEdit(request, pk):
+    patient = get_object_or_404(Patient,pk=pk,user=request.user)
+    form = CreatePatientForm(instance=patient)
+    if request.method == 'POST':
+        form = CreatePatientForm(request.POST,instance=patient)
+        if form.is_valid():
+            patient = form.save(commit=False)
+            patient.user = request.user
+            patient.save()
+            return redirect('patient_list')
+    context = {"patient":patient,"form":form}
+    return render(request, 'patient_edit.html',context)
+
+def patientDelete(request, pk):
+    patient = get_object_or_404(Patient,pk=pk,user=request.user)
+    patient.delete()
+    return redirect('patient_list')
+
 def prediction(request):
     form = PredictionForm()
     prediction = 0

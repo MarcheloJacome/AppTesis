@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.contrib.auth.models import User
 sextype = [
     (0, 'Female'),
     (1, 'Male'),
@@ -60,7 +60,8 @@ class Patient(models.Model):
     age = models.PositiveIntegerField()
     height = models.DecimalField(max_digits=5, decimal_places=2)
     weight = models.DecimalField(max_digits=5, decimal_places=1)
-    physician = models.ForeignKey(Physician, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+    #physician = models.ForeignKey(Physician, on_delete=models.CASCADE)
     def __str__(self):
         return str(self.first_name +' '+self.last_name)
 

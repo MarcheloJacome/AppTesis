@@ -128,7 +128,7 @@ def patientDetail(request, pk):
     patient = get_object_or_404(Patient,pk=pk,user=request.user)
     form = DetailPatientForm(instance=patient)
     context = {"patient":patient,"form":form}
-    return render(request, 'patient_detail1.html',context)
+    return render(request, 'patient_detail.html',context)
 
 def patientEdit(request, pk):
     patient = get_object_or_404(Patient,pk=pk,user=request.user)
@@ -147,6 +147,93 @@ def patientDelete(request, pk):
     patient = get_object_or_404(Patient,pk=pk,user=request.user)
     patient.delete()
     return redirect('patient_list')
+
+########Prediction
+def predictionList(request, pk):
+    patient = get_object_or_404(Patient,pk=pk)
+    #user = request.user
+    predictions = Prediction.objects.filter(Patient=patient)
+    filter = PredictionFilter(request.GET,queryset=predictions)
+    predictions = filter.qs
+    context = {'pred_list':predictions,'filter':filter,'patient':patient}
+    return render(request,"prediction_list.html",context)
+
+def predictionCreate(request,pk):
+    form = MakePredictionForm()
+    patient = get_object_or_404(Patient,pk=pk)
+    if request.method == 'POST':
+        form = MakePredictionForm(request.POST)
+        if form.is_valid():
+            #Getting data from post and shaping it to make prediction
+            temp = np.array([
+            form.cleaned_data['age'],
+            form.cleaned_data['sex'],
+            form.cleaned_data['chestPainType'],
+            form.cleaned_data['restingBP'],
+            form.cleaned_data['cholesterol'],
+            form.cleaned_data['fastingBS'],
+            form.cleaned_data['restingECG'],
+            form.cleaned_data['maxHR'],
+            form.cleaned_data['exerciseAngina'],
+            form.cleaned_data['oldpeak'],
+            form.cleaned_data['sT_Slope'],
+            ])
+            hdisease = reloadModel.predict(temp.reshape(1, -1))[0]
+            patient = get_object_or_404(Patient,pk=pk)
+            prediction = form.save(commit=False)
+            prediction.Patient = patient
+            prediction.heartDisease = hdisease
+            prediction.save()
+            return redirect('../prediction_detail'+'/'+str(prediction.pk))
+    context = {'form':form,'patient':patient}
+    return render(request,'prediction_create.html',context)
+
+def predictionDetail(request, pk):
+    prediction = get_object_or_404(Prediction,pk=pk)
+    form = DetailPredictionForm(instance=prediction)
+    context = {"prediction":prediction,"form":form,"patient":prediction.Patient}
+    return render(request, 'prediction_detail.html',context)
+
+def predictionEdit(request, pk):
+    prediction = get_object_or_404(Prediction,pk=pk)
+    form = MakePredictionForm(instance=prediction)
+    #patient = get_object_or_404(Patient,pk=pk)
+    print('get')
+    if request.method == 'POST':
+        print('post')
+        form = MakePredictionForm(request.POST,instance=prediction)
+        if form.is_valid():
+            print('valid')
+            #Getting data from post and shaping it to make prediction
+            temp = np.array([
+            form.cleaned_data['age'],
+            form.cleaned_data['sex'],
+            form.cleaned_data['chestPainType'],
+            form.cleaned_data['restingBP'],
+            form.cleaned_data['cholesterol'],
+            form.cleaned_data['fastingBS'],
+            form.cleaned_data['restingECG'],
+            form.cleaned_data['maxHR'],
+            form.cleaned_data['exerciseAngina'],
+            form.cleaned_data['oldpeak'],
+            form.cleaned_data['sT_Slope'],
+            ])
+            hdisease = reloadModel.predict(temp.reshape(1, -1))[0]
+            #patient = get_object_or_404(Patient,pk=pk)
+            #print(patient.pk)
+            prediction = form.save(commit=False)
+            #prediction.Patient = patient
+            prediction.heartDisease = hdisease
+            prediction.save()
+            return redirect('../prediction_detail'+'/'+str(prediction.pk))
+    context = {"prediction":prediction,"form":form}
+    return render(request, 'prediction_edit.html',context)
+
+def predictionDelete(request, pk):
+    prediction = get_object_or_404(Prediction,pk=pk)
+    pat_pk = prediction.Patient.pk
+    prediction.delete()
+    return redirect('../prediction_list/'+str(pat_pk))
 
 def prediction(request):
     form = PredictionForm()

@@ -16,3 +16,20 @@ class PatientFilter(django_filters.FilterSet):
     class Meta:
         model = Patient
         fields = ['first_name','id_number']
+
+class DateInput(forms.DateInput):
+    input_type = 'date'
+
+class PredictionFilter(django_filters.FilterSet):
+    dateFilter = django_filters.DateFilter(
+        field_name="date_created",
+        lookup_expr="iexact",
+        widget=DateInput,
+        label="Date"
+    )
+    class Meta:
+        model = Prediction
+        fields= ['date_created']
+        widgets = {
+            'date_created' : DateInput()
+        }

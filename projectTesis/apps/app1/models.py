@@ -34,6 +34,12 @@ ea = [
     (1, 'Yes'),
 ]
 
+#heartdisease
+hd = [
+    (0, 'No'),
+    (1, 'Yes'),
+]
+
 
 class Physician(models.Model):
     date_created = models.DateField(auto_now_add=True)
@@ -67,7 +73,7 @@ class Patient(models.Model):
 
 # Create your models here.
 class Prediction(models.Model):
-    date_created = models.DateField(auto_now_add=True, null = True)
+    date_created = models.DateField(null = True)
     age = models.PositiveIntegerField()
     sex = models.IntegerField(choices=sextype)
     chestPainType = models.IntegerField(choices=cpt)
@@ -79,7 +85,7 @@ class Prediction(models.Model):
     exerciseAngina = models.IntegerField(choices=ea)
     oldpeak = models.DecimalField(max_digits=5, decimal_places=2)
     sT_Slope = models.IntegerField(choices=sts)
-    heartDisease = models.BooleanField(null=True)
+    heartDisease = models.IntegerField(null=True, choices=hd)
     Patient = models.ForeignKey(Patient, on_delete=models.CASCADE, null = True)
     def __str__(self):
         return str(self.pk)

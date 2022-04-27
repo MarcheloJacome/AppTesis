@@ -35,5 +35,10 @@ urlpatterns = [
     path('patient_detail/<int:pk>', views.patientDetail, name="patient_detail"),
     path('patient_edit/<int:pk>', views.patientEdit, name="patient_edit"),
     path('patient_delete/<int:pk>', views.patientDelete, name="patient_delete"),
+    path('prediction_list/<int:pk>', views.predictionList, name="prediction_list"),
+    path('prediction_create/<int:pk>', views.predictionCreate, name="prediction_create"),
+    path('prediction_detail/<int:pk>', views.predictionDetail, name="prediction_detail"),
+    path('prediction_edit/<int:pk>', views.predictionEdit, name="prediction_edit"),
+    path('prediction_delete/<int:pk>', views.predictionDelete, name="prediction_delete"),
     #re_path('predictHD', views.predictHD, name='predictHD'),
 ]

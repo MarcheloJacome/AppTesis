@@ -2,6 +2,7 @@ import email
 from http.client import HTTPResponse
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import response
+from sqlalchemy import distinct
 #from matplotlib.style import context
 from .filters import *
 from .models import *
@@ -108,7 +109,7 @@ def patientList(request):
     user = request.user
     patients = Patient.objects.filter(user=user)
     filter = PatientFilter(request.GET,queryset=patients)
-    patients = filter.qs
+    patients = filter.qs.distinct() 
     context = {'patient_list':patients,'filter':filter}
     return render(request,"patient_list.html",context)
 
@@ -179,10 +180,12 @@ def predictionCreate(request,pk):
             form.cleaned_data['sT_Slope'],
             ])
             hdisease = reloadModel.predict(temp.reshape(1, -1))[0]
+            hdProb = reloadModel.predict_proba(temp.reshape(1, -1))[0][1]*100
             patient = get_object_or_404(Patient,pk=pk)
             prediction = form.save(commit=False)
             prediction.Patient = patient
             prediction.heartDisease = hdisease
+            prediction.heartDiseaseProb = hdProb
             prediction.save()
             return redirect('../prediction_detail'+'/'+str(prediction.pk))
     context = {'form':form,'patient':patient}
@@ -219,11 +222,13 @@ def predictionEdit(request, pk):
             form.cleaned_data['sT_Slope'],
             ])
             hdisease = reloadModel.predict(temp.reshape(1, -1))[0]
+            hdProb = reloadModel.predict_proba(temp.reshape(1, -1))[0][1]*100
             #patient = get_object_or_404(Patient,pk=pk)
             #print(patient.pk)
             prediction = form.save(commit=False)
             #prediction.Patient = patient
             prediction.heartDisease = hdisease
+            prediction.heartDiseaseProb = hdProb
             prediction.save()
             return redirect('../prediction_detail'+'/'+str(prediction.pk))
     context = {"prediction":prediction,"form":form}

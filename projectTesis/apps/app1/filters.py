@@ -6,16 +6,21 @@ class PatientFilter(django_filters.FilterSet):
     nameFilter = django_filters.CharFilter(
         field_name = 'first_name',
         lookup_expr ='iexact',
-        label = 'Name',
+        label = 'Name:',
     )
     idFilter = django_filters.CharFilter(
         field_name = 'id_number',
         lookup_expr ='iexact',
-        label = 'Id',
+        label = 'Id:',
+    )
+    hdProbFilter = django_filters.NumberFilter(
+        field_name = 'prediction__heartDiseaseProb',
+        lookup_expr ='gt',
+        label = 'Probability > than:',
     )
     class Meta:
         model = Patient
-        fields = ['first_name','id_number']
+        fields = ['first_name','id_number','prediction']
 
 class DateInput(forms.DateInput):
     input_type = 'date'

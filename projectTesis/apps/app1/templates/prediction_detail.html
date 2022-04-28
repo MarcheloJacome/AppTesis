@@ -91,6 +91,11 @@
                                     {{form.heartDisease|as_crispy_field}}
                                     <!-- Form Group (birthday)-->
                                 </div>
+                                <div class="mb-3">
+                                    <!-- Form Group (phone number)-->
+                                    {{form.heartDiseaseProb|as_crispy_field}}
+                                    <!-- Form Group (birthday)-->
+                                </div>
                                 <!-- Save changes button-->
                                 <a class="btn btn-primary" href={% url 'prediction_list' patient.pk%}>Back to list</a>
                             </form>

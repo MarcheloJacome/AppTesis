@@ -13,11 +13,11 @@
         <div class="col-md-3">{{filter.form.dateFilter|as_crispy_field}}</div>
         <div class="col-md-3">
             &nbsp
-            <button type="submit" class="btn btn-success btn-block btn-lg"><i class="fas fa-filter"></i>
+            <button type="submit" class="btn btn-success btn-block btn-md"><i class="fas fa-filter"></i>
                 filter</button>
 
             &nbsp
-            <a class="btn btn-secondary  btn-lg" href="{% url 'prediction_list' patient.pk %}"><i class="fas fa-times"></i></a>
+            <a class="btn btn-secondary  btn-md" href="{% url 'prediction_list' patient.pk %}"><i class="fas fa-times"></i></a>
         </div>
     </div>
 </form>
@@ -29,6 +29,7 @@
             <th>Last name</th>
             <th>Date</th>
             <th>Prediction</th>
+            <th>Probability of HD %</th>
             <td class="text-center"> 
                 <a href="{% url 'prediction_create' patient.pk %}" class="btn btn-outline-success btn-sm">
                     <i class="fas fa-plus"></i> Add new Prediction
@@ -42,7 +43,13 @@
             <td>{{patient.first_name}}</td>
             <td>{{patient.last_name}}</td>
             <td>{{pred.date_created}}</td>
-            <td>{{pred.heartDisease}}</td>
+            <td>{% if pred.heartDisease == 0 %}
+                No
+                {% elif pred.heartDisease == 1 %}
+                Yes
+                {% endif %}
+            </td>
+            <td>{{pred.heartDiseaseProb}}</td>
             <td class="text-center">
                 <a href="{% url 'prediction_detail' pred.pk %}" class="text-secondary text-decoration-none">
                     <i class="fas fa-eye text-secondary"></i>

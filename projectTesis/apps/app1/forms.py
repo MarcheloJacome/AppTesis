@@ -34,11 +34,11 @@ class CreatePatientForm(forms.ModelForm):
             'first_name',
             'last_name',
             'id_number',
-            'sex',
+            #'sex',
             'city',
             'address',
             'phone_number',
-            'age',
+            #'age',
             'height',
             'weight',
         ]
@@ -46,11 +46,11 @@ class CreatePatientForm(forms.ModelForm):
             'first_name':'First Name',
             'last_name':'Last Name',
             'id_number':'ID Number',
-            'sex':'Sex',
+            #'sex':'Sex',
             'city':'City',
             'address':'Adress',
             'phone_number':'Phone Number',
-            'age':'Age',
+            #'age':'Age',
             'height':'Height',
             'weight':'Weigth',
         }
@@ -62,11 +62,11 @@ class DetailPatientForm(forms.ModelForm):
        self.fields['last_name'].widget.attrs['readonly'] = True
        self.fields['id_number'].widget.attrs['readonly'] = True
       # self.fields['sex'].widget.attrs['readonly'] = True
-       self.fields['sex'].widget.attrs['disabled'] = True
+       #self.fields['sex'].widget.attrs['disabled'] = True
        self.fields['city'].widget.attrs['readonly'] = True
        self.fields['address'].widget.attrs['readonly'] = True
        self.fields['phone_number'].widget.attrs['readonly'] = True
-       self.fields['age'].widget.attrs['readonly'] = True
+       #self.fields['age'].widget.attrs['readonly'] = True
        self.fields['height'].widget.attrs['readonly'] = True
        self.fields['weight'].widget.attrs['readonly'] = True
     class Meta:
@@ -75,11 +75,11 @@ class DetailPatientForm(forms.ModelForm):
             'first_name',
             'last_name',
             'id_number',
-            'sex',
+            #'sex',
             'city',
             'address',
             'phone_number',
-            'age',
+            #'age',
             'height',
             'weight',
         ]
@@ -87,11 +87,11 @@ class DetailPatientForm(forms.ModelForm):
             'first_name':'First Name',
             'last_name':'Last Name',
             'id_number':'ID Number',
-            'sex':'Sex',
+            #'sex':'Sex',
             'city':'City',
             'address':'Adress',
             'phone_number':'Phone Number',
-            'age':'Age',
+            #'age':'Age',
             'height':'Height (cm)',
             'weight':'Weigth (kg)',
         }
@@ -101,9 +101,11 @@ class MakePredictionForm(forms.ModelForm):
        super(MakePredictionForm, self).__init__(*args, **kwargs)
        self.fields['heartDisease'].widget.attrs['disabled'] = True
        self.fields['heartDisease'].required = False
+       self.fields['heartDiseaseProb'].widget.attrs['disabled'] = True
+       self.fields['heartDiseaseProb'].required = False
     class Meta:
         model = Prediction
-        fields=['date_created','age','sex','chestPainType','restingBP','cholesterol','fastingBS','restingECG','maxHR','exerciseAngina','oldpeak','sT_Slope','heartDisease']
+        fields=['date_created','age','sex','chestPainType','restingBP','cholesterol','fastingBS','restingECG','maxHR','exerciseAngina','oldpeak','sT_Slope','heartDisease','heartDiseaseProb']
         labels = {
             'date_created':'Date',
             'age':'Age of the patient (years)',
@@ -118,6 +120,7 @@ class MakePredictionForm(forms.ModelForm):
             'oldpeak':'ST (Numeric value measured in depression)',
             'sT_Slope':'The slope of the peak exercise ST segment',
             'heartDisease':'Heart Disease',
+            'heartDiseaseProb':'Probability of heart disease (%)',
         }
         widgets = {
             'date_created': DateInput,
@@ -140,9 +143,10 @@ class DetailPredictionForm(forms.ModelForm):
        self.fields['oldpeak'].widget.attrs['readonly'] = True
        self.fields['sT_Slope'].widget.attrs['disabled'] = True
        self.fields['heartDisease'].widget.attrs['disabled'] = True
+       self.fields['heartDiseaseProb'].widget.attrs['disabled'] = True
     class Meta:
         model = Prediction
-        fields=['date_created','age','sex','chestPainType','restingBP','cholesterol','fastingBS','restingECG','maxHR','exerciseAngina','oldpeak','sT_Slope','heartDisease']
+        fields=['date_created','age','sex','chestPainType','restingBP','cholesterol','fastingBS','restingECG','maxHR','exerciseAngina','oldpeak','sT_Slope','heartDisease','heartDiseaseProb']
         labels = {
             'date_created':'Creation date',
             'age':'Age of the patient (years)',
@@ -157,6 +161,7 @@ class DetailPredictionForm(forms.ModelForm):
             'oldpeak':'ST (Numeric value measured in depression)',
             'sT_Slope':'The slope of the peak exercise ST segment',
             'heartDisease':'Heart Disease',
+            'heartDiseaseProb':'Probability of heart disease (%)',
         }
 
 class PredictionForm(forms.ModelForm):

@@ -12,9 +12,21 @@ from django.contrib.auth.forms import UserCreationForm, PasswordChangeForm
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout, update_session_auth_hash
 import numpy as np
+import pandas as pd
 import joblib
 
-# Create your views here.
+#Reload Ai Model
+reloadModel = joblib.load('aiModels/KNearNeiModel.pkl')
+#Reload OneHotEncoder
+ohEncoder = joblib.load('aiModels/OHEncoder.pkl')
+#Reload StandardScaler
+sScaler = joblib.load('aiModels/SScaler.pkl')
+#Reload Soft Voting Classifier
+hvClassifier = joblib.load('aiModels/SVClassifier.pkl')
+
+non_proc_labels = ['Age', 'Sex', 'ChestPainType', 'RestingBP', 'Cholesterol', 'FastingBS',
+       'RestingECG', 'MaxHR', 'ExerciseAngina', 'Oldpeak', 'ST_Slope']
+
 def registerPage(request):
     if request.user.is_authenticated:
         return redirect('Prediction')
@@ -77,7 +89,7 @@ def changeUserPass(request):
         context = {'form':form}
         return render(request,'change_user_pass.html',context)
 
-reloadModel = joblib.load('aiModels/LGModel.pkl')
+
 
 """
 def prediction1(request):
@@ -166,7 +178,7 @@ def predictionCreate(request,pk):
         form = MakePredictionForm(request.POST)
         if form.is_valid():
             #Getting data from post and shaping it to make prediction
-            temp = np.array([
+            temp = np.array([[
             form.cleaned_data['age'],
             form.cleaned_data['sex'],
             form.cleaned_data['chestPainType'],
@@ -178,13 +190,21 @@ def predictionCreate(request,pk):
             form.cleaned_data['exerciseAngina'],
             form.cleaned_data['oldpeak'],
             form.cleaned_data['sT_Slope'],
-            ])
-            hdisease = reloadModel.predict(temp.reshape(1, -1))[0]
-            hdProb = reloadModel.predict_proba(temp.reshape(1, -1))[0][1]*100
+            ]])
+            temp_pd = pd.DataFrame(temp,columns=non_proc_labels)
+            transformed_temp = ohEncoder.transform(temp_pd)
+            sc_transformed_temp = sScaler.transform(transformed_temp)
+            aimod = form.cleaned_data['aimodel']
+            if aimod == 0 :
+                hdisease = reloadModel.predict(sc_transformed_temp)[0]
+                hdProb = reloadModel.predict_proba(sc_transformed_temp)[0][1]*100
+            else:
+                hdisease = hvClassifier.predict(sc_transformed_temp)[0]
+                hdProb = hvClassifier.predict_proba(sc_transformed_temp)[0][1]*100               
             patient = get_object_or_404(Patient,pk=pk)
             prediction = form.save(commit=False)
             prediction.Patient = patient
-            prediction.heartDisease = hdisease
+            prediction.heartDisease = int(hdisease)
             prediction.heartDiseaseProb = hdProb
             prediction.save()
             return redirect('../prediction_detail'+'/'+str(prediction.pk))
@@ -201,14 +221,11 @@ def predictionEdit(request, pk):
     prediction = get_object_or_404(Prediction,pk=pk)
     form = MakePredictionForm(instance=prediction)
     #patient = get_object_or_404(Patient,pk=pk)
-    print('get')
     if request.method == 'POST':
-        print('post')
         form = MakePredictionForm(request.POST,instance=prediction)
         if form.is_valid():
-            print('valid')
             #Getting data from post and shaping it to make prediction
-            temp = np.array([
+            temp = np.array([[
             form.cleaned_data['age'],
             form.cleaned_data['sex'],
             form.cleaned_data['chestPainType'],
@@ -220,14 +237,22 @@ def predictionEdit(request, pk):
             form.cleaned_data['exerciseAngina'],
             form.cleaned_data['oldpeak'],
             form.cleaned_data['sT_Slope'],
-            ])
-            hdisease = reloadModel.predict(temp.reshape(1, -1))[0]
-            hdProb = reloadModel.predict_proba(temp.reshape(1, -1))[0][1]*100
+            ]])
+            temp_pd = pd.DataFrame(temp,columns=non_proc_labels)
+            transformed_temp = ohEncoder.transform(temp_pd)
+            sc_transformed_temp = sScaler.transform(transformed_temp)
+            aimod = form.cleaned_data['aimodel']
+            if aimod == 0 :
+                hdisease = reloadModel.predict(sc_transformed_temp)[0]
+                hdProb = reloadModel.predict_proba(sc_transformed_temp)[0][1]*100
+            else:
+                hdisease = hvClassifier.predict(sc_transformed_temp)[0]
+                hdProb = hvClassifier.predict_proba(sc_transformed_temp)[0][1]*100
             #patient = get_object_or_404(Patient,pk=pk)
             #print(patient.pk)
             prediction = form.save(commit=False)
             #prediction.Patient = patient
-            prediction.heartDisease = hdisease
+            prediction.heartDisease = int(hdisease)
             prediction.heartDiseaseProb = hdProb
             prediction.save()
             return redirect('../prediction_detail'+'/'+str(prediction.pk))

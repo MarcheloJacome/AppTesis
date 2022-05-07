@@ -1,3 +1,4 @@
+from random import choices
 from django import forms
 from django.forms import fields, widgets
 from .models import Patient, Prediction
@@ -96,7 +97,15 @@ class DetailPatientForm(forms.ModelForm):
             'weight':'Weigth (kg)',
         }
 
+aimod = [
+    (0, 'Single Model (K-Nearest Neighbors)'),
+    (1, 'Hard Voting Ensemble Models'),
+]
+
+    
+
 class MakePredictionForm(forms.ModelForm):
+    aimodel = forms.IntegerField(required=True,widget=forms.Select(choices=aimod),label="AiModel")
     def __init__(self, *args, **kwargs):
        super(MakePredictionForm, self).__init__(*args, **kwargs)
        self.fields['heartDisease'].widget.attrs['disabled'] = True
@@ -143,6 +152,7 @@ class DetailPredictionForm(forms.ModelForm):
        self.fields['oldpeak'].widget.attrs['readonly'] = True
        self.fields['sT_Slope'].widget.attrs['disabled'] = True
        self.fields['heartDisease'].widget.attrs['disabled'] = True
+       self.fields['heartDisease'].widget.attrs['selected'] = True
        self.fields['heartDiseaseProb'].widget.attrs['disabled'] = True
     class Meta:
         model = Prediction
@@ -163,6 +173,9 @@ class DetailPredictionForm(forms.ModelForm):
             'heartDisease':'Heart Disease',
             'heartDiseaseProb':'Probability of heart disease (%)',
         }
+        widgets = {
+            #'heartDisease': forms.TextInput(),
+        }       
 
 class PredictionForm(forms.ModelForm):
     #def __init__(self, *args, **kwargs):
@@ -185,4 +198,5 @@ class PredictionForm(forms.ModelForm):
             'oldpeak':'ST (Numeric value measured in depression)',
             'sT_Slope':'The slope of the peak exercise ST segment',
         }
+
 

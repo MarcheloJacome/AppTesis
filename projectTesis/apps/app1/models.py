@@ -1,27 +1,27 @@
 from django.db import models
 from django.contrib.auth.models import User
 sextype = [
-    (0, 'Female'),
-    (1, 'Male'),
+    ('F', 'Female'),
+    ('M', 'Male'),
 ]
 
 cpt = [
-    (0, 'Asymptomatic'),
-    (1, 'Atypical Angina'),
-    (2, 'Non-Anginal Pain'),
-    (3, 'Typical Angina'),
+    ('ASY', 'Asymptomatic'),
+    ('ATA', 'Atypical Angina'),
+    ('NAP', 'Non-Anginal Pain'),
+    ('TA', 'Typical Angina'),
 ]
 
 recg = [
-    (0, 'LVH'),
-    (1, 'Normal'),
-    (2, 'ST'),
+    ('LVH', 'LVH'),
+    ('Normal', 'Normal'),
+    ('ST', 'ST'),
 ]
 
 sts = [
-    (0, 'DOWN'),
-    (1, 'FLAT'),
-    (2, 'UP'),
+    ('Down', 'DOWN'),
+    ('Flat', 'FLAT'),
+    ('Up', 'UP'),
 ]
 
 fbs = [
@@ -30,8 +30,8 @@ fbs = [
 ]
 
 ea = [
-    (0, 'No'),
-    (1, 'Yes'),
+    ('N', 'No'),
+    ('Y', 'Yes'),
 ]
 
 #heartdisease
@@ -75,16 +75,16 @@ class Patient(models.Model):
 class Prediction(models.Model):
     date_created = models.DateField(null = True)
     age = models.PositiveIntegerField()
-    sex = models.IntegerField(choices=sextype)
-    chestPainType = models.IntegerField(choices=cpt)
+    sex = models.CharField(choices=sextype,max_length=10)
+    chestPainType = models.CharField(choices=cpt,max_length=10)
     restingBP = models.PositiveIntegerField()
     cholesterol = models.PositiveIntegerField()
     fastingBS = models.IntegerField(choices=fbs)
-    restingECG = models.IntegerField(choices=recg)
+    restingECG = models.CharField(choices=recg,max_length=10)
     maxHR = models.PositiveIntegerField()
-    exerciseAngina = models.IntegerField(choices=ea)
+    exerciseAngina = models.CharField(choices=ea,max_length=10)
     oldpeak = models.DecimalField(max_digits=5, decimal_places=2)
-    sT_Slope = models.IntegerField(choices=sts)
+    sT_Slope = models.CharField(choices=sts,max_length=10)
     heartDisease = models.IntegerField(null=True, choices=hd)
     heartDiseaseProb = models.DecimalField(max_digits=5, decimal_places=2, null=True)
     Patient = models.ForeignKey(Patient, on_delete=models.CASCADE, null = True)

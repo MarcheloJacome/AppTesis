@@ -23,9 +23,18 @@ ohEncoder = joblib.load('aiModels/OHEncoder.pkl')
 sScaler = joblib.load('aiModels/SScaler.pkl')
 #Reload Soft Voting Classifier
 hvClassifier = joblib.load('aiModels/SVClassifier.pkl')
+#Reload XGB Classifier
+XGBClassifier = joblib.load('aiModels/XGBClassifier.pkl')
 
 non_proc_labels = ['Age', 'Sex', 'ChestPainType', 'RestingBP', 'Cholesterol', 'FastingBS',
        'RestingECG', 'MaxHR', 'ExerciseAngina', 'Oldpeak', 'ST_Slope']
+proc_labels = ['Sex_F', 'Sex_M',
+       'ChestPainType_ASY','ChestPainType_ATA','ChestPainType_NAP','ChestPainType_TA', 'RestingECG_LVH',
+       'RestingECG_Normal', 'RestingECG_ST',
+       'ExerciseAngina_N','ExerciseAngina_Y', 
+       'ST_Slope_Down','ST_Slope_Flat', 'ST_Slope_Up',
+       'Age', 'RestingBP', 'Cholesterol',
+       'FastingBS', 'MaxHR', 'Oldpeak']
 
 def registerPage(request):
     if request.user.is_authenticated:
@@ -264,6 +273,13 @@ def predictionDelete(request, pk):
     pat_pk = prediction.Patient.pk
     prediction.delete()
     return redirect('../prediction_list/'+str(pat_pk))
+
+def featureImportance(request):
+    f_importances = XGBClassifier.feature_importances_*100
+    labels = proc_labels
+    context = {'f_importances':f_importances,
+                'labels':labels}
+    return render(request, 'feature_importance.html',context)
 
 def prediction(request):
     form = PredictionForm()

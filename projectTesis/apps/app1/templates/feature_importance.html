@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block title %}
+<h1 class="display-4">Feature Importance</h1>
+<p class="lead font-italic"></p>
+<style type ="text/css">
+    .chartBox{
+        width: 85%;
+        height: 85%;
+    }
+</style>
+{% endblock title %}
+{% block content%}
+<div class="chartBox container">
+    <canvas id="myChart" ></canvas>
+</div>
+
+<!--Chart js-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+{% endblock content%}
+
+{% block scripts %}
+<script>
+    // jquery function
+    $(document).ready(function () {
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: [{% for lab in labels %}'{{lab}}',{% endfor %}], 
+        datasets: [{
+            label: 'Feature Importance %',
+            data: [{% for feature in f_importances %} {{ feature }}, {% endfor %}],
+        backgroundColor: [
+        'rgba(255, 99, 132, 0.2)',
+        'rgba(54, 162, 235, 0.2)',
+        'rgba(255, 206, 86, 0.2)',
+        'rgba(75, 192, 192, 0.2)',
+        'rgba(153, 102, 255, 0.2)',
+        'rgba(255, 159, 64, 0.2)'
+    ],
+        borderColor: [
+        'rgba(255, 99, 132, 1)',
+        'rgba(54, 162, 235, 1)',
+        'rgba(255, 206, 86, 1)',
+        'rgba(75, 192, 192, 1)',
+        'rgba(153, 102, 255, 1)',
+        'rgba(255, 159, 64, 1)'
+    ],
+        borderWidth: 1
+                    }]
+                },
+        options: {
+        maintainAspectRatio: true,
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+    });
+        });
+</script>
+{% endblock scripts %}

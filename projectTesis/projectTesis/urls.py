@@ -40,5 +40,6 @@ urlpatterns = [
     path('prediction_detail/<int:pk>', views.predictionDetail, name="prediction_detail"),
     path('prediction_edit/<int:pk>', views.predictionEdit, name="prediction_edit"),
     path('prediction_delete/<int:pk>', views.predictionDelete, name="prediction_delete"),
+    path('feature_importance/', views.featureImportance, name="feature_importance"),
     #re_path('predictHD', views.predictHD, name='predictHD'),
 ]

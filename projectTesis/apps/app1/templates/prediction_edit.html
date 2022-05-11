@@ -9,99 +9,73 @@
     {% csrf_token %}
     <div class="container">
         <div class="container-xl px-4 mt-4">
-            <!-- Account page navigation-->
             <div class="row">
-    
                 <div class="col-xl-12">
-                    <!-- Account details card-->
                     <div class="card mb-4">
                         <div class="card-header">Details</div>
                         <div class="card-body">
                             <form>
-                                <div class="mb-3">
-                                    {{form.date_created|as_crispy_field}}
+                                <div class="mb-3">                                   
+                                    {{form.date_created|as_crispy_field}}                                     
                                 </div>
-                                <!-- Form Group (username)-->
-                                <!-- Form Row-->
                                 <div class="row gx-3 mb-3">
-                                    <!-- Form Group (first name)-->
                                     <div class="col-md-6">
-                                        <!--<label class="small mb-1" for="inputFirstName">First Name</label>-->
-                                        <!--<input class="form-control" id="inputFirstName" type="text" placeholder="Enter your first name" value="{{patient.first_name}}" readonly>-->
                                         {{form.age|as_crispy_field}}
-    
                                     </div>
-                                    <!-- Form Group (last name)-->
                                     <div class="col-md-6">
                                         {{form.sex|as_crispy_field}}
                                     </div>
                                 </div>
-                                <!-- Form Row        -->
                                 <div class="row gx-3 mb-3">
-                                    <!-- Form Group (organization name)-->
                                     <div class="col-md-6">
                                         {{form.chestPainType|as_crispy_field}}
                                     </div>
-                                    <!-- Form Group (location)-->
                                     <div class="col-md-6">
                                         {{form.restingBP|as_crispy_field}}
                                     </div>
                                 </div>
-                                <!-- Form Group (email address)-->
-                                <div class="mb-3">
-                                    {{form.cholesterol|as_crispy_field}}
-                                </div>
-                                <!-- Form Row-->
-                                <div class="mb-3">
-                                    <!-- Form Group (phone number)-->
-                                    {{form.fastingBS|as_crispy_field}}
-                                    <!-- Form Group (birthday)-->
+                                <div class="row gx-3 mb-3">
+                                    <div class="col-md-6">
+                                        {{form.cholesterol|as_crispy_field}}
+                                    </div>
+                                    <div class="col-md-6">
+                                        {{form.fastingBS|as_crispy_field}}
+                                    </div>
                                 </div>
                                 <div class="row gx-3 mb-3">
-                                    <!-- Form Group (phone number)-->
                                     <div class="col-md-6">
-                                        <!--<label class="small mb-1" for="inputPhone">Sex</label>
-                                  <input class="form-control" id="inputPhone" type="tel" placeholder="Enter your phone number" value="{{patient.sex}}" readonly>-->
                                         {{form.restingECG|as_crispy_field}}
                                     </div>
-                                    <!-- Form Group (birthday)-->
                                     <div class="col-md-6">
                                         {{form.maxHR|as_crispy_field}}
                                     </div>
                                 </div>
                                 <div class="row gx-3 mb-3">
-                                    <!-- Form Group (phone number)-->
                                     <div class="col-md-6">
-                                        <!--<label class="small mb-1" for="inputPhone">Sex</label>
-                                    <input class="form-control" id="inputPhone" type="tel" placeholder="Enter your phone number" value="{{patient.sex}}" readonly>-->
                                         {{form.exerciseAngina|as_crispy_field}}
                                     </div>
-                                    <!-- Form Group (birthday)-->
                                     <div class="col-md-6">
                                         {{form.oldpeak|as_crispy_field}}
                                     </div>
                                 </div>
-                                <div class="mb-3">
-                                    <!-- Form Group (phone number)-->
-                                    {{form.sT_Slope|as_crispy_field}}
-                                    <!-- Form Group (birthday)-->
+                                <div class="row gx-3 mb-3">
+                                    <div class="col-md-6">
+                                        {{form.sT_Slope|as_crispy_field}}
+                                    </div>
+                                    <div class="col-md-6">
+                                        {{form.aiModel|as_crispy_field}}
+                                    </div>
                                 </div>
-                                <div class="mb-3">
-                                    <!-- Form Group (phone number)-->
-                                    {{form.heartDisease|as_crispy_field}}
-                                    <!-- Form Group (birthday)-->
+                                <hr>
+                                <h2>Prediction</h2>
+                                <div class="row gx-3 mb-3">
+                                    <div class="col-md-6">
+                                        {{form.heartDisease|as_crispy_field}}
+                                    </div>
+                                    <div class="col-md-6">
+                                        {{form.heartDiseaseProb|as_crispy_field}}
+                                    </div>
                                 </div>
-                                <div class="mb-3">
-                                    <!-- Form Group (phone number)-->
-                                    {{form.heartDiseaseProb|as_crispy_field}}
-                                    <!-- Form Group (birthday)-->
-                                </div>
-                                <div class="mb-3">
-                                    <!-- Form Group (phone number)-->
-                                    {{form.aimodel|as_crispy_field}}
-                                    <!-- Form Group (birthday)-->
-                                </div>
-                                <!-- Save changes button-->
                                 <button class="btn btn-primary" type="Submit">Make Prediction</button>
                                 <a class="btn btn-primary" href={% url 'prediction_list' prediction.Patient.pk %}>Back to list</a>
                             </form>

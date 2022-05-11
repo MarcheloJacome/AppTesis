@@ -39,6 +39,11 @@ hd = [
     (0, 'No'),
     (1, 'Yes'),
 ]
+#aimodel
+aimod = [
+    (0, 'Single Model (K-Nearest Neighbors)'),
+    (1, 'Hard Voting Ensemble Models'),
+]
 
 
 class Physician(models.Model):
@@ -87,6 +92,7 @@ class Prediction(models.Model):
     sT_Slope = models.CharField(choices=sts,max_length=10)
     heartDisease = models.IntegerField(null=True, choices=hd)
     heartDiseaseProb = models.DecimalField(max_digits=5, decimal_places=2, null=True)
+    aiModel = models.IntegerField(choices=aimod,max_length=50, null=True)
     Patient = models.ForeignKey(Patient, on_delete=models.CASCADE, null = True)
     def __str__(self):
         return str(self.pk)

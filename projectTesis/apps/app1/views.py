@@ -203,7 +203,7 @@ def predictionCreate(request,pk):
             temp_pd = pd.DataFrame(temp,columns=non_proc_labels)
             transformed_temp = ohEncoder.transform(temp_pd)
             sc_transformed_temp = sScaler.transform(transformed_temp)
-            aimod = form.cleaned_data['aimodel']
+            aimod = form.cleaned_data['aiModel']
             if aimod == 0 :
                 hdisease = reloadModel.predict(sc_transformed_temp)[0]
                 hdProb = reloadModel.predict_proba(sc_transformed_temp)[0][1]*100
@@ -250,7 +250,7 @@ def predictionEdit(request, pk):
             temp_pd = pd.DataFrame(temp,columns=non_proc_labels)
             transformed_temp = ohEncoder.transform(temp_pd)
             sc_transformed_temp = sScaler.transform(transformed_temp)
-            aimod = form.cleaned_data['aimodel']
+            aimod = form.cleaned_data['aiModel']
             if aimod == 0 :
                 hdisease = reloadModel.predict(sc_transformed_temp)[0]
                 hdProb = reloadModel.predict_proba(sc_transformed_temp)[0][1]*100

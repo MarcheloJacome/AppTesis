@@ -28,6 +28,7 @@
             <th>Name</th>
             <th>Last name</th>
             <th>Date</th>
+            <th>AI Model</th>
             <th>Prediction</th>
             <th>Probability of HD %</th>
             <td class="text-center"> 
@@ -43,6 +44,11 @@
             <td>{{patient.first_name}}</td>
             <td>{{patient.last_name}}</td>
             <td>{{pred.date_created}}</td>
+            <td>{% if pred.aiModel == 0 %}
+                Single Model (K-Nearest Neighbors)
+                {% elif pred.aiModel == 1 %}
+                Hard Voting Ensemble Models
+                {% endif %}</td>
             <td>{% if pred.heartDisease == 0 %}
                 No
                 {% elif pred.heartDisease == 1 %}

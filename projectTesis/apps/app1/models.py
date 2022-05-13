@@ -41,7 +41,7 @@ hd = [
 ]
 #aimodel
 aimod = [
-    (0, 'Single Model (K-Nearest Neighbors)'),
+    (0, 'Single Model (XGB Classifier)'),
     (1, 'Hard Voting Ensemble Models'),
 ]
 

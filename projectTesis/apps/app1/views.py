@@ -16,15 +16,14 @@ import pandas as pd
 import joblib
 
 #Reload Ai Model
-reloadModel = joblib.load('aiModels/KNearNeiModel.pkl')
+reloadModel = joblib.load('aiModels/XGBClassifier.pkl')
 #Reload OneHotEncoder
 ohEncoder = joblib.load('aiModels/OHEncoder.pkl')
 #Reload StandardScaler
 sScaler = joblib.load('aiModels/SScaler.pkl')
 #Reload Soft Voting Classifier
-hvClassifier = joblib.load('aiModels/SVClassifier.pkl')
-#Reload XGB Classifier
-XGBClassifier = joblib.load('aiModels/XGBClassifier.pkl')
+hvClassifier = joblib.load('aiModels/HVClassifier.pkl')
+
 
 non_proc_labels = ['Age', 'Sex', 'ChestPainType', 'RestingBP', 'Cholesterol', 'FastingBS',
        'RestingECG', 'MaxHR', 'ExerciseAngina', 'Oldpeak', 'ST_Slope']
@@ -172,7 +171,7 @@ def patientDelete(request, pk):
 
 ########Prediction
 def predictionList(request, pk):
-    patient = get_object_or_404(Patient,pk=pk)
+    patient = get_object_or_404(Patient,pk=pk,user=request.user)
     #user = request.user
     predictions = Prediction.objects.filter(Patient=patient)
     filter = PredictionFilter(request.GET,queryset=predictions)
@@ -182,7 +181,7 @@ def predictionList(request, pk):
 
 def predictionCreate(request,pk):
     form = MakePredictionForm()
-    patient = get_object_or_404(Patient,pk=pk)
+    patient = get_object_or_404(Patient,pk=pk,user=request.user)
     if request.method == 'POST':
         form = MakePredictionForm(request.POST)
         if form.is_valid():
@@ -221,17 +220,17 @@ def predictionCreate(request,pk):
     return render(request,'prediction_create.html',context)
 
 def predictionDetail(request, pk):
-    prediction = get_object_or_404(Prediction,pk=pk)
+    prediction = get_object_or_404(Prediction,pk=pk,Patient__user=request.user)
     form = DetailPredictionForm(instance=prediction)
     context = {"prediction":prediction,"form":form,"patient":prediction.Patient}
     return render(request, 'prediction_detail.html',context)
 
 def predictionEdit(request, pk):
-    prediction = get_object_or_404(Prediction,pk=pk)
-    form = MakePredictionForm(instance=prediction)
+    prediction = get_object_or_404(Prediction,pk=pk,Patient__user=request.user)
+    form = EditPredictionForm(instance=prediction)
     #patient = get_object_or_404(Patient,pk=pk)
     if request.method == 'POST':
-        form = MakePredictionForm(request.POST,instance=prediction)
+        form = EditPredictionForm(request.POST,instance=prediction)
         if form.is_valid():
             #Getting data from post and shaping it to make prediction
             temp = np.array([[
@@ -257,25 +256,32 @@ def predictionEdit(request, pk):
             else:
                 hdisease = hvClassifier.predict(sc_transformed_temp)[0]
                 hdProb = hvClassifier.predict_proba(sc_transformed_temp)[0][1]*100
-            #patient = get_object_or_404(Patient,pk=pk)
-            #print(patient.pk)
+            save_as_new = form.cleaned_data['newPrediction']
             prediction = form.save(commit=False)
-            #prediction.Patient = patient
-            prediction.heartDisease = int(hdisease)
-            prediction.heartDiseaseProb = hdProb
+            pk_patient = prediction.Patient.pk
+            if save_as_new:
+                patient = get_object_or_404(Patient,pk=pk_patient)
+                prediction.pk = None
+                prediction._state.adding = True
+                prediction.heartDisease = int(hdisease)
+                prediction.heartDiseaseProb = hdProb
+                prediction.Patient = patient
+            else :
+                prediction.heartDisease = int(hdisease)
+                prediction.heartDiseaseProb = hdProb
             prediction.save()
             return redirect('../prediction_detail'+'/'+str(prediction.pk))
     context = {"prediction":prediction,"form":form}
     return render(request, 'prediction_edit.html',context)
 
 def predictionDelete(request, pk):
-    prediction = get_object_or_404(Prediction,pk=pk)
+    prediction = get_object_or_404(Prediction,pk=pk,Patient__user=request.user)
     pat_pk = prediction.Patient.pk
     prediction.delete()
     return redirect('../prediction_list/'+str(pat_pk))
 
 def featureImportance(request):
-    f_importances = XGBClassifier.feature_importances_*100
+    f_importances = reloadModel.feature_importances_*100
     labels = proc_labels
     context = {'f_importances':f_importances,
                 'labels':labels}
@@ -283,11 +289,12 @@ def featureImportance(request):
 
 def prediction(request):
     form = PredictionForm()
-    prediction = 0
+    hdisease = None
+    hdProb = None
     if request.method == 'POST':
         form = PredictionForm(request.POST)
         if form.is_valid():
-            temp = np.array([
+            temp = np.array([[
             form.cleaned_data['age'],
             form.cleaned_data['sex'],
             form.cleaned_data['chestPainType'],
@@ -299,10 +306,21 @@ def prediction(request):
             form.cleaned_data['exerciseAngina'],
             form.cleaned_data['oldpeak'],
             form.cleaned_data['sT_Slope'],
-            ])
-            prediction = reloadModel.predict(temp.reshape(1, -1))[0]
-            #form.save()
-    context = {'form': form,'prediction':prediction}
+            ]])
+            temp_pd = pd.DataFrame(temp,columns=non_proc_labels)
+            transformed_temp = ohEncoder.transform(temp_pd)
+            sc_transformed_temp = sScaler.transform(transformed_temp)
+            aimod = form.cleaned_data['aiModel']
+            if aimod == 0 :
+                hdisease = reloadModel.predict(sc_transformed_temp)[0]
+                hdProb = reloadModel.predict_proba(sc_transformed_temp)[0][1]*100
+            else:
+                hdisease = hvClassifier.predict(sc_transformed_temp)[0]
+                hdProb = hvClassifier.predict_proba(sc_transformed_temp)[0][1]*100
+            hdProb = round(hdProb, 2)
+    context = {'form': form,
+              'hdisease':hdisease,
+              'hdProb':hdProb}
     return render(request, 'prediction.html',context)
 """
 def predictHD(request):

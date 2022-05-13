@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
 {% load crispy_forms_tags %}
-
+{% block titletab %}
+<title>Prediction list</title>
+{% endblock titletab %}
 {% block title %}
 <h1 class="display-4">List of Predictions</h1>
 
@@ -45,7 +47,7 @@
             <td>{{patient.last_name}}</td>
             <td>{{pred.date_created}}</td>
             <td>{% if pred.aiModel == 0 %}
-                Single Model (K-Nearest Neighbors)
+                Single Model (XGB Booster)
                 {% elif pred.aiModel == 1 %}
                 Hard Voting Ensemble Models
                 {% endif %}</td>

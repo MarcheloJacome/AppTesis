@@ -5,55 +5,105 @@
 <p class="lead font-italic"></p>
 {% endblock title %}
 {% block content%}
-    <h3>Please enter details:</h3>
-    <br>
-    <form method="post" enctype="multipart/form-data" action="">
-        {% csrf_token %}
-        <!--
-        <div class="col-md-4 col-sm-4"><label for="fname">Age:</label> </div> <input name="age"
-            type="text" ><br><br>
-        -->
-        <div class="col-md-4 col-sm-4">{{form.age |as_crispy_field}}</div>
-        <div class="col-md-12 col-sm-12">{{form.sex |as_crispy_field}}</div>
-        <div class="col-md-4 col-sm-4">{{form.chestPainType |as_crispy_field}}</div>
-        <div class="col-md-4 col-sm-4">{{form.restingBP |as_crispy_field}}</div>
-        <div class="col-md-4 col-sm-4">{{form.cholesterol |as_crispy_field}}</div>
-        <div class="col-md-4 col-sm-4">{{form.fastingBS |as_crispy_field}}</div>
-        <div class="col-md-4 col-sm-4">{{form.restingECG |as_crispy_field}}</div>
-        <div class="col-md-4 col-sm-4">{{form.maxHR |as_crispy_field}}</div>
-        <div class="col-md-4 col-sm-4">{{form.exerciseAngina |as_crispy_field}}</div>
-        <div class="col-md-4 col-sm-4">{{form.oldpeak |as_crispy_field}}</div>
-        <div class="col-md-4 col-sm-4">{{form.sT_Slope |as_crispy_field}}</div>
-
-        <!--
-        <div class="col-md-4 col-sm-4"><label for="lname">Sex:</label> </div> <input type="text" id="lname"
-            name="sex" ><br><br>
-        <div class="col-md-4 col-sm-4"><label for="fname">ChestPainType:</label> </div> <input type="text" id="fname"
-            name="chestPainType" ><br><br>
-        <div class="col-md-4 col-sm-4"><label for="lname">RestingBP:</label> </div> <input type="text" id="lname"
-            name="restingBP" ><br><br>
-        <div class="col-md-4 col-sm-4"><label for="fname">Cholesterol:</label></div> <input type="text" id="fname"
-            name="cholesterol"><br><br>
-        <div class="col-md-4 col-sm-4"><label for="lname">FastingBS:</label> </div> <input type="text" id="lname"
-            name="fastingBS" ><br><br>
-        <div class="col-md-4 col-sm-4"><label for="lname">RestingECG:</label> </div> <input type="text" id="lname"
-            name="restingECG" ><br><br>
-            <div class="col-md-4 col-sm-4"><label for="lname">MaxHR:</label> </div> <input type="text" id="lname"
-            name="maxHR" ><br><br>
-        <div class="col-md-4 col-sm-4"><label for="fname">ExerciseAngina:</label></div> <input type="text" id="fname"
-            name="exerciseAngina" ><br><br>
-        <div class="col-md-4 col-sm-4"><label for="lname">Oldpeak:</label> </div> <input type="text" id="lname"
-            name="oldpeak" ><br><br>
-        <div class="col-md-4 col-sm-4"><label for="lname">ST_Slope:</label> </div> <input type="text" id="lname"
-            name="sT_Slope" ><br><br>
-        -->
-        <br>
-
-
-        <input type="submit" value="Submit"></div>
-
-    </form>
-    <br>
-
-    <h1>The prediction is {{prediction}}</h1>
-{% endblock content%}   
+<h3>Please enter details:</h3>
+<br>
+<form method="post" enctype="multipart/form-data" action="">
+    {% csrf_token %}
+    <div class="container">
+        <div class="container-xl px-4 mt-4">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="card mb-4">
+                        <div class="card-header">Patient:{{request.user}}</div>
+                        <div class="card-body">
+                            <form>
+                                <div class="row gx-3 mb-3">
+                                    <div class="col-md-6">
+                                        {{form.age|as_crispy_field}}
+                                    </div>
+                                    <div class="col-md-6">
+                                        {{form.sex|as_crispy_field}}
+                                    </div>
+                                </div>
+                                <div class="row gx-3 mb-3">
+                                    <div class="col-md-6">
+                                        {{form.chestPainType|as_crispy_field}}
+                                    </div>
+                                    <div class="col-md-6">
+                                        {{form.restingBP|as_crispy_field}}
+                                    </div>
+                                </div>
+                                <div class="row gx-3 mb-3">
+                                    <div class="col-md-6">
+                                        {{form.cholesterol|as_crispy_field}}
+                                    </div>
+                                    <div class="col-md-6">
+                                        {{form.fastingBS|as_crispy_field}}
+                                    </div>
+                                </div>
+                                <div class="row gx-3 mb-3">
+                                    <div class="col-md-6">
+                                        {{form.restingECG|as_crispy_field}}
+                                    </div>
+                                    <div class="col-md-6">
+                                        {{form.maxHR|as_crispy_field}}
+                                    </div>
+                                </div>
+                                <div class="row gx-3 mb-3">
+                                    <div class="col-md-6">
+                                        {{form.exerciseAngina|as_crispy_field}}
+                                    </div>
+                                    <div class="col-md-6">
+                                        {{form.oldpeak|as_crispy_field}}
+                                    </div>
+                                </div>
+                                <div class="row gx-3 mb-3">
+                                    <div class="col-md-6">
+                                        {{form.sT_Slope|as_crispy_field}}
+                                    </div>
+                                    <div class="col-md-6">
+                                        {{form.aiModel|as_crispy_field}}
+                                    </div>
+                                </div>
+                                <hr>
+                                <h2>Prediction</h2>
+                                <div class="row gx-3 mb-3">
+                                    <div class="col-md-6">
+                                        <div id="div_id_heartDisease" class="mb-3">
+                                            <label for="id_heartDisease" class="form-label">
+                                                Heart Disease
+                                            </label>
+                                            <select name="heartDisease" disabled="" class="select form-select"
+                                                id="id_heartDisease">
+                                                <option value="" selected="">
+                                                    {% if hdisease == 0 %}
+                                                    No
+                                                    {% elif hdisease == 1 %}
+                                                    Yes
+                                                    {% endif %}
+                                                </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div id="div_id_heartDiseaseProb" class="mb-3">
+                                            <label for="id_heartDiseaseProb" class="form-label">
+                                                Probability of heart disease (%)
+                                            </label>
+                                            <input type="number" name="heartDiseaseProb" step="0.01" disabled=""
+                                                class="numberinput form-control" id="id_heartDiseaseProb"
+                                                value="{{hdProb}}">
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                        <button class="btn btn-primary" type="Submit">Make Prediction</button>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</form>
+{% endblock content%}

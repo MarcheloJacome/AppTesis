@@ -16,6 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, re_path
 from django.contrib.auth import views as auth_views
+from django.contrib.staticfiles.storage import staticfiles_storage
+from django.views.generic.base import RedirectView
 #from django.conf.urls import url
 from apps.app1 import views
 urlpatterns = [
@@ -41,5 +43,6 @@ urlpatterns = [
     path('prediction_edit/<int:pk>', views.predictionEdit, name="prediction_edit"),
     path('prediction_delete/<int:pk>', views.predictionDelete, name="prediction_delete"),
     path('feature_importance/', views.featureImportance, name="feature_importance"),
+    path('favicon.ico', RedirectView.as_view(url=staticfiles_storage.url("images/favicon.ico"))),   
     #re_path('predictHD', views.predictHD, name='predictHD'),
 ]

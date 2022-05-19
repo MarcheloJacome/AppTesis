@@ -13,8 +13,9 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from xml.etree.ElementInclude import include
 from django.contrib import admin
-from django.urls import path, re_path
+from django.urls import path, re_path, include
 from django.contrib.auth import views as auth_views
 from django.contrib.staticfiles.storage import staticfiles_storage
 from django.views.generic.base import RedirectView
@@ -43,6 +44,12 @@ urlpatterns = [
     path('prediction_edit/<int:pk>', views.predictionEdit, name="prediction_edit"),
     path('prediction_delete/<int:pk>', views.predictionDelete, name="prediction_delete"),
     path('feature_importance/', views.featureImportance, name="feature_importance"),
+    path('prediction_to_train_add/<int:pk>', views.addPredictionToTrain, name="prediction_to_train_add"),
+    path('prediction_to_train_list/', views.predictionToTrainList, name="prediction_to_train_list"),
+    path('prediction_to_train_detail/<int:pk>', views.predictionToTrainDetail, name="prediction_to_train_detail"),
+    path('prediction_to_train_edit/<int:pk>', views.predictionToTrainEdit, name="prediction_to_train_edit"),
+    path('prediction_to_train_delete/<int:pk>', views.predictionToTrainDelete, name="prediction_to_train_delete"),
+    #path('prediction_to_train_confirm/<int:pk>', views.predictionToTrainConfirm, name="prediction_to_train_confirm"),
     path('favicon.ico', RedirectView.as_view(url=staticfiles_storage.url("images/favicon.ico"))),   
     #re_path('predictHD', views.predictHD, name='predictHD'),
 ]

@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+{% block title %}
+<h1 class="display-4">{% trans "Prediction to train Detail"%}</h1>
+<p class="lead font-italic">{% trans "Patient"%}: {{patient.first_name}} {{patient.last_name}}</p>
+{% endblock title %}
+{% block content%}
+<form action="" method="POST">
+    {% csrf_token %}
+    <div class="container">
+        <div class="container-xl px-4 mt-4">
+            <div class="d-flex flex-row-reverse">
+                <div class="p-2">
+                    <a href="{% url 'prediction_to_train_confirm' prediction.pk%}" class="btn btn-outline-success btn-sm">
+                        <i class="fas fa-plus"></i> {% trans "Train Model with this prediction"%}
+                    </a>
+                </div>
+            </div>
+            <div class="row">    
+                <div class="col-xl-12">
+                    <div class="card mb-4">
+                        <div class="card-header">{% trans "Details"%}</div>
+                        <div class="card-body">
+                            <form>
+                                <div class="mb-3">                                   
+                                    {{form.date_created|as_crispy_field}}                                     
+                                </div>
+                                <div class="row gx-3 mb-3">
+                                    <div class="col-md-6">
+                                        {{form.age|as_crispy_field}}
+                                    </div>
+                                    <div class="col-md-6">
+                                        {{form.sex|as_crispy_field}}
+                                    </div>
+                                </div>
+                                <div class="row gx-3 mb-3">
+                                    <div class="col-md-6">
+                                        {{form.chestPainType|as_crispy_field}}
+                                    </div>
+                                    <div class="col-md-6">
+                                        {{form.restingBP|as_crispy_field}}
+                                    </div>
+                                </div>
+                                <div class="row gx-3 mb-3">
+                                    <div class="col-md-6">
+                                        {{form.cholesterol|as_crispy_field}}
+                                    </div>
+                                    <div class="col-md-6">
+                                        {{form.fastingBS|as_crispy_field}}
+                                    </div>
+                                </div>
+                                <div class="row gx-3 mb-3">
+                                    <div class="col-md-6">
+                                        {{form.restingECG|as_crispy_field}}
+                                    </div>
+                                    <div class="col-md-6">
+                                        {{form.maxHR|as_crispy_field}}
+                                    </div>
+                                </div>
+                                <div class="row gx-3 mb-3">
+                                    <div class="col-md-6">
+                                        {{form.exerciseAngina|as_crispy_field}}
+                                    </div>
+                                    <div class="col-md-6">
+                                        {{form.oldpeak|as_crispy_field}}
+                                    </div>
+                                </div>
+                                <div class="row gx-3 mb-3">
+                                    <div class="col-md-6">
+                                        {{form.sT_Slope|as_crispy_field}}
+                                    </div>
+                                    <div class="col-md-6">
+                                        {{form.aiModel|as_crispy_field}}
+                                    </div>
+                                </div>
+                                <hr>
+                                <h2>{% trans "Prediction"%}</h2>
+                                <div class="row gx-3 mb-3">
+                                    <div class="col-md-6">
+                                        {{form.heartDisease|as_crispy_field}}
+                                    </div>
+                                </div>
+                                <a class="btn btn-primary" href={% url 'prediction_to_train_list'%}>{% trans "Back to list"%}</a>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+{% endblock content%}
+{% block scripts %}
+<!--Chart js-->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js" ></script>
+<script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+
+
+{% endblock scripts %}

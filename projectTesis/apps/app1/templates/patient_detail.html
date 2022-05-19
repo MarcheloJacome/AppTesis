@@ -1,7 +1,8 @@
 {% extends 'base.html' %}
+{% load i18n %}
 {% load crispy_forms_tags %}
 {% block title %}
-<h1 class="display-4">Patient Information</h1>
+<h1 class="display-4">{% trans "Patient Information"%}</h1>
 <p class="lead font-italic"></p>
 {% endblock title %}
 
@@ -9,68 +10,46 @@
 
 <div class="container">
     <div class="container-xl px-4 mt-4">
-        <!-- Account page navigation-->
         <div class="row">
-
             <div class="col-xl-12">
-                <!-- Account details card-->
                 <div class="card mb-4">
-                    <div class="card-header">Details</div>
+                    <div class="card-header">{% trans "Details"%}</div>
                     <div class="card-body">
                         <form>
-                            <!-- Form Group (username)-->
-                            <!-- Form Row-->
                             <div class="row gx-3 mb-3">
-                                <!-- Form Group (first name)-->
                                 <div class="col-md-6">
-                                    <!--<label class="small mb-1" for="inputFirstName">First Name</label>-->
-                                    <!--<input class="form-control" id="inputFirstName" type="text" placeholder="Enter your first name" value="{{patient.first_name}}" readonly>-->
                                     {{form.first_name|as_crispy_field}}
-
                                 </div>
-                                <!-- Form Group (last name)-->
                                 <div class="col-md-6">
                                     {{form.last_name|as_crispy_field}}
                                 </div>
                             </div>
-                            <!-- Form Row        -->
                             <div class="row gx-3 mb-3">
-                                <!-- Form Group (organization name)-->
                                 <div class="col-md-6">
                                     {{form.id_number|as_crispy_field}}
                                 </div>
-                                <!-- Form Group (location)-->
                                 <div class="col-md-6">
                                     {{form.city|as_crispy_field}}
                                 </div>
                             </div>
-                            <!-- Form Group (email address)-->
                             <div class="mb-3">
                                 {{form.address|as_crispy_field}}
                             </div>
-                            <!-- Form Row-->
                             <div class="mb-3">
-                                <!-- Form Group (phone number)-->
                                 {{form.phone_number|as_crispy_field}}
-                                <!-- Form Group (birthday)-->
                             </div>
                             <div class="row gx-3 mb-3">
-                                <!-- Form Group (phone number)-->
                                 <div class="col-md-6">
-                                    <!--<label class="small mb-1" for="inputPhone">Sex</label>
-                                <input class="form-control" id="inputPhone" type="tel" placeholder="Enter your phone number" value="{{patient.sex}}" readonly>-->
                                     {{form.height|as_crispy_field}}
                                 </div>
-                                <!-- Form Group (birthday)-->
                                 <div class="col-md-6">
                                     {{form.weight|as_crispy_field}}
                                 </div>
                             </div>
-                            <!-- Save changes button-->
                             <a href="{% url 'prediction_list' patient.pk %}" class="btn btn-primary">
-                                Check Predictions
+                                {% trans "Check Predictions"%}
                             </a>
-                            <a class="btn btn-primary" href={% url 'patient_list' %}>Back to Patients</a>
+                            <a class="btn btn-primary" href={% url 'patient_list' %}>{% trans "Back to Patients"%}</a>
                         </form>
                     </div>
                 </div>

@@ -1,8 +1,9 @@
 {% extends 'base.html' %}
+{% load i18n %}
 {% load crispy_forms_tags %}
 
 {% block title %}
-<h1 class="display-4">Patients List</h1>
+<h1 class="display-4">{% trans "Patients List"%}</h1>
 
 <p class="lead font-italic"></p>
 {% endblock title %}
@@ -15,7 +16,7 @@
         <div class="col-md-3">
             &nbsp
             <button type="submit" class="btn btn-success btn-block btn-md"><i class="fas fa-filter"></i>
-                filter</button>
+                {% trans "Filter"%}</button>
 
             &nbsp
             <a class="btn btn-secondary  btn-md" href="{% url 'patient_list' %}"><i class="fas fa-times"></i></a>
@@ -26,14 +27,15 @@
 <table class="table table-striped">
     <thead class="border-bottom font-weight-bold">
         <tr>
-            <th>Name</th>
-            <th>Last name</th>
-            <th>ID Number</th>
-            <th>Last Prediction</th>
-            <th>Probability of HD %</th>
+            <th>{% trans "Name"%}</th>
+            <th>{% trans "Last name"%}</th>
+            <th>{% trans "ID Number"%}</th>
+            <th>{% trans "Last Prediction"%}</th>
+            <th>{% trans "Probability of HD"%}</th>
+            <!--<th>Add to model training</th>-->
             <td class="text-center"> 
                 <a href="{% url 'patient_create' %}" class="btn btn-outline-success btn-sm">
-                    <i class="fas fa-plus"></i> Add new Patient
+                    <i class="fas fa-plus"></i> {% trans "Add new Patient"%}
                 </a>
             </td>
         </tr>
@@ -44,13 +46,14 @@
             <td>{{pat.first_name}}</td>
             <td>{{pat.last_name}}</td>
             <td>{{pat.id_number}}</td>
-            <td>{% if pat.prediction_set.last.heartDisease == 0 %}
+            <td>{% if pat.last_prediction == 0 %}
                 No
-                {% elif pat.prediction_set.last.heartDisease == 1 %}
-                Yes
+                {% elif pat.last_prediction == 1 %}
+                {% trans "Yes"%}
                 {% endif %}
             </td>
-            <td>{{pat.prediction_set.last.heartDiseaseProb}}</td>
+            <td>{{pat.last_prediction_prob}}%</td>
+            <!--<td>{{pat.prediction_set.last.heartDiseaseProb}}</td>-->
             <td class="text-center">
                 <a href="{% url 'patient_detail' pat.pk %}" class="text-secondary text-decoration-none">
                     <i class="fas fa-eye text-secondary"></i>
@@ -70,8 +73,10 @@
                     </button>
                 </form>
                 <a href="{% url 'prediction_create' pat.pk %}" class="btn btn-outline-primary btn-sm">
-                    <i class="fas fa-heartbeat"></i> Make Prediction
+                    <i class="fas fa-heartbeat"></i> {% trans "Make Prediction"%}
                 </a>
+
+
             </td>
         </tr>
         {% endfor %}

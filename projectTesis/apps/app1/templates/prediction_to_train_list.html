@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+{% block titletab %}
+<title>{% trans "Predictions to train list"%}</title>
+{% endblock titletab %}
+{% block title %}
+<h1 class="display-4">{% trans "List of Predictions to train"%}</h1>
+
+<a class="btn btn-primary" href={% url 'patient_list' %}>{% trans "Back to Patients"%}</a>
+{% endblock title %}
+{% block content %}
+<table class="table table-striped">
+    <thead class="border-bottom font-weight-bold">
+        <tr>
+            <th>{% trans "Name"%}</th>
+            <th>{% trans "Last name"%}</th>
+            <th>{% trans "Date"%}</th>
+            <th>{% trans "AI Model"%}</th>
+            <th>{% trans "Prediction"%}</th>
+            <td> </td>
+        </tr>
+    </thead>
+    <tbody>
+        {% for pred in pred_list %}
+        <tr>
+            <td>{{pred.prediction.Patient.first_name}}</td>
+            <td>{{pred.prediction.Patient.last_name}}</td>
+            <td>{{pred.date_created}}</td>
+            <td>{% if pred.aiModel == 0 %}
+                {% trans "Single Model (XGB Booster)"%}
+                {% elif pred.aiModel == 1 %}
+                {% trans "Hard Voting Ensemble Models"%}
+                {% endif %}</td>
+            <td>{% if pred.heartDisease == 0 %}
+                No
+                {% elif pred.heartDisease == 1 %}
+                {% trans "Yes"%}
+                {% endif %}
+            </td>
+            <td class="text-center">
+                <a href="{% url 'prediction_to_train_detail' pred.pk %}" class="text-secondary text-decoration-none">
+                    <i class="fas fa-eye text-secondary"></i>
+                </a>
+                &nbsp
+                &nbsp
+
+                <a href="{% url 'prediction_to_train_edit' pred.pk %}" class="text-secondary text-decoration-none">
+                    <i class="fas fa-edit text-secondary"></i>
+                </a>
+                &nbsp
+
+                <form action="{% url 'prediction_to_train_delete' pred.pk %}" method="post" class="d-inline">
+                    {% csrf_token %}
+                    <button type="submit" class="btn">
+                        <i class="far fa-trash-alt  text-danger float-right"></i>
+                    </button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock content %}

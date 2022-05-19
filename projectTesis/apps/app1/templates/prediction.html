@@ -1,11 +1,12 @@
 {% extends 'base.html' %}
+{% load i18n %}
 {% load crispy_forms_tags %}
 {% block title %}
-<h1 class="display-4">Heart Disease Prediction</h1>
+<h1 class="display-4">{% trans "Heart Disease Prediction"%}</h1>
 <p class="lead font-italic"></p>
 {% endblock title %}
 {% block content%}
-<h3>Please enter details:</h3>
+<h3>{% trans "Please enter details"%}:</h3>
 <br>
 <form method="post" enctype="multipart/form-data" action="">
     {% csrf_token %}
@@ -14,7 +15,7 @@
             <div class="row">
                 <div class="col-xl-12">
                     <div class="card mb-4">
-                        <div class="card-header">Patient:{{request.user}}</div>
+                        <div class="card-header">{% trans "Patient"%}:{{request.user}}</div>
                         <div class="card-body">
                             <form>
                                 <div class="row gx-3 mb-3">
@@ -66,12 +67,12 @@
                                     </div>
                                 </div>
                                 <hr>
-                                <h2>Prediction</h2>
+                                <h2>{% trans "Prediction"%}</h2>
                                 <div class="row gx-3 mb-3">
                                     <div class="col-md-6">
                                         <div id="div_id_heartDisease" class="mb-3">
                                             <label for="id_heartDisease" class="form-label">
-                                                Heart Disease
+                                                {% trans "Heart Disease"%}
                                             </label>
                                             <select name="heartDisease" disabled="" class="select form-select"
                                                 id="id_heartDisease">
@@ -79,7 +80,7 @@
                                                     {% if hdisease == 0 %}
                                                     No
                                                     {% elif hdisease == 1 %}
-                                                    Yes
+                                                    {% trans "Yes"%}
                                                     {% endif %}
                                                 </option>
                                             </select>
@@ -88,7 +89,7 @@
                                     <div class="col-md-6">
                                         <div id="div_id_heartDiseaseProb" class="mb-3">
                                             <label for="id_heartDiseaseProb" class="form-label">
-                                                Probability of heart disease (%)
+                                                {% trans "Probability of heart disease"%} (%)
                                             </label>
                                             <input type="number" name="heartDiseaseProb" step="0.01" disabled=""
                                                 class="numberinput form-control" id="id_heartDiseaseProb"
@@ -97,7 +98,7 @@
                                     </div>
                                 </div>
                         </div>
-                        <button class="btn btn-primary" type="Submit">Make Prediction</button>
+                        <button class="btn btn-primary" type="Submit">{% trans "Make Prediction"%}</button>
 </form>
 </div>
 </div>

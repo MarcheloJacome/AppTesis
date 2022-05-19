@@ -1,6 +1,6 @@
 import email
 from http.client import HTTPResponse
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404, get_list_or_404
 from django.http import response
 from sqlalchemy import distinct
 #from matplotlib.style import context
@@ -11,9 +11,11 @@ from .forms import *
 from django.contrib.auth.forms import UserCreationForm, PasswordChangeForm
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout, update_session_auth_hash
+from django.utils.translation import gettext as _
 import numpy as np
 import pandas as pd
 import joblib
+import datetime
 
 #Reload Ai Model
 reloadModel = joblib.load('aiModels/XGBClassifier.pkl')
@@ -22,7 +24,7 @@ ohEncoder = joblib.load('aiModels/OHEncoder.pkl')
 #Reload StandardScaler
 sScaler = joblib.load('aiModels/SScaler.pkl')
 #Reload Soft Voting Classifier
-hvClassifier = joblib.load('aiModels/HVClassifier.pkl')
+svClassifier = joblib.load('aiModels/SVClassifier.pkl')
 
 
 non_proc_labels = ['Age', 'Sex', 'ChestPainType', 'RestingBP', 'Cholesterol', 'FastingBS',
@@ -45,7 +47,7 @@ def registerPage(request):
             if form.is_valid():
                 form.save()
                 user = form.cleaned_data.get('username')
-                messages.success(request,'Account was created for'+user)
+                messages.success(request,_('Account was created for ')+user)
                 return redirect('login')
         context = {'form':form}
         return render(request,'register.html',context)
@@ -62,7 +64,7 @@ def loginPage(request):
                 login(request, user)
                 return redirect('Prediction')
             else:
-                messages.info(request, 'Username or Password is incorrect')
+                messages.info(request, _('Username or Password is incorrect'))
         context = {}
         return render(request,'login.html',context)
 
@@ -78,7 +80,7 @@ def editUser(request):
         if form.is_valid():
             form.save()
             user = form.cleaned_data.get('username')
-            messages.success(request,'Account was updated for '+user)
+            messages.success(request,_('Account was updated for ')+user)
             #return redirect('prediction')
     context = {'form':form}
     return render(request,'edit_user.html',context)
@@ -98,38 +100,11 @@ def changeUserPass(request):
         return render(request,'change_user_pass.html',context)
 
 
-
-"""
-def prediction1(request):
-    context = {'a' : 'Hola'}
-    
-    if request.method == 'POST':
-        print('ola')
-        print(type(float(request.POST.get('age'))))
-        temp = np.array([
-            float(request.POST.get('age')),
-            float(request.POST.get('sex')),
-            float(request.POST.get('chestPainType')),
-            float(request.POST.get('restingBP')),
-            float(request.POST.get('cholesterol')),
-            float(request.POST.get('fastingBS')),
-            float(request.POST.get('restingECG')),
-            float(request.POST.get('maxHR')),
-            float(request.POST.get('exerciseAngina')),
-            float(request.POST.get('oldpeak')),
-            float(request.POST.get('sT_Slope')),
-        ])
-        prediction = reloadModel.predict(temp.reshape(1, -1))[0]
-        context = {'prediction':prediction}
-    print('ola')
-    
-    return render(request,'prediction.html',context)
-"""
 def patientList(request):
     user = request.user
     patients = Patient.objects.filter(user=user)
     filter = PatientFilter(request.GET,queryset=patients)
-    patients = filter.qs.distinct() 
+    patients = filter.qs#.distinct() 
     context = {'patient_list':patients,'filter':filter}
     return render(request,"patient_list.html",context)
 
@@ -170,10 +145,11 @@ def patientDelete(request, pk):
     return redirect('patient_list')
 
 ########Prediction
+
 def predictionList(request, pk):
     patient = get_object_or_404(Patient,pk=pk,user=request.user)
     #user = request.user
-    predictions = Prediction.objects.filter(Patient=patient)
+    predictions = Prediction.objects.filter(Patient=patient).order_by('-pk')
     filter = PredictionFilter(request.GET,queryset=predictions)
     predictions = filter.qs
     context = {'pred_list':predictions,'filter':filter,'patient':patient}
@@ -207,13 +183,17 @@ def predictionCreate(request,pk):
                 hdisease = reloadModel.predict(sc_transformed_temp)[0]
                 hdProb = reloadModel.predict_proba(sc_transformed_temp)[0][1]*100
             else:
-                hdisease = hvClassifier.predict(sc_transformed_temp)[0]
-                hdProb = hvClassifier.predict_proba(sc_transformed_temp)[0][1]*100               
+                hdisease = svClassifier.predict(sc_transformed_temp)[0]
+                hdProb = svClassifier.predict_proba(sc_transformed_temp)[0][1]*100               
             patient = get_object_or_404(Patient,pk=pk)
             prediction = form.save(commit=False)
+            prediction.date_created = datetime.date.today()
             prediction.Patient = patient
             prediction.heartDisease = int(hdisease)
             prediction.heartDiseaseProb = hdProb
+            patient.last_prediction = int(hdisease)
+            patient.last_prediction_prob = hdProb
+            patient.save()
             prediction.save()
             return redirect('../prediction_detail'+'/'+str(prediction.pk))
     context = {'form':form,'patient':patient}
@@ -254,8 +234,8 @@ def predictionEdit(request, pk):
                 hdisease = reloadModel.predict(sc_transformed_temp)[0]
                 hdProb = reloadModel.predict_proba(sc_transformed_temp)[0][1]*100
             else:
-                hdisease = hvClassifier.predict(sc_transformed_temp)[0]
-                hdProb = hvClassifier.predict_proba(sc_transformed_temp)[0][1]*100
+                hdisease = svClassifier.predict(sc_transformed_temp)[0]
+                hdProb = svClassifier.predict_proba(sc_transformed_temp)[0][1]*100
             save_as_new = form.cleaned_data['newPrediction']
             prediction = form.save(commit=False)
             pk_patient = prediction.Patient.pk
@@ -263,9 +243,13 @@ def predictionEdit(request, pk):
                 patient = get_object_or_404(Patient,pk=pk_patient)
                 prediction.pk = None
                 prediction._state.adding = True
+                prediction.date_created = datetime.date.today()
                 prediction.heartDisease = int(hdisease)
                 prediction.heartDiseaseProb = hdProb
                 prediction.Patient = patient
+                patient.last_prediction = int(hdisease)
+                patient.last_prediction_prob = hdProb
+                patient.save()
             else :
                 prediction.heartDisease = int(hdisease)
                 prediction.heartDiseaseProb = hdProb
@@ -315,31 +299,108 @@ def prediction(request):
                 hdisease = reloadModel.predict(sc_transformed_temp)[0]
                 hdProb = reloadModel.predict_proba(sc_transformed_temp)[0][1]*100
             else:
-                hdisease = hvClassifier.predict(sc_transformed_temp)[0]
-                hdProb = hvClassifier.predict_proba(sc_transformed_temp)[0][1]*100
+                hdisease = svClassifier.predict(sc_transformed_temp)[0]
+                hdProb = svClassifier.predict_proba(sc_transformed_temp)[0][1]*100
             hdProb = round(hdProb, 2)
     context = {'form': form,
               'hdisease':hdisease,
               'hdProb':hdProb}
     return render(request, 'prediction.html',context)
-"""
-def predictHD(request):
-    print("holaaaaaaa")
+
+
+def addPredictionToTrain(request, pk):
+    user = request.user 
+    pred = get_object_or_404(Prediction,pk=pk,Patient__user=user)
+    if request.method == 'GET':
+        try:
+            pred_to_train = PredictionToTrain.objects.get(prediction=pred)
+        except PredictionToTrain.DoesNotExist:
+            PredictionToTrain.objects.create(
+                date_created = pred.date_created,
+                age = pred.age,
+                sex = pred.sex,
+                chestPainType = pred.chestPainType,
+                restingBP = pred.restingBP,
+                cholesterol = pred.cholesterol,
+                fastingBS = pred.fastingBS,
+                restingECG = pred.restingECG,
+                maxHR = pred.maxHR,
+                exerciseAngina = pred.exerciseAngina,
+                oldpeak = pred.oldpeak,
+                sT_Slope = pred.sT_Slope,
+                heartDisease = pred.heartDisease,
+                aiModel = pred.aiModel,
+                prediction = pred,
+                was_used = False
+            )
+        return redirect('prediction_to_train_list')
+
+def predictionToTrainList(request):
+    user = request.user
+    pred_list = PredictionToTrain.objects.filter(
+        prediction__Patient__user=user,
+        was_used = False
+    ).order_by('-pk')
+    context = {'pred_list': pred_list}
+    return render(request,'prediction_to_train_list.html',context)
+
+def predictionToTrainDetail(request, pk):
+    user = request.user 
+    prediction = get_object_or_404(PredictionToTrain,pk=pk,prediction__Patient__user=user)
+    patient = prediction.prediction.Patient
+    form = DetailPredictionToTrainForm(instance=prediction)
+    context = {"prediction":prediction,"form":form,"patient":patient}
+    return render(request, 'prediction_to_train_detail.html',context)
+
+def predictionToTrainEdit(request, pk):
+    user = request.user 
+    prediction = get_object_or_404(PredictionToTrain,pk=pk,prediction__Patient__user=user)
+    patient = prediction.prediction.Patient
+    form = EditPredictionToTrainForm(instance=prediction)
+    form1 = EditPredictionToTrainForm1(instance=prediction)
     if request.method == 'POST':
-        temp = np.array([
-            request.POST.get('age'),
-            request.POST.get('sex'),
-            request.POST.get('chestPainType'),
-            request.POST.get('restingBP'),
-            request.POST.get('cholesterol'),
-            request.POST.get('fastingBS'),
-            request.POST.get('restingECG'),
-            request.POST.get('maxHR'),
-            request.POST.get('exerciseAngina'),
-            request.POST.get('oldpeak'),
-            request.POST.get('sT_Slope'),
-        ])
-        prediction = reloadModel.predict(temp.reshape(1, -1))[0]
-    context = {'prediction':prediction}
-    return render(request,'prediction.html',context)
+        form1 = EditPredictionToTrainForm1(request.POST,instance=prediction)
+        if form1.is_valid():
+            form1.save()
+            return redirect('../prediction_to_train_detail'+'/'+str(prediction.pk))
+    context = {"prediction":prediction,"form":form,"form1":form1,"patient":patient}
+    return render(request, 'prediction_to_train_edit.html',context)
+
+def predictionToTrainDelete(request, pk):
+    user = request.user 
+    prediction = get_object_or_404(PredictionToTrain,pk=pk,prediction__Patient__user=user)
+    prediction.delete()
+    return redirect('prediction_to_train_list')
+"""
+def predictionToTrainConfirm(request, pk):
+    user = request.user 
+    prediction = get_object_or_404(PredictionToTrain,pk=pk,prediction__Patient__user=user)
+    patient = prediction.prediction.Patient
+    form = DetailPredictionToTrainForm(instance=prediction)   
+    if request.method == 'POST':
+        tempx = np.array([[
+        prediction.age,
+        prediction.sex,
+        prediction.chestPainType,
+        prediction.restingBP,
+        prediction.cholesterol,
+        prediction.fastingBS,
+        prediction.restingECG,
+        prediction.maxHR,
+        prediction.exerciseAngina,
+        prediction.oldpeak,
+        prediction.sT_Slope,
+        ]])
+        tempy = np.array([[prediction.heartDisease]]) 
+        tempx_pd = pd.DataFrame(tempx,columns=non_proc_labels)
+        transformed_tempx = ohEncoder.transform(tempx_pd)
+        sc_transformed_tempx = sScaler.transform(transformed_tempx) 
+        aimod = prediction.aiModel
+        if aimod == 0:
+            reloadModel = joblib.load('aiModels/XGBClassifier.pkl')
+            reloadModel.fit(sc_transformed_tempx,tempy)
+        else:
+            svClassifier = joblib.load('aiModels/SVClassifier.pkl')
+            svClassifier.fit(sc_transformed_tempx,tempy)
+    return render(request, 'prediction_to_train_detail.html',context)
 """

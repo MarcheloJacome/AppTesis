@@ -1,7 +1,8 @@
 {% extends 'base.html' %}
+{% load i18n %}
 {% load crispy_forms_tags %}
 {% block title %}
-<h1 class="display-4">Make Prediction</h1>
+<h1 class="display-4">{% trans "Make Prediction"%}</h1>
 <p class="lead font-italic"></p>
 {% endblock title %}
 {% block content%}
@@ -12,12 +13,9 @@
             <div class="row">
                 <div class="col-xl-12">
                     <div class="card mb-4">
-                        <div class="card-header">Patient:{{patient.first_name}} {{patient.last_name}}</div>
+                        <div class="card-header">{% trans "Patient"%}:{{patient.first_name}} {{patient.last_name}}</div>
                         <div class="card-body">
                             <form>
-                                <div class="mb-3">                                   
-                                    {{form.date_created|as_crispy_field}}                                     
-                                </div>
                                 <div class="row gx-3 mb-3">
                                     <div class="col-md-6">
                                         {{form.age|as_crispy_field}}
@@ -67,7 +65,7 @@
                                     </div>
                                 </div>
                                 <hr>
-                                <h2>Prediction</h2>
+                                <h2>{% trans "Prediction"%}</h2>
                                 <div class="row gx-3 mb-3">
                                     <div class="col-md-6">
                                         {{form.heartDisease|as_crispy_field}}
@@ -76,7 +74,7 @@
                                         {{form.heartDiseaseProb|as_crispy_field}}
                                     </div>
                                 </div>
-                                <button class="btn btn-primary" type="Submit">Make Prediction</button>
+                                <button class="btn btn-primary" type="Submit">{% trans "Make Prediction"%}</button>
                             </form>
                         </div>
                     </div>

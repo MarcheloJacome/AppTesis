@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+{% block title %}
+<h1 class="display-4">{% trans "Edit Prediction to Train"%}</h1>
+<p class="lead font-italic">{% trans "Patient"%}: {{patient.first_name}} {{patient.last_name}}</p>
+{% endblock title %}
+{% block content%}
+<form action="" method="POST">
+    {% csrf_token %}
+    <div class="container">
+        <div class="container-xl px-4 mt-4">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="card mb-4">
+                        <div class="card-header">{% trans "Details"%}</div>
+                        <div class="card-body">
+                            <form>
+                                <div class="mb-3">                                   
+                                    {{form.date_created|as_crispy_field}}                                     
+                                </div>
+                                <div class="row gx-3 mb-3">
+                                    <div class="col-md-6">
+                                        {{form.age|as_crispy_field}}
+                                    </div>
+                                    <div class="col-md-6">
+                                        {{form.sex|as_crispy_field}}
+                                    </div>
+                                </div>
+                                <div class="row gx-3 mb-3">
+                                    <div class="col-md-6">
+                                        {{form.chestPainType|as_crispy_field}}
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        {{form.restingBP|as_crispy_field}}
+                                    </div>
+                                </div>
+                                <div class="row gx-3 mb-3">
+                                    <div class="col-md-6">
+                                        {{form.cholesterol|as_crispy_field}}
+                                    </div>
+                                    <div class="col-md-6">
+                                        {{form.fastingBS|as_crispy_field}}
+                                    </div>
+                                </div>
+                                <div class="row gx-3 mb-3">
+                                    <div class="col-md-6">
+                                        {{form.restingECG|as_crispy_field}}
+                                    </div>
+                                    <div class="col-md-6">
+                                        {{form.maxHR|as_crispy_field}}
+                                    </div>
+                                </div>
+                                <div class="row gx-3 mb-3">
+                                    <div class="col-md-6">
+                                        {{form.exerciseAngina|as_crispy_field}}
+                                    </div>
+                                    <div class="col-md-6">
+                                        {{form.oldpeak|as_crispy_field}}
+                                    </div>
+                                </div>
+                                <div class="row gx-3 mb-3">
+                                    <div class="col-md-6">
+                                        {{form.sT_Slope|as_crispy_field}}
+                                    </div>
+                                    <div class="col-md-6">
+                                        {{form.aiModel|as_crispy_field}}
+                                    </div>
+                                </div>
+                                <hr>
+                                <h2>{% trans "Prediction"%}</h2>
+                                <div class="row gx-3 mb-3">
+                                    <div class="col-md-6">
+                                        {{form1.heartDisease|as_crispy_field}}
+                                    </div>
+                                </div>
+                                <button class="btn btn-primary" type="Submit">{% trans "Save Prediction"%}</button>
+                                <a class="btn btn-primary" href={% url 'prediction_to_train_list'%}>{% trans "Back to list"%}</a>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+{% endblock content%}

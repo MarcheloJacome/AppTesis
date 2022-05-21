@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-18 23:30-0500\n"
+"POT-Creation-Date: 2022-05-19 17:19-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -30,7 +30,8 @@ msgstr "Identificacion"
 msgid "Probability > than:"
 msgstr "Probabilidad > a:"
 
-#: .\apps\app1\filters.py:45 .\apps\app1\templates\prediction_list.html:33
+#: .\apps\app1\filters.py:43 .\apps\app1\filters.py:48
+#: .\apps\app1\templates\prediction_list.html:33
 #: .\apps\app1\templates\prediction_to_train_list.html:18
 msgid "Date"
 msgstr "Fecha"
@@ -63,12 +64,10 @@ msgid "Phone Number"
 msgstr "Numero telefónico"
 
 #: .\apps\app1\forms.py:37 .\apps\app1\forms.py:78
-#| msgid "Height"
 msgid "Height"
 msgstr "Altura"
 
 #: .\apps\app1\forms.py:38 .\apps\app1\forms.py:79
-#| msgid "Weigth"
 msgid "Weight"
 msgstr "Peso"
 
@@ -187,7 +186,7 @@ msgid ""
 msgstr ""
 "Resultados del electrocardiograma en reposo: \n"
 "Normal: Electrocardiograma normal\n"
-"Con una anomalía de la onda ST-T (inversiones de la onda T o elevación "
+"ST: Con una anomalía de la onda ST-T (inversiones de la onda T o elevación "
 "depresión del ST > 0,05 mV)\n"
 "LVH: Muestra hipertrofia ventricular izquierda probable o definitiva según "
 "el criterio de Estes"
@@ -238,7 +237,7 @@ msgstr "Fecha de creación"
 
 #: .\apps\app1\forms.py:183
 msgid "Save as new prediction"
-msgstr "GUardar como nueva predicción"
+msgstr "Guardar como nueva predicción"
 
 #: .\apps\app1\models.py:6
 msgid "Female"
@@ -520,7 +519,7 @@ msgstr "Última predicción"
 msgid "Probability of HD"
 msgstr "Probabilidad de enfermedad cardiaca"
 
-#: .\apps\app1\templates\patient_list.html:76
+#: .\apps\app1\templates\patient_list.html:80
 #: .\apps\app1\templates\prediction.html:101
 #: .\apps\app1\templates\prediction_create.html:5
 #: .\apps\app1\templates\prediction_create.html:77

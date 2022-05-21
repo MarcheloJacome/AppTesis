@@ -52,7 +52,11 @@
                 {% trans "Yes"%}
                 {% endif %}
             </td>
-            <td>{{pat.last_prediction_prob}}%</td>
+            <td>
+                {% if pat.last_prediction_prob %}
+                {{pat.last_prediction_prob}}%
+                {% endif %}
+            </td>
             <!--<td>{{pat.prediction_set.last.heartDiseaseProb}}</td>-->
             <td class="text-center">
                 <a href="{% url 'patient_detail' pat.pk %}" class="text-secondary text-decoration-none">

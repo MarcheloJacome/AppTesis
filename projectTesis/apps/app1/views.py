@@ -271,6 +271,12 @@ def featureImportance(request):
                 'labels':labels}
     return render(request, 'feature_importance.html',context)
 
+def aboutAIModels(request):
+    return render(request, 'about_ai_models.html')
+
+def aboutDataset(request):
+    return render(request, 'about_dataset.html')
+
 def prediction(request):
     form = PredictionForm()
     hdisease = None

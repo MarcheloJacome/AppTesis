@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+{% block title %}
+<h1 class="display-4">{% trans "AI Models"%}</h1>
+<p class="lead font-italic"></p>
+{% endblock title %}
+{% block content%}
+<h2 >{% trans "Model 1 : XGB Classifier"%}</h2>
+<p>{% trans "XGBoost stands for 'Extreme Gradient Boosting', where the term 'Gradient Boosting' originates from the paper 'Greedy Function Approximation: A Gradient Boosting Machine', by Friedman."%}</p>
+<p>{% trans "Gradient boosting is a machine learning technique used in regression and classification tasks, among others. It gives a prediction model in the form of an ensemble of weak prediction models, which are typically decision trees. When a decision tree is the weak learner, the resulting algorithm is called gradient-boosted trees; it usually outperforms random forest. A gradient-boosted trees model is built in a stage-wise fashion as in other boosting methods, but it generalizes the other methods by allowing optimization of an arbitrary differentiable loss function."%}</p>
+
+<h2 >{% trans "Model 2 : Soft Voting Essemble Models"%}</h2>
+<p>{% trans "The goal of ensemble methods is to combine the predictions of several base estimators built with a given learning algorithm in order to improve generalizability / robustness over a single estimator."%}</p>
+<h4>{% trans "Voting Classifier"%}</h4>
+<p>{% trans "The idea behind the VotingClassifier is to combine conceptually different machine learning classifiers and use a majority vote or the average predicted probabilities (soft vote) to predict the class labels. Such a classifier can be useful for a set of equally well performing model in order to balance out their individual weaknesses."%}</p>
+{% endblock content%}
+

@@ -12,18 +12,22 @@
 </style>
 {% endblock title %}
 {% block content%}
+<h2 >{% trans "Feature Importance with XGB Classifier"%}</h2>
+<p>{% trans "Feature importance provides a score that indicates how useful or valuable each feature was in the construction of the boosted decision trees within the model. The more an attribute is used to make key decisions with decision trees, the higher its relative importance."%}</p>
+<p>{% trans "This importance is calculated explicitly for each attribute in the dataset, allowing attributes to be ranked and compared to each other."%}</p>
+<p>{% trans "Importance is calculated for a single decision tree by the amount that each attribute split point improves the performance measure, weighted by the number of observations the node is responsible for. The performance measure may be the purity (Gini index) used to select the split points or another more specific error function."%}</p>
+<p>{% trans "The feature importances are then averaged across all of the the decision trees within the model."%}</p>
 <div class="chartBox container">
     <canvas id="myChart" ></canvas>
 </div>
 
 <!--Chart js-->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
 
-<!-- jQuery -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 {% endblock content%}
 
 {% block scripts %}
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
 <script>
     // jquery function
     $(document).ready(function () {

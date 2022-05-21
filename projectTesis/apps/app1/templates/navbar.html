@@ -15,6 +15,19 @@
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">{% trans "Data Visualization"%}</a>
+        </li>
+        <li class="nav-item">
+          <span class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle link-dark" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              {% trans "About"%}
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <li><a class="nav-link link-dark" href="{% url 'about_ai_models' %}">{% trans "Ai Models"%}</a></li>
+              <li><a class="nav-link link-dark" href="{% url 'about_dataset' %}">{% trans "Dataset"%}</a></li>
+              <li><a class="nav-link link-dark" href="{% url 'feature_importance' %}">{% trans "Feature importance"%}</a></li>
+            </ul>
+          </span>
+        </li>
       </ul>
 
     </div>

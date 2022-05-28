@@ -1,0 +1,133 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+{% block titletab %}
+<title>{% trans "About Dataset" %}</title>
+{% endblock titletab %}
+{% block title %}
+<h1 class="display-4 text-center">{% trans "Used Dataset"%}</h1>
+<p class="lead font-italic"></p>
+<style type ="text/css">
+    .table-responsive {
+        max-height: 500px;
+    }
+</style>
+{% endblock title %}
+{% block content%}
+<h2 >{% trans "UCI Heart Disease Dataset"%}</h2>
+&nbsp
+<p class="fs-5">{% trans "This dataset is the result of the combination of 5 already available datasets that contain 76 features including the predicted feature, nevertheless, in this case, only 11 features are used since all published experiments refer to using a subset of the features."%}</p>
+&nbsp
+<div class="container table-responsive" style="overflow-x:auto;">
+    <table class="table table-striped table-bordered table-sm" width="100%">
+        <thead>
+            <tr>
+                {% for lab in non_proc_lab %}
+                <th>{{lab}}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            {% if arr %}  
+            {% for a in arr %}
+            <tr>
+                <th>{{a.Age}}</th>
+                <th>{{a.Sex}}</th>
+                <th>{{a.ChestPainType}}</th>
+                <th>{{a.RestingBP}}</th>
+                <th>{{a.Cholesterol}}</th>
+                <th>{{a.FastingBS}}</th>
+                <th>{{a.RestingECG}}</th>
+                <th>{{a.MaxHR}}</th>
+                <th>{{a.ExerciseAngina}}</th>
+                <th>{{a.Oldpeak}}</th>
+                <th>{{a.ST_Slope}}</th>
+                <th>{{a.HeartDisease}}</th>
+            </tr>
+            {% endfor %}
+            {% endif %}
+        </tbody>
+    </table>
+</div>
+<hr>
+&nbsp
+<div class="container">
+    <div class="row">
+      <div class="col">
+        <p class="fs-5">{% trans "The five datasets used for its curation are:"%}</p>
+        <p class="fs-5">-{% trans "Cleveland: 303 observations"%}</p>
+        <p class="fs-5">-{% trans "Hungarian: 294 observations"%}</p>
+        <p class="fs-5">-{% trans "Switzerland: 123 observations"%}</p>
+        <p class="fs-5">-{% trans "Long Beach VA: 200 observations"%}</p>
+        <p class="fs-5">-{% trans "Stalog (Heart) Data Set: 270 observations"%}</p>
+        <p class="fs-5">{% trans "Total: 1190 observations"%}</p>
+        <p class="fs-5">{% trans "Duplicated: 272 observations"%}</p>
+        <p class="fs-5">{% trans "Final dataset: 918 observations"%}</p>
+      </div>
+      <div class="col">
+        <h4>{% trans "Feature description"%}</h4>
+        <p class="fs-5">-{% trans "Age: age of the patient in years."%}</p>
+        <p class="fs-5">-{% trans "Sex: sex of the patient (M: Male, F: Female)."%}</p>
+        <p class="fs-5">-{% trans "ChestPainType: chest pain type (TA: Typical Angina, ATA: Atypical Angina, NAP: Non-Anginal Pain, ASY: Asymptomatic)."%}</p>
+        <p class="fs-5">-{% trans "RestingBP: resting blood pressure measured in (mm/Hg)."%}</p>
+        <p class="fs-5">-{% trans "Cholesterol: serum cholesterol measured in (mm/Hg)."%}</p>
+        <p class="fs-5">-{% trans "FastingBS: fasting blood sugar (1: if FastingBS > 120 mg/dl, 0: if FastingBS <= 120 mg/dl)."%}</p>
+        <p class="fs-5">-{% trans "RestingECG: resting electrocardiogram results (Normal: Normal, ST: having ST-T wave abnormality (T wave inversions and/or ST elevation or depression of > 0.05 mV), LVH: showing probable or definite left ventricular hypertrophy by Estes' criteria)."%}</p>
+        <p class="fs-5">-{% trans "MaxHR: Maximum amount of heart beats achieved per minute under maximum stress."%}</p>
+        <p class="fs-5">-{% trans "ExerciseAngina: exercise-induced angina (Y: Yes, N: No)."%}</p>
+        <p class="fs-5">-{% trans "Oldeak: ST depression. The height difference (in milimiters) between the J point and the baseline (the PR segment)."%}</p>
+        <p class="fs-5">-{% trans "ST_Slope: the slope of the peak exercise ST segment (Up: upsloping, Flat: flat, Down: downsloping)."%}</p>
+        <p class="fs-5">-{% trans "HeartDisease: output class (1: heart disease, 0: Normal)."%}</p> 
+      </div>
+    </div>
+</div>
+<hr>
+<p class="fs-5">{% trans "As seen above, 5 of the 11 features are not numeric values, they are categorical values, and they need to be transformed into numeric values to be implemented in machine learning models."%}</p>
+<p class="fs-5">{% trans "One way of doing this would be to just assign the numerical value of the entry in the dataset to each categoric feature, but this is not the best approach since machine learning models could assume that higher the categorical value, better the category, which is not always the case. A better approach is using what’s called "%}<span class="fs-5 fst-italic">"{% trans "one hot encoding"%}"</span>.</p>
+&nbsp
+<h2 >{% trans "One hot encoding"%}</h2>
+&nbsp
+<p class="fs-5">{% trans "It is a way to perform a “binarization” of each categoric value and include it as a separate feature to train the model. This means additional columns with only binary values (0 and 1) for each categoric value will be added to the original dataset. 0 indicates non-existent and 1 indicates existent."%}</p>
+<p class="fs-5">{% trans "The result of applying “one hot encoding” to the original dataset will look like the following:"%}</p>
+&nbsp
+<div class="container table-responsive" style="overflow-x:auto;">
+    <table class="table table-striped table-bordered table-sm" width="100%">
+        <thead>
+            <tr>
+                {% for lab in proc_labels %}
+                <th>{{lab}}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            {% if arr_encoded %}  
+            {% for a in arr_encoded %}
+            <tr>
+                <th>{{a.Sex_F}}</th>
+                <th>{{a.Sex_M }}</th>
+                <th>{{a.ChestPainType_ASY }}</th>
+                <th>{{a.ChestPainType_ATA}}</th>
+                <th>{{a.ChestPainType_NAP }}</th>
+                <th>{{a.ChestPainType_TA }}</th>
+                <th>{{a.RestingECG_LVH }}</th>
+                <th>{{a.RestingECG_Normal }}</th>
+                <th>{{a.RestingECG_ST }}</th>
+                <th>{{a.ExerciseAngina_N }}</th>
+                <th>{{a.ExerciseAngina_Y }}</th>
+                <th>{{a.ST_Slope_Down}}</th>
+                <th>{{a.ST_Slope_Flat }}</th>
+                <th>{{a.ST_Slope_Up }}</th>
+                <th>{{a.Age }}</th>
+                <th>{{a.RestingBP}}</th>
+                <th>{{a.Cholesterol}}</th>
+                <th>{{a.FastingBS}}</th>
+                <th>{{a.MaxHR}}</th>
+                <th>{{a.Oldpeak}}</th>
+                <th>{{a.HeartDisease}}</th>
+            </tr>
+            {% endfor %}
+            {% endif %}
+        </tbody>
+    </table>
+</div>
+{% endblock content%}

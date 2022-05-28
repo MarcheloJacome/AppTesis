@@ -1,18 +1,78 @@
 {% extends 'base.html' %}
 {% load i18n %}
 {% load crispy_forms_tags %}
+{% load static %}
+{% block titletab %}
+<title>{% trans "About AI Models" %}</title>
+{% endblock titletab %}
 {% block title %}
-<h1 class="display-4">{% trans "AI Models"%}</h1>
+<h1 class="display-4 text-center">{% trans "AI Models"%}</h1>
 <p class="lead font-italic"></p>
 {% endblock title %}
 {% block content%}
-<h2 >{% trans "Model 1 : XGB Classifier"%}</h2>
-<p>{% trans "XGBoost stands for 'Extreme Gradient Boosting', where the term 'Gradient Boosting' originates from the paper 'Greedy Function Approximation: A Gradient Boosting Machine', by Friedman."%}</p>
-<p>{% trans "Gradient boosting is a machine learning technique used in regression and classification tasks, among others. It gives a prediction model in the form of an ensemble of weak prediction models, which are typically decision trees. When a decision tree is the weak learner, the resulting algorithm is called gradient-boosted trees; it usually outperforms random forest. A gradient-boosted trees model is built in a stage-wise fashion as in other boosting methods, but it generalizes the other methods by allowing optimization of an arbitrary differentiable loss function."%}</p>
+<!--
+<h2 id="single_model">{% trans "Single Model : XGB Classifier"%}</h2>
+&nbsp
+<p class="fs-5">{% trans "XGBoost stands for 'Extreme Gradient Boosting', where the term 'Gradient Boosting' originates from the paper 'Greedy Function Approximation: A Gradient Boosting Machine', by Friedman."%}</p>
+<p class="fs-5">{% trans "Gradient boosting is a machine learning technique used in regression and classification tasks, among others. It gives a prediction model in the form of an ensemble of weak prediction models, which are typically decision trees. When a decision tree is the weak learner, the resulting algorithm is called gradient-boosted trees; it usually outperforms random forest. A gradient-boosted trees model is built in a stage-wise fashion as in other boosting methods, but it generalizes the other methods by allowing optimization of an arbitrary differentiable loss function."%}</p>
+-->
 
-<h2 >{% trans "Model 2 : Soft Voting Essemble Models"%}</h2>
-<p>{% trans "The goal of ensemble methods is to combine the predictions of several base estimators built with a given learning algorithm in order to improve generalizability / robustness over a single estimator."%}</p>
+<h2 id="single_model">{% trans "Single Model : Multi-Layer Perceptron"%}</h2>
+&nbsp
+<p class="fs-5">{% trans "Multi-layer perceptron could easily be the most useful type of neural network since a perceptron is a single neuron model that worked as a precursor to the larger neural networks."%}</p>
+<p class="fs-5">{% trans "Neural networks are powerful because they have the ability to learn the representation in the training dataset and relate it to the output variable to be predicted. They are able to learn any mapping function, making them a universal approximation algorithm."%}</p>
+<p class="fs-5">{% trans "Multi-layer perceptron consists of three types of layers: the input layer, output layer and hidden layer. The input layer takes the input signal to be processed. The required task, like as prediction and classification, is performed by the output layer. A number of hidden layers, wich is arbitrary, that are placed in between the input and output layer are the computational engine of the MLP. The data flows in the forward direction from input to output layer. The neurons in the MLP are trained with the back propagation learning algorithm. MLPs are designed to approximate any continuous function and can solve problems which are not linearly separable. The major use cases of MLP are pattern classification, recognition, prediction and approximation."%}</p>
+
+&nbsp
+<h2 id="ensemble_models">{% trans "Ensemble models : Soft Voting Ensemble Models"%}</h2>
+&nbsp
+<p class="fs-5">{% trans "The goal of ensemble methods is to combine the predictions of several base models built with a given learning algorithm in order to improve generalizability / robustness over a single model."%}</p>
 <h4>{% trans "Voting Classifier"%}</h4>
-<p>{% trans "The idea behind the VotingClassifier is to combine conceptually different machine learning classifiers and use a majority vote or the average predicted probabilities (soft vote) to predict the class labels. Such a classifier can be useful for a set of equally well performing model in order to balance out their individual weaknesses."%}</p>
+<p class="fs-5">{% trans "The idea behind the VotingClassifier is to combine conceptually different machine learning classifiers and use a majority vote or the average predicted probabilities (soft vote) to predict the class labels. Such a classifier can be useful for a set of equally well performing model in order to balance out their individual weaknesses."%}</p>
+<p class="fs-5">{% trans "The following models were used to build it:"%}</p>
+<p class="fs-5">-{% trans "XGB Classifier"%}</p>
+<p class="fs-5">-{% trans "K-Nearest Neighbors Classifier"%}</p>
+<p class="fs-5">-{% trans "Stochastic Gradient Boosting Classifier"%}</p>
+<p class="fs-5">-{% trans "Random Forest Classifier"%}</p>
+<p class="fs-5">-{% trans "Multi-Layer Perceptron Classifier"%}</p>
+&nbsp
+<h2 >{% trans "Choosing the best model"%}</h2>
+&nbsp
+<p class="fs-5">{% trans "Being able to find the best model for this application is a time consuming, but necessary task, in order to get the best results. In this case, 9 different machine learning models were tested with the default parameters to first have an idea of the path to be followed."%}</p>
+<p class="fs-5">{% trans "Since each model has have numerous amounts of parameters, the number of possible combinations to test are massive, making this task even more time consuming because it’s necessary to be able to find the best hyper-parameters for each model. Thankfully, there is a couple of tools to help with this task: Gridsearch, to find the best hyper-parameters and Cross-Validation to evaluate the obtained hyper-parameters."%}</p>
+&nbsp
+<div class="container">
+    <div class="row">
+      <div class="col">
+        <h2 >{% trans "Cross-Validation"%}</h2>
+        &nbsp
+        <p class="fs-5">{% trans "Whenever a supervised machine learning experiment is done, a common practice is to split the original data into a train set and a test set to avoid “overfitting” the model, which means that it will fail to predict unseen data."%}</p>
+        <p class="fs-5">{% trans "Cross-validation is a procedure that splits the data into smaller sets and the model is trained for each set and validated with the remaining part of the data. In the end, the average of the values computed in the loop is reported as the performance measure."%}</p>
+        &nbsp
+      </div>
+      <div class="col">
+        <h2 >{% trans "Grid Search"%}</h2>
+        &nbsp
+        <p class="fs-5">{% trans "This tool generates different candidates for a model or estimator from a grid of parameter values previously specified. It is fitted on a dataset and all the possible combinations of parameter values are evaluated; in the end the best combination is retained."%}</p>
+        <p class="fs-5">{% trans "After applying cross-validation and grid search to each model, the best one ("%}<a href="#single_model" class="fs-5">{% trans "single model"%}</a>{% trans ") was chosen, based on its accuracy and ability to be constantly trained with new data. The following 4 models were used to build the "%}<a href="#ensemble_models" class="fs-5">{% trans "ensemble models"%}</a>.</p>
+        &nbsp
+      </div>
+    </div>
+</div>
+<h3 class="text-center">{% trans "Obtained parameters for single model"%}</h3>
+&nbsp
+<div class="text-center">
+    <img src="{% static 'app1/images/mlp_class_params.png' %}"
+      style="width: 70%;" alt="mlp_class_params">
+    <p class="fs-6">{% trans "A weighed average accuracy of 87 % was obtained with these parameters."%}</p>
+</div>
+&nbsp
+<h3 class="text-center">{% trans "Obtained parameters for ensemble models"%}</h3>
+&nbsp
+<div class="text-center">
+    <img src="{% static 'app1/images/sv_class_params.png' %}"
+      style="width: 70%;" alt="sv_class_params">
+    <p class="fs-6">{% trans "A weighed average accuracy of 87.51 % was obtained with these parameters."%}</p>
+</div>
 {% endblock content%}
 

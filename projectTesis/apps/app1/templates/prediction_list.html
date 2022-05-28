@@ -2,13 +2,10 @@
 {% load i18n %}
 {% load crispy_forms_tags %}
 {% block titletab %}
-<title>{% trans "Prediction list"%}</title>
+<title>{% trans "Predictions list" %}</title>
 {% endblock titletab %}
 {% block title %}
 <h1 class="display-4">{% trans "List of Predictions"%}</h1>
-
-<p class="lead font-italic">Patient: {{patient.first_name}} {{patient.last_name}}</p>
-<a class="btn btn-primary" href={% url 'patient_list' %}>{% trans "Back to Patients"%}</a>
 {% endblock title %}
 {% block content %}
 <form action="" method="get" autocomplete="off">
@@ -22,14 +19,25 @@
             &nbsp
             <a class="btn btn-secondary  btn-md" href="{% url 'prediction_list' patient.pk %}"><i class="fas fa-times"></i></a>
         </div>
+        <div class="col-md-2 offset-md-4">
+            <a class="btn btn-primary" href={% url 'patient_list' %}>{% trans "Back to Patients"%}</a>
+        </div>
     </div>
 </form>
 <hr>
+<div class="row">
+    <div class="col text-center">
+        <span class="fw-normal fs-3">{% trans "Patient"%}: </span><span class="fst-italic fs-3">{{patient.first_name}} {{patient.last_name}}</span>
+    </div>
+</div>
+&nbsp
 <table class="table table-striped">
     <thead class="border-bottom font-weight-bold">
         <tr>
+            <!--
             <th>{% trans "Name"%}</th>
             <th>{% trans "Last name"%}</th>
+            -->
             <th>{% trans "Date"%}</th>
             <th>{% trans "AI Model"%}</th>
             <th>{% trans "Prediction"%}</th>
@@ -44,13 +52,15 @@
     <tbody>
         {% for pred in pred_list %}
         <tr>
+            <!--
             <td>{{patient.first_name}}</td>
             <td>{{patient.last_name}}</td>
+            -->
             <td>{{pred.date_created}}</td>
             <td>{% if pred.aiModel == 0 %}
-                {% trans "Single Model (XGB Booster)"%}
+                {% trans "Single Model"%}
                 {% elif pred.aiModel == 1 %}
-                {% trans "Soft Voting Ensemble Models"%}
+                {% trans "Ensemble Models"%}
                 {% endif %}</td>
             <td>{% if pred.heartDisease == 0 %}
                 No

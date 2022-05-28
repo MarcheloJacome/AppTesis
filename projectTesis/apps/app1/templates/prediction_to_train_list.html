@@ -6,10 +6,31 @@
 {% endblock titletab %}
 {% block title %}
 <h1 class="display-4">{% trans "List of Predictions to train"%}</h1>
-
-<a class="btn btn-primary" href={% url 'patient_list' %}>{% trans "Back to Patients"%}</a>
 {% endblock title %}
 {% block content %}
+<form action="" method="get" autocomplete="off">
+    <div class="row align-items-center">
+        <div class="col-md-3">{{filter.form.dateFilter|as_crispy_field}}</div>
+        <div class="col-md-2">{{filter.form.f_name_filter|as_crispy_field}}</div>
+        <div class="col-md-2">{{filter.form.l_name_filter|as_crispy_field}}</div>
+        <div class="col-md-3">
+            &nbsp
+            <button type="submit" class="btn btn-success btn-block btn-md"><i class="fas fa-filter"></i>
+                {% trans "Filter"%}</button>
+
+            &nbsp
+            <a class="btn btn-secondary  btn-md" href="{% url 'prediction_to_train_list' %}"><i class="fas fa-times"></i></a>
+        </div>
+        <div class="col-md-2">
+            <a class="btn btn-primary" href={% url 'patient_list' %}>{% trans "Back to Patients"%}</a>
+        </div>
+    </div>
+</form>
+{% for message in messages %}
+<div class="col-md-12 text-center alert alert-danger" role="alert">
+    {{ message }}
+</div>
+{% endfor %}
 <table class="table table-striped">
     <thead class="border-bottom font-weight-bold">
         <tr>
@@ -28,9 +49,9 @@
             <td>{{pred.prediction.Patient.last_name}}</td>
             <td>{{pred.date_created}}</td>
             <td>{% if pred.aiModel == 0 %}
-                {% trans "Single Model (XGB Booster)"%}
+                {% trans "Single Model"%}
                 {% elif pred.aiModel == 1 %}
-                {% trans "Hard Voting Ensemble Models"%}
+                {% trans "Ensemble Models"%}
                 {% endif %}</td>
             <td>{% if pred.heartDisease == 0 %}
                 No

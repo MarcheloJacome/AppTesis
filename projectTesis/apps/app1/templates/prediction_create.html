@@ -1,11 +1,19 @@
 {% extends 'base.html' %}
 {% load i18n %}
 {% load crispy_forms_tags %}
+{% block titletab %}
+<title>{% trans "Create prediction" %}</title>
+{% endblock titletab %}
 {% block title %}
 <h1 class="display-4">{% trans "Make Prediction"%}</h1>
 <p class="lead font-italic"></p>
 {% endblock title %}
 {% block content%}
+<div class="row">
+    <div class="col text-center">
+        <span class="fw-normal fs-3">{% trans "Patient"%}: </span><span class="fst-italic fs-3">{{patient.first_name}} {{patient.last_name}}</span>
+    </div>
+</div>
 <form action="" method="POST">
     {% csrf_token %}
     <div class="container">
@@ -13,9 +21,7 @@
             <div class="row">
                 <div class="col-xl-12">
                     <div class="card mb-4">
-                        <div class="card-header">{% trans "Patient"%}:{{patient.first_name}} {{patient.last_name}}</div>
                         <div class="card-body">
-                            <form>
                                 <div class="row gx-3 mb-3">
                                     <div class="col-md-6">
                                         {{form.age|as_crispy_field}}
@@ -74,10 +80,22 @@
                                         {{form.heartDiseaseProb|as_crispy_field}}
                                     </div>
                                 </div>
-                                <button class="btn btn-primary" type="Submit">{% trans "Make Prediction"%}</button>
-                            </form>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="d-grid gap-2">
+                    <a class="btn btn-primary" href={% url 'patient_list' %}>{% trans "Back to list"%}</a>
+                </div>  
+            </div>
+            <div class="col-md-6">
+                <div class="d-grid gap-2">
+                    <button class="btn btn-success" type="Submit">{% trans "Make Prediction"%}</button>
                 </div>
             </div>
         </div>

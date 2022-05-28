@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-19 17:19-0500\n"
+"POT-Creation-Date: 2022-05-25 23:57-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -299,7 +299,410 @@ msgstr "Modelo único (clasificador XGB)"
 msgid "Soft Voting Ensemble Models"
 msgstr "Conjunto de Modelos de votación"
 
-#: .\apps\app1\templates\base.html:18
+#: .\apps\app1\templates\about_ai_models.html:6
+msgid "AI Models"
+msgstr "Modelos de IA"
+
+#: .\apps\app1\templates\about_ai_models.html:10
+#| msgid "Single Model (XGB Classifier)"
+msgid "Model 1 : XGB Classifier"
+msgstr "Modelo 1 : Clasificador XGB"
+
+#: .\apps\app1\templates\about_ai_models.html:12
+msgid ""
+"XGBoost stands for 'Extreme Gradient Boosting', where the term 'Gradient "
+"Boosting' originates from the paper 'Greedy Function Approximation: A "
+"Gradient Boosting Machine', by Friedman."
+msgstr ""
+"XGBoost significa 'Aumento de gradiente extremo', donde el término 'Aumento "
+"de gradiente extremo' se origina del paper 'Greedy Function Approximation: A "
+"Gradient Boosting Machine', de Friedman."
+
+#: .\apps\app1\templates\about_ai_models.html:13
+msgid ""
+"Gradient boosting is a machine learning technique used in regression and "
+"classification tasks, among others. It gives a prediction model in the form "
+"of an ensemble of weak prediction models, which are typically decision "
+"trees. When a decision tree is the weak learner, the resulting algorithm is "
+"called gradient-boosted trees; it usually outperforms random forest. A "
+"gradient-boosted trees model is built in a stage-wise fashion as in other "
+"boosting methods, but it generalizes the other methods by allowing "
+"optimization of an arbitrary differentiable loss function."
+msgstr ""
+"La potenciación del gradiente es una técnica de aprendizaje automático utilizada en tareas de regresión y "
+"clasificación, entre otras. Da un modelo de predicción en la forma "
+"de un conjunto de modelos de predicción débiles, que suelen ser arboles "
+"de decisión. Cuando un árbol de decisión es el aprendiz débil, el algoritmo resultante es "
+"llamado árboles de potenciación del gradiente; por lo general, supera a los bosques aleatorios. Un "
+"modelo de árboles de potenciación del gradiente se construye de manera escalonada como en otros "
+"métodos de potenciación, pero generaliza los otros métodos al permitir "
+"la optimización de una función de pérdida diferenciable arbitraria."
+
+#: .\apps\app1\templates\about_ai_models.html:15
+#| msgid "Soft Voting Ensemble Models"
+msgid "Model 2 : Soft Voting Essemble Models"
+msgstr "Modelo 2: Modelos de conjunto de votación suave"
+
+#: .\apps\app1\templates\about_ai_models.html:17
+msgid ""
+"The goal of ensemble methods is to combine the predictions of several base "
+"estimators built with a given learning algorithm in order to improve "
+"generalizability / robustness over a single estimator."
+msgstr ""
+"El objetivo de los métodos de conjunto es combinar las predicciones de varios estimadores "
+"base construidos con un algoritmo de aprendizaje dado para mejorar "
+"la generalizabilidad / robustez sobre un solo estimador."
+
+#: .\apps\app1\templates\about_ai_models.html:18
+#| msgid "Single Model (XGB Classifier)"
+msgid "Voting Classifier"
+msgstr "Voting Classifier"
+
+#: .\apps\app1\templates\about_ai_models.html:19
+msgid ""
+"The idea behind the VotingClassifier is to combine conceptually different "
+"machine learning classifiers and use a majority vote or the average "
+"predicted probabilities (soft vote) to predict the class labels. Such a "
+"classifier can be useful for a set of equally well performing model in order "
+"to balance out their individual weaknesses."
+msgstr ""
+"La idea detrás del VotingClassifier es combinar conceptualmente diferentes "
+"clasificadores de machine learning y el uso de un voto mayoritario o el promedio "
+"de las probabilidades predichas (voto suave) para predecir las etiquetas de la clase. Dicho "
+"clasificador puede ser útil para un conjunto de modelos igualmente buenos con el objetivo "
+"de equilibrar sus debilidades individuales."
+
+#: .\apps\app1\templates\about_ai_models.html:20
+msgid "The following models were used to build it:"
+msgstr "Para su construcción se utilizaron los siguientes modelos:"
+
+#: .\apps\app1\templates\about_ai_models.html:21
+#| msgid "Single Model (XGB Classifier)"
+msgid "XGB Classifier"
+msgstr "Clasificador XGB"
+
+#: .\apps\app1\templates\about_ai_models.html:22
+msgid "K-Nearest Neighbors Classifier"
+msgstr "Clasificador K-Vecinos Cercanos"
+
+#: .\apps\app1\templates\about_ai_models.html:23
+msgid "Stochastic Gradient Boosting Classifier"
+msgstr "Clasificador de Aumento de Gradiente Estocástico"
+
+#: .\apps\app1\templates\about_ai_models.html:24
+msgid "Random Forest Classifier"
+msgstr "Clasificador de Bosque Aleatorio"
+
+#: .\apps\app1\templates\about_ai_models.html:25
+msgid "Multi-Layer Perceptron Classifier"
+msgstr "Clasificador de Perceptrón Multicapa"
+
+#: .\apps\app1\templates\about_ai_models.html:27
+msgid "Choosing the best model"
+msgstr "Elección del mejor modelo"
+
+#: .\apps\app1\templates\about_ai_models.html:29
+msgid ""
+"Being able to find the best model for this application is a time consuming, "
+"but necessary task, in order to get the best results. In this case, 9 "
+"different machine learning models were tested with the default parameters to "
+"first have an idea of the path to be followed."
+msgstr ""
+"Ser capaz de encontrar el mejor modelo para esta aplicación es una demorada, "
+"pero necesaria tarea, para obtener los mejores resultados. En este caso, 9 "
+"distintos modelos de machine learning fueron probados con sus parámetros predeterminados para "
+"primero tener una idea del camino a seguir."
+
+#: .\apps\app1\templates\about_ai_models.html:30
+msgid ""
+"Since each model has have numerous amounts of parameters, the number of "
+"possible combinations to test are massive, making this task even more time "
+"consuming because it’s necessary to be able to find the best hyper-"
+"parameters for each model. Thankfully, there is a couple of tools to help "
+"with this task: Gridsearch, to find the best hyper-parameters and Cross-"
+"Validation to evaluate the obtained hyper-parameters."
+msgstr ""
+"Dado que cada modelo tiene numerosas cantidades de parámetros, el número de "
+"combinaciones posibles para probar son masivas, lo que hace que esta tarea consuma inclusive más "
+"tiempo porque es necesario poder encontrar los mejores hiper-"
+"parámetros para cada modelo. Afortunadamente, hay un par de herramientas para ayudar "
+"con esta tarea: Gridsearch, para encontrar los mejores hiper-parámetros y Cross-"
+"Validation para evaluar los hiper-parámetros obtenidos."
+
+#: .\apps\app1\templates\about_ai_models.html:35
+msgid "Cross-Validation"
+msgstr "Cross-Validation"
+
+#: .\apps\app1\templates\about_ai_models.html:37
+msgid ""
+"Whenever a supervised machine learning experiment is done, a common practice "
+"is to split the original data into a train set and a test set to avoid "
+"“overfitting” the model, which means that it will fail to predict unseen "
+"data."
+msgstr ""
+"Cada vez que se realiza un experimento supervisado de machine learning, una práctica común "
+"es dividir los datos originales en un conjunto de entrenamiento y un conjunto de prueba para evitar "
+"“sobreajustar” el modelo, lo que significa que fallará en predecir los datos no "
+"vistos."
+
+#: .\apps\app1\templates\about_ai_models.html:38
+msgid ""
+"Cross-validation is a procedure that splits the data into smaller sets and "
+"the model is trained for each set and validated with the remaining part of "
+"the data. In the end, the average of the values computed in the loop is "
+"reported as the performance measure."
+msgstr ""
+"Cross-validation es un procedimiento que divide los datos en conjuntos más pequeños y "
+"el modelo es entrenado para cada conjunto y se valida con la parte restante de "
+"los datos. Al final, el promedio de los valores calculados en el bucle es "
+"reportado como la medida de desempeño."
+
+#: .\apps\app1\templates\about_ai_models.html:42
+msgid "Grid Search"
+msgstr "Grid Search"
+
+#: .\apps\app1\templates\about_ai_models.html:44
+msgid ""
+"This tool generates different candidates for a model or estimator from a "
+"grid of parameter values previously specified. It is fitted on a dataset and "
+"all the possible combinations of parameter values are evaluated; in the end "
+"the best combination is retained."
+msgstr ""
+"Esta herramienta genera diferentes candidatos para un modelo o estimador a partir de una "
+"cuadrícula de valores de parámetros especificados previamente. Es ajustado a un conjunto de datos y "
+"todas las posibles combinaciones de valores de parámetros son evaluadas; al final"
+"se conserva la mejor combinación."
+
+#: .\apps\app1\templates\about_ai_models.html:45
+msgid ""
+"After applying cross-validation and grid search to each model, the best one ("
+msgstr ""
+"Después de aplicar cross-validation y grid search a cada modelo, el mejor ("
+
+#: .\apps\app1\templates\about_ai_models.html:45
+msgid "model 1"
+msgstr "modelo 1"
+
+#: .\apps\app1\templates\about_ai_models.html:45
+msgid ""
+") was chosen and the following 4 were used to build the ensemble model ("
+msgstr ""
+") fue elegido y los siguientes 4 fueron usados para construir el modelo de conjunto ("
+
+#: .\apps\app1\templates\about_ai_models.html:45
+msgid "model 2"
+msgstr "modelo 2"
+
+#: .\apps\app1\templates\about_ai_models.html:50
+msgid "Parameters obtained for model 1"
+msgstr "Parámetros obtenidos para el modelo 1"
+
+#: .\apps\app1\templates\about_ai_models.html:55
+msgid ""
+"A weighed average accuracy of 87.77%% was obtained with these parameters."
+msgstr ""
+"Con estos parámetros se obtuvo una precisión media ponderada del 87,77%."
+
+#: .\apps\app1\templates\about_ai_models.html:58
+msgid "Parameters obtained for model 2"
+msgstr "Parámetros obtenidos para el modelo 1"
+
+#: .\apps\app1\templates\about_ai_models.html:63
+msgid ""
+"A weighed average accuracy of 87.51%% was obtained with these parameters."
+msgstr ""
+"Con estos parámetros se obtuvo una precisión media ponderada del 87,51%."
+
+#: .\apps\app1\templates\about_dataset.html:5
+msgid "Used Dataset"
+msgstr "Conjunto de datos usado"
+
+#: .\apps\app1\templates\about_dataset.html:14
+msgid "UCI Heart Disease Dataset"
+msgstr "Conjunto de datos de enfermedades cardíacas de la UCI"
+
+#: .\apps\app1\templates\about_dataset.html:16
+msgid ""
+"This dataset is the result of the combination of 5 already available "
+"datasets that contain 76 features including the predicted feature, "
+"nevertheless, in this case, only 11 features are used since all published experiments "
+"refer to using a subset of the features."
+msgstr ""
+"Este conjunto de datos es el resultado de la combinación de 5 conjuntos  "
+"de datos ya disponibles que contienen 76 características, incluida la característica predicha, "
+"sin embargo, en este caso, solo se utilizan 11 características ya que todos los experimentos "
+"publicados se refieren al uso de un subconjunto de las características."
+
+#: .\apps\app1\templates\about_dataset.html:54
+msgid "The five datasets used for its curation are:"
+msgstr "Los cinco conjuntos de datos utilizados para su gestión son:"
+
+#: .\apps\app1\templates\about_dataset.html:55
+msgid "Cleveland: 303 observations"
+msgstr "Cleveland: 303 observaciones"
+
+#: .\apps\app1\templates\about_dataset.html:56
+msgid "Hungarian: 294 observations"
+msgstr "Hungaria: 294 observaciones"
+
+#: .\apps\app1\templates\about_dataset.html:57
+msgid "Switzerland: 123 observations"
+msgstr "Suiza: 123 observaciones"
+
+#: .\apps\app1\templates\about_dataset.html:58
+msgid "Long Beach VA: 200 observations"
+msgstr "Long Beach: 200 observaciones"
+
+#: .\apps\app1\templates\about_dataset.html:59
+msgid "Stalog (Heart) Data Set: 270 observations"
+msgstr "Conjunto de datos de Statlog (corazón): 270 observaciones"
+
+#: .\apps\app1\templates\about_dataset.html:60
+msgid "Total: 1190 observations"
+msgstr "Total: 1190 observaciones"
+
+#: .\apps\app1\templates\about_dataset.html:61
+msgid "Duplicated: 272 observations"
+msgstr "Duplicado: 272 observaciones"
+
+#: .\apps\app1\templates\about_dataset.html:62
+msgid "Final dataset: 918 observations"
+msgstr "Conjunto de datos final: 918 observaciones"
+
+#: .\apps\app1\templates\about_dataset.html:65
+msgid "Feature description"
+msgstr "Descripción de características"
+
+#: .\apps\app1\templates\about_dataset.html:66
+msgid "Age: age of the patient in years."
+msgstr "Age: edad del paciente en años"
+
+#: .\apps\app1\templates\about_dataset.html:67
+msgid "Sex: sex of the patient (M: Male, F: Female)."
+msgstr "Sex: sexo del paciente (M: Masculino, F: Femenino)."
+
+#: .\apps\app1\templates\about_dataset.html:68
+msgid ""
+"ChestPainType: chest pain type (TA: Typical Angina, ATA: Atypical Angina, "
+"NAP: Non-Anginal Pain, ASY: Asymptomatic)."
+msgstr ""
+"ChestPainType: tipo de dolor torácico (TA: Angina típica, ATA: Angina atípica, "
+"NAP: dolor no anginoso, ASY: asintomático)."
+
+#: .\apps\app1\templates\about_dataset.html:69
+msgid "RestingBP: resting blood pressure measured in (mm/Hg)."
+msgstr "RestingBP: presión arterial en reposo medida en: mm/Hg"
+
+#: .\apps\app1\templates\about_dataset.html:70
+msgid "Cholesterol: serum cholesterol measured in (mm/Hg)."
+msgstr "Cholesterol: colesterol sérico medido en mm/dl"
+
+#: .\apps\app1\templates\about_dataset.html:71
+msgid ""
+"FastingBS: fasting blood sugar (1: if FastingBS > 120 mg/dl, 0: if FastingBS "
+"<= 120 mg/dl)."
+msgstr ""
+"FastingBS: azúcar en sangre en ayunas (1: si FastingBS en ayunas > 120 mg/dl, 0: si FastingBS en ayunas "
+"<= 120 mg/dl)."
+
+#: .\apps\app1\templates\about_dataset.html:72
+msgid ""
+"RestingECG: resting electrocardiogram results (Normal: Normal, ST: having ST-"
+"T wave abnormality (T wave inversions and/or ST elevation or depression of > "
+"0.05 mV), LVH: showing probable or definite left ventricular hypertrophy by "
+"Estes' criteria)."
+msgstr ""
+"RestingECG: resultados del electrocardiograma en reposo (Normal: Normal, ST: con una anomalía"
+"de la onda ST-T (inversiones de la onda T y/o elevación o depresión del ST > "
+"0.05 mV), LVH: muestra hipertrofia ventricular izquierda probable o definitiva según "
+"el criterio de Estes)."
+
+
+#: .\apps\app1\templates\about_dataset.html:73
+msgid ""
+"MaxHR: Maximum amount of heart beats achieved per minute under maximum "
+"stress."
+msgstr ""
+"MaxHR: Cantidad máxima de latidos cardíacos por minuto bajo estrés "
+"máximo."
+
+#: .\apps\app1\templates\about_dataset.html:74
+msgid "ExerciseAngina: exercise-induced angina (Y: Yes, N: No)."
+msgstr "ExerciseAngina: angina de pecho inducida por ejercicio (Y: Si, N: No)"
+
+#: .\apps\app1\templates\about_dataset.html:75
+msgid ""
+"Oldeak: ST depression. The height difference (in milimiters) between the J "
+"point and the baseline (the PR segment)."
+msgstr ""
+"Oldeak: depresión del segmento ST. La diferencia de altura (en milímetros) entre el punto "
+"J y la línea base (el segmento PR)."
+
+#: .\apps\app1\templates\about_dataset.html:76
+msgid ""
+"ST_Slope: the slope of the peak exercise ST segment (Up: upsloping, Flat: "
+"flat, Down: downsloping)."
+msgstr ""
+"ST_Slope: La pendiente del segmento ST de ejercicio máximo (Up: creciente, Flat: "
+"constante, Down: decreciente)."
+
+#: .\apps\app1\templates\about_dataset.html:77
+msgid "HeartDisease: output class (1: heart disease, 0: Normal)."
+msgstr "HeartDisease: clase de salida (1: cardiopatía, 0: Normal)."
+
+#: .\apps\app1\templates\about_dataset.html:82
+msgid ""
+"As seen above, 5 of the 11 features are not numeric values, they are "
+"categorical values, and they need to be transformed into numeric values to "
+"be implemented in machine learning models."
+msgstr ""
+"Como se observa arriba, 5 de las 11 características no son valores numéricos, son "
+"valores categóricos, y necesitan ser transformados en valores numéricos para "
+"ser implementados en los modelos de machine learning."
+
+#: .\apps\app1\templates\about_dataset.html:83
+msgid ""
+"One way of doing this would be to just assign the numerical value of the "
+"entry in the dataset to each categoric feature, but this is not the best "
+"approach since machine learning models could assume that higher the "
+"categorical value, better the category, which is not always the case. A "
+"better approach is using what’s called "
+msgstr ""
+"Una forma de hacer esto sería simplemente asignar el valor numérico de "
+"entrada en el conjunto de datos a cada característica categórica, pero este no es el mejor "
+"enfoque ya que los modelos de machine learning podrían asumir que mientras más alto el "
+"valor categórico, mejor la categoría, que no siempre es así. Un "
+"mejor enfoque es usar lo que se llama "
+
+#: .\apps\app1\templates\about_dataset.html:83
+msgid "one hot encoding"
+msgstr "one hot encoding"
+
+#: .\apps\app1\templates\about_dataset.html:85
+msgid "One hot encoding"
+msgstr "One hot encoding"
+
+#: .\apps\app1\templates\about_dataset.html:87
+msgid ""
+"It is a way to perform a “binarization” of each categoric value and include "
+"it as a separate feature to train the model. This means additional columns "
+"with only binary values (0 and 1) for each categoric value will be added to "
+"the original dataset. 0 indicates non-existent and 1 indicates existent."
+msgstr ""
+"Es una forma de realizar una “binarización” de cada valor categórico e incluirlos "
+"como una característica separada para entrenar el modelo. Esto significa que columnas adicionales "
+"con solo valores binarios (0 y 1) para cada valor categórico se agregarán a "
+"el conjunto de datos original. 0 indica que no existe y 1 indica que existe."
+
+#: .\apps\app1\templates\about_dataset.html:88
+msgid ""
+"The result of applying “one hot encoding” to the original dataset will look "
+"like the following:"
+msgstr ""
+"El resultado de aplicar “one hot encoding” al conjunto de datos original se verá "
+"de la siguente manera:"
+
+#: .\apps\app1\templates\base.html:22
 msgid "Hello, world"
 msgstr "Hola, mundo"
 
@@ -330,7 +733,53 @@ msgstr "Actualizar perfil"
 
 #: .\apps\app1\templates\feature_importance.html:5
 msgid "Feature Importance"
-msgstr "Importancia de los marcadores"
+msgstr "Importancia de las características"
+
+#: .\apps\app1\templates\feature_importance.html:16
+msgid "Feature Importance with XGB Classifier"
+msgstr "Importancia de las características con el clasificador XGB"
+
+#: .\apps\app1\templates\feature_importance.html:18
+msgid ""
+"Feature importance provides a score that indicates how useful or valuable "
+"each feature was in the construction of the boosted decision trees within "
+"the model. The more an attribute is used to make key decisions with decision "
+"trees, the higher its relative importance."
+msgstr ""
+"La importancia de las características proporciona una puntuación que indica cuán útil o valiosa "
+"cada característica fue en la construcción de los árboles de decisión potenciados dentro de "
+"el modelo. Cuanto más se utiliza un atributo para tomar decisiones clave con árboles de "
+"decisión, mayor es su importancia relativa."
+
+#: .\apps\app1\templates\feature_importance.html:19
+msgid ""
+"This importance is calculated explicitly for each attribute in the dataset, "
+"allowing attributes to be ranked and compared to each other."
+msgstr ""
+"Esta importancia se calcula explícitamente para cada atributo en el conjunto de datos, "
+"permitiendo clasificar los atributos y compararlos entre sí."
+
+#: .\apps\app1\templates\feature_importance.html:20
+msgid ""
+"Importance is calculated for a single decision tree by the amount that each "
+"attribute split point improves the performance measure, weighted by the "
+"number of observations the node is responsible for. The performance measure "
+"may be the purity (Gini index) used to select the split points or another "
+"more specific error function."
+msgstr ""
+"La importancia se calcula para un solo árbol de decisión por la cantidad en la que cada punto de división "
+"de atributo mejora la medida de rendimiento, ponderado por la "
+"cantidad de observaciones de las que el nodo es responsable. La medida de rendimiento "
+"puede ser la pureza (índice de Gini) utilizada para seleccionar los puntos de división u otra "
+"función de error más específica."
+
+#: .\apps\app1\templates\feature_importance.html:21
+msgid ""
+"The feature importances are then averaged across all of the the decision "
+"trees within the model."
+msgstr ""
+"Las importancias de las características luego se promedian en todos los árboles "
+"de decisión dentro del modelo."
 
 #: .\apps\app1\templates\login.html:12
 msgid "Login"
@@ -376,15 +825,32 @@ msgstr "Pacientes"
 msgid "Data Visualization"
 msgstr "Visualización de datos"
 
-#: .\apps\app1\templates\navbar.html:23
+#: .\apps\app1\templates\navbar.html:22
+msgid "About"
+msgstr "Acerca de"
+
+#: .\apps\app1\templates\navbar.html:25
+#| msgid "AI Model"
+msgid "Ai Models"
+msgstr "Modelos de IA"
+
+#: .\apps\app1\templates\navbar.html:26
+msgid "Dataset"
+msgstr "Conjunto de Datos"
+
+#: .\apps\app1\templates\navbar.html:27
+msgid "Feature importance"
+msgstr "Importancia de las características"
+
+#: .\apps\app1\templates\navbar.html:36
 msgid "Hello"
 msgstr "Hola"
 
-#: .\apps\app1\templates\navbar.html:26
+#: .\apps\app1\templates\navbar.html:39
 msgid "Edit Profile"
 msgstr "Editar perfil"
 
-#: .\apps\app1\templates\navbar.html:27
+#: .\apps\app1\templates\navbar.html:40
 msgid "Logout"
 msgstr "Cerrar sesión"
 
@@ -654,15 +1120,15 @@ msgstr "Email"
 msgid "Confirm Password"
 msgstr "Confirmar contraseña"
 
-#: .\apps\app1\views.py:50
+#: .\apps\app1\views.py:51
 msgid "Account was created for "
 msgstr "Se creó una cuenta para "
 
-#: .\apps\app1\views.py:67
+#: .\apps\app1\views.py:68
 msgid "Username or Password is incorrect"
 msgstr "Usuario o contraseña incorrectos"
 
-#: .\apps\app1\views.py:83
+#: .\apps\app1\views.py:84
 msgid "Account was updated for "
 msgstr "Se actualizó una cuenta para "
 

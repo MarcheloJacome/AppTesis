@@ -53,3 +53,34 @@ class PredictionFilter(django_filters.FilterSet):
         widgets = {
             'date_created' : DateInput()
         }
+
+class PredictionToTrainFilter(django_filters.FilterSet):
+    def __init__(self, *args, **kwargs):
+        super(PredictionToTrainFilter, self).__init__(*args, **kwargs)
+        self.filters['dateFilter'].label = _("Date")
+    dateFilter = django_filters.DateFilter(
+        field_name="date_created",
+        lookup_expr="iexact",
+        widget=DateInput,
+        label=_("Date")
+    )
+    f_name_filter = django_filters.CharFilter(
+        field_name = 'prediction__Patient__first_name',
+        lookup_expr ='iexact',
+        label = _('Name:'),
+        distinct = True,
+    )
+    l_name_filter = django_filters.CharFilter(
+        field_name = 'prediction__Patient__last_name',
+        lookup_expr ='iexact',
+        label = _('Last name:'),
+        distinct = True,
+    )
+    class Meta:
+        model = PredictionToTrain
+        fields= ['date_created',
+                'prediction__Patient__first_name',
+                'prediction__Patient__last_name']
+        widgets = {
+            'date_created' : DateInput()
+        }

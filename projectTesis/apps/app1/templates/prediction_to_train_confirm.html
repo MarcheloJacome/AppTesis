@@ -1,30 +1,32 @@
 {% extends 'base.html' %}
 {% load i18n %}
 {% load crispy_forms_tags %}
+{% block titletab %}
+<title>{% trans "Confirm prediction to train" %}</title>
+{% endblock titletab %}
 {% block title %}
-<h1 class="display-4">{% trans "Prediction to train Detail"%}</h1>
-<p class="lead font-italic">{% trans "Patient"%}: {{patient.first_name}} {{patient.last_name}}</p>
+<h1 class="display-4">{% trans "Confirm prediction to train"%}</h1>
 {% endblock title %}
 {% block content%}
+<h3>{% trans "Are you sure youn want to train the model with this prediction?"%}</h3>
+<p class="fs-5">{% trans "This action cannot be undone so make sure all details are correct."%}</p>
+<div class="row">
+    <div class="col text-center">
+        <span class="fw-normal fs-3">{% trans "Patient"%}: </span><span class="fst-italic fs-3">{{patient.first_name}} {{patient.last_name}}</span>
+    </div>
+</div>
 <form action="" method="POST">
     {% csrf_token %}
     <div class="container">
         <div class="container-xl px-4 mt-4">
-            <div class="d-flex flex-row-reverse">
-                <div class="p-2">
-                    <a href="{% url 'prediction_to_train_confirm' prediction.pk%}" class="btn btn-outline-success btn-sm">
-                        <i class="fas fa-plus"></i> {% trans "Train Model with this prediction"%}
-                    </a>
-                </div>
-            </div>
-            <div class="row">    
+            <div class="row">
                 <div class="col-xl-12">
                     <div class="card mb-4">
                         <div class="card-header">{% trans "Details"%}</div>
                         <div class="card-body">
-                            <form>
-                                <div class="mb-3">                                   
-                                    {{form.date_created|as_crispy_field}}                                     
+                            
+                                <div class="mb-3">
+                                    {{form.date_created|as_crispy_field}}
                                 </div>
                                 <div class="row gx-3 mb-3">
                                     <div class="col-md-6">
@@ -75,16 +77,29 @@
                                     </div>
                                 </div>
                                 <hr>
-                                <h2>{% trans "Prediction"%}</h2>
+                                <h3>{% trans "Prediction"%}</h3>
                                 <div class="row gx-3 mb-3">
                                     <div class="col-md-6">
                                         {{form.heartDisease|as_crispy_field}}
                                     </div>
                                 </div>
-                                <a class="btn btn-primary" href={% url 'prediction_to_train_list'%}>{% trans "Back to list"%}</a>
-                            </form>
+                            
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="d-grid gap-2">
+                    <a class="btn btn-primary" href={% url 'prediction_to_train_list' %}>{% trans "Back to list"%}</a>
+                </div>  
+            </div>
+            <div class="col-md-6">
+                <div class="d-grid gap-2">
+                    <button class="btn btn-success" type="Submit"></i>{% trans "Train Model"%}</button>
                 </div>
             </div>
         </div>
@@ -94,7 +109,7 @@
 {% block scripts %}
 <!--Chart js-->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js" ></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
 <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
 
 

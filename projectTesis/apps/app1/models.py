@@ -43,8 +43,8 @@ hd = [
 ]
 #aimodel
 aimod = [
-    (0, _('Single Model (XGB Classifier)')),
-    (1, _('Soft Voting Ensemble Models')),
+    (0, _('Single Model')),
+    (1, _('Ensemble Models')),
 ]
 
 

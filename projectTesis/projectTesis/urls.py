@@ -51,7 +51,7 @@ urlpatterns = [
     path('prediction_to_train_detail/<int:pk>', views.predictionToTrainDetail, name="prediction_to_train_detail"),
     path('prediction_to_train_edit/<int:pk>', views.predictionToTrainEdit, name="prediction_to_train_edit"),
     path('prediction_to_train_delete/<int:pk>', views.predictionToTrainDelete, name="prediction_to_train_delete"),
-    #path('prediction_to_train_confirm/<int:pk>', views.predictionToTrainConfirm, name="prediction_to_train_confirm"),
+    path('prediction_to_train_confirm/<int:pk>', views.predictionToTrainConfirm, name="prediction_to_train_confirm"),
     path('favicon.ico', RedirectView.as_view(url=staticfiles_storage.url("images/favicon.ico"))),   
     #re_path('predictHD', views.predictHD, name='predictHD'),
 ]

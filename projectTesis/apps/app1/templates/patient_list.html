@@ -1,7 +1,9 @@
 {% extends 'base.html' %}
 {% load i18n %}
 {% load crispy_forms_tags %}
-
+{% block titletab %}
+<title>{% trans "Patients list" %}</title>
+{% endblock titletab %}
 {% block title %}
 <h1 class="display-4">{% trans "Patients List"%}</h1>
 
@@ -32,6 +34,7 @@
             <th>{% trans "ID Number"%}</th>
             <th>{% trans "Last Prediction"%}</th>
             <th>{% trans "Probability of HD"%}</th>
+            <th>{% trans "List of predictions"%}</th>
             <!--<th>Add to model training</th>-->
             <td class="text-center"> 
                 <a href="{% url 'patient_create' %}" class="btn btn-outline-success btn-sm">
@@ -56,6 +59,11 @@
                 {% if pat.last_prediction_prob %}
                 {{pat.last_prediction_prob}}%
                 {% endif %}
+            </td>
+            <td class="">        
+                <a href="{% url 'prediction_list' pat.pk %}" class="text-dark text-decoration-none">
+                <i class="far fa-list-alt text-dark"></i>
+                </a>
             </td>
             <!--<td>{{pat.prediction_set.last.heartDiseaseProb}}</td>-->
             <td class="text-center">

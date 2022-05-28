@@ -16,15 +16,16 @@ import numpy as np
 import pandas as pd
 import joblib
 import datetime
+import json
 
 #Reload Ai Model
-reloadModel = joblib.load('aiModels/XGBClassifier.pkl')
+#reloadModel = joblib.load('aiModels/XGBClassifier.pkl')
 #Reload OneHotEncoder
-ohEncoder = joblib.load('aiModels/OHEncoder.pkl')
+#ohEncoder = joblib.load('aiModels/OHEncoder.pkl')
 #Reload StandardScaler
-sScaler = joblib.load('aiModels/SScaler.pkl')
+#sScaler = joblib.load('aiModels/SScaler.pkl')
 #Reload Soft Voting Classifier
-svClassifier = joblib.load('aiModels/SVClassifier.pkl')
+#svClassifier = joblib.load('aiModels/SVClassifier.pkl')
 
 
 non_proc_labels = ['Age', 'Sex', 'ChestPainType', 'RestingBP', 'Cholesterol', 'FastingBS',
@@ -160,7 +161,7 @@ def predictionCreate(request,pk):
     patient = get_object_or_404(Patient,pk=pk,user=request.user)
     if request.method == 'POST':
         form = MakePredictionForm(request.POST)
-        if form.is_valid():
+        if form.is_valid():        
             #Getting data from post and shaping it to make prediction
             temp = np.array([[
             form.cleaned_data['age'],
@@ -176,13 +177,18 @@ def predictionCreate(request,pk):
             form.cleaned_data['sT_Slope'],
             ]])
             temp_pd = pd.DataFrame(temp,columns=non_proc_labels)
+            ohEncoder = joblib.load('aiModels/OHEncoder.pkl')
             transformed_temp = ohEncoder.transform(temp_pd)
+            sScaler = joblib.load('aiModels/SScaler.pkl')
             sc_transformed_temp = sScaler.transform(transformed_temp)
             aimod = form.cleaned_data['aiModel']
             if aimod == 0 :
-                hdisease = reloadModel.predict(sc_transformed_temp)[0]
-                hdProb = reloadModel.predict_proba(sc_transformed_temp)[0][1]*100
+                #xgb_class = joblib.load('aiModels/XGBClassifier.pkl')
+                mlp_classifier = joblib.load('aiModels/MLPClassifier.pkl')
+                hdisease = mlp_classifier.predict(sc_transformed_temp)[0]
+                hdProb = mlp_classifier.predict_proba(sc_transformed_temp)[0][1]*100
             else:
+                svClassifier = joblib.load('aiModels/SVClassifier.pkl')
                 hdisease = svClassifier.predict(sc_transformed_temp)[0]
                 hdProb = svClassifier.predict_proba(sc_transformed_temp)[0][1]*100               
             patient = get_object_or_404(Patient,pk=pk)
@@ -211,7 +217,7 @@ def predictionEdit(request, pk):
     #patient = get_object_or_404(Patient,pk=pk)
     if request.method == 'POST':
         form = EditPredictionForm(request.POST,instance=prediction)
-        if form.is_valid():
+        if form.is_valid():        
             #Getting data from post and shaping it to make prediction
             temp = np.array([[
             form.cleaned_data['age'],
@@ -227,13 +233,18 @@ def predictionEdit(request, pk):
             form.cleaned_data['sT_Slope'],
             ]])
             temp_pd = pd.DataFrame(temp,columns=non_proc_labels)
+            ohEncoder = joblib.load('aiModels/OHEncoder.pkl')
             transformed_temp = ohEncoder.transform(temp_pd)
+            sScaler = joblib.load('aiModels/SScaler.pkl')
             sc_transformed_temp = sScaler.transform(transformed_temp)
             aimod = form.cleaned_data['aiModel']
             if aimod == 0 :
-                hdisease = reloadModel.predict(sc_transformed_temp)[0]
-                hdProb = reloadModel.predict_proba(sc_transformed_temp)[0][1]*100
+                #xgb_class = joblib.load('aiModels/XGBClassifier.pkl')
+                mlp_classifier = joblib.load('aiModels/MLPClassifier.pkl')
+                hdisease = mlp_classifier.predict(sc_transformed_temp)[0]
+                hdProb = mlp_classifier.predict_proba(sc_transformed_temp)[0][1]*100
             else:
+                svClassifier = joblib.load('aiModels/SVClassifier.pkl')
                 hdisease = svClassifier.predict(sc_transformed_temp)[0]
                 hdProb = svClassifier.predict_proba(sc_transformed_temp)[0][1]*100
             save_as_new = form.cleaned_data['newPrediction']
@@ -255,17 +266,25 @@ def predictionEdit(request, pk):
                 prediction.heartDiseaseProb = hdProb
             prediction.save()
             return redirect('../prediction_detail'+'/'+str(prediction.pk))
-    context = {"prediction":prediction,"form":form}
+    context = {"prediction":prediction,"form":form,"patient":prediction.Patient}
     return render(request, 'prediction_edit.html',context)
 
 def predictionDelete(request, pk):
     prediction = get_object_or_404(Prediction,pk=pk,Patient__user=request.user)
     pat_pk = prediction.Patient.pk
     prediction.delete()
+    pred = Prediction.objects.filter(Patient=pat_pk).last()
+    last_prediction = pred.heartDisease
+    last_prediction_prob = pred.heartDiseaseProb
+    patient = patient = get_object_or_404(Patient,pk=pat_pk)
+    patient.last_prediction = int(last_prediction)
+    patient.last_prediction_prob = last_prediction_prob
+    patient.save()
     return redirect('../prediction_list/'+str(pat_pk))
 
 def featureImportance(request):
-    f_importances = reloadModel.feature_importances_*100
+    xgb_class = joblib.load('aiModels/XGBClassifier.pkl')
+    f_importances = xgb_class.feature_importances_*100
     labels = proc_labels
     context = {'f_importances':f_importances,
                 'labels':labels}
@@ -275,7 +294,32 @@ def aboutAIModels(request):
     return render(request, 'about_ai_models.html')
 
 def aboutDataset(request):
-    return render(request, 'about_dataset.html')
+    non_proc_lab = ['Age', 'Sex', 'ChestPainType', 'RestingBP', 'Cholesterol', 'FastingBS',
+        'RestingECG', 'MaxHR', 'ExerciseAngina', 'Oldpeak', 'ST_Slope', 'HeartDisease']
+    proc_labels = ['Sex_F', 'Sex_M',
+        'ChestPainType_ASY','ChestPainType_ATA','ChestPainType_NAP','ChestPainType_TA', 'RestingECG_LVH',
+        'RestingECG_Normal', 'RestingECG_ST',
+        'ExerciseAngina_N','ExerciseAngina_Y', 
+        'ST_Slope_Down','ST_Slope_Flat', 'ST_Slope_Up',
+        'Age', 'RestingBP', 'Cholesterol',
+        'FastingBS', 'MaxHR', 'Oldpeak',
+        'HeartDisease']
+    df = pd.read_csv("apps/app1/static/app1/Data/heart.csv")
+    df = df.head(20)
+    json_rec = df.reset_index().to_json(orient='records')
+    arr = []
+    arr = json.loads(json_rec)
+    ohEncoderOriginal = joblib.load('aiModels/OHEncoderOriginal.pkl')
+    transformed_df = ohEncoderOriginal.transform(df)
+    encoded_pd = pd.DataFrame(transformed_df, columns=proc_labels)
+    json_rec_encoded = encoded_pd.reset_index().to_json(orient='records')
+    arr_encoded = []
+    arr_encoded = json.loads(json_rec_encoded)
+    context = {"arr":arr,
+              "non_proc_lab":non_proc_lab,
+              "arr_encoded":arr_encoded,
+              "proc_labels":proc_labels}
+    return render(request, 'about_dataset.html',context)
 
 def prediction(request):
     form = PredictionForm()
@@ -283,7 +327,7 @@ def prediction(request):
     hdProb = None
     if request.method == 'POST':
         form = PredictionForm(request.POST)
-        if form.is_valid():
+        if form.is_valid():           
             temp = np.array([[
             form.cleaned_data['age'],
             form.cleaned_data['sex'],
@@ -298,13 +342,18 @@ def prediction(request):
             form.cleaned_data['sT_Slope'],
             ]])
             temp_pd = pd.DataFrame(temp,columns=non_proc_labels)
+            ohEncoder = joblib.load('aiModels/OHEncoder.pkl')
             transformed_temp = ohEncoder.transform(temp_pd)
+            sScaler = joblib.load('aiModels/SScaler.pkl')
             sc_transformed_temp = sScaler.transform(transformed_temp)
             aimod = form.cleaned_data['aiModel']
             if aimod == 0 :
-                hdisease = reloadModel.predict(sc_transformed_temp)[0]
-                hdProb = reloadModel.predict_proba(sc_transformed_temp)[0][1]*100
+                #xgb_class = joblib.load('aiModels/XGBClassifier.pkl')
+                mlp_classifier = joblib.load('aiModels/MLPClassifier.pkl')
+                hdisease = mlp_classifier.predict(sc_transformed_temp)[0]
+                hdProb = mlp_classifier.predict_proba(sc_transformed_temp)[0][1]*100
             else:
+                svClassifier = joblib.load('aiModels/SVClassifier.pkl')
                 hdisease = svClassifier.predict(sc_transformed_temp)[0]
                 hdProb = svClassifier.predict_proba(sc_transformed_temp)[0][1]*100
             hdProb = round(hdProb, 2)
@@ -320,6 +369,9 @@ def addPredictionToTrain(request, pk):
     if request.method == 'GET':
         try:
             pred_to_train = PredictionToTrain.objects.get(prediction=pred)
+            if pred_to_train is not None:
+                messages.add_message(request, messages.ERROR,
+                        _('Could not add prediction. It was already used to train the model!'))
         except PredictionToTrain.DoesNotExist:
             PredictionToTrain.objects.create(
                 date_created = pred.date_created,
@@ -347,7 +399,9 @@ def predictionToTrainList(request):
         prediction__Patient__user=user,
         was_used = False
     ).order_by('-pk')
-    context = {'pred_list': pred_list}
+    filter = PredictionToTrainFilter(request.GET,queryset=pred_list)
+    pred_list = filter.qs
+    context = {'pred_list': pred_list,'filter':filter}
     return render(request,'prediction_to_train_list.html',context)
 
 def predictionToTrainDetail(request, pk):
@@ -377,7 +431,7 @@ def predictionToTrainDelete(request, pk):
     prediction = get_object_or_404(PredictionToTrain,pk=pk,prediction__Patient__user=user)
     prediction.delete()
     return redirect('prediction_to_train_list')
-"""
+
 def predictionToTrainConfirm(request, pk):
     user = request.user 
     prediction = get_object_or_404(PredictionToTrain,pk=pk,prediction__Patient__user=user)
@@ -397,16 +451,23 @@ def predictionToTrainConfirm(request, pk):
         prediction.oldpeak,
         prediction.sT_Slope,
         ]])
-        tempy = np.array([[prediction.heartDisease]]) 
+        tempy = np.array([prediction.heartDisease]) 
         tempx_pd = pd.DataFrame(tempx,columns=non_proc_labels)
+        ohEncoder = joblib.load('aiModels/OHEncoder.pkl')
         transformed_tempx = ohEncoder.transform(tempx_pd)
+        sScaler = joblib.load('aiModels/SScaler.pkl')
         sc_transformed_tempx = sScaler.transform(transformed_tempx) 
-        aimod = prediction.aiModel
-        if aimod == 0:
-            reloadModel = joblib.load('aiModels/XGBClassifier.pkl')
-            reloadModel.fit(sc_transformed_tempx,tempy)
-        else:
-            svClassifier = joblib.load('aiModels/SVClassifier.pkl')
-            svClassifier.fit(sc_transformed_tempx,tempy)
-    return render(request, 'prediction_to_train_detail.html',context)
-"""
+        #aimod = prediction.aiModel
+        #if aimod == 0:
+            #xgb_class = joblib.load('aiModels/XGBClassifier.pkl')
+        mlp_classifier = joblib.load('aiModels/MLPClassifier.pkl')
+        mlp_classifier.partial_fit(sc_transformed_tempx,tempy)
+        joblib.dump(mlp_classifier,'AiModels\MLPClassifier.pkl')
+        prediction.was_used = True
+        prediction.save()
+        return redirect('prediction_to_train_list')
+        #else:
+            #svClassifier = joblib.load('aiModels/SVClassifier.pkl')
+            #svClassifier.fit(sc_transformed_tempx,tempy)
+    context = {"patient":patient,"form":form}
+    return render(request, 'prediction_to_train_confirm.html',context)

@@ -1,6 +1,9 @@
 {% extends 'base.html' %}
 {% load i18n %}
 {% load crispy_forms_tags %}
+{% block titletab %}
+<title>{% trans "Prediction" %}</title>
+{% endblock titletab %}
 {% block title %}
 <h1 class="display-4">{% trans "Heart Disease Prediction"%}</h1>
 <p class="lead font-italic"></p>
@@ -15,7 +18,6 @@
             <div class="row">
                 <div class="col-xl-12">
                     <div class="card mb-4">
-                        <div class="card-header">{% trans "Patient"%}:{{request.user}}</div>
                         <div class="card-body">
                             <form>
                                 <div class="row gx-3 mb-3">

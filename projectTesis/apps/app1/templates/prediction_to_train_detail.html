@@ -1,11 +1,18 @@
 {% extends 'base.html' %}
 {% load i18n %}
 {% load crispy_forms_tags %}
+{% block titletab %}
+<title>{% trans "Prediction to train detail" %}</title>
+{% endblock titletab %}
 {% block title %}
 <h1 class="display-4">{% trans "Prediction to train Detail"%}</h1>
-<p class="lead font-italic">{% trans "Patient"%}: {{patient.first_name}} {{patient.last_name}}</p>
 {% endblock title %}
 {% block content%}
+<div class="row">
+    <div class="col text-center">
+        <span class="fw-normal fs-3">{% trans "Patient"%}: </span><span class="fst-italic fs-3">{{patient.first_name}} {{patient.last_name}}</span>
+    </div>
+</div>
 <form action="" method="POST">
     {% csrf_token %}
     <div class="container">
@@ -22,7 +29,6 @@
                     <div class="card mb-4">
                         <div class="card-header">{% trans "Details"%}</div>
                         <div class="card-body">
-                            <form>
                                 <div class="mb-3">                                   
                                     {{form.date_created|as_crispy_field}}                                     
                                 </div>
@@ -81,10 +87,24 @@
                                         {{form.heartDisease|as_crispy_field}}
                                     </div>
                                 </div>
-                                <a class="btn btn-primary" href={% url 'prediction_to_train_list'%}>{% trans "Back to list"%}</a>
-                            </form>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="d-grid gap-2">
+                    <a class="btn btn-primary" href={% url 'prediction_to_train_list'%}>{% trans "Back to list"%}</a>
+                </div>  
+            </div>
+            <div class="col-md-6">
+                <div class="d-grid gap-2">
+                    <a href="{% url 'prediction_to_train_confirm' prediction.pk%}" class="btn btn-success">
+                        <i class="fas fa-plus"></i> {% trans "Train Model with this prediction"%}
+                    </a>
                 </div>
             </div>
         </div>

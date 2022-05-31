@@ -119,7 +119,7 @@ class MakePredictionForm(forms.ModelForm):
         self.fields['heartDisease'].label = _('Heart Disease')
         self.fields['heartDiseaseProb'].label = _(
             'Probability of heart disease (%)')
-        self.fields['aiModel'].label = _('AI Model')
+        self.fields['aiModel'].label = _('Machine learning model')
         # Fields Description
         self.fields['age'].widget.attrs['title'] = _(
             'Age of the patient in years')
@@ -143,7 +143,7 @@ class MakePredictionForm(forms.ModelForm):
         self.fields['sT_Slope'].widget.attrs['title'] = _(
             'The slope of the peak exercise ST segment:\nUP: Upslowing\nFLAT: Flat\nDOWN: Downslowing')
         self.fields['aiModel'].widget.attrs['title'] = _(
-            'Artificial inteligence model to use for prediction')
+            'Machine learning model to use for prediction')
 
     class Meta:
         model = Prediction
@@ -179,7 +179,7 @@ class EditPredictionForm(forms.ModelForm):
         self.fields['heartDisease'].label = _('Heart Disease')
         self.fields['heartDiseaseProb'].label = _(
             'Probability of heart disease (%)')
-        self.fields['aiModel'].label = _('AI Model')
+        self.fields['aiModel'].label = _('Machine learning model')
         self.fields['newPrediction'].label = _('Save as new prediction')
         # Fields Description
         self.fields['age'].widget.attrs['title'] = _(
@@ -204,7 +204,7 @@ class EditPredictionForm(forms.ModelForm):
         self.fields['sT_Slope'].widget.attrs['title'] = _(
             'The slope of the peak exercise ST segment:\nUP: Upslowing\nFLAT: Flat\nDOWN: Downslowing')
         self.fields['aiModel'].widget.attrs['title'] = _(
-            'Artificial inteligence model to use for prediction')
+            'Machine learning model to use for prediction')
 
     class Meta:
         model = Prediction
@@ -249,7 +249,7 @@ class DetailPredictionForm(forms.ModelForm):
         self.fields['heartDisease'].label = _('Heart Disease')
         self.fields['heartDiseaseProb'].label = _(
             'Probability of heart disease (%)')
-        self.fields['aiModel'].label = _('AI Model')
+        self.fields['aiModel'].label = _('Machine learning model')
         # Fields Description
         self.fields['age'].widget.attrs['title'] = _(
             'Age of the patient in years')
@@ -273,7 +273,7 @@ class DetailPredictionForm(forms.ModelForm):
         self.fields['sT_Slope'].widget.attrs['title'] = _(
             'The slope of the peak exercise ST segment:\nUP: Upslowing\nFLAT: Flat\nDOWN: Downslowing')
         self.fields['aiModel'].widget.attrs['title'] = _(
-            'Artificial inteligence model to use for prediction')
+            'Machine learning model to use for prediction')
 
     class Meta:
         model = Prediction
@@ -304,7 +304,7 @@ class PredictionForm(forms.ModelForm):
         self.fields['heartDisease'].label = _('Heart Disease')
         self.fields['heartDiseaseProb'].label = _(
             'Probability of heart disease (%)')
-        self.fields['aiModel'].label = _('AI Model')
+        self.fields['aiModel'].label = _('Machine learning model')
         # Fields Description
         self.fields['age'].widget.attrs['title'] = _(
             'Age of the patient in years')
@@ -328,7 +328,7 @@ class PredictionForm(forms.ModelForm):
         self.fields['sT_Slope'].widget.attrs['title'] = _(
             'The slope of the peak exercise ST segment:\nUP: Upslowing\nFLAT: Flat\nDOWN: Downslowing')
         self.fields['aiModel'].widget.attrs['title'] = _(
-            'Artificial inteligence model to use for prediction')
+            'Machine learning model to use for prediction')
 
     class Meta:
         model = Prediction
@@ -369,7 +369,7 @@ class DetailPredictionToTrainForm(forms.ModelForm):
         self.fields['oldpeak'].label = _("ECG ST Segment")
         self.fields['sT_Slope'].label = _('ST Slope')
         self.fields['heartDisease'].label = _('Heart Disease')
-        self.fields['aiModel'].label = _('AI Model')
+        self.fields['aiModel'].label = _('Machine learning model')
         # Fields Description
         self.fields['age'].widget.attrs['title'] = _(
             'Age of the patient in years')
@@ -393,7 +393,7 @@ class DetailPredictionToTrainForm(forms.ModelForm):
         self.fields['sT_Slope'].widget.attrs['title'] = _(
             'The slope of the peak exercise ST segment:\nUP: Upslowing\nFLAT: Flat\nDOWN: Downslowing')
         self.fields['aiModel'].widget.attrs['title'] = _(
-            'Artificial inteligence model to use for prediction')
+            'Machine learning model to use for prediction')
 
     class Meta:
         model = PredictionToTrain
@@ -432,7 +432,7 @@ class EditPredictionToTrainForm(forms.ModelForm):
         self.fields['oldpeak'].label = _("ECG ST Segment")
         self.fields['sT_Slope'].label = _('ST Slope')
         self.fields['heartDisease'].label = _('Heart Disease')
-        self.fields['aiModel'].label = _('AI Model')
+        self.fields['aiModel'].label = _('Machine learning model')
         # Fields Description
         self.fields['age'].widget.attrs['title'] = _(
             'Age of the patient in years')
@@ -456,7 +456,7 @@ class EditPredictionToTrainForm(forms.ModelForm):
         self.fields['sT_Slope'].widget.attrs['title'] = _(
             'The slope of the peak exercise ST segment:\nUP: Upslowing\nFLAT: Flat\nDOWN: Downslowing')
         self.fields['aiModel'].widget.attrs['title'] = _(
-            'Artificial inteligence model to use for prediction')
+            'Machine learning model to use for prediction')
 
     class Meta:
         model = PredictionToTrain

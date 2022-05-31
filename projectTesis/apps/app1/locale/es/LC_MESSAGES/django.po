@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-25 23:57-0500\n"
+"POT-Creation-Date: 2022-05-31 15:48-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,6 +19,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: .\apps\app1\filters.py:11 .\apps\app1\filters.py:18
+#: .\apps\app1\filters.py:70
 msgid "Name:"
 msgstr "Nombre"
 
@@ -31,23 +32,28 @@ msgid "Probability > than:"
 msgstr "Probabilidad > a:"
 
 #: .\apps\app1\filters.py:43 .\apps\app1\filters.py:48
-#: .\apps\app1\templates\prediction_list.html:33
-#: .\apps\app1\templates\prediction_to_train_list.html:18
+#: .\apps\app1\filters.py:60 .\apps\app1\filters.py:65
+#: .\apps\app1\templates\prediction_list.html:41
+#: .\apps\app1\templates\prediction_to_train_list.html:39
 msgid "Date"
 msgstr "Fecha"
 
+#: .\apps\app1\filters.py:76
+msgid "Last name:"
+msgstr "Apellido"
+
 #: .\apps\app1\forms.py:31 .\apps\app1\forms.py:72
-#: .\apps\app1\templates\register.html:78
+#: .\apps\app1\templates\register.html:81
 msgid "First Name"
 msgstr "Nombre"
 
 #: .\apps\app1\forms.py:32 .\apps\app1\forms.py:73
-#: .\apps\app1\templates\register.html:79
+#: .\apps\app1\templates\register.html:82
 msgid "Last Name"
 msgstr "Apellido"
 
 #: .\apps\app1\forms.py:33 .\apps\app1\forms.py:74
-#: .\apps\app1\templates\patient_list.html:32
+#: .\apps\app1\templates\patient_list.html:34
 msgid "ID Number"
 msgstr "Número de identificación"
 
@@ -128,7 +134,7 @@ msgstr "Pendiente del segmento ST"
 
 #: .\apps\app1\forms.py:119 .\apps\app1\forms.py:179 .\apps\app1\forms.py:249
 #: .\apps\app1\forms.py:304 .\apps\app1\forms.py:371 .\apps\app1\forms.py:434
-#: .\apps\app1\forms.py:471 .\apps\app1\templates\prediction.html:75
+#: .\apps\app1\forms.py:471 .\apps\app1\templates\prediction.html:77
 msgid "Heart Disease"
 msgstr "Enfermedad cardíaca"
 
@@ -139,10 +145,8 @@ msgstr "Probabilidad de enfermedad cardiaca (%)"
 
 #: .\apps\app1\forms.py:122 .\apps\app1\forms.py:182 .\apps\app1\forms.py:252
 #: .\apps\app1\forms.py:307 .\apps\app1\forms.py:372 .\apps\app1\forms.py:435
-#: .\apps\app1\templates\prediction_list.html:34
-#: .\apps\app1\templates\prediction_to_train_list.html:19
-msgid "AI Model"
-msgstr "Modelo de IA"
+msgid "Machine learning model"
+msgstr "Modelo de machine learning"
 
 #: .\apps\app1\forms.py:125 .\apps\app1\forms.py:186 .\apps\app1\forms.py:255
 #: .\apps\app1\forms.py:310 .\apps\app1\forms.py:375 .\apps\app1\forms.py:438
@@ -227,8 +231,8 @@ msgstr ""
 
 #: .\apps\app1\forms.py:146 .\apps\app1\forms.py:207 .\apps\app1\forms.py:276
 #: .\apps\app1\forms.py:331 .\apps\app1\forms.py:396 .\apps\app1\forms.py:459
-msgid "Artificial inteligence model to use for prediction"
-msgstr "Modelo de inteligencia artificial a utilizar para la predicción"
+msgid "Machine learning model to use for prediction"
+msgstr "Modelo de machine learning a utilizar para la predicción"
 
 #: .\apps\app1\forms.py:166 .\apps\app1\forms.py:236 .\apps\app1\forms.py:358
 #: .\apps\app1\forms.py:421
@@ -284,31 +288,36 @@ msgid "Blood sugar > 120 mg/dl"
 msgstr "Azúcar en sangre > 120 mg/dl"
 
 #: .\apps\app1\models.py:36 .\apps\app1\models.py:42
-#: .\apps\app1\templates\patient_list.html:52
-#: .\apps\app1\templates\prediction.html:83
-#: .\apps\app1\templates\prediction_list.html:58
-#: .\apps\app1\templates\prediction_to_train_list.html:38
+#: .\apps\app1\templates\patient_list.html:55
+#: .\apps\app1\templates\prediction.html:85
+#: .\apps\app1\templates\prediction_list.html:68
+#: .\apps\app1\templates\prediction_to_train_list.html:59
 msgid "Yes"
 msgstr "Sí"
 
-#: .\apps\app1\models.py:46
-msgid "Single Model (XGB Classifier)"
-msgstr "Modelo único (clasificador XGB)"
+#: .\apps\app1\models.py:46 .\apps\app1\templates\prediction_list.html:61
+#: .\apps\app1\templates\prediction_to_train_list.html:52
+msgid "Single Model"
+msgstr "Modelo Simple"
 
-#: .\apps\app1\models.py:47 .\apps\app1\templates\prediction_list.html:53
-msgid "Soft Voting Ensemble Models"
-msgstr "Conjunto de Modelos de votación"
+#: .\apps\app1\models.py:47 .\apps\app1\templates\prediction_list.html:63
+#: .\apps\app1\templates\prediction_to_train_list.html:54
+msgid "Ensemble Models"
+msgstr "Conjunto de Modelos"
 
 #: .\apps\app1\templates\about_ai_models.html:6
-msgid "AI Models"
-msgstr "Modelos de IA"
+msgid "About ML Models"
+msgstr "Acerca de modelos de ML"
 
-#: .\apps\app1\templates\about_ai_models.html:10
-#| msgid "Single Model (XGB Classifier)"
-msgid "Model 1 : XGB Classifier"
-msgstr "Modelo 1 : Clasificador XGB"
+#: .\apps\app1\templates\about_ai_models.html:9
+msgid "Machine Learning Models"
+msgstr "Modelos de Machine Learning"
 
-#: .\apps\app1\templates\about_ai_models.html:12
+#: .\apps\app1\templates\about_ai_models.html:14
+msgid "Single Model : XGB Classifier"
+msgstr "Modelo simple: Clasificador XGB"
+
+#: .\apps\app1\templates\about_ai_models.html:16
 msgid ""
 "XGBoost stands for 'Extreme Gradient Boosting', where the term 'Gradient "
 "Boosting' originates from the paper 'Greedy Function Approximation: A "
@@ -318,7 +327,7 @@ msgstr ""
 "de gradiente extremo' se origina del paper 'Greedy Function Approximation: A "
 "Gradient Boosting Machine', de Friedman."
 
-#: .\apps\app1\templates\about_ai_models.html:13
+#: .\apps\app1\templates\about_ai_models.html:17
 msgid ""
 "Gradient boosting is a machine learning technique used in regression and "
 "classification tasks, among others. It gives a prediction model in the form "
@@ -329,36 +338,85 @@ msgid ""
 "boosting methods, but it generalizes the other methods by allowing "
 "optimization of an arbitrary differentiable loss function."
 msgstr ""
-"La potenciación del gradiente es una técnica de aprendizaje automático utilizada en tareas de regresión y "
-"clasificación, entre otras. Da un modelo de predicción en la forma "
-"de un conjunto de modelos de predicción débiles, que suelen ser arboles "
-"de decisión. Cuando un árbol de decisión es el aprendiz débil, el algoritmo resultante es "
-"llamado árboles de potenciación del gradiente; por lo general, supera a los bosques aleatorios. Un "
-"modelo de árboles de potenciación del gradiente se construye de manera escalonada como en otros "
-"métodos de potenciación, pero generaliza los otros métodos al permitir "
-"la optimización de una función de pérdida diferenciable arbitraria."
+"La potenciación del gradiente es una técnica de aprendizaje automático "
+"utilizada en tareas de regresión y clasificación, entre otras. Da un modelo "
+"de predicción en la forma de un conjunto de modelos de predicción débiles, "
+"que suelen ser arboles de decisión. Cuando un árbol de decisión es el "
+"aprendiz débil, el algoritmo resultante es llamado árboles de potenciación "
+"del gradiente; por lo general, supera a los bosques aleatorios. Un modelo de "
+"árboles de potenciación del gradiente se construye de manera escalonada como "
+"en otros métodos de potenciación, pero generaliza los otros métodos al "
+"permitir la optimización de una función de pérdida diferenciable arbitraria."
 
-#: .\apps\app1\templates\about_ai_models.html:15
-#| msgid "Soft Voting Ensemble Models"
-msgid "Model 2 : Soft Voting Essemble Models"
-msgstr "Modelo 2: Modelos de conjunto de votación suave"
+#: .\apps\app1\templates\about_ai_models.html:20
+msgid "Single Model : Multi-Layer Perceptron"
+msgstr "Modelo simple: Perceptrón Multicapa"
 
-#: .\apps\app1\templates\about_ai_models.html:17
+#: .\apps\app1\templates\about_ai_models.html:22
+msgid ""
+"Multi-layer perceptron could easily be the most useful type of neural "
+"network since a perceptron is a single neuron model that worked as a "
+"precursor to the larger neural networks."
+msgstr ""
+"El perceptrón multicapa podría ser fácilmente el tipo de red neuronal "
+"mas útil ya que un perceptrón es un modelo de una sola neurona que funcionó como "
+"precursor de las redes neuronales más grandes."
+
+#: .\apps\app1\templates\about_ai_models.html:23
+msgid ""
+"Neural networks are powerful because they have the ability to learn the "
+"representation in the training dataset and relate it to the output variable "
+"to be predicted. They are able to learn any mapping function, making them a "
+"universal approximation algorithm."
+msgstr ""
+"Las redes neuronales son poderosas porque tienen la capacidad de aprender la "
+"representación en el conjunto de datos de entrenamiento y relacionarla con la variable de salida "
+"que se va a predecir. Pueden aprender cualquier función de mapeo, lo que las convierte "
+"en un algoritmo de aproximación universal."
+
+#: .\apps\app1\templates\about_ai_models.html:24
+msgid ""
+"Multi-layer perceptron consists of three types of layers: the input layer, "
+"output layer and hidden layer. The input layer takes the input signal to be "
+"processed. The required task, like as prediction and classification, is "
+"performed by the output layer. A number of hidden layers, wich is arbitrary, "
+"that are placed in between the input and output layer are the computational "
+"engine of the MLP. The data flows in the forward direction from input to "
+"output layer. The neurons in the MLP are trained with the back propagation "
+"learning algorithm. MLPs are designed to approximate any continuous function "
+"and can solve problems which are not linearly separable. The major use cases "
+"of MLP are pattern classification, recognition, prediction and approximation."
+msgstr ""
+"El perceptrón multicapa (MLP) consta de tres tipos de capas: la capa de entrada, "
+"la capa de salida y la capa oculta. La capa de entrada toma la señal de entrada para "
+"procesarla. La tarea requerida, como la predicción y la clasificación, la "
+"realiza la capa de salida. Un número de capas ocultas, (número arbitrario) "
+"que se colocan entre la capa de entrada y la de salida que son el motor "
+"computacional del MLP. Los datos fluyen en dirección directa desde la capa de entrada a "
+"la de salida. Las neuronas en el MLP se entrenan con el algoritmo de aprendizaje "
+"de propagación hacia atrás. Los MLP están diseñados para aproximar cualquier función continua "
+"y pueden resolver problemas que no son linealmente separables. Los principales casos de uso "
+"de un MLP son la clasificación, el reconocimiento, la predicción y la aproximación de patrones."
+
+#: .\apps\app1\templates\about_ai_models.html:27
+msgid "Ensemble models : Soft Voting Ensemble Models"
+msgstr "Conjunto de modelos: Conjunto de modelos de votación suave"
+
+#: .\apps\app1\templates\about_ai_models.html:29
 msgid ""
 "The goal of ensemble methods is to combine the predictions of several base "
-"estimators built with a given learning algorithm in order to improve "
-"generalizability / robustness over a single estimator."
+"models built with a given learning algorithm in order to improve "
+"generalizability / robustness over a single model."
 msgstr ""
-"El objetivo de los métodos de conjunto es combinar las predicciones de varios estimadores "
-"base construidos con un algoritmo de aprendizaje dado para mejorar "
-"la generalizabilidad / robustez sobre un solo estimador."
+"El objetivo de los métodos de conjunto es combinar las predicciones de "
+"varios estimadores base construidos con un algoritmo de aprendizaje dado "
+"para mejorar la generalizabilidad / robustez sobre un solo estimador."
 
-#: .\apps\app1\templates\about_ai_models.html:18
-#| msgid "Single Model (XGB Classifier)"
+#: .\apps\app1\templates\about_ai_models.html:30
 msgid "Voting Classifier"
 msgstr "Voting Classifier"
 
-#: .\apps\app1\templates\about_ai_models.html:19
+#: .\apps\app1\templates\about_ai_models.html:31
 msgid ""
 "The idea behind the VotingClassifier is to combine conceptually different "
 "machine learning classifiers and use a majority vote or the average "
@@ -367,41 +425,41 @@ msgid ""
 "to balance out their individual weaknesses."
 msgstr ""
 "La idea detrás del VotingClassifier es combinar conceptualmente diferentes "
-"clasificadores de machine learning y el uso de un voto mayoritario o el promedio "
-"de las probabilidades predichas (voto suave) para predecir las etiquetas de la clase. Dicho "
-"clasificador puede ser útil para un conjunto de modelos igualmente buenos con el objetivo "
-"de equilibrar sus debilidades individuales."
+"clasificadores de machine learning y el uso de un voto mayoritario o el "
+"promedio de las probabilidades predichas (voto suave) para predecir las "
+"etiquetas de la clase. Dicho clasificador puede ser útil para un conjunto de "
+"modelos igualmente buenos con el objetivo de equilibrar sus debilidades "
+"individuales."
 
-#: .\apps\app1\templates\about_ai_models.html:20
+#: .\apps\app1\templates\about_ai_models.html:32
 msgid "The following models were used to build it:"
 msgstr "Para su construcción se utilizaron los siguientes modelos:"
 
-#: .\apps\app1\templates\about_ai_models.html:21
-#| msgid "Single Model (XGB Classifier)"
+#: .\apps\app1\templates\about_ai_models.html:33
 msgid "XGB Classifier"
 msgstr "Clasificador XGB"
 
-#: .\apps\app1\templates\about_ai_models.html:22
+#: .\apps\app1\templates\about_ai_models.html:34
 msgid "K-Nearest Neighbors Classifier"
 msgstr "Clasificador K-Vecinos Cercanos"
 
-#: .\apps\app1\templates\about_ai_models.html:23
+#: .\apps\app1\templates\about_ai_models.html:35
 msgid "Stochastic Gradient Boosting Classifier"
 msgstr "Clasificador de Aumento de Gradiente Estocástico"
 
-#: .\apps\app1\templates\about_ai_models.html:24
+#: .\apps\app1\templates\about_ai_models.html:36
 msgid "Random Forest Classifier"
 msgstr "Clasificador de Bosque Aleatorio"
 
-#: .\apps\app1\templates\about_ai_models.html:25
+#: .\apps\app1\templates\about_ai_models.html:37
 msgid "Multi-Layer Perceptron Classifier"
 msgstr "Clasificador de Perceptrón Multicapa"
 
-#: .\apps\app1\templates\about_ai_models.html:27
+#: .\apps\app1\templates\about_ai_models.html:39
 msgid "Choosing the best model"
 msgstr "Elección del mejor modelo"
 
-#: .\apps\app1\templates\about_ai_models.html:29
+#: .\apps\app1\templates\about_ai_models.html:41
 msgid ""
 "Being able to find the best model for this application is a time consuming, "
 "but necessary task, in order to get the best results. In this case, 9 "
@@ -410,10 +468,10 @@ msgid ""
 msgstr ""
 "Ser capaz de encontrar el mejor modelo para esta aplicación es una demorada, "
 "pero necesaria tarea, para obtener los mejores resultados. En este caso, 9 "
-"distintos modelos de machine learning fueron probados con sus parámetros predeterminados para "
-"primero tener una idea del camino a seguir."
+"distintos modelos de machine learning fueron probados con sus parámetros "
+"predeterminados para primero tener una idea del camino a seguir."
 
-#: .\apps\app1\templates\about_ai_models.html:30
+#: .\apps\app1\templates\about_ai_models.html:42
 msgid ""
 "Since each model has have numerous amounts of parameters, the number of "
 "possible combinations to test are massive, making this task even more time "
@@ -423,244 +481,248 @@ msgid ""
 "Validation to evaluate the obtained hyper-parameters."
 msgstr ""
 "Dado que cada modelo tiene numerosas cantidades de parámetros, el número de "
-"combinaciones posibles para probar son masivas, lo que hace que esta tarea consuma inclusive más "
-"tiempo porque es necesario poder encontrar los mejores hiper-"
-"parámetros para cada modelo. Afortunadamente, hay un par de herramientas para ayudar "
-"con esta tarea: Gridsearch, para encontrar los mejores hiper-parámetros y Cross-"
-"Validation para evaluar los hiper-parámetros obtenidos."
+"combinaciones posibles para probar son masivas, lo que hace que esta tarea "
+"consuma inclusive más tiempo porque es necesario poder encontrar los mejores "
+"hiper-parámetros para cada modelo. Afortunadamente, hay un par de "
+"herramientas para ayudar con esta tarea: Gridsearch, para encontrar los "
+"mejores hiper-parámetros y Cross-Validation para evaluar los hiper-"
+"parámetros obtenidos."
 
-#: .\apps\app1\templates\about_ai_models.html:35
+#: .\apps\app1\templates\about_ai_models.html:47
 msgid "Cross-Validation"
 msgstr "Cross-Validation"
 
-#: .\apps\app1\templates\about_ai_models.html:37
+#: .\apps\app1\templates\about_ai_models.html:49
 msgid ""
 "Whenever a supervised machine learning experiment is done, a common practice "
 "is to split the original data into a train set and a test set to avoid "
 "“overfitting” the model, which means that it will fail to predict unseen "
 "data."
 msgstr ""
-"Cada vez que se realiza un experimento supervisado de machine learning, una práctica común "
-"es dividir los datos originales en un conjunto de entrenamiento y un conjunto de prueba para evitar "
-"“sobreajustar” el modelo, lo que significa que fallará en predecir los datos no "
-"vistos."
+"Cada vez que se realiza un experimento supervisado de machine learning, una "
+"práctica común es dividir los datos originales en un conjunto de "
+"entrenamiento y un conjunto de prueba para evitar “sobreajustar” el modelo, "
+"lo que significa que fallará en predecir los datos no vistos."
 
-#: .\apps\app1\templates\about_ai_models.html:38
+#: .\apps\app1\templates\about_ai_models.html:50
 msgid ""
 "Cross-validation is a procedure that splits the data into smaller sets and "
 "the model is trained for each set and validated with the remaining part of "
 "the data. In the end, the average of the values computed in the loop is "
 "reported as the performance measure."
 msgstr ""
-"Cross-validation es un procedimiento que divide los datos en conjuntos más pequeños y "
-"el modelo es entrenado para cada conjunto y se valida con la parte restante de "
-"los datos. Al final, el promedio de los valores calculados en el bucle es "
-"reportado como la medida de desempeño."
+"Cross-validation es un procedimiento que divide los datos en conjuntos más "
+"pequeños y el modelo es entrenado para cada conjunto y se valida con la "
+"parte restante de los datos. Al final, el promedio de los valores calculados "
+"en el bucle es reportado como la medida de desempeño."
 
-#: .\apps\app1\templates\about_ai_models.html:42
+#: .\apps\app1\templates\about_ai_models.html:54
 msgid "Grid Search"
 msgstr "Grid Search"
 
-#: .\apps\app1\templates\about_ai_models.html:44
+#: .\apps\app1\templates\about_ai_models.html:56
 msgid ""
 "This tool generates different candidates for a model or estimator from a "
 "grid of parameter values previously specified. It is fitted on a dataset and "
 "all the possible combinations of parameter values are evaluated; in the end "
 "the best combination is retained."
 msgstr ""
-"Esta herramienta genera diferentes candidatos para un modelo o estimador a partir de una "
-"cuadrícula de valores de parámetros especificados previamente. Es ajustado a un conjunto de datos y "
-"todas las posibles combinaciones de valores de parámetros son evaluadas; al final"
-"se conserva la mejor combinación."
+"Esta herramienta genera diferentes candidatos para un modelo o estimador a "
+"partir de una cuadrícula de valores de parámetros especificados previamente. "
+"Es ajustado a un conjunto de datos y todas las posibles combinaciones de "
+"valores de parámetros son evaluadas; al finalse conserva la mejor "
+"combinación."
 
-#: .\apps\app1\templates\about_ai_models.html:45
+#: .\apps\app1\templates\about_ai_models.html:57
 msgid ""
 "After applying cross-validation and grid search to each model, the best one ("
 msgstr ""
 "Después de aplicar cross-validation y grid search a cada modelo, el mejor ("
 
-#: .\apps\app1\templates\about_ai_models.html:45
-msgid "model 1"
-msgstr "modelo 1"
+#: .\apps\app1\templates\about_ai_models.html:57
+msgid "single model"
+msgstr "modelo simple"
 
-#: .\apps\app1\templates\about_ai_models.html:45
+#: .\apps\app1\templates\about_ai_models.html:57
 msgid ""
-") was chosen and the following 4 were used to build the ensemble model ("
+") was chosen, based on its accuracy and ability to be constantly trained "
+"with new data. The following 4 models were used to build the "
 msgstr ""
-") fue elegido y los siguientes 4 fueron usados para construir el modelo de conjunto ("
+") fue elegido, en base a su precisión y capacidad de ser constantemente entrenado "
+"con nuevos datos. Los 4 modelos que le siguieron fueron usados para construir el  "
 
-#: .\apps\app1\templates\about_ai_models.html:45
-msgid "model 2"
-msgstr "modelo 2"
+#: .\apps\app1\templates\about_ai_models.html:57
+msgid "ensemble models"
+msgstr "conjunto de modelos"
 
-#: .\apps\app1\templates\about_ai_models.html:50
-msgid "Parameters obtained for model 1"
-msgstr "Parámetros obtenidos para el modelo 1"
+#: .\apps\app1\templates\about_ai_models.html:62
+msgid "Obtained parameters for single model"
+msgstr "Paámetros obtenidos para el modelo simple"
 
-#: .\apps\app1\templates\about_ai_models.html:55
-msgid ""
-"A weighed average accuracy of 87.77%% was obtained with these parameters."
+#: .\apps\app1\templates\about_ai_models.html:67
+msgid "A weighed average accuracy of 87 %% was obtained with these parameters."
 msgstr ""
-"Con estos parámetros se obtuvo una precisión media ponderada del 87,77%."
+"Con estos parámetros se obtuvo una precisión media ponderada del 87%."
 
-#: .\apps\app1\templates\about_ai_models.html:58
-msgid "Parameters obtained for model 2"
-msgstr "Parámetros obtenidos para el modelo 1"
+#: .\apps\app1\templates\about_ai_models.html:70
+msgid "Obtained parameters for ensemble models"
+msgstr "Paámetros obtenidos para el conjunto de modelos"
 
-#: .\apps\app1\templates\about_ai_models.html:63
+#: .\apps\app1\templates\about_ai_models.html:75
 msgid ""
-"A weighed average accuracy of 87.51%% was obtained with these parameters."
+"A weighed average accuracy of 87.51 %% was obtained with these parameters."
 msgstr ""
 "Con estos parámetros se obtuvo una precisión media ponderada del 87,51%."
 
 #: .\apps\app1\templates\about_dataset.html:5
+msgid "About Dataset"
+msgstr "Acerca del conjunto de datos"
+
+#: .\apps\app1\templates\about_dataset.html:8
 msgid "Used Dataset"
 msgstr "Conjunto de datos usado"
 
-#: .\apps\app1\templates\about_dataset.html:14
+#: .\apps\app1\templates\about_dataset.html:17
 msgid "UCI Heart Disease Dataset"
 msgstr "Conjunto de datos de enfermedades cardíacas de la UCI"
 
-#: .\apps\app1\templates\about_dataset.html:16
+#: .\apps\app1\templates\about_dataset.html:19
 msgid ""
 "This dataset is the result of the combination of 5 already available "
 "datasets that contain 76 features including the predicted feature, "
-"nevertheless, in this case, only 11 features are used since all published experiments "
-"refer to using a subset of the features."
+"nevertheless, in this case, only 11 features are used since all published "
+"experiments refer to using a subset of the features."
 msgstr ""
-"Este conjunto de datos es el resultado de la combinación de 5 conjuntos  "
-"de datos ya disponibles que contienen 76 características, incluida la característica predicha, "
-"sin embargo, en este caso, solo se utilizan 11 características ya que todos los experimentos "
-"publicados se refieren al uso de un subconjunto de las características."
+"Este conjunto de datos es el resultado de la combinación de 5 conjuntos  de "
+"datos ya disponibles que contienen 76 características, incluida la "
+"característica predicha, sin embargo, en este caso, solo se utilizan 11 "
+"características ya que todos los experimentos publicados se refieren al uso "
+"de un subconjunto de las características."
 
-#: .\apps\app1\templates\about_dataset.html:54
+#: .\apps\app1\templates\about_dataset.html:57
 msgid "The five datasets used for its curation are:"
 msgstr "Los cinco conjuntos de datos utilizados para su gestión son:"
 
-#: .\apps\app1\templates\about_dataset.html:55
+#: .\apps\app1\templates\about_dataset.html:58
 msgid "Cleveland: 303 observations"
 msgstr "Cleveland: 303 observaciones"
 
-#: .\apps\app1\templates\about_dataset.html:56
+#: .\apps\app1\templates\about_dataset.html:59
 msgid "Hungarian: 294 observations"
 msgstr "Hungaria: 294 observaciones"
 
-#: .\apps\app1\templates\about_dataset.html:57
+#: .\apps\app1\templates\about_dataset.html:60
 msgid "Switzerland: 123 observations"
 msgstr "Suiza: 123 observaciones"
 
-#: .\apps\app1\templates\about_dataset.html:58
+#: .\apps\app1\templates\about_dataset.html:61
 msgid "Long Beach VA: 200 observations"
 msgstr "Long Beach: 200 observaciones"
 
-#: .\apps\app1\templates\about_dataset.html:59
+#: .\apps\app1\templates\about_dataset.html:62
 msgid "Stalog (Heart) Data Set: 270 observations"
 msgstr "Conjunto de datos de Statlog (corazón): 270 observaciones"
 
-#: .\apps\app1\templates\about_dataset.html:60
+#: .\apps\app1\templates\about_dataset.html:63
 msgid "Total: 1190 observations"
 msgstr "Total: 1190 observaciones"
 
-#: .\apps\app1\templates\about_dataset.html:61
+#: .\apps\app1\templates\about_dataset.html:64
 msgid "Duplicated: 272 observations"
 msgstr "Duplicado: 272 observaciones"
 
-#: .\apps\app1\templates\about_dataset.html:62
+#: .\apps\app1\templates\about_dataset.html:65
 msgid "Final dataset: 918 observations"
 msgstr "Conjunto de datos final: 918 observaciones"
 
-#: .\apps\app1\templates\about_dataset.html:65
+#: .\apps\app1\templates\about_dataset.html:69
 msgid "Feature description"
 msgstr "Descripción de características"
 
-#: .\apps\app1\templates\about_dataset.html:66
-msgid "Age: age of the patient in years."
-msgstr "Age: edad del paciente en años"
-
-#: .\apps\app1\templates\about_dataset.html:67
-msgid "Sex: sex of the patient (M: Male, F: Female)."
-msgstr "Sex: sexo del paciente (M: Masculino, F: Femenino)."
-
-#: .\apps\app1\templates\about_dataset.html:68
-msgid ""
-"ChestPainType: chest pain type (TA: Typical Angina, ATA: Atypical Angina, "
-"NAP: Non-Anginal Pain, ASY: Asymptomatic)."
-msgstr ""
-"ChestPainType: tipo de dolor torácico (TA: Angina típica, ATA: Angina atípica, "
-"NAP: dolor no anginoso, ASY: asintomático)."
-
-#: .\apps\app1\templates\about_dataset.html:69
-msgid "RestingBP: resting blood pressure measured in (mm/Hg)."
-msgstr "RestingBP: presión arterial en reposo medida en: mm/Hg"
-
 #: .\apps\app1\templates\about_dataset.html:70
-msgid "Cholesterol: serum cholesterol measured in (mm/Hg)."
-msgstr "Cholesterol: colesterol sérico medido en mm/dl"
+msgid " age of the patient in years."
+msgstr "edad del paciente en años"
 
 #: .\apps\app1\templates\about_dataset.html:71
-msgid ""
-"FastingBS: fasting blood sugar (1: if FastingBS > 120 mg/dl, 0: if FastingBS "
-"<= 120 mg/dl)."
-msgstr ""
-"FastingBS: azúcar en sangre en ayunas (1: si FastingBS en ayunas > 120 mg/dl, 0: si FastingBS en ayunas "
-"<= 120 mg/dl)."
+msgid " sex of the patient (M: Male, F: Female)."
+msgstr "sexo del paciente (M: Masculino, F: Femenino)."
 
 #: .\apps\app1\templates\about_dataset.html:72
 msgid ""
-"RestingECG: resting electrocardiogram results (Normal: Normal, ST: having ST-"
-"T wave abnormality (T wave inversions and/or ST elevation or depression of > "
-"0.05 mV), LVH: showing probable or definite left ventricular hypertrophy by "
-"Estes' criteria)."
+" chest pain type (TA: Typical Angina, ATA: Atypical Angina, NAP: Non-Anginal "
+"Pain, ASY: Asymptomatic)."
 msgstr ""
-"RestingECG: resultados del electrocardiograma en reposo (Normal: Normal, ST: con una anomalía"
-"de la onda ST-T (inversiones de la onda T y/o elevación o depresión del ST > "
-"0.05 mV), LVH: muestra hipertrofia ventricular izquierda probable o definitiva según "
-"el criterio de Estes)."
-
+" tipo de dolor torácico (TA: Angina típica, ATA: Angina "
+"atípica, NAP: dolor no anginoso, ASY: asintomático)."
 
 #: .\apps\app1\templates\about_dataset.html:73
-msgid ""
-"MaxHR: Maximum amount of heart beats achieved per minute under maximum "
-"stress."
-msgstr ""
-"MaxHR: Cantidad máxima de latidos cardíacos por minuto bajo estrés "
-"máximo."
+msgid " resting blood pressure measured in (mm/Hg)."
+msgstr "presión arterial en reposo medida en: mm/Hg"
 
 #: .\apps\app1\templates\about_dataset.html:74
-msgid "ExerciseAngina: exercise-induced angina (Y: Yes, N: No)."
-msgstr "ExerciseAngina: angina de pecho inducida por ejercicio (Y: Si, N: No)"
+msgid " serum cholesterol measured in (mm/Hg)."
+msgstr " colesterol sérico medido en mm/dl"
 
 #: .\apps\app1\templates\about_dataset.html:75
 msgid ""
-"Oldeak: ST depression. The height difference (in milimiters) between the J "
-"point and the baseline (the PR segment)."
+" fasting blood sugar (1: if FastingBS > 120 mg/dl, 0: if FastingBS <= 120 mg/"
+"dl)."
 msgstr ""
-"Oldeak: depresión del segmento ST. La diferencia de altura (en milímetros) entre el punto "
-"J y la línea base (el segmento PR)."
+" azúcar en sangre en ayunas (1: si FastingBS en ayunas > 120 mg/"
+"dl, 0: si FastingBS en ayunas <= 120 mg/dl)."
 
 #: .\apps\app1\templates\about_dataset.html:76
 msgid ""
-"ST_Slope: the slope of the peak exercise ST segment (Up: upsloping, Flat: "
-"flat, Down: downsloping)."
+" resting electrocardiogram results (Normal: Normal, ST: having ST-T wave "
+"abnormality (T wave inversions and/or ST elevation or depression of > 0.05 "
+"mV), LVH: showing probable or definite left ventricular hypertrophy by "
+"Estes' criteria)."
 msgstr ""
-"ST_Slope: La pendiente del segmento ST de ejercicio máximo (Up: creciente, Flat: "
-"constante, Down: decreciente)."
+" resultados del electrocardiograma en reposo (Normal: Normal, ST: "
+"con una anomalíade la onda ST-T (inversiones de la onda T y/o elevación o "
+"depresión del ST > 0.05 mV), LVH: muestra hipertrofia ventricular izquierda "
+"probable o definitiva según el criterio de Estes)."
 
 #: .\apps\app1\templates\about_dataset.html:77
-msgid "HeartDisease: output class (1: heart disease, 0: Normal)."
-msgstr "HeartDisease: clase de salida (1: cardiopatía, 0: Normal)."
+msgid ""
+" maximum amount of heart beats achieved per minute under maximum stress."
+msgstr " cantidad máxima de latidos cardíacos por minuto bajo estrés máximo"
 
-#: .\apps\app1\templates\about_dataset.html:82
+#: .\apps\app1\templates\about_dataset.html:78
+msgid " exercise-induced angina (Y: Yes, N: No)."
+msgstr " angina de pecho inducida por ejercicio (Y: Si, N: No)"
+
+#: .\apps\app1\templates\about_dataset.html:79
+msgid ""
+" ST depression. The height difference (in milimiters) between the J point "
+"and the baseline (the PR segment)."
+msgstr ""
+"La diferencia de altura (en milímetros) entre el punto J y la línea base (el "
+"segmento PR)"
+
+#: .\apps\app1\templates\about_dataset.html:80
+msgid ""
+" the slope of the peak exercise ST segment (Up: upsloping, Flat: flat, Down: "
+"downsloping)."
+msgstr ""
+" la pendiente del segmento ST de ejercicio máximo (Up: creciente, "
+"Flat: constante, Down: decreciente)."
+
+#: .\apps\app1\templates\about_dataset.html:81
+msgid " output class (1: heart disease, 0: Normal)."
+msgstr " clase de salida (1: cardiopatía, 0: Normal)."
+
+#: .\apps\app1\templates\about_dataset.html:86
 msgid ""
 "As seen above, 5 of the 11 features are not numeric values, they are "
 "categorical values, and they need to be transformed into numeric values to "
 "be implemented in machine learning models."
 msgstr ""
-"Como se observa arriba, 5 de las 11 características no son valores numéricos, son "
-"valores categóricos, y necesitan ser transformados en valores numéricos para "
-"ser implementados en los modelos de machine learning."
+"Como se observa arriba, 5 de las 11 características no son valores "
+"numéricos, son valores categóricos, y necesitan ser transformados en valores "
+"numéricos para ser implementados en los modelos de machine learning."
 
-#: .\apps\app1\templates\about_dataset.html:83
+#: .\apps\app1\templates\about_dataset.html:87
 msgid ""
 "One way of doing this would be to just assign the numerical value of the "
 "entry in the dataset to each categoric feature, but this is not the best "
@@ -669,97 +731,115 @@ msgid ""
 "better approach is using what’s called "
 msgstr ""
 "Una forma de hacer esto sería simplemente asignar el valor numérico de "
-"entrada en el conjunto de datos a cada característica categórica, pero este no es el mejor "
-"enfoque ya que los modelos de machine learning podrían asumir que mientras más alto el "
-"valor categórico, mejor la categoría, que no siempre es así. Un "
-"mejor enfoque es usar lo que se llama "
+"entrada en el conjunto de datos a cada característica categórica, pero este "
+"no es el mejor enfoque ya que los modelos de machine learning podrían asumir "
+"que mientras más alto el valor categórico, mejor la categoría, que no "
+"siempre es así. Un mejor enfoque es usar lo que se llama "
 
-#: .\apps\app1\templates\about_dataset.html:83
+#: .\apps\app1\templates\about_dataset.html:87
 msgid "one hot encoding"
 msgstr "one hot encoding"
 
-#: .\apps\app1\templates\about_dataset.html:85
+#: .\apps\app1\templates\about_dataset.html:89
 msgid "One hot encoding"
 msgstr "One hot encoding"
 
-#: .\apps\app1\templates\about_dataset.html:87
+#: .\apps\app1\templates\about_dataset.html:91
 msgid ""
 "It is a way to perform a “binarization” of each categoric value and include "
 "it as a separate feature to train the model. This means additional columns "
 "with only binary values (0 and 1) for each categoric value will be added to "
 "the original dataset. 0 indicates non-existent and 1 indicates existent."
 msgstr ""
-"Es una forma de realizar una “binarización” de cada valor categórico e incluirlos "
-"como una característica separada para entrenar el modelo. Esto significa que columnas adicionales "
-"con solo valores binarios (0 y 1) para cada valor categórico se agregarán a "
-"el conjunto de datos original. 0 indica que no existe y 1 indica que existe."
+"Es una forma de realizar una “binarización” de cada valor categórico e "
+"incluirlos como una característica separada para entrenar el modelo. Esto "
+"significa que columnas adicionales con solo valores binarios (0 y 1) para "
+"cada valor categórico se agregarán a el conjunto de datos original. 0 indica "
+"que no existe y 1 indica que existe."
 
-#: .\apps\app1\templates\about_dataset.html:88
+#: .\apps\app1\templates\about_dataset.html:92
 msgid ""
 "The result of applying “one hot encoding” to the original dataset will look "
 "like the following:"
 msgstr ""
-"El resultado de aplicar “one hot encoding” al conjunto de datos original se verá "
-"de la siguente manera:"
+"El resultado de aplicar “one hot encoding” al conjunto de datos original se "
+"verá de la siguente manera:"
 
 #: .\apps\app1\templates\base.html:22
 msgid "Hello, world"
 msgstr "Hola, mundo"
 
 #: .\apps\app1\templates\change_user_pass.html:5
+msgid "Change password"
+msgstr "Cambiar contraseña"
+
+#: .\apps\app1\templates\change_user_pass.html:8
 msgid "Change Password"
 msgstr "Cambiar contraseña"
 
-#: .\apps\app1\templates\change_user_pass.html:29
-#: .\apps\app1\templates\password_reset_form.html:37
+#: .\apps\app1\templates\change_user_pass.html:32
+#: .\apps\app1\templates\password_reset_form.html:40
 msgid "Update Password"
 msgstr "Actualizar contraseña"
 
 #: .\apps\app1\templates\edit_user.html:5
+#, fuzzy
+#| msgid "Edit User Profile"
+msgid "Edit user"
+msgstr "Editar perfil de usuario"
+
+#: .\apps\app1\templates\edit_user.html:8
 msgid "Edit User Profile"
 msgstr "Editar perfil de usuario"
 
-#: .\apps\app1\templates\edit_user.html:33
+#: .\apps\app1\templates\edit_user.html:36
 msgid "Want to change your password?"
 msgstr "¿Deseas cambiar tu contraseña?"
 
-#: .\apps\app1\templates\edit_user.html:33
+#: .\apps\app1\templates\edit_user.html:36
 msgid "Click here"
 msgstr "Haz clic aquí"
 
-#: .\apps\app1\templates\edit_user.html:42
+#: .\apps\app1\templates\edit_user.html:45
 msgid "Update Profile"
 msgstr "Actualizar perfil"
 
 #: .\apps\app1\templates\feature_importance.html:5
+msgid "About feature importance"
+msgstr "Acerca de importancia de las características"
+
+#: .\apps\app1\templates\feature_importance.html:8
 msgid "Feature Importance"
 msgstr "Importancia de las características"
 
-#: .\apps\app1\templates\feature_importance.html:16
+#: .\apps\app1\templates\feature_importance.html:19
 msgid "Feature Importance with XGB Classifier"
 msgstr "Importancia de las características con el clasificador XGB"
 
-#: .\apps\app1\templates\feature_importance.html:18
+#: .\apps\app1\templates\feature_importance.html:21
 msgid ""
-"Feature importance provides a score that indicates how useful or valuable "
-"each feature was in the construction of the boosted decision trees within "
-"the model. The more an attribute is used to make key decisions with decision "
-"trees, the higher its relative importance."
+"The XGB Classifier model allows us to get the importance of each feaure used "
+"to train the model. Feature importance provides a score that indicates how "
+"useful or valuable each feature was in the construction of the boosted "
+"decision trees within the model. The more an attribute is used to make key "
+"decisions with decision trees, the higher its relative importance."
 msgstr ""
-"La importancia de las características proporciona una puntuación que indica cuán útil o valiosa "
-"cada característica fue en la construcción de los árboles de decisión potenciados dentro de "
-"el modelo. Cuanto más se utiliza un atributo para tomar decisiones clave con árboles de "
-"decisión, mayor es su importancia relativa."
+"El clasificador XGB nos permite obtener la importancia de cada caracteristica usada "
+"para entrenar el modelo. La importancia de las características proporciona una puntuación que indica "
+"cuán útil o valiosa cada característica fue en la construcción de los "
+"árboles de decisión potenciados dentro de el modelo. Cuanto más se utiliza "
+"un atributo para tomar decisiones clave con árboles de decisión, mayor es su "
+"importancia relativa."
 
-#: .\apps\app1\templates\feature_importance.html:19
+#: .\apps\app1\templates\feature_importance.html:22
 msgid ""
 "This importance is calculated explicitly for each attribute in the dataset, "
 "allowing attributes to be ranked and compared to each other."
 msgstr ""
-"Esta importancia se calcula explícitamente para cada atributo en el conjunto de datos, "
-"permitiendo clasificar los atributos y compararlos entre sí."
+"Esta importancia se calcula explícitamente para cada atributo en el conjunto "
+"de datos, permitiendo clasificar los atributos y compararlos entre sí."
 
-#: .\apps\app1\templates\feature_importance.html:20
+#: .\apps\app1\templates\feature_importance.html:23
 msgid ""
 "Importance is calculated for a single decision tree by the amount that each "
 "attribute split point improves the performance measure, weighted by the "
@@ -767,49 +847,50 @@ msgid ""
 "may be the purity (Gini index) used to select the split points or another "
 "more specific error function."
 msgstr ""
-"La importancia se calcula para un solo árbol de decisión por la cantidad en la que cada punto de división "
-"de atributo mejora la medida de rendimiento, ponderado por la "
-"cantidad de observaciones de las que el nodo es responsable. La medida de rendimiento "
-"puede ser la pureza (índice de Gini) utilizada para seleccionar los puntos de división u otra "
-"función de error más específica."
+"La importancia se calcula para un solo árbol de decisión por la cantidad en "
+"la que cada punto de división de atributo mejora la medida de rendimiento, "
+"ponderado por la cantidad de observaciones de las que el nodo es "
+"responsable. La medida de rendimiento puede ser la pureza (índice de Gini) "
+"utilizada para seleccionar los puntos de división u otra función de error "
+"más específica."
 
-#: .\apps\app1\templates\feature_importance.html:21
+#: .\apps\app1\templates\feature_importance.html:24
 msgid ""
 "The feature importances are then averaged across all of the the decision "
 "trees within the model."
 msgstr ""
-"Las importancias de las características luego se promedian en todos los árboles "
-"de decisión dentro del modelo."
+"Las importancias de las características luego se promedian en todos los "
+"árboles de decisión dentro del modelo."
 
-#: .\apps\app1\templates\login.html:12
+#: .\apps\app1\templates\login.html:4 .\apps\app1\templates\login.html:15
 msgid "Login"
 msgstr "Iniciar sesión"
 
-#: .\apps\app1\templates\login.html:31
+#: .\apps\app1\templates\login.html:34
 msgid "Please login to your account"
 msgstr "Por favor, ingresa con tu cuenta"
 
-#: .\apps\app1\templates\login.html:36 .\apps\app1\templates\register.html:80
+#: .\apps\app1\templates\login.html:39 .\apps\app1\templates\register.html:83
 msgid "Username"
 msgstr "Nombre de usuario"
 
-#: .\apps\app1\templates\login.html:41 .\apps\app1\templates\register.html:82
+#: .\apps\app1\templates\login.html:44 .\apps\app1\templates\register.html:85
 msgid "Password"
 msgstr "Contraseña"
 
-#: .\apps\app1\templates\login.html:45
+#: .\apps\app1\templates\login.html:48
 msgid "Log in"
 msgstr "Iniciar sesión"
 
-#: .\apps\app1\templates\login.html:46
+#: .\apps\app1\templates\login.html:49
 msgid "Forgot password?"
 msgstr "¿Olvidaste tu contraseña?"
 
-#: .\apps\app1\templates\login.html:52
+#: .\apps\app1\templates\login.html:55
 msgid "Don't have an account?"
 msgstr "¿No posees una cuenta?"
 
-#: .\apps\app1\templates\login.html:53
+#: .\apps\app1\templates\login.html:56
 msgid "Create new"
 msgstr "Crear nueva"
 
@@ -822,17 +903,16 @@ msgid "Patients"
 msgstr "Pacientes"
 
 #: .\apps\app1\templates\navbar.html:17
-msgid "Data Visualization"
-msgstr "Visualización de datos"
+msgid "Model Training"
+msgstr "Entrenamiento de modelo"
 
 #: .\apps\app1\templates\navbar.html:22
 msgid "About"
 msgstr "Acerca de"
 
 #: .\apps\app1\templates\navbar.html:25
-#| msgid "AI Model"
-msgid "Ai Models"
-msgstr "Modelos de IA"
+msgid "ML Models"
+msgstr "Modelos de ML"
 
 #: .\apps\app1\templates\navbar.html:26
 msgid "Dataset"
@@ -854,11 +934,16 @@ msgstr "Editar perfil"
 msgid "Logout"
 msgstr "Cerrar sesión"
 
-#: .\apps\app1\templates\password_reset.html:12
+#: .\apps\app1\templates\password_reset.html:4
+#: .\apps\app1\templates\password_reset_form.html:4
+msgid "Password reset"
+msgstr "Reestablecer contraseña"
+
+#: .\apps\app1\templates\password_reset.html:15
 msgid "Password Reset"
 msgstr "Reestablecer contraseña"
 
-#: .\apps\app1\templates\password_reset.html:31
+#: .\apps\app1\templates\password_reset.html:34
 msgid ""
 "Forgotten your password? Enter your email adress below and we will email "
 "instructions to set a new one."
@@ -866,35 +951,43 @@ msgstr ""
 "¿Olvidaste tu contraseña? Ingresa tu dirección de correo electrónico y te "
 "enviaremos un correo electrónico con instrucciones para restablecerla."
 
-#: .\apps\app1\templates\password_reset.html:37
+#: .\apps\app1\templates\password_reset.html:40
 msgid "Send email"
 msgstr "Enviar email"
 
-#: .\apps\app1\templates\password_reset_done.html:12
+#: .\apps\app1\templates\password_reset_done.html:4
+msgid "Password reset complete"
+msgstr "Reestablecimiento de contraseña completo"
+
+#: .\apps\app1\templates\password_reset_done.html:15
 msgid "Password Reset Complete"
 msgstr "Reestablecimiento de contraseña completo"
 
-#: .\apps\app1\templates\password_reset_done.html:27
+#: .\apps\app1\templates\password_reset_done.html:30
 msgid "Your password has been set. You may go ahead and log in now."
 msgstr ""
 "Tu contraseña ha sido establecida. Puedes continuar e iniciar sesión ahora."
 
-#: .\apps\app1\templates\password_reset_form.html:12
+#: .\apps\app1\templates\password_reset_form.html:15
 msgid "Enter new password"
 msgstr "Ingresa tu contraseña"
 
-#: .\apps\app1\templates\password_reset_form.html:31
+#: .\apps\app1\templates\password_reset_form.html:34
 msgid ""
 "Please enter yout new password twice so we can verify you typed it correctly."
 msgstr ""
 "Ingresa tu nueva contraseña dos veces para que podamos verificar que la "
 "escribiste correctamente."
 
-#: .\apps\app1\templates\password_reset_sent.html:12
+#: .\apps\app1\templates\password_reset_sent.html:4
+msgid "Password reset sent"
+msgstr "Restablecimiento de contraseña enviado"
+
+#: .\apps\app1\templates\password_reset_sent.html:15
 msgid "Password Reset Sent"
 msgstr "Restablecimiento de contraseña enviado"
 
-#: .\apps\app1\templates\password_reset_sent.html:28
+#: .\apps\app1\templates\password_reset_sent.html:31
 msgid ""
 "We have emailed you instructions for setting your password, if an account "
 "exists with the email you provided. You should receive them shortly."
@@ -903,7 +996,7 @@ msgstr ""
 "contraseña, si existe una cuenta con el correo electrónico proporcionado. "
 "Deberías recibirlas en breve."
 
-#: .\apps\app1\templates\password_reset_sent.html:29
+#: .\apps\app1\templates\password_reset_sent.html:32
 msgid ""
 "If you don't receive an email, please make sure you've entered the address "
 "you registered with and check your spam folder."
@@ -913,170 +1006,232 @@ msgstr ""
 "no deseado."
 
 #: .\apps\app1\templates\patient_create.html:5
-#: .\apps\app1\templates\patient_list.html:38
+msgid "Create patient"
+msgstr "Crear paciente"
+
+#: .\apps\app1\templates\patient_create.html:8
+#: .\apps\app1\templates\patient_list.html:41
 msgid "Add new Patient"
 msgstr "Añadir nuevo paciente"
 
-#: .\apps\app1\templates\patient_create.html:16
-#: .\apps\app1\templates\patient_detail.html:16
-#: .\apps\app1\templates\patient_edit.html:16
-#: .\apps\app1\templates\prediction_detail.html:23
-#: .\apps\app1\templates\prediction_edit.html:16
-#: .\apps\app1\templates\prediction_to_train_confirm.html:23
-#: .\apps\app1\templates\prediction_to_train_detail.html:23
-#: .\apps\app1\templates\prediction_to_train_edit.html:16
+#: .\apps\app1\templates\patient_create.html:19
+#: .\apps\app1\templates\patient_detail.html:18
+#: .\apps\app1\templates\patient_edit.html:19
+#: .\apps\app1\templates\prediction_detail.html:32
+#: .\apps\app1\templates\prediction_edit.html:24
+#: .\apps\app1\templates\prediction_to_train_confirm.html:25
+#: .\apps\app1\templates\prediction_to_train_detail.html:30
+#: .\apps\app1\templates\prediction_to_train_edit.html:23
 msgid "Details"
 msgstr "Detalles"
 
-#: .\apps\app1\templates\patient_create.html:49
+#: .\apps\app1\templates\patient_create.html:52
 msgid "Add Patient"
 msgstr "Añadir Paciente"
 
 #: .\apps\app1\templates\patient_detail.html:5
+msgid "Patient details"
+msgstr "Detalles de paciente"
+
+#: .\apps\app1\templates\patient_detail.html:8
 msgid "Patient Information"
 msgstr "Información del paciente"
 
-#: .\apps\app1\templates\patient_detail.html:50
-msgid "Check Predictions"
-msgstr "Revisar predicciones"
-
-#: .\apps\app1\templates\patient_detail.html:52
-#: .\apps\app1\templates\patient_edit.html:50
-#: .\apps\app1\templates\prediction_list.html:11
-#: .\apps\app1\templates\prediction_to_train_list.html:10
+#: .\apps\app1\templates\patient_detail.html:62
+#: .\apps\app1\templates\patient_edit.html:61
+#: .\apps\app1\templates\prediction_list.html:23
+#: .\apps\app1\templates\prediction_to_train_list.html:25
 msgid "Back to Patients"
 msgstr "Volver a Pacientes"
 
+#: .\apps\app1\templates\patient_detail.html:68
+msgid "Check Predictions"
+msgstr "Revisar predicciones"
+
 #: .\apps\app1\templates\patient_edit.html:5
+msgid "Edit patient"
+msgstr "Editar paciente"
+
+#: .\apps\app1\templates\patient_edit.html:8
 msgid "Edit Patient"
 msgstr "Editar paciente"
 
-#: .\apps\app1\templates\patient_edit.html:49
+#: .\apps\app1\templates\patient_edit.html:66
 msgid "Update Patient"
 msgstr "Actualizar paciente"
 
-#: .\apps\app1\templates\patient_list.html:6
+#: .\apps\app1\templates\patient_list.html:5
+msgid "Patients list"
+msgstr "Lista de pacientes"
+
+#: .\apps\app1\templates\patient_list.html:8
 msgid "Patients List"
 msgstr "Lista de pacientes"
 
-#: .\apps\app1\templates\patient_list.html:19
-#: .\apps\app1\templates\prediction_list.html:20
+#: .\apps\app1\templates\patient_list.html:21
+#: .\apps\app1\templates\prediction_list.html:17
+#: .\apps\app1\templates\prediction_to_train_list.html:19
 msgid "Filter"
 msgstr "Filtrar"
 
-#: .\apps\app1\templates\patient_list.html:30
-#: .\apps\app1\templates\prediction_list.html:31
-#: .\apps\app1\templates\prediction_to_train_list.html:16
+#: .\apps\app1\templates\patient_list.html:32
+#: .\apps\app1\templates\prediction_list.html:38
+#: .\apps\app1\templates\prediction_to_train_list.html:37
 msgid "Name"
 msgstr "Nombre"
 
-#: .\apps\app1\templates\patient_list.html:31
-#: .\apps\app1\templates\prediction_list.html:32
-#: .\apps\app1\templates\prediction_to_train_list.html:17
+#: .\apps\app1\templates\patient_list.html:33
+#: .\apps\app1\templates\prediction_list.html:39
+#: .\apps\app1\templates\prediction_to_train_list.html:38
 msgid "Last name"
 msgstr "Apellido"
 
-#: .\apps\app1\templates\patient_list.html:33
+#: .\apps\app1\templates\patient_list.html:35
 msgid "Last Prediction"
 msgstr "Última predicción"
 
-#: .\apps\app1\templates\patient_list.html:34
-#: .\apps\app1\templates\prediction_list.html:36
+#: .\apps\app1\templates\patient_list.html:36
+#: .\apps\app1\templates\prediction_list.html:44
 msgid "Probability of HD"
 msgstr "Probabilidad de enfermedad cardiaca"
 
-#: .\apps\app1\templates\patient_list.html:80
-#: .\apps\app1\templates\prediction.html:101
-#: .\apps\app1\templates\prediction_create.html:5
-#: .\apps\app1\templates\prediction_create.html:77
-#: .\apps\app1\templates\prediction_edit.html:85
+#: .\apps\app1\templates\patient_list.html:37
+msgid "List of predictions"
+msgstr "Lista de Predicciones"
+
+#: .\apps\app1\templates\patient_list.html:88
+#: .\apps\app1\templates\prediction.html:103
+#: .\apps\app1\templates\prediction_create.html:8
+#: .\apps\app1\templates\prediction_create.html:98
+#: .\apps\app1\templates\prediction_edit.html:107
 msgid "Make Prediction"
 msgstr "Realizar predicción"
 
 #: .\apps\app1\templates\prediction.html:5
-msgid "Heart Disease Prediction"
-msgstr "Predicción de enfermedad cardiaca"
-
-#: .\apps\app1\templates\prediction.html:9
-msgid "Please enter details"
-msgstr "Por favor, ingresa los detalles"
-
-#: .\apps\app1\templates\prediction.html:18
-#: .\apps\app1\templates\prediction_create.html:16
-#: .\apps\app1\templates\prediction_to_train_confirm.html:6
-#: .\apps\app1\templates\prediction_to_train_detail.html:6
-#: .\apps\app1\templates\prediction_to_train_edit.html:6
-msgid "Patient"
-msgstr "Paciente"
-
-#: .\apps\app1\templates\prediction.html:70
-#: .\apps\app1\templates\prediction_create.html:68
-#: .\apps\app1\templates\prediction_detail.html:78
-#: .\apps\app1\templates\prediction_edit.html:76
-#: .\apps\app1\templates\prediction_list.html:35
-#: .\apps\app1\templates\prediction_to_train_confirm.html:78
-#: .\apps\app1\templates\prediction_to_train_detail.html:78
-#: .\apps\app1\templates\prediction_to_train_edit.html:72
-#: .\apps\app1\templates\prediction_to_train_list.html:20
+#: .\apps\app1\templates\prediction.html:72
+#: .\apps\app1\templates\prediction_create.html:74
+#: .\apps\app1\templates\prediction_detail.html:87
+#: .\apps\app1\templates\prediction_edit.html:83
+#: .\apps\app1\templates\prediction_list.html:43
+#: .\apps\app1\templates\prediction_to_train_confirm.html:80
+#: .\apps\app1\templates\prediction_to_train_detail.html:84
+#: .\apps\app1\templates\prediction_to_train_edit.html:78
+#: .\apps\app1\templates\prediction_to_train_list.html:41
 msgid "Prediction"
 msgstr "Predicción"
 
-#: .\apps\app1\templates\prediction.html:92
+#: .\apps\app1\templates\prediction.html:8
+msgid "Heart Disease Prediction"
+msgstr "Predicción de enfermedad cardiaca"
+
+#: .\apps\app1\templates\prediction.html:12
+msgid "Please enter details"
+msgstr "Por favor, ingresa los detalles"
+
+#: .\apps\app1\templates\prediction.html:94
 msgid "Probability of heart disease"
 msgstr "Probabilidad de enfermedad cardiaca"
 
-#: .\apps\app1\templates\prediction_detail.html:5
-msgid "Prediction Detail"
-msgstr "Detalles de predicción"
+#: .\apps\app1\templates\prediction_create.html:5
+msgid "Create prediction"
+msgstr "Crear predicción"
 
-#: .\apps\app1\templates\prediction_detail.html:16
-msgid "Add prediction to model training"
-msgstr "Añadir predicción a entrenamiento del modelo"
+#: .\apps\app1\templates\prediction_create.html:14
+#: .\apps\app1\templates\prediction_detail.html:15
+#: .\apps\app1\templates\prediction_edit.html:14
+#: .\apps\app1\templates\prediction_list.html:30
+#: .\apps\app1\templates\prediction_to_train_confirm.html:15
+#: .\apps\app1\templates\prediction_to_train_detail.html:13
+#: .\apps\app1\templates\prediction_to_train_edit.html:13
+msgid "Patient"
+msgstr "Paciente"
 
-#: .\apps\app1\templates\prediction_detail.html:87
-#: .\apps\app1\templates\prediction_edit.html:86
-#: .\apps\app1\templates\prediction_to_train_confirm.html:84
-#: .\apps\app1\templates\prediction_to_train_detail.html:84
-#: .\apps\app1\templates\prediction_to_train_edit.html:79
+#: .\apps\app1\templates\prediction_create.html:93
+#: .\apps\app1\templates\prediction_detail.html:108
+#: .\apps\app1\templates\prediction_edit.html:102
+#: .\apps\app1\templates\prediction_to_train_confirm.html:97
+#: .\apps\app1\templates\prediction_to_train_detail.html:100
+#: .\apps\app1\templates\prediction_to_train_edit.html:94
 msgid "Back to list"
 msgstr "Volver a la lista"
 
+#: .\apps\app1\templates\prediction_detail.html:5
+msgid "Prediction detail"
+msgstr "Detalles de predicción"
+
+#: .\apps\app1\templates\prediction_detail.html:8
+msgid "Prediction Detail"
+msgstr "Detalles de predicción"
+
+#: .\apps\app1\templates\prediction_detail.html:25
+#: .\apps\app1\templates\prediction_detail.html:114
+msgid "Add prediction to model training"
+msgstr "Añadir predicción a entrenamiento del modelo"
+
 #: .\apps\app1\templates\prediction_edit.html:5
+msgid "Edit prediction"
+msgstr "Editar predicción"
+
+#: .\apps\app1\templates\prediction_edit.html:8
 msgid "Edit Prediction"
 msgstr "Editar predicción"
 
 #: .\apps\app1\templates\prediction_list.html:5
-msgid "Prediction list"
+msgid "Predictions list"
 msgstr "Lista de predicciones"
 
 #: .\apps\app1\templates\prediction_list.html:8
 msgid "List of Predictions"
 msgstr "Lista de Predicciones"
 
-#: .\apps\app1\templates\prediction_list.html:39
+#: .\apps\app1\templates\prediction_list.html:42
+#: .\apps\app1\templates\prediction_to_train_list.html:40
+msgid "AI Model"
+msgstr "Modelo de IA"
+
+#: .\apps\app1\templates\prediction_list.html:47
 msgid "Add new Prediction"
 msgstr "Añadir nueva predicción"
 
-#: .\apps\app1\templates\prediction_list.html:51
-#: .\apps\app1\templates\prediction_to_train_list.html:31
-msgid "Single Model (XGB Booster)"
-msgstr "Modelo único (clasificador XGB)"
-
 #: .\apps\app1\templates\prediction_to_train_confirm.html:5
+#: .\apps\app1\templates\prediction_to_train_confirm.html:8
+msgid "Confirm prediction to train"
+msgstr "Confirmar prediccion para entrenar"
+
+#: .\apps\app1\templates\prediction_to_train_confirm.html:11
+msgid "Are you sure youn want to train the model with this prediction?"
+msgstr "¿Estás seguro de que deseas entrenar el modelo con esta predicción?"
+
+#: .\apps\app1\templates\prediction_to_train_confirm.html:12
+msgid "This action cannot be undone so make sure all details are correct."
+msgstr "Esta acción no se puede deshacer, así que asegúrate que los detalles sean correctos."
+
+#: .\apps\app1\templates\prediction_to_train_confirm.html:102
+msgid "Train Model"
+msgstr "Entrenar Modelo"
+
 #: .\apps\app1\templates\prediction_to_train_detail.html:5
+msgid "Prediction to train detail"
+msgstr "Detalles de predicción para entrenamiento"
+
+#: .\apps\app1\templates\prediction_to_train_detail.html:8
 msgid "Prediction to train Detail"
 msgstr "Detalles de predicción para entrenamiento"
 
-#: .\apps\app1\templates\prediction_to_train_confirm.html:16
-#: .\apps\app1\templates\prediction_to_train_detail.html:16
+#: .\apps\app1\templates\prediction_to_train_detail.html:23
+#: .\apps\app1\templates\prediction_to_train_detail.html:106
 msgid "Train Model with this prediction"
 msgstr "Entrenar modelo con esta predicción"
 
 #: .\apps\app1\templates\prediction_to_train_edit.html:5
+msgid "Edit prediction to train"
+msgstr "Editar predicción para entrenameinto"
+
+#: .\apps\app1\templates\prediction_to_train_edit.html:8
 msgid "Edit Prediction to Train"
 msgstr "Editar predicción para entrenameinto"
 
-#: .\apps\app1\templates\prediction_to_train_edit.html:78
+#: .\apps\app1\templates\prediction_to_train_edit.html:99
 msgid "Save Prediction"
 msgstr "Guardar predicción"
 
@@ -1088,35 +1243,31 @@ msgstr "Lista de predicciones para entrenar"
 msgid "List of Predictions to train"
 msgstr "Lista de predicciones para entrenar"
 
-#: .\apps\app1\templates\prediction_to_train_list.html:33
-msgid "Hard Voting Ensemble Models"
-msgstr "Conjunto de modelos de votación"
-
-#: .\apps\app1\templates\register.html:12
+#: .\apps\app1\templates\register.html:4 .\apps\app1\templates\register.html:15
 msgid "Register"
 msgstr "Registrar"
 
-#: .\apps\app1\templates\register.html:31
+#: .\apps\app1\templates\register.html:34
 msgid "Register new account"
 msgstr "Registrar nueva cuenta"
 
-#: .\apps\app1\templates\register.html:51
+#: .\apps\app1\templates\register.html:54
 msgid "Create Account"
 msgstr "Crear cuenta"
 
-#: .\apps\app1\templates\register.html:55
+#: .\apps\app1\templates\register.html:58
 msgid "Already have an account?"
 msgstr "¿Ya posees una cuenta?"
 
-#: .\apps\app1\templates\register.html:56
+#: .\apps\app1\templates\register.html:59
 msgid "Log In"
 msgstr "Iniciar sesión"
 
-#: .\apps\app1\templates\register.html:81
+#: .\apps\app1\templates\register.html:84
 msgid "Email"
 msgstr "Email"
 
-#: .\apps\app1\templates\register.html:83
+#: .\apps\app1\templates\register.html:86
 msgid "Confirm Password"
 msgstr "Confirmar contraseña"
 
@@ -1131,6 +1282,57 @@ msgstr "Usuario o contraseña incorrectos"
 #: .\apps\app1\views.py:84
 msgid "Account was updated for "
 msgstr "Se actualizó una cuenta para "
+
+#: .\apps\app1\views.py:374
+msgid "Could not add prediction. It was already used to train the model!"
+msgstr "No se puedo añadir la predicción. ¡Ya fue usada previamente para entrenar el modelo!"
+
+#~| msgid "Single Model (XGB Classifier)"
+#~ msgid "Model 1 : XGB Classifier"
+#~ msgstr "Modelo 1 : Clasificador XGB"
+
+#~ msgid "model 1"
+#~ msgstr "modelo 1"
+
+#~ msgid ""
+#~ ") was chosen and the following 4 were used to build the ensemble model ("
+#~ msgstr ""
+#~ ") fue elegido y los siguientes 4 fueron usados para construir el modelo "
+#~ "de conjunto ("
+
+#~ msgid "model 2"
+#~ msgstr "modelo 2"
+
+#~ msgid "Parameters obtained for model 1"
+#~ msgstr "Parámetros obtenidos para el modelo 1"
+
+#~ msgid "Parameters obtained for model 2"
+#~ msgstr "Parámetros obtenidos para el modelo 1"
+
+#~ msgid "RestingBP: resting blood pressure measured in (mm/Hg)."
+#~ msgstr "RestingBP: presión arterial en reposo medida en: mm/Hg"
+
+#~ msgid ""
+#~ "MaxHR: Maximum amount of heart beats achieved per minute under maximum "
+#~ "stress."
+#~ msgstr ""
+#~ "MaxHR: Cantidad máxima de latidos cardíacos por minuto bajo estrés máximo."
+
+#~ msgid ""
+#~ "Oldeak: ST depression. The height difference (in milimiters) between the "
+#~ "J point and the baseline (the PR segment)."
+#~ msgstr ""
+#~ "Oldeak: depresión del segmento ST. La diferencia de altura (en "
+#~ "milímetros) entre el punto J y la línea base (el segmento PR)."
+
+#~ msgid "Data Visualization"
+#~ msgstr "Visualización de datos"
+
+#~ msgid "Single Model (XGB Booster)"
+#~ msgstr "Modelo único (clasificador XGB)"
+
+#~ msgid "Hard Voting Ensemble Models"
+#~ msgstr "Conjunto de modelos de votación"
 
 #~ msgid "Height (cm)"
 #~ msgstr "Altura (cm)"

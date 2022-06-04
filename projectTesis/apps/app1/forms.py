@@ -34,8 +34,8 @@ class CreatePatientForm(forms.ModelForm):
         self.fields['city'].label = _('City')
         self.fields['address'].label = _('Adress')
         self.fields['phone_number'].label = _('Phone Number')
-        self.fields['height'].label = _('Height')
-        self.fields['weight'].label = _('Weight')
+        self.fields['height'].label = _('Height (cm)')
+        self.fields['weight'].label = _('Weight (kg)')
 
     class Meta:
         model = Patient
@@ -43,11 +43,9 @@ class CreatePatientForm(forms.ModelForm):
             'first_name',
             'last_name',
             'id_number',
-            # 'sex',
             'city',
             'address',
             'phone_number',
-            # 'age',
             'height',
             'weight',
         ]
@@ -60,12 +58,9 @@ class DetailPatientForm(forms.ModelForm):
         self.fields['first_name'].widget.attrs['readonly'] = True
         self.fields['last_name'].widget.attrs['readonly'] = True
         self.fields['id_number'].widget.attrs['readonly'] = True
-        # self.fields['sex'].widget.attrs['readonly'] = True
-        #self.fields['sex'].widget.attrs['disabled'] = True
         self.fields['city'].widget.attrs['readonly'] = True
         self.fields['address'].widget.attrs['readonly'] = True
         self.fields['phone_number'].widget.attrs['readonly'] = True
-        #self.fields['age'].widget.attrs['readonly'] = True
         self.fields['height'].widget.attrs['readonly'] = True
         self.fields['weight'].widget.attrs['readonly'] = True
         # labels
@@ -75,8 +70,8 @@ class DetailPatientForm(forms.ModelForm):
         self.fields['city'].label = _('City')
         self.fields['address'].label = _('Adress')
         self.fields['phone_number'].label = _('Phone Number')
-        self.fields['height'].label = _('Height')
-        self.fields['weight'].label = _('Weight')
+        self.fields['height'].label = _('Height (cm)')
+        self.fields['weight'].label = _('Weight (kg)')
 
     class Meta:
         model = Patient
@@ -84,11 +79,9 @@ class DetailPatientForm(forms.ModelForm):
             'first_name',
             'last_name',
             'id_number',
-            # 'sex',
             'city',
             'address',
             'phone_number',
-            # 'age',
             'height',
             'weight',
         ]

@@ -70,32 +70,31 @@
                                 </div>
                                 <hr>
                                 <h2>{% trans "Prediction"%}</h2>
+                                &nbsp
                                 <div class="row gx-3 mb-3">
                                     <div class="col-md-6">
-                                        <div id="div_id_heartDisease" class="mb-3">
+                                        <div id="div_id_heartDisease" class="mb-3 fs-5 text">
                                             <label for="id_heartDisease" class="form-label">
-                                                {% trans "Heart Disease"%}
+                                                {% trans "Heart Disease"%}: 
                                             </label>
-                                            <select name="heartDisease" disabled="" class="select form-select"
-                                                id="id_heartDisease">
-                                                <option value="" selected="">
-                                                    {% if hdisease == 0 %}
-                                                    No
-                                                    {% elif hdisease == 1 %}
-                                                    {% trans "Yes"%}
-                                                    {% endif %}
-                                                </option>
-                                            </select>
+                                            <span class="fw-bold">
+                                            {% if hdisease == 0 %}
+                                            No
+                                            {% elif hdisease == 1 %}
+                                            {% trans "Yes"%}
+                                            {% endif %}
+                                            </span>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
-                                        <div id="div_id_heartDiseaseProb" class="mb-3">
+                                        <div id="div_id_heartDiseaseProb" class="mb-3 fs-5 text">
                                             <label for="id_heartDiseaseProb" class="form-label">
-                                                {% trans "Probability of heart disease"%} (%)
-                                            </label>
-                                            <input type="number" name="heartDiseaseProb" step="0.01" disabled=""
-                                                class="numberinput form-control" id="id_heartDiseaseProb"
-                                                value="{{hdProb}}">
+                                                {% trans "Probability of heart disease"%}: 
+                                            <span class="fw-bold">
+                                            {% if hdProb %}
+                                            {{hdProb}}%
+                                            {% endif %}
+                                            </span>
                                         </div>
                                     </div>
                                 </div>

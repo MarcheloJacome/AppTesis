@@ -11,6 +11,7 @@
     
     @media (min-width: 768px) {
     .gradient-form {
+    min-height: 900px!important;
     height: 100vh !important;
     }
     }

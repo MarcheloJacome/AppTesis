@@ -12,6 +12,7 @@ from django.contrib.auth.forms import UserCreationForm, PasswordChangeForm
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout, update_session_auth_hash
 from django.utils.translation import gettext as _
+from django.contrib.auth.decorators import login_required
 import numpy as np
 import pandas as pd
 import joblib
@@ -55,7 +56,7 @@ def registerPage(request):
 
 def loginPage(request):
     if request.user.is_authenticated:
-        return redirect('Prediction')
+        return redirect('index')
     else:
         if request.method == 'POST':
             username = request.POST.get('username')
@@ -63,16 +64,18 @@ def loginPage(request):
             user = authenticate(request, username=username, password=password)
             if user is not None:
                 login(request, user)
-                return redirect('Prediction')
+                return redirect('index')
             else:
                 messages.info(request, _('Username or Password is incorrect'))
         context = {}
         return render(request,'login.html',context)
 
+@login_required(login_url="/login")
 def logoutUser(request):
     logout(request)
     return redirect('login')
 
+@login_required(login_url="/login")
 def editUser(request):
     form = EditUserForm(instance = request.user)
     print(request.user)
@@ -86,6 +89,7 @@ def editUser(request):
     context = {'form':form}
     return render(request,'edit_user.html',context)
 
+@login_required(login_url="/login")
 def changeUserPass(request):
     if request.user.is_authenticated:
         if request.method == 'POST':
@@ -100,7 +104,7 @@ def changeUserPass(request):
         context = {'form':form}
         return render(request,'change_user_pass.html',context)
 
-
+@login_required(login_url="/login")
 def patientList(request):
     user = request.user
     patients = Patient.objects.filter(user=user)
@@ -109,6 +113,7 @@ def patientList(request):
     context = {'patient_list':patients,'filter':filter}
     return render(request,"patient_list.html",context)
 
+@login_required(login_url="/login")
 def patientCreate(request):
     form = CreatePatientForm()
     if request.method == 'POST':
@@ -121,12 +126,14 @@ def patientCreate(request):
     context = {'form':form}
     return render(request,'patient_create.html',context)
 
+@login_required(login_url="/login")
 def patientDetail(request, pk):
     patient = get_object_or_404(Patient,pk=pk,user=request.user)
     form = DetailPatientForm(instance=patient)
     context = {"patient":patient,"form":form}
     return render(request, 'patient_detail.html',context)
 
+@login_required(login_url="/login")
 def patientEdit(request, pk):
     patient = get_object_or_404(Patient,pk=pk,user=request.user)
     form = CreatePatientForm(instance=patient)
@@ -140,6 +147,7 @@ def patientEdit(request, pk):
     context = {"patient":patient,"form":form}
     return render(request, 'patient_edit.html',context)
 
+@login_required(login_url="/login")
 def patientDelete(request, pk):
     patient = get_object_or_404(Patient,pk=pk,user=request.user)
     patient.delete()
@@ -147,6 +155,7 @@ def patientDelete(request, pk):
 
 ########Prediction
 
+@login_required(login_url="/login")
 def predictionList(request, pk):
     patient = get_object_or_404(Patient,pk=pk,user=request.user)
     #user = request.user
@@ -156,6 +165,7 @@ def predictionList(request, pk):
     context = {'pred_list':predictions,'filter':filter,'patient':patient}
     return render(request,"prediction_list.html",context)
 
+@login_required(login_url="/login")
 def predictionCreate(request,pk):
     form = MakePredictionForm()
     patient = get_object_or_404(Patient,pk=pk,user=request.user)
@@ -205,12 +215,14 @@ def predictionCreate(request,pk):
     context = {'form':form,'patient':patient}
     return render(request,'prediction_create.html',context)
 
+@login_required(login_url="/login")
 def predictionDetail(request, pk):
     prediction = get_object_or_404(Prediction,pk=pk,Patient__user=request.user)
     form = DetailPredictionForm(instance=prediction)
     context = {"prediction":prediction,"form":form,"patient":prediction.Patient}
     return render(request, 'prediction_detail.html',context)
 
+@login_required(login_url="/login")
 def predictionEdit(request, pk):
     prediction = get_object_or_404(Prediction,pk=pk,Patient__user=request.user)
     form = EditPredictionForm(instance=prediction)
@@ -269,6 +281,7 @@ def predictionEdit(request, pk):
     context = {"prediction":prediction,"form":form,"patient":prediction.Patient}
     return render(request, 'prediction_edit.html',context)
 
+@login_required(login_url="/login")
 def predictionDelete(request, pk):
     prediction = get_object_or_404(Prediction,pk=pk,Patient__user=request.user)
     pat_pk = prediction.Patient.pk
@@ -362,7 +375,7 @@ def prediction(request):
               'hdProb':hdProb}
     return render(request, 'prediction.html',context)
 
-
+@login_required(login_url="/login")
 def addPredictionToTrain(request, pk):
     user = request.user 
     pred = get_object_or_404(Prediction,pk=pk,Patient__user=user)
@@ -393,6 +406,7 @@ def addPredictionToTrain(request, pk):
             )
         return redirect('prediction_to_train_list')
 
+@login_required(login_url="/login")
 def predictionToTrainList(request):
     user = request.user
     pred_list = PredictionToTrain.objects.filter(
@@ -404,6 +418,7 @@ def predictionToTrainList(request):
     context = {'pred_list': pred_list,'filter':filter}
     return render(request,'prediction_to_train_list.html',context)
 
+@login_required(login_url="/login")
 def predictionToTrainDetail(request, pk):
     user = request.user 
     prediction = get_object_or_404(PredictionToTrain,pk=pk,prediction__Patient__user=user)
@@ -412,6 +427,7 @@ def predictionToTrainDetail(request, pk):
     context = {"prediction":prediction,"form":form,"patient":patient}
     return render(request, 'prediction_to_train_detail.html',context)
 
+@login_required(login_url="/login")
 def predictionToTrainEdit(request, pk):
     user = request.user 
     prediction = get_object_or_404(PredictionToTrain,pk=pk,prediction__Patient__user=user)
@@ -426,12 +442,14 @@ def predictionToTrainEdit(request, pk):
     context = {"prediction":prediction,"form":form,"form1":form1,"patient":patient}
     return render(request, 'prediction_to_train_edit.html',context)
 
+@login_required(login_url="/login")
 def predictionToTrainDelete(request, pk):
     user = request.user 
     prediction = get_object_or_404(PredictionToTrain,pk=pk,prediction__Patient__user=user)
     prediction.delete()
     return redirect('prediction_to_train_list')
 
+@login_required(login_url="/login")
 def predictionToTrainConfirm(request, pk):
     user = request.user 
     prediction = get_object_or_404(PredictionToTrain,pk=pk,prediction__Patient__user=user)

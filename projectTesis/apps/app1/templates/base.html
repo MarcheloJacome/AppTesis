@@ -1,4 +1,5 @@
 {% load i18n %}
+{% load replace %}
 <!doctype html>
 <html lang="en">
 
@@ -37,7 +38,32 @@
         </div>
     </div>
     <hr>
-    <h5></h5>
+    {% get_current_language as LANGUAGE_CODE %}
+    {% get_language_info for LANGUAGE_CODE as lang_info %}
+    {% get_available_languages as LANGUAGES %}
+    {% get_language_info_list for LANGUAGES as languages %}
+    <div class="container">
+        <div class="row">
+            <div class="col md-3 offset-md-11">
+                <div class="dropdown">
+                    <button class="btn btn-outline-secondary dropdown-toggle btn-sm" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-globe">&nbsp</i>{{lang_info.name_local}}
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        {% for lang in languages %}
+                        {% if lang.code == 'es' or lang.code == 'en' %}
+                        <li >
+                            <a class="dropdown-item" href="/{{lang.code}}{{request.path|replace}}">
+                                {{lang.name_local}}</a>
+                        </li>
+                        {% endif %}
+                        {% endfor %}
+                    </ul>
+                  </div>
+            </div>
+        </div>
+    </div>
+    &nbsp
 </body>
 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>

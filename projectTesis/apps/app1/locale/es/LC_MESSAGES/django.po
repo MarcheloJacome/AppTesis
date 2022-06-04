@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-31 15:48-0500\n"
+"POT-Creation-Date: 2022-06-03 22:53-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,167 +19,173 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: .\apps\app1\filters.py:11 .\apps\app1\filters.py:18
-#: .\apps\app1\filters.py:70
-msgid "Name:"
+#: .\apps\app1\filters.py:61 .\apps\app1\filters.py:72
+#: .\apps\app1\templates\patient_list.html:32
+#: .\apps\app1\templates\prediction_list.html:38
+#: .\apps\app1\templates\prediction_to_train_list.html:37
+msgid "Name"
 msgstr "Nombre"
 
 #: .\apps\app1\filters.py:12 .\apps\app1\filters.py:24
-msgid "Id:"
+msgid "Id"
 msgstr "Identificacion"
 
 #: .\apps\app1\filters.py:13 .\apps\app1\filters.py:30
-msgid "Probability > than:"
-msgstr "Probabilidad > a:"
+msgid "Probability > than"
+msgstr "Probabilidad > a"
 
 #: .\apps\app1\filters.py:43 .\apps\app1\filters.py:48
-#: .\apps\app1\filters.py:60 .\apps\app1\filters.py:65
+#: .\apps\app1\filters.py:60 .\apps\app1\filters.py:67
 #: .\apps\app1\templates\prediction_list.html:41
 #: .\apps\app1\templates\prediction_to_train_list.html:39
 msgid "Date"
 msgstr "Fecha"
 
-#: .\apps\app1\filters.py:76
-msgid "Last name:"
+#: .\apps\app1\filters.py:62 .\apps\app1\filters.py:78
+#: .\apps\app1\templates\patient_list.html:33
+#: .\apps\app1\templates\prediction_list.html:39
+#: .\apps\app1\templates\prediction_to_train_list.html:38
+msgid "Last name"
 msgstr "Apellido"
 
-#: .\apps\app1\forms.py:31 .\apps\app1\forms.py:72
-#: .\apps\app1\templates\register.html:81
+#: .\apps\app1\forms.py:31 .\apps\app1\forms.py:67
+#: .\apps\app1\templates\register.html:82
 msgid "First Name"
 msgstr "Nombre"
 
-#: .\apps\app1\forms.py:32 .\apps\app1\forms.py:73
-#: .\apps\app1\templates\register.html:82
+#: .\apps\app1\forms.py:32 .\apps\app1\forms.py:68
+#: .\apps\app1\templates\register.html:83
 msgid "Last Name"
 msgstr "Apellido"
 
-#: .\apps\app1\forms.py:33 .\apps\app1\forms.py:74
+#: .\apps\app1\forms.py:33 .\apps\app1\forms.py:69
 #: .\apps\app1\templates\patient_list.html:34
 msgid "ID Number"
 msgstr "Número de identificación"
 
-#: .\apps\app1\forms.py:34 .\apps\app1\forms.py:75
+#: .\apps\app1\forms.py:34 .\apps\app1\forms.py:70
 msgid "City"
 msgstr "Ciudad"
 
-#: .\apps\app1\forms.py:35 .\apps\app1\forms.py:76
+#: .\apps\app1\forms.py:35 .\apps\app1\forms.py:71
 msgid "Adress"
 msgstr "Dirección"
 
-#: .\apps\app1\forms.py:36 .\apps\app1\forms.py:77
+#: .\apps\app1\forms.py:36 .\apps\app1\forms.py:72
 msgid "Phone Number"
 msgstr "Numero telefónico"
 
-#: .\apps\app1\forms.py:37 .\apps\app1\forms.py:78
-msgid "Height"
-msgstr "Altura"
+#: .\apps\app1\forms.py:37 .\apps\app1\forms.py:73
+msgid "Height (cm)"
+msgstr "Altura (cm)"
 
-#: .\apps\app1\forms.py:38 .\apps\app1\forms.py:79
-msgid "Weight"
-msgstr "Peso"
+#: .\apps\app1\forms.py:38 .\apps\app1\forms.py:74
+msgid "Weight (kg)"
+msgstr "Peso (kg)"
 
-#: .\apps\app1\forms.py:107 .\apps\app1\forms.py:167 .\apps\app1\forms.py:237
-#: .\apps\app1\forms.py:292 .\apps\app1\forms.py:359 .\apps\app1\forms.py:422
+#: .\apps\app1\forms.py:100 .\apps\app1\forms.py:160 .\apps\app1\forms.py:230
+#: .\apps\app1\forms.py:285 .\apps\app1\forms.py:352 .\apps\app1\forms.py:415
 msgid "Age"
 msgstr "Edad"
 
-#: .\apps\app1\forms.py:108 .\apps\app1\forms.py:168 .\apps\app1\forms.py:238
-#: .\apps\app1\forms.py:293 .\apps\app1\forms.py:360 .\apps\app1\forms.py:423
+#: .\apps\app1\forms.py:101 .\apps\app1\forms.py:161 .\apps\app1\forms.py:231
+#: .\apps\app1\forms.py:286 .\apps\app1\forms.py:353 .\apps\app1\forms.py:416
 msgid "Sex"
 msgstr "Sexo"
 
-#: .\apps\app1\forms.py:109 .\apps\app1\forms.py:169 .\apps\app1\forms.py:239
-#: .\apps\app1\forms.py:294 .\apps\app1\forms.py:361 .\apps\app1\forms.py:424
+#: .\apps\app1\forms.py:102 .\apps\app1\forms.py:162 .\apps\app1\forms.py:232
+#: .\apps\app1\forms.py:287 .\apps\app1\forms.py:354 .\apps\app1\forms.py:417
 msgid "Chest pain type"
 msgstr "Tipo de dolor de pecho"
 
-#: .\apps\app1\forms.py:110 .\apps\app1\forms.py:170 .\apps\app1\forms.py:240
-#: .\apps\app1\forms.py:295 .\apps\app1\forms.py:362 .\apps\app1\forms.py:425
+#: .\apps\app1\forms.py:103 .\apps\app1\forms.py:163 .\apps\app1\forms.py:233
+#: .\apps\app1\forms.py:288 .\apps\app1\forms.py:355 .\apps\app1\forms.py:418
 msgid "Resting blood pressure"
 msgstr "Presión arterial en reposo"
 
-#: .\apps\app1\forms.py:111 .\apps\app1\forms.py:171 .\apps\app1\forms.py:241
-#: .\apps\app1\forms.py:296 .\apps\app1\forms.py:363 .\apps\app1\forms.py:426
+#: .\apps\app1\forms.py:104 .\apps\app1\forms.py:164 .\apps\app1\forms.py:234
+#: .\apps\app1\forms.py:289 .\apps\app1\forms.py:356 .\apps\app1\forms.py:419
 msgid "Serum cholesterol"
 msgstr "Colesterol sérico"
 
-#: .\apps\app1\forms.py:112 .\apps\app1\forms.py:172 .\apps\app1\forms.py:242
-#: .\apps\app1\forms.py:297 .\apps\app1\forms.py:364 .\apps\app1\forms.py:427
+#: .\apps\app1\forms.py:105 .\apps\app1\forms.py:165 .\apps\app1\forms.py:235
+#: .\apps\app1\forms.py:290 .\apps\app1\forms.py:357 .\apps\app1\forms.py:420
 msgid "Fasting blood sugar"
 msgstr "Azúcar en sangre en ayunas"
 
-#: .\apps\app1\forms.py:114 .\apps\app1\forms.py:174 .\apps\app1\forms.py:244
-#: .\apps\app1\forms.py:299 .\apps\app1\forms.py:366 .\apps\app1\forms.py:429
+#: .\apps\app1\forms.py:107 .\apps\app1\forms.py:167 .\apps\app1\forms.py:237
+#: .\apps\app1\forms.py:292 .\apps\app1\forms.py:359 .\apps\app1\forms.py:422
 msgid "Resting electrocardiogram results"
 msgstr "Resultados del electrocardiograma en reposo"
 
-#: .\apps\app1\forms.py:115 .\apps\app1\forms.py:175 .\apps\app1\forms.py:245
-#: .\apps\app1\forms.py:300 .\apps\app1\forms.py:367 .\apps\app1\forms.py:430
+#: .\apps\app1\forms.py:108 .\apps\app1\forms.py:168 .\apps\app1\forms.py:238
+#: .\apps\app1\forms.py:293 .\apps\app1\forms.py:360 .\apps\app1\forms.py:423
 msgid "Maximum heart rate achieved"
 msgstr "Frecuencia cardíaca máxima alcanzada"
 
-#: .\apps\app1\forms.py:116 .\apps\app1\forms.py:176 .\apps\app1\forms.py:246
-#: .\apps\app1\forms.py:301 .\apps\app1\forms.py:368 .\apps\app1\forms.py:431
+#: .\apps\app1\forms.py:109 .\apps\app1\forms.py:169 .\apps\app1\forms.py:239
+#: .\apps\app1\forms.py:294 .\apps\app1\forms.py:361 .\apps\app1\forms.py:424
 msgid "Exercise-induced angina"
 msgstr "Angina de pecho inducida por ejercicio"
 
-#: .\apps\app1\forms.py:117 .\apps\app1\forms.py:177 .\apps\app1\forms.py:247
-#: .\apps\app1\forms.py:302 .\apps\app1\forms.py:369 .\apps\app1\forms.py:432
+#: .\apps\app1\forms.py:110 .\apps\app1\forms.py:170 .\apps\app1\forms.py:240
+#: .\apps\app1\forms.py:295 .\apps\app1\forms.py:362 .\apps\app1\forms.py:425
 msgid "ECG ST Segment"
 msgstr "Segmento ST del electrocardiograma"
 
-#: .\apps\app1\forms.py:118 .\apps\app1\forms.py:178 .\apps\app1\forms.py:248
-#: .\apps\app1\forms.py:303 .\apps\app1\forms.py:370 .\apps\app1\forms.py:433
+#: .\apps\app1\forms.py:111 .\apps\app1\forms.py:171 .\apps\app1\forms.py:241
+#: .\apps\app1\forms.py:296 .\apps\app1\forms.py:363 .\apps\app1\forms.py:426
 msgid "ST Slope"
 msgstr "Pendiente del segmento ST"
 
-#: .\apps\app1\forms.py:119 .\apps\app1\forms.py:179 .\apps\app1\forms.py:249
-#: .\apps\app1\forms.py:304 .\apps\app1\forms.py:371 .\apps\app1\forms.py:434
-#: .\apps\app1\forms.py:471 .\apps\app1\templates\prediction.html:77
+#: .\apps\app1\forms.py:112 .\apps\app1\forms.py:172 .\apps\app1\forms.py:242
+#: .\apps\app1\forms.py:297 .\apps\app1\forms.py:364 .\apps\app1\forms.py:427
+#: .\apps\app1\forms.py:464 .\apps\app1\templates\prediction.html:78
 msgid "Heart Disease"
 msgstr "Enfermedad cardíaca"
 
-#: .\apps\app1\forms.py:121 .\apps\app1\forms.py:181 .\apps\app1\forms.py:251
-#: .\apps\app1\forms.py:306
+#: .\apps\app1\forms.py:114 .\apps\app1\forms.py:174 .\apps\app1\forms.py:244
+#: .\apps\app1\forms.py:299
 msgid "Probability of heart disease (%)"
-msgstr "Probabilidad de enfermedad cardiaca (%)"
+msgstr "Probabilidad de enfermedad cardíaca (%)"
 
-#: .\apps\app1\forms.py:122 .\apps\app1\forms.py:182 .\apps\app1\forms.py:252
-#: .\apps\app1\forms.py:307 .\apps\app1\forms.py:372 .\apps\app1\forms.py:435
+#: .\apps\app1\forms.py:115 .\apps\app1\forms.py:175 .\apps\app1\forms.py:245
+#: .\apps\app1\forms.py:300 .\apps\app1\forms.py:365 .\apps\app1\forms.py:428
 msgid "Machine learning model"
 msgstr "Modelo de machine learning"
 
-#: .\apps\app1\forms.py:125 .\apps\app1\forms.py:186 .\apps\app1\forms.py:255
-#: .\apps\app1\forms.py:310 .\apps\app1\forms.py:375 .\apps\app1\forms.py:438
+#: .\apps\app1\forms.py:118 .\apps\app1\forms.py:179 .\apps\app1\forms.py:248
+#: .\apps\app1\forms.py:303 .\apps\app1\forms.py:368 .\apps\app1\forms.py:431
 msgid "Age of the patient in years"
 msgstr "Edad del paciente en años"
 
-#: .\apps\app1\forms.py:126 .\apps\app1\forms.py:187 .\apps\app1\forms.py:256
-#: .\apps\app1\forms.py:311 .\apps\app1\forms.py:376 .\apps\app1\forms.py:439
+#: .\apps\app1\forms.py:119 .\apps\app1\forms.py:180 .\apps\app1\forms.py:249
+#: .\apps\app1\forms.py:304 .\apps\app1\forms.py:369 .\apps\app1\forms.py:432
 msgid "Sex of the patient"
 msgstr "Sexo del paciente"
 
-#: .\apps\app1\forms.py:128 .\apps\app1\forms.py:189 .\apps\app1\forms.py:258
-#: .\apps\app1\forms.py:313 .\apps\app1\forms.py:378 .\apps\app1\forms.py:441
+#: .\apps\app1\forms.py:121 .\apps\app1\forms.py:182 .\apps\app1\forms.py:251
+#: .\apps\app1\forms.py:306 .\apps\app1\forms.py:371 .\apps\app1\forms.py:434
 msgid "Type of chest pain"
 msgstr "Tipo de dolor de pecho"
 
-#: .\apps\app1\forms.py:130 .\apps\app1\forms.py:191 .\apps\app1\forms.py:260
-#: .\apps\app1\forms.py:315 .\apps\app1\forms.py:380 .\apps\app1\forms.py:443
+#: .\apps\app1\forms.py:123 .\apps\app1\forms.py:184 .\apps\app1\forms.py:253
+#: .\apps\app1\forms.py:308 .\apps\app1\forms.py:373 .\apps\app1\forms.py:436
 msgid "Resting blood pressure measured in: mm/Hg"
 msgstr "Presión arterial en reposo medida en: mm/Hg"
 
-#: .\apps\app1\forms.py:132 .\apps\app1\forms.py:193 .\apps\app1\forms.py:262
-#: .\apps\app1\forms.py:317 .\apps\app1\forms.py:382 .\apps\app1\forms.py:445
+#: .\apps\app1\forms.py:125 .\apps\app1\forms.py:186 .\apps\app1\forms.py:255
+#: .\apps\app1\forms.py:310 .\apps\app1\forms.py:375 .\apps\app1\forms.py:438
 msgid "Serum cholesterol measured in mm/dl"
 msgstr "Colesterol sérico medido en mm/dl"
 
-#: .\apps\app1\forms.py:134 .\apps\app1\forms.py:195 .\apps\app1\forms.py:264
-#: .\apps\app1\forms.py:319 .\apps\app1\forms.py:384 .\apps\app1\forms.py:447
+#: .\apps\app1\forms.py:127 .\apps\app1\forms.py:188 .\apps\app1\forms.py:257
+#: .\apps\app1\forms.py:312 .\apps\app1\forms.py:377 .\apps\app1\forms.py:440
 msgid "Fasting blood sugar, wheter it is greater than 120 mg/dl or not"
 msgstr "Azúcar en sangre en ayunas, si es superior a 120 mg/dl o no"
 
-#: .\apps\app1\forms.py:136 .\apps\app1\forms.py:197 .\apps\app1\forms.py:266
-#: .\apps\app1\forms.py:321 .\apps\app1\forms.py:386 .\apps\app1\forms.py:449
+#: .\apps\app1\forms.py:129 .\apps\app1\forms.py:190 .\apps\app1\forms.py:259
+#: .\apps\app1\forms.py:314 .\apps\app1\forms.py:379 .\apps\app1\forms.py:442
 msgid ""
 "Resting electrocardiogram results: \n"
 "Normal: Normal ECG\n"
@@ -195,18 +201,18 @@ msgstr ""
 "LVH: Muestra hipertrofia ventricular izquierda probable o definitiva según "
 "el criterio de Estes"
 
-#: .\apps\app1\forms.py:138 .\apps\app1\forms.py:199 .\apps\app1\forms.py:268
-#: .\apps\app1\forms.py:323 .\apps\app1\forms.py:388 .\apps\app1\forms.py:451
+#: .\apps\app1\forms.py:131 .\apps\app1\forms.py:192 .\apps\app1\forms.py:261
+#: .\apps\app1\forms.py:316 .\apps\app1\forms.py:381 .\apps\app1\forms.py:444
 msgid "Maximum amount of heart beats achieved per minute under maximum stress"
 msgstr "Cantidad máxima de latidos cardíacos por minuto bajo estrés máximo"
 
-#: .\apps\app1\forms.py:140 .\apps\app1\forms.py:201 .\apps\app1\forms.py:270
-#: .\apps\app1\forms.py:325 .\apps\app1\forms.py:390 .\apps\app1\forms.py:453
+#: .\apps\app1\forms.py:133 .\apps\app1\forms.py:194 .\apps\app1\forms.py:263
+#: .\apps\app1\forms.py:318 .\apps\app1\forms.py:383 .\apps\app1\forms.py:446
 msgid "Wheter the patient has exercise-induced angina or not"
 msgstr "Si el paciente tiene angina de pecho inducida por ejercicio o no"
 
-#: .\apps\app1\forms.py:142 .\apps\app1\forms.py:203 .\apps\app1\forms.py:272
-#: .\apps\app1\forms.py:327 .\apps\app1\forms.py:392 .\apps\app1\forms.py:455
+#: .\apps\app1\forms.py:135 .\apps\app1\forms.py:196 .\apps\app1\forms.py:265
+#: .\apps\app1\forms.py:320 .\apps\app1\forms.py:385 .\apps\app1\forms.py:448
 msgid ""
 "ST depression.\n"
 "The height difference (in milimiters) between the J point and the baseline "
@@ -216,8 +222,8 @@ msgstr ""
 "La diferencia de altura (en milímetros) entre el punto J y la línea base (el "
 "segmento PR)"
 
-#: .\apps\app1\forms.py:144 .\apps\app1\forms.py:205 .\apps\app1\forms.py:274
-#: .\apps\app1\forms.py:329 .\apps\app1\forms.py:394 .\apps\app1\forms.py:457
+#: .\apps\app1\forms.py:137 .\apps\app1\forms.py:198 .\apps\app1\forms.py:267
+#: .\apps\app1\forms.py:322 .\apps\app1\forms.py:387 .\apps\app1\forms.py:450
 msgid ""
 "The slope of the peak exercise ST segment:\n"
 "UP: Upslowing\n"
@@ -229,17 +235,17 @@ msgstr ""
 "PLANO: Constante\n"
 "ABAJO: Decreciente"
 
-#: .\apps\app1\forms.py:146 .\apps\app1\forms.py:207 .\apps\app1\forms.py:276
-#: .\apps\app1\forms.py:331 .\apps\app1\forms.py:396 .\apps\app1\forms.py:459
+#: .\apps\app1\forms.py:139 .\apps\app1\forms.py:200 .\apps\app1\forms.py:269
+#: .\apps\app1\forms.py:324 .\apps\app1\forms.py:389 .\apps\app1\forms.py:452
 msgid "Machine learning model to use for prediction"
 msgstr "Modelo de machine learning a utilizar para la predicción"
 
-#: .\apps\app1\forms.py:166 .\apps\app1\forms.py:236 .\apps\app1\forms.py:358
-#: .\apps\app1\forms.py:421
+#: .\apps\app1\forms.py:159 .\apps\app1\forms.py:229 .\apps\app1\forms.py:351
+#: .\apps\app1\forms.py:414
 msgid "Creation date"
 msgstr "Fecha de creación"
 
-#: .\apps\app1\forms.py:183
+#: .\apps\app1\forms.py:176
 msgid "Save as new prediction"
 msgstr "Guardar como nueva predicción"
 
@@ -289,7 +295,7 @@ msgstr "Azúcar en sangre > 120 mg/dl"
 
 #: .\apps\app1\models.py:36 .\apps\app1\models.py:42
 #: .\apps\app1\templates\patient_list.html:55
-#: .\apps\app1\templates\prediction.html:85
+#: .\apps\app1\templates\prediction.html:84
 #: .\apps\app1\templates\prediction_list.html:68
 #: .\apps\app1\templates\prediction_to_train_list.html:59
 msgid "Yes"
@@ -358,8 +364,8 @@ msgid ""
 "network since a perceptron is a single neuron model that worked as a "
 "precursor to the larger neural networks."
 msgstr ""
-"El perceptrón multicapa podría ser fácilmente el tipo de red neuronal "
-"mas útil ya que un perceptrón es un modelo de una sola neurona que funcionó como "
+"El perceptrón multicapa podría ser fácilmente el tipo de red neuronal mas "
+"útil ya que un perceptrón es un modelo de una sola neurona que funcionó como "
 "precursor de las redes neuronales más grandes."
 
 #: .\apps\app1\templates\about_ai_models.html:23
@@ -370,9 +376,10 @@ msgid ""
 "universal approximation algorithm."
 msgstr ""
 "Las redes neuronales son poderosas porque tienen la capacidad de aprender la "
-"representación en el conjunto de datos de entrenamiento y relacionarla con la variable de salida "
-"que se va a predecir. Pueden aprender cualquier función de mapeo, lo que las convierte "
-"en un algoritmo de aproximación universal."
+"representación en el conjunto de datos de entrenamiento y relacionarla con "
+"la variable de salida que se va a predecir. Pueden aprender cualquier "
+"función de mapeo, lo que las convierte en un algoritmo de aproximación "
+"universal."
 
 #: .\apps\app1\templates\about_ai_models.html:24
 msgid ""
@@ -387,16 +394,18 @@ msgid ""
 "and can solve problems which are not linearly separable. The major use cases "
 "of MLP are pattern classification, recognition, prediction and approximation."
 msgstr ""
-"El perceptrón multicapa (MLP) consta de tres tipos de capas: la capa de entrada, "
-"la capa de salida y la capa oculta. La capa de entrada toma la señal de entrada para "
-"procesarla. La tarea requerida, como la predicción y la clasificación, la "
-"realiza la capa de salida. Un número de capas ocultas, (número arbitrario) "
-"que se colocan entre la capa de entrada y la de salida que son el motor "
-"computacional del MLP. Los datos fluyen en dirección directa desde la capa de entrada a "
-"la de salida. Las neuronas en el MLP se entrenan con el algoritmo de aprendizaje "
-"de propagación hacia atrás. Los MLP están diseñados para aproximar cualquier función continua "
-"y pueden resolver problemas que no son linealmente separables. Los principales casos de uso "
-"de un MLP son la clasificación, el reconocimiento, la predicción y la aproximación de patrones."
+"El perceptrón multicapa (MLP) consta de tres tipos de capas: la capa de "
+"entrada, la capa de salida y la capa oculta. La capa de entrada toma la "
+"señal de entrada para procesarla. La tarea requerida, como la predicción y "
+"la clasificación, la realiza la capa de salida. Un número de capas ocultas, "
+"(número arbitrario) que se colocan entre la capa de entrada y la de salida "
+"que son el motor computacional del MLP. Los datos fluyen en dirección "
+"directa desde la capa de entrada a la de salida. Las neuronas en el MLP se "
+"entrenan con el algoritmo de aprendizaje de propagación hacia atrás. Los MLP "
+"están diseñados para aproximar cualquier función continua y pueden resolver "
+"problemas que no son linealmente separables. Los principales casos de uso de "
+"un MLP son la clasificación, el reconocimiento, la predicción y la "
+"aproximación de patrones."
 
 #: .\apps\app1\templates\about_ai_models.html:27
 msgid "Ensemble models : Soft Voting Ensemble Models"
@@ -408,9 +417,9 @@ msgid ""
 "models built with a given learning algorithm in order to improve "
 "generalizability / robustness over a single model."
 msgstr ""
-"El objetivo de los métodos de conjunto es combinar las predicciones de "
-"varios estimadores base construidos con un algoritmo de aprendizaje dado "
-"para mejorar la generalizabilidad / robustez sobre un solo estimador."
+"El objetivo del conjunto de models es combinar las predicciones de varios "
+"estimadores base construidos con un algoritmo de aprendizaje dado para "
+"mejorar la generalizabilidad / robustez sobre un solo estimador."
 
 #: .\apps\app1\templates\about_ai_models.html:30
 msgid "Voting Classifier"
@@ -548,8 +557,9 @@ msgid ""
 ") was chosen, based on its accuracy and ability to be constantly trained "
 "with new data. The following 4 models were used to build the "
 msgstr ""
-") fue elegido, en base a su precisión y capacidad de ser constantemente entrenado "
-"con nuevos datos. Los 4 modelos que le siguieron fueron usados para construir el  "
+") fue elegido, en base a su precisión y capacidad de ser constantemente "
+"entrenado con nuevos datos. Los 4 modelos que le siguieron fueron usados "
+"para construir el  "
 
 #: .\apps\app1\templates\about_ai_models.html:57
 msgid "ensemble models"
@@ -561,8 +571,7 @@ msgstr "Paámetros obtenidos para el modelo simple"
 
 #: .\apps\app1\templates\about_ai_models.html:67
 msgid "A weighed average accuracy of 87 %% was obtained with these parameters."
-msgstr ""
-"Con estos parámetros se obtuvo una precisión media ponderada del 87%."
+msgstr "Con estos parámetros se obtuvo una precisión media ponderada del 87%."
 
 #: .\apps\app1\templates\about_ai_models.html:70
 msgid "Obtained parameters for ensemble models"
@@ -584,7 +593,7 @@ msgstr "Conjunto de datos usado"
 
 #: .\apps\app1\templates\about_dataset.html:17
 msgid "UCI Heart Disease Dataset"
-msgstr "Conjunto de datos de enfermedades cardíacas de la UCI"
+msgstr "Conjunto de datos de enfermedad cardíaca de la UCI"
 
 #: .\apps\app1\templates\about_dataset.html:19
 msgid ""
@@ -641,23 +650,23 @@ msgstr "Descripción de características"
 
 #: .\apps\app1\templates\about_dataset.html:70
 msgid " age of the patient in years."
-msgstr "edad del paciente en años"
+msgstr " edad del paciente en años"
 
 #: .\apps\app1\templates\about_dataset.html:71
 msgid " sex of the patient (M: Male, F: Female)."
-msgstr "sexo del paciente (M: Masculino, F: Femenino)."
+msgstr " sexo del paciente (M: Masculino, F: Femenino)."
 
 #: .\apps\app1\templates\about_dataset.html:72
 msgid ""
 " chest pain type (TA: Typical Angina, ATA: Atypical Angina, NAP: Non-Anginal "
 "Pain, ASY: Asymptomatic)."
 msgstr ""
-" tipo de dolor torácico (TA: Angina típica, ATA: Angina "
-"atípica, NAP: dolor no anginoso, ASY: asintomático)."
+" tipo de dolor torácico (TA: Angina típica, ATA: Angina atípica, NAP: dolor "
+"no anginoso, ASY: asintomático)."
 
 #: .\apps\app1\templates\about_dataset.html:73
 msgid " resting blood pressure measured in (mm/Hg)."
-msgstr "presión arterial en reposo medida en: mm/Hg"
+msgstr " presión arterial en reposo medida en: mm/Hg"
 
 #: .\apps\app1\templates\about_dataset.html:74
 msgid " serum cholesterol measured in (mm/Hg)."
@@ -668,8 +677,8 @@ msgid ""
 " fasting blood sugar (1: if FastingBS > 120 mg/dl, 0: if FastingBS <= 120 mg/"
 "dl)."
 msgstr ""
-" azúcar en sangre en ayunas (1: si FastingBS en ayunas > 120 mg/"
-"dl, 0: si FastingBS en ayunas <= 120 mg/dl)."
+" azúcar en sangre en ayunas (1: si FastingBS en ayunas > 120 mg/dl, 0: si "
+"FastingBS en ayunas <= 120 mg/dl)."
 
 #: .\apps\app1\templates\about_dataset.html:76
 msgid ""
@@ -678,10 +687,10 @@ msgid ""
 "mV), LVH: showing probable or definite left ventricular hypertrophy by "
 "Estes' criteria)."
 msgstr ""
-" resultados del electrocardiograma en reposo (Normal: Normal, ST: "
-"con una anomalíade la onda ST-T (inversiones de la onda T y/o elevación o "
-"depresión del ST > 0.05 mV), LVH: muestra hipertrofia ventricular izquierda "
-"probable o definitiva según el criterio de Estes)."
+" resultados del electrocardiograma en reposo (Normal: Normal, ST: con una "
+"anomalíade la onda ST-T (inversiones de la onda T y/o elevación o depresión "
+"del ST > 0.05 mV), LVH: muestra hipertrofia ventricular izquierda probable o "
+"definitiva según el criterio de Estes)."
 
 #: .\apps\app1\templates\about_dataset.html:77
 msgid ""
@@ -697,16 +706,16 @@ msgid ""
 " ST depression. The height difference (in milimiters) between the J point "
 "and the baseline (the PR segment)."
 msgstr ""
-"La diferencia de altura (en milímetros) entre el punto J y la línea base (el "
-"segmento PR)"
+" la diferencia de altura (en milímetros) entre el punto J y la línea base "
+"(el segmento PR)"
 
 #: .\apps\app1\templates\about_dataset.html:80
 msgid ""
 " the slope of the peak exercise ST segment (Up: upsloping, Flat: flat, Down: "
 "downsloping)."
 msgstr ""
-" la pendiente del segmento ST de ejercicio máximo (Up: creciente, "
-"Flat: constante, Down: decreciente)."
+" la pendiente del segmento ST de ejercicio máximo (Up: creciente, Flat: "
+"constante, Down: decreciente)."
 
 #: .\apps\app1\templates\about_dataset.html:81
 msgid " output class (1: heart disease, 0: Normal)."
@@ -718,9 +727,9 @@ msgid ""
 "categorical values, and they need to be transformed into numeric values to "
 "be implemented in machine learning models."
 msgstr ""
-"Como se observa arriba, 5 de las 11 características no son valores "
-"numéricos, son valores categóricos, y necesitan ser transformados en valores "
-"numéricos para ser implementados en los modelos de machine learning."
+"Como se observa en la parte superior, 5 de las 11 características no son "
+"valores numéricos, son valores categóricos, y necesitan ser transformados en "
+"valores numéricos para ser implementados en los modelos de machine learning."
 
 #: .\apps\app1\templates\about_dataset.html:87
 msgid ""
@@ -765,7 +774,7 @@ msgstr ""
 "El resultado de aplicar “one hot encoding” al conjunto de datos original se "
 "verá de la siguente manera:"
 
-#: .\apps\app1\templates\base.html:22
+#: .\apps\app1\templates\base.html:23
 msgid "Hello, world"
 msgstr "Hola, mundo"
 
@@ -778,15 +787,13 @@ msgid "Change Password"
 msgstr "Cambiar contraseña"
 
 #: .\apps\app1\templates\change_user_pass.html:32
-#: .\apps\app1\templates\password_reset_form.html:40
+#: .\apps\app1\templates\password_reset_form.html:43
 msgid "Update Password"
 msgstr "Actualizar contraseña"
 
 #: .\apps\app1\templates\edit_user.html:5
-#, fuzzy
-#| msgid "Edit User Profile"
 msgid "Edit user"
-msgstr "Editar perfil de usuario"
+msgstr "Editar usuario"
 
 #: .\apps\app1\templates\edit_user.html:8
 msgid "Edit User Profile"
@@ -824,12 +831,13 @@ msgid ""
 "decision trees within the model. The more an attribute is used to make key "
 "decisions with decision trees, the higher its relative importance."
 msgstr ""
-"El clasificador XGB nos permite obtener la importancia de cada caracteristica usada "
-"para entrenar el modelo. La importancia de las características proporciona una puntuación que indica "
-"cuán útil o valiosa cada característica fue en la construcción de los "
-"árboles de decisión potenciados dentro de el modelo. Cuanto más se utiliza "
-"un atributo para tomar decisiones clave con árboles de decisión, mayor es su "
-"importancia relativa."
+"El clasificador XGB nos permite obtener la importancia de cada "
+"caracteristica usada para entrenar el modelo. La importancia de las "
+"características proporciona una puntuación que indica cuán útil o valiosa "
+"cada característica fue en la construcción de los árboles de decisión "
+"potenciados dentro de el modelo. Cuanto más se utiliza un atributo para "
+"tomar decisiones clave con árboles de decisión, mayor es su importancia "
+"relativa."
 
 #: .\apps\app1\templates\feature_importance.html:22
 msgid ""
@@ -862,35 +870,36 @@ msgstr ""
 "Las importancias de las características luego se promedian en todos los "
 "árboles de decisión dentro del modelo."
 
-#: .\apps\app1\templates\login.html:4 .\apps\app1\templates\login.html:15
+#: .\apps\app1\templates\login.html:5 .\apps\app1\templates\login.html:17
 msgid "Login"
 msgstr "Iniciar sesión"
 
-#: .\apps\app1\templates\login.html:34
+#: .\apps\app1\templates\login.html:36
 msgid "Please login to your account"
 msgstr "Por favor, ingresa con tu cuenta"
 
-#: .\apps\app1\templates\login.html:39 .\apps\app1\templates\register.html:83
+#: .\apps\app1\templates\login.html:40 .\apps\app1\templates\login.html:41
+#: .\apps\app1\templates\register.html:84
 msgid "Username"
 msgstr "Nombre de usuario"
 
-#: .\apps\app1\templates\login.html:44 .\apps\app1\templates\register.html:85
+#: .\apps\app1\templates\login.html:46 .\apps\app1\templates\register.html:86
 msgid "Password"
 msgstr "Contraseña"
 
-#: .\apps\app1\templates\login.html:48
+#: .\apps\app1\templates\login.html:50
 msgid "Log in"
 msgstr "Iniciar sesión"
 
-#: .\apps\app1\templates\login.html:49
+#: .\apps\app1\templates\login.html:51
 msgid "Forgot password?"
 msgstr "¿Olvidaste tu contraseña?"
 
-#: .\apps\app1\templates\login.html:55
+#: .\apps\app1\templates\login.html:57
 msgid "Don't have an account?"
 msgstr "¿No posees una cuenta?"
 
-#: .\apps\app1\templates\login.html:56
+#: .\apps\app1\templates\login.html:58
 msgid "Create new"
 msgstr "Crear nueva"
 
@@ -898,52 +907,60 @@ msgstr "Crear nueva"
 msgid "Home"
 msgstr "Inicio"
 
-#: .\apps\app1\templates\navbar.html:14
+#: .\apps\app1\templates\navbar.html:15
 msgid "Patients"
 msgstr "Pacientes"
 
-#: .\apps\app1\templates\navbar.html:17
+#: .\apps\app1\templates\navbar.html:18
 msgid "Model Training"
 msgstr "Entrenamiento de modelo"
 
-#: .\apps\app1\templates\navbar.html:22
+#: .\apps\app1\templates\navbar.html:24
 msgid "About"
 msgstr "Acerca de"
 
-#: .\apps\app1\templates\navbar.html:25
+#: .\apps\app1\templates\navbar.html:27
 msgid "ML Models"
 msgstr "Modelos de ML"
 
-#: .\apps\app1\templates\navbar.html:26
+#: .\apps\app1\templates\navbar.html:28
 msgid "Dataset"
 msgstr "Conjunto de Datos"
 
-#: .\apps\app1\templates\navbar.html:27
+#: .\apps\app1\templates\navbar.html:29
 msgid "Feature importance"
 msgstr "Importancia de las características"
 
-#: .\apps\app1\templates\navbar.html:36
+#: .\apps\app1\templates\navbar.html:37
 msgid "Hello"
 msgstr "Hola"
 
-#: .\apps\app1\templates\navbar.html:39
+#: .\apps\app1\templates\navbar.html:41
+msgid "Guest"
+msgstr "Invitado/a"
+
+#: .\apps\app1\templates\navbar.html:46
 msgid "Edit Profile"
 msgstr "Editar perfil"
 
-#: .\apps\app1\templates\navbar.html:40
+#: .\apps\app1\templates\navbar.html:47
 msgid "Logout"
 msgstr "Cerrar sesión"
 
-#: .\apps\app1\templates\password_reset.html:4
-#: .\apps\app1\templates\password_reset_form.html:4
+#: .\apps\app1\templates\navbar.html:51 .\apps\app1\templates\register.html:60
+msgid "Log In"
+msgstr "Iniciar sesión"
+
+#: .\apps\app1\templates\password_reset.html:5
+#: .\apps\app1\templates\password_reset_form.html:5
 msgid "Password reset"
 msgstr "Reestablecer contraseña"
 
-#: .\apps\app1\templates\password_reset.html:15
+#: .\apps\app1\templates\password_reset.html:18
 msgid "Password Reset"
 msgstr "Reestablecer contraseña"
 
-#: .\apps\app1\templates\password_reset.html:34
+#: .\apps\app1\templates\password_reset.html:37
 msgid ""
 "Forgotten your password? Enter your email adress below and we will email "
 "instructions to set a new one."
@@ -951,43 +968,43 @@ msgstr ""
 "¿Olvidaste tu contraseña? Ingresa tu dirección de correo electrónico y te "
 "enviaremos un correo electrónico con instrucciones para restablecerla."
 
-#: .\apps\app1\templates\password_reset.html:40
+#: .\apps\app1\templates\password_reset.html:43
 msgid "Send email"
 msgstr "Enviar email"
 
-#: .\apps\app1\templates\password_reset_done.html:4
+#: .\apps\app1\templates\password_reset_done.html:5
 msgid "Password reset complete"
 msgstr "Reestablecimiento de contraseña completo"
 
-#: .\apps\app1\templates\password_reset_done.html:15
+#: .\apps\app1\templates\password_reset_done.html:18
 msgid "Password Reset Complete"
 msgstr "Reestablecimiento de contraseña completo"
 
-#: .\apps\app1\templates\password_reset_done.html:30
+#: .\apps\app1\templates\password_reset_done.html:33
 msgid "Your password has been set. You may go ahead and log in now."
 msgstr ""
 "Tu contraseña ha sido establecida. Puedes continuar e iniciar sesión ahora."
 
-#: .\apps\app1\templates\password_reset_form.html:15
+#: .\apps\app1\templates\password_reset_form.html:18
 msgid "Enter new password"
 msgstr "Ingresa tu contraseña"
 
-#: .\apps\app1\templates\password_reset_form.html:34
+#: .\apps\app1\templates\password_reset_form.html:37
 msgid ""
 "Please enter yout new password twice so we can verify you typed it correctly."
 msgstr ""
 "Ingresa tu nueva contraseña dos veces para que podamos verificar que la "
 "escribiste correctamente."
 
-#: .\apps\app1\templates\password_reset_sent.html:4
+#: .\apps\app1\templates\password_reset_sent.html:5
 msgid "Password reset sent"
 msgstr "Restablecimiento de contraseña enviado"
 
-#: .\apps\app1\templates\password_reset_sent.html:15
+#: .\apps\app1\templates\password_reset_sent.html:18
 msgid "Password Reset Sent"
 msgstr "Restablecimiento de contraseña enviado"
 
-#: .\apps\app1\templates\password_reset_sent.html:31
+#: .\apps\app1\templates\password_reset_sent.html:34
 msgid ""
 "We have emailed you instructions for setting your password, if an account "
 "exists with the email you provided. You should receive them shortly."
@@ -996,7 +1013,7 @@ msgstr ""
 "contraseña, si existe una cuenta con el correo electrónico proporcionado. "
 "Deberías recibirlas en breve."
 
-#: .\apps\app1\templates\password_reset_sent.html:32
+#: .\apps\app1\templates\password_reset_sent.html:35
 msgid ""
 "If you don't receive an email, please make sure you've entered the address "
 "you registered with and check your spam folder."
@@ -1074,18 +1091,6 @@ msgstr "Lista de pacientes"
 msgid "Filter"
 msgstr "Filtrar"
 
-#: .\apps\app1\templates\patient_list.html:32
-#: .\apps\app1\templates\prediction_list.html:38
-#: .\apps\app1\templates\prediction_to_train_list.html:37
-msgid "Name"
-msgstr "Nombre"
-
-#: .\apps\app1\templates\patient_list.html:33
-#: .\apps\app1\templates\prediction_list.html:39
-#: .\apps\app1\templates\prediction_to_train_list.html:38
-msgid "Last name"
-msgstr "Apellido"
-
 #: .\apps\app1\templates\patient_list.html:35
 msgid "Last Prediction"
 msgstr "Última predicción"
@@ -1093,14 +1098,14 @@ msgstr "Última predicción"
 #: .\apps\app1\templates\patient_list.html:36
 #: .\apps\app1\templates\prediction_list.html:44
 msgid "Probability of HD"
-msgstr "Probabilidad de enfermedad cardiaca"
+msgstr "Probabilidad de enfermedad cardíaca"
 
 #: .\apps\app1\templates\patient_list.html:37
 msgid "List of predictions"
 msgstr "Lista de Predicciones"
 
 #: .\apps\app1\templates\patient_list.html:88
-#: .\apps\app1\templates\prediction.html:103
+#: .\apps\app1\templates\prediction.html:102
 #: .\apps\app1\templates\prediction_create.html:8
 #: .\apps\app1\templates\prediction_create.html:98
 #: .\apps\app1\templates\prediction_edit.html:107
@@ -1122,15 +1127,15 @@ msgstr "Predicción"
 
 #: .\apps\app1\templates\prediction.html:8
 msgid "Heart Disease Prediction"
-msgstr "Predicción de enfermedad cardiaca"
+msgstr "Predicción de enfermedad cardíaca"
 
 #: .\apps\app1\templates\prediction.html:12
 msgid "Please enter details"
 msgstr "Por favor, ingresa los detalles"
 
-#: .\apps\app1\templates\prediction.html:94
+#: .\apps\app1\templates\prediction.html:92
 msgid "Probability of heart disease"
-msgstr "Probabilidad de enfermedad cardiaca"
+msgstr "Probabilidad de enfermedad cardíaca"
 
 #: .\apps\app1\templates\prediction_create.html:5
 msgid "Create prediction"
@@ -1186,8 +1191,8 @@ msgstr "Lista de Predicciones"
 
 #: .\apps\app1\templates\prediction_list.html:42
 #: .\apps\app1\templates\prediction_to_train_list.html:40
-msgid "AI Model"
-msgstr "Modelo de IA"
+msgid "ML Model"
+msgstr "Modelo de ML"
 
 #: .\apps\app1\templates\prediction_list.html:47
 msgid "Add new Prediction"
@@ -1204,7 +1209,9 @@ msgstr "¿Estás seguro de que deseas entrenar el modelo con esta predicción?"
 
 #: .\apps\app1\templates\prediction_to_train_confirm.html:12
 msgid "This action cannot be undone so make sure all details are correct."
-msgstr "Esta acción no se puede deshacer, así que asegúrate que los detalles sean correctos."
+msgstr ""
+"Esta acción no se puede deshacer, así que asegúrate que los detalles sean "
+"correctos."
 
 #: .\apps\app1\templates\prediction_to_train_confirm.html:102
 msgid "Train Model"
@@ -1243,49 +1250,65 @@ msgstr "Lista de predicciones para entrenar"
 msgid "List of Predictions to train"
 msgstr "Lista de predicciones para entrenar"
 
-#: .\apps\app1\templates\register.html:4 .\apps\app1\templates\register.html:15
+#: .\apps\app1\templates\register.html:4 .\apps\app1\templates\register.html:16
 msgid "Register"
 msgstr "Registrar"
 
-#: .\apps\app1\templates\register.html:34
+#: .\apps\app1\templates\register.html:35
 msgid "Register new account"
 msgstr "Registrar nueva cuenta"
 
-#: .\apps\app1\templates\register.html:54
+#: .\apps\app1\templates\register.html:55
 msgid "Create Account"
 msgstr "Crear cuenta"
 
-#: .\apps\app1\templates\register.html:58
+#: .\apps\app1\templates\register.html:59
 msgid "Already have an account?"
 msgstr "¿Ya posees una cuenta?"
 
-#: .\apps\app1\templates\register.html:59
-msgid "Log In"
-msgstr "Iniciar sesión"
-
-#: .\apps\app1\templates\register.html:84
+#: .\apps\app1\templates\register.html:85
 msgid "Email"
 msgstr "Email"
 
-#: .\apps\app1\templates\register.html:86
+#: .\apps\app1\templates\register.html:87
 msgid "Confirm Password"
 msgstr "Confirmar contraseña"
 
-#: .\apps\app1\views.py:51
+#: .\apps\app1\views.py:52
 msgid "Account was created for "
 msgstr "Se creó una cuenta para "
 
-#: .\apps\app1\views.py:68
+#: .\apps\app1\views.py:69
 msgid "Username or Password is incorrect"
 msgstr "Usuario o contraseña incorrectos"
 
-#: .\apps\app1\views.py:84
+#: .\apps\app1\views.py:87
 msgid "Account was updated for "
 msgstr "Se actualizó una cuenta para "
 
-#: .\apps\app1\views.py:374
+#: .\apps\app1\views.py:387
 msgid "Could not add prediction. It was already used to train the model!"
-msgstr "No se puedo añadir la predicción. ¡Ya fue usada previamente para entrenar el modelo!"
+msgstr ""
+"No se puedo añadir la predicción. ¡Ya fue usada previamente para entrenar el "
+"modelo!"
+
+#~ msgid "Name:"
+#~ msgstr "Nombre"
+
+#~ msgid "Id:"
+#~ msgstr "Identificacion"
+
+#~ msgid "Probability > than:"
+#~ msgstr "Probabilidad > a:"
+
+#~ msgid "Last name:"
+#~ msgstr "Apellido"
+
+#~ msgid "Height"
+#~ msgstr "Altura"
+
+#~ msgid "Weight"
+#~ msgstr "Peso"
 
 #~| msgid "Single Model (XGB Classifier)"
 #~ msgid "Model 1 : XGB Classifier"
@@ -1333,9 +1356,3 @@ msgstr "No se puedo añadir la predicción. ¡Ya fue usada previamente para entr
 
 #~ msgid "Hard Voting Ensemble Models"
 #~ msgstr "Conjunto de modelos de votación"
-
-#~ msgid "Height (cm)"
-#~ msgstr "Altura (cm)"
-
-#~ msgid "Weigth (kg)"
-#~ msgstr "Peso (kg)"

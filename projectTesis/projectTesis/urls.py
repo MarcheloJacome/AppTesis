@@ -19,11 +19,13 @@ from django.urls import path, re_path, include
 from django.contrib.auth import views as auth_views
 from django.contrib.staticfiles.storage import staticfiles_storage
 from django.views.generic.base import RedirectView
+from django.conf.urls.i18n import i18n_patterns
 #from django.conf.urls import url
 from apps.app1 import views
-urlpatterns = [
+urlpatterns = []
+urlpatterns += i18n_patterns(
     path('admin/', admin.site.urls),
-    re_path('prediction/', views.prediction, name='Prediction'),
+    path('', views.prediction, name='index'),
     path('register/', views.registerPage, name="register"),
     path('login/', views.loginPage, name="login"),
     path('logout/', views.logoutUser, name="logout"),
@@ -54,4 +56,4 @@ urlpatterns = [
     path('prediction_to_train_confirm/<int:pk>', views.predictionToTrainConfirm, name="prediction_to_train_confirm"),
     path('favicon.ico', RedirectView.as_view(url=staticfiles_storage.url("images/favicon.ico"))),   
     #re_path('predictHD', views.predictHD, name='predictHD'),
-]
+)

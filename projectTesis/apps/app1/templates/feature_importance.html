@@ -9,8 +9,8 @@
 <p class="lead font-italic"></p>
 <style type ="text/css">
     .chartBox{
-        width: 85%;
-        height: 85%;
+        width: 90%;
+        height: 90%;
     }
 </style>
 {% endblock title %}
@@ -28,6 +28,7 @@
 </div>
 {% endblock content%}
 {% block scripts %}
+
 <script>
     $(document).ready(function () {
         var ctx = document.getElementById('myChart').getContext('2d');
@@ -36,7 +37,7 @@
             data: {
                 labels: [{% for lab in labels %}'{{lab}}',{% endfor %}], 
         datasets: [{
-            label: 'Feature Importance %',
+            label: '{% trans "Feature Importance %"%}',
             data: [{% for feature in f_importances %} {{ feature }}, {% endfor %}],
         backgroundColor: [
         'rgba(255, 99, 132, 0.2)',

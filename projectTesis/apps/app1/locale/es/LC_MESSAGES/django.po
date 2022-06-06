@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-06-03 22:53-0500\n"
+"POT-Creation-Date: 2022-06-06 11:14-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,299 +17,6 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-
-#: .\apps\app1\filters.py:11 .\apps\app1\filters.py:18
-#: .\apps\app1\filters.py:61 .\apps\app1\filters.py:72
-#: .\apps\app1\templates\patient_list.html:32
-#: .\apps\app1\templates\prediction_list.html:38
-#: .\apps\app1\templates\prediction_to_train_list.html:37
-msgid "Name"
-msgstr "Nombre"
-
-#: .\apps\app1\filters.py:12 .\apps\app1\filters.py:24
-msgid "Id"
-msgstr "Identificacion"
-
-#: .\apps\app1\filters.py:13 .\apps\app1\filters.py:30
-msgid "Probability > than"
-msgstr "Probabilidad > a"
-
-#: .\apps\app1\filters.py:43 .\apps\app1\filters.py:48
-#: .\apps\app1\filters.py:60 .\apps\app1\filters.py:67
-#: .\apps\app1\templates\prediction_list.html:41
-#: .\apps\app1\templates\prediction_to_train_list.html:39
-msgid "Date"
-msgstr "Fecha"
-
-#: .\apps\app1\filters.py:62 .\apps\app1\filters.py:78
-#: .\apps\app1\templates\patient_list.html:33
-#: .\apps\app1\templates\prediction_list.html:39
-#: .\apps\app1\templates\prediction_to_train_list.html:38
-msgid "Last name"
-msgstr "Apellido"
-
-#: .\apps\app1\forms.py:31 .\apps\app1\forms.py:67
-#: .\apps\app1\templates\register.html:82
-msgid "First Name"
-msgstr "Nombre"
-
-#: .\apps\app1\forms.py:32 .\apps\app1\forms.py:68
-#: .\apps\app1\templates\register.html:83
-msgid "Last Name"
-msgstr "Apellido"
-
-#: .\apps\app1\forms.py:33 .\apps\app1\forms.py:69
-#: .\apps\app1\templates\patient_list.html:34
-msgid "ID Number"
-msgstr "Número de identificación"
-
-#: .\apps\app1\forms.py:34 .\apps\app1\forms.py:70
-msgid "City"
-msgstr "Ciudad"
-
-#: .\apps\app1\forms.py:35 .\apps\app1\forms.py:71
-msgid "Adress"
-msgstr "Dirección"
-
-#: .\apps\app1\forms.py:36 .\apps\app1\forms.py:72
-msgid "Phone Number"
-msgstr "Numero telefónico"
-
-#: .\apps\app1\forms.py:37 .\apps\app1\forms.py:73
-msgid "Height (cm)"
-msgstr "Altura (cm)"
-
-#: .\apps\app1\forms.py:38 .\apps\app1\forms.py:74
-msgid "Weight (kg)"
-msgstr "Peso (kg)"
-
-#: .\apps\app1\forms.py:100 .\apps\app1\forms.py:160 .\apps\app1\forms.py:230
-#: .\apps\app1\forms.py:285 .\apps\app1\forms.py:352 .\apps\app1\forms.py:415
-msgid "Age"
-msgstr "Edad"
-
-#: .\apps\app1\forms.py:101 .\apps\app1\forms.py:161 .\apps\app1\forms.py:231
-#: .\apps\app1\forms.py:286 .\apps\app1\forms.py:353 .\apps\app1\forms.py:416
-msgid "Sex"
-msgstr "Sexo"
-
-#: .\apps\app1\forms.py:102 .\apps\app1\forms.py:162 .\apps\app1\forms.py:232
-#: .\apps\app1\forms.py:287 .\apps\app1\forms.py:354 .\apps\app1\forms.py:417
-msgid "Chest pain type"
-msgstr "Tipo de dolor de pecho"
-
-#: .\apps\app1\forms.py:103 .\apps\app1\forms.py:163 .\apps\app1\forms.py:233
-#: .\apps\app1\forms.py:288 .\apps\app1\forms.py:355 .\apps\app1\forms.py:418
-msgid "Resting blood pressure"
-msgstr "Presión arterial en reposo"
-
-#: .\apps\app1\forms.py:104 .\apps\app1\forms.py:164 .\apps\app1\forms.py:234
-#: .\apps\app1\forms.py:289 .\apps\app1\forms.py:356 .\apps\app1\forms.py:419
-msgid "Serum cholesterol"
-msgstr "Colesterol sérico"
-
-#: .\apps\app1\forms.py:105 .\apps\app1\forms.py:165 .\apps\app1\forms.py:235
-#: .\apps\app1\forms.py:290 .\apps\app1\forms.py:357 .\apps\app1\forms.py:420
-msgid "Fasting blood sugar"
-msgstr "Azúcar en sangre en ayunas"
-
-#: .\apps\app1\forms.py:107 .\apps\app1\forms.py:167 .\apps\app1\forms.py:237
-#: .\apps\app1\forms.py:292 .\apps\app1\forms.py:359 .\apps\app1\forms.py:422
-msgid "Resting electrocardiogram results"
-msgstr "Resultados del electrocardiograma en reposo"
-
-#: .\apps\app1\forms.py:108 .\apps\app1\forms.py:168 .\apps\app1\forms.py:238
-#: .\apps\app1\forms.py:293 .\apps\app1\forms.py:360 .\apps\app1\forms.py:423
-msgid "Maximum heart rate achieved"
-msgstr "Frecuencia cardíaca máxima alcanzada"
-
-#: .\apps\app1\forms.py:109 .\apps\app1\forms.py:169 .\apps\app1\forms.py:239
-#: .\apps\app1\forms.py:294 .\apps\app1\forms.py:361 .\apps\app1\forms.py:424
-msgid "Exercise-induced angina"
-msgstr "Angina de pecho inducida por ejercicio"
-
-#: .\apps\app1\forms.py:110 .\apps\app1\forms.py:170 .\apps\app1\forms.py:240
-#: .\apps\app1\forms.py:295 .\apps\app1\forms.py:362 .\apps\app1\forms.py:425
-msgid "ECG ST Segment"
-msgstr "Segmento ST del electrocardiograma"
-
-#: .\apps\app1\forms.py:111 .\apps\app1\forms.py:171 .\apps\app1\forms.py:241
-#: .\apps\app1\forms.py:296 .\apps\app1\forms.py:363 .\apps\app1\forms.py:426
-msgid "ST Slope"
-msgstr "Pendiente del segmento ST"
-
-#: .\apps\app1\forms.py:112 .\apps\app1\forms.py:172 .\apps\app1\forms.py:242
-#: .\apps\app1\forms.py:297 .\apps\app1\forms.py:364 .\apps\app1\forms.py:427
-#: .\apps\app1\forms.py:464 .\apps\app1\templates\prediction.html:78
-msgid "Heart Disease"
-msgstr "Enfermedad cardíaca"
-
-#: .\apps\app1\forms.py:114 .\apps\app1\forms.py:174 .\apps\app1\forms.py:244
-#: .\apps\app1\forms.py:299
-msgid "Probability of heart disease (%)"
-msgstr "Probabilidad de enfermedad cardíaca (%)"
-
-#: .\apps\app1\forms.py:115 .\apps\app1\forms.py:175 .\apps\app1\forms.py:245
-#: .\apps\app1\forms.py:300 .\apps\app1\forms.py:365 .\apps\app1\forms.py:428
-msgid "Machine learning model"
-msgstr "Modelo de machine learning"
-
-#: .\apps\app1\forms.py:118 .\apps\app1\forms.py:179 .\apps\app1\forms.py:248
-#: .\apps\app1\forms.py:303 .\apps\app1\forms.py:368 .\apps\app1\forms.py:431
-msgid "Age of the patient in years"
-msgstr "Edad del paciente en años"
-
-#: .\apps\app1\forms.py:119 .\apps\app1\forms.py:180 .\apps\app1\forms.py:249
-#: .\apps\app1\forms.py:304 .\apps\app1\forms.py:369 .\apps\app1\forms.py:432
-msgid "Sex of the patient"
-msgstr "Sexo del paciente"
-
-#: .\apps\app1\forms.py:121 .\apps\app1\forms.py:182 .\apps\app1\forms.py:251
-#: .\apps\app1\forms.py:306 .\apps\app1\forms.py:371 .\apps\app1\forms.py:434
-msgid "Type of chest pain"
-msgstr "Tipo de dolor de pecho"
-
-#: .\apps\app1\forms.py:123 .\apps\app1\forms.py:184 .\apps\app1\forms.py:253
-#: .\apps\app1\forms.py:308 .\apps\app1\forms.py:373 .\apps\app1\forms.py:436
-msgid "Resting blood pressure measured in: mm/Hg"
-msgstr "Presión arterial en reposo medida en: mm/Hg"
-
-#: .\apps\app1\forms.py:125 .\apps\app1\forms.py:186 .\apps\app1\forms.py:255
-#: .\apps\app1\forms.py:310 .\apps\app1\forms.py:375 .\apps\app1\forms.py:438
-msgid "Serum cholesterol measured in mm/dl"
-msgstr "Colesterol sérico medido en mm/dl"
-
-#: .\apps\app1\forms.py:127 .\apps\app1\forms.py:188 .\apps\app1\forms.py:257
-#: .\apps\app1\forms.py:312 .\apps\app1\forms.py:377 .\apps\app1\forms.py:440
-msgid "Fasting blood sugar, wheter it is greater than 120 mg/dl or not"
-msgstr "Azúcar en sangre en ayunas, si es superior a 120 mg/dl o no"
-
-#: .\apps\app1\forms.py:129 .\apps\app1\forms.py:190 .\apps\app1\forms.py:259
-#: .\apps\app1\forms.py:314 .\apps\app1\forms.py:379 .\apps\app1\forms.py:442
-msgid ""
-"Resting electrocardiogram results: \n"
-"Normal: Normal ECG\n"
-"ST: Having ST-T wave abnormality (T wave inversions and or ST elevation or "
-"depression of > 0.05 mV)\n"
-"LVH: Showing probable or definite left ventricular hypertrophy by Estes' "
-"criteria"
-msgstr ""
-"Resultados del electrocardiograma en reposo: \n"
-"Normal: Electrocardiograma normal\n"
-"ST: Con una anomalía de la onda ST-T (inversiones de la onda T o elevación "
-"depresión del ST > 0,05 mV)\n"
-"LVH: Muestra hipertrofia ventricular izquierda probable o definitiva según "
-"el criterio de Estes"
-
-#: .\apps\app1\forms.py:131 .\apps\app1\forms.py:192 .\apps\app1\forms.py:261
-#: .\apps\app1\forms.py:316 .\apps\app1\forms.py:381 .\apps\app1\forms.py:444
-msgid "Maximum amount of heart beats achieved per minute under maximum stress"
-msgstr "Cantidad máxima de latidos cardíacos por minuto bajo estrés máximo"
-
-#: .\apps\app1\forms.py:133 .\apps\app1\forms.py:194 .\apps\app1\forms.py:263
-#: .\apps\app1\forms.py:318 .\apps\app1\forms.py:383 .\apps\app1\forms.py:446
-msgid "Wheter the patient has exercise-induced angina or not"
-msgstr "Si el paciente tiene angina de pecho inducida por ejercicio o no"
-
-#: .\apps\app1\forms.py:135 .\apps\app1\forms.py:196 .\apps\app1\forms.py:265
-#: .\apps\app1\forms.py:320 .\apps\app1\forms.py:385 .\apps\app1\forms.py:448
-msgid ""
-"ST depression.\n"
-"The height difference (in milimiters) between the J point and the baseline "
-"(the PR segment)"
-msgstr ""
-"Depresión del segmento ST.\n"
-"La diferencia de altura (en milímetros) entre el punto J y la línea base (el "
-"segmento PR)"
-
-#: .\apps\app1\forms.py:137 .\apps\app1\forms.py:198 .\apps\app1\forms.py:267
-#: .\apps\app1\forms.py:322 .\apps\app1\forms.py:387 .\apps\app1\forms.py:450
-msgid ""
-"The slope of the peak exercise ST segment:\n"
-"UP: Upslowing\n"
-"FLAT: Flat\n"
-"DOWN: Downslowing"
-msgstr ""
-"La pendiente del segmento ST de ejercicio máximo:\n"
-"ARRIBA: Creciente\n"
-"PLANO: Constante\n"
-"ABAJO: Decreciente"
-
-#: .\apps\app1\forms.py:139 .\apps\app1\forms.py:200 .\apps\app1\forms.py:269
-#: .\apps\app1\forms.py:324 .\apps\app1\forms.py:389 .\apps\app1\forms.py:452
-msgid "Machine learning model to use for prediction"
-msgstr "Modelo de machine learning a utilizar para la predicción"
-
-#: .\apps\app1\forms.py:159 .\apps\app1\forms.py:229 .\apps\app1\forms.py:351
-#: .\apps\app1\forms.py:414
-msgid "Creation date"
-msgstr "Fecha de creación"
-
-#: .\apps\app1\forms.py:176
-msgid "Save as new prediction"
-msgstr "Guardar como nueva predicción"
-
-#: .\apps\app1\models.py:6
-msgid "Female"
-msgstr "Femenino"
-
-#: .\apps\app1\models.py:7
-msgid "Male"
-msgstr "Masculino"
-
-#: .\apps\app1\models.py:11
-msgid "Asymptomatic"
-msgstr "Asintomático"
-
-#: .\apps\app1\models.py:12
-msgid "Atypical Angina"
-msgstr "Angina atípica"
-
-#: .\apps\app1\models.py:13
-msgid "Non-Anginal Pain"
-msgstr "Dolor no anginoso"
-
-#: .\apps\app1\models.py:14
-msgid "Typical Angina"
-msgstr "Angina típica"
-
-#: .\apps\app1\models.py:24
-msgid "DOWN"
-msgstr "ABAJO"
-
-#: .\apps\app1\models.py:25
-msgid "FLAT"
-msgstr "PLANO"
-
-#: .\apps\app1\models.py:26
-msgid "UP"
-msgstr "ARRIBA"
-
-#: .\apps\app1\models.py:30
-msgid "Blood sugar <= 120 mg/dl"
-msgstr "Azúcar en sangre <= 120 mg/dl"
-
-#: .\apps\app1\models.py:31
-msgid "Blood sugar > 120 mg/dl"
-msgstr "Azúcar en sangre > 120 mg/dl"
-
-#: .\apps\app1\models.py:36 .\apps\app1\models.py:42
-#: .\apps\app1\templates\patient_list.html:55
-#: .\apps\app1\templates\prediction.html:84
-#: .\apps\app1\templates\prediction_list.html:68
-#: .\apps\app1\templates\prediction_to_train_list.html:59
-msgid "Yes"
-msgstr "Sí"
-
-#: .\apps\app1\models.py:46 .\apps\app1\templates\prediction_list.html:61
-#: .\apps\app1\templates\prediction_to_train_list.html:52
-msgid "Single Model"
-msgstr "Modelo Simple"
-
-#: .\apps\app1\models.py:47 .\apps\app1\templates\prediction_list.html:63
-#: .\apps\app1\templates\prediction_to_train_list.html:54
-msgid "Ensemble Models"
-msgstr "Conjunto de Modelos"
 
 #: .\apps\app1\templates\about_ai_models.html:6
 msgid "About ML Models"
@@ -570,6 +277,9 @@ msgid "Obtained parameters for single model"
 msgstr "Paámetros obtenidos para el modelo simple"
 
 #: .\apps\app1\templates\about_ai_models.html:67
+#, fuzzy, python-format
+#| msgid ""
+#| "A weighed average accuracy of 87 %% was obtained with these parameters."
 msgid "A weighed average accuracy of 87 %% was obtained with these parameters."
 msgstr "Con estos parámetros se obtuvo una precisión media ponderada del 87%."
 
@@ -578,10 +288,13 @@ msgid "Obtained parameters for ensemble models"
 msgstr "Paámetros obtenidos para el conjunto de modelos"
 
 #: .\apps\app1\templates\about_ai_models.html:75
+#, fuzzy, python-format
+#| msgid ""
+#| "A weighed average accuracy of 87.51 %% was obtained with these parameters."
 msgid ""
 "A weighed average accuracy of 87.51 %% was obtained with these parameters."
 msgstr ""
-"Con estos parámetros se obtuvo una precisión media ponderada del 87,51%."
+"Con estos parámetros se obtuvo una precisión media ponderada del 87.51%."
 
 #: .\apps\app1\templates\about_dataset.html:5
 msgid "About Dataset"
@@ -774,9 +487,13 @@ msgstr ""
 "El resultado de aplicar “one hot encoding” al conjunto de datos original se "
 "verá de la siguente manera:"
 
-#: .\apps\app1\templates\base.html:23
+#: .\apps\app1\templates\base.html:26
 msgid "Hello, world"
 msgstr "Hola, mundo"
+
+#: .\apps\app1\templates\base_user.html:15 .\apps\app1\templates\login.html:6
+msgid "Login"
+msgstr "Iniciar sesión"
 
 #: .\apps\app1\templates\change_user_pass.html:5
 msgid "Change password"
@@ -787,7 +504,7 @@ msgid "Change Password"
 msgstr "Cambiar contraseña"
 
 #: .\apps\app1\templates\change_user_pass.html:32
-#: .\apps\app1\templates\password_reset_form.html:43
+#: .\apps\app1\templates\password_reset_form.html:23
 msgid "Update Password"
 msgstr "Actualizar contraseña"
 
@@ -870,36 +587,36 @@ msgstr ""
 "Las importancias de las características luego se promedian en todos los "
 "árboles de decisión dentro del modelo."
 
-#: .\apps\app1\templates\login.html:5 .\apps\app1\templates\login.html:17
-msgid "Login"
-msgstr "Iniciar sesión"
+#: .\apps\app1\templates\feature_importance.html:40
+msgid "Feature Importance %%"
+msgstr "Importancia de característica %"
 
-#: .\apps\app1\templates\login.html:36
+#: .\apps\app1\templates\login.html:18
 msgid "Please login to your account"
 msgstr "Por favor, ingresa con tu cuenta"
 
-#: .\apps\app1\templates\login.html:40 .\apps\app1\templates\login.html:41
-#: .\apps\app1\templates\register.html:84
+#: .\apps\app1\templates\login.html:20 .\apps\app1\templates\login.html:22
+#: .\apps\app1\templates\register.html:64
 msgid "Username"
 msgstr "Nombre de usuario"
 
-#: .\apps\app1\templates\login.html:46 .\apps\app1\templates\register.html:86
+#: .\apps\app1\templates\login.html:26 .\apps\app1\templates\register.html:66
 msgid "Password"
 msgstr "Contraseña"
 
-#: .\apps\app1\templates\login.html:50
+#: .\apps\app1\templates\login.html:29
 msgid "Log in"
 msgstr "Iniciar sesión"
 
-#: .\apps\app1\templates\login.html:51
+#: .\apps\app1\templates\login.html:30
 msgid "Forgot password?"
 msgstr "¿Olvidaste tu contraseña?"
 
-#: .\apps\app1\templates\login.html:57
+#: .\apps\app1\templates\login.html:36
 msgid "Don't have an account?"
 msgstr "¿No posees una cuenta?"
 
-#: .\apps\app1\templates\login.html:58
+#: .\apps\app1\templates\login.html:37
 msgid "Create new"
 msgstr "Crear nueva"
 
@@ -947,20 +664,18 @@ msgstr "Editar perfil"
 msgid "Logout"
 msgstr "Cerrar sesión"
 
-#: .\apps\app1\templates\navbar.html:51 .\apps\app1\templates\register.html:60
+#: .\apps\app1\templates\navbar.html:51
+#: .\apps\app1\templates\password_reset_done.html:20
+#: .\apps\app1\templates\register.html:43
 msgid "Log In"
 msgstr "Iniciar sesión"
 
-#: .\apps\app1\templates\password_reset.html:5
-#: .\apps\app1\templates\password_reset_form.html:5
+#: .\apps\app1\templates\password_reset.html:6
+#: .\apps\app1\templates\password_reset_form.html:6
 msgid "Password reset"
 msgstr "Reestablecer contraseña"
 
-#: .\apps\app1\templates\password_reset.html:18
-msgid "Password Reset"
-msgstr "Reestablecer contraseña"
-
-#: .\apps\app1\templates\password_reset.html:37
+#: .\apps\app1\templates\password_reset.html:21
 msgid ""
 "Forgotten your password? Enter your email adress below and we will email "
 "instructions to set a new one."
@@ -968,43 +683,31 @@ msgstr ""
 "¿Olvidaste tu contraseña? Ingresa tu dirección de correo electrónico y te "
 "enviaremos un correo electrónico con instrucciones para restablecerla."
 
-#: .\apps\app1\templates\password_reset.html:43
+#: .\apps\app1\templates\password_reset.html:27
 msgid "Send email"
 msgstr "Enviar email"
 
-#: .\apps\app1\templates\password_reset_done.html:5
+#: .\apps\app1\templates\password_reset_done.html:6
 msgid "Password reset complete"
 msgstr "Reestablecimiento de contraseña completo"
 
-#: .\apps\app1\templates\password_reset_done.html:18
-msgid "Password Reset Complete"
-msgstr "Reestablecimiento de contraseña completo"
-
-#: .\apps\app1\templates\password_reset_done.html:33
+#: .\apps\app1\templates\password_reset_done.html:17
 msgid "Your password has been set. You may go ahead and log in now."
 msgstr ""
 "Tu contraseña ha sido establecida. Puedes continuar e iniciar sesión ahora."
 
 #: .\apps\app1\templates\password_reset_form.html:18
-msgid "Enter new password"
-msgstr "Ingresa tu contraseña"
-
-#: .\apps\app1\templates\password_reset_form.html:37
 msgid ""
 "Please enter yout new password twice so we can verify you typed it correctly."
 msgstr ""
 "Ingresa tu nueva contraseña dos veces para que podamos verificar que la "
 "escribiste correctamente."
 
-#: .\apps\app1\templates\password_reset_sent.html:5
+#: .\apps\app1\templates\password_reset_sent.html:6
 msgid "Password reset sent"
 msgstr "Restablecimiento de contraseña enviado"
 
-#: .\apps\app1\templates\password_reset_sent.html:18
-msgid "Password Reset Sent"
-msgstr "Restablecimiento de contraseña enviado"
-
-#: .\apps\app1\templates\password_reset_sent.html:34
+#: .\apps\app1\templates\password_reset_sent.html:16
 msgid ""
 "We have emailed you instructions for setting your password, if an account "
 "exists with the email you provided. You should receive them shortly."
@@ -1013,7 +716,7 @@ msgstr ""
 "contraseña, si existe una cuenta con el correo electrónico proporcionado. "
 "Deberías recibirlas en breve."
 
-#: .\apps\app1\templates\password_reset_sent.html:35
+#: .\apps\app1\templates\password_reset_sent.html:17
 msgid ""
 "If you don't receive an email, please make sure you've entered the address "
 "you registered with and check your spam folder."
@@ -1022,275 +725,457 @@ msgstr ""
 "dirección de correo con la que te registraste y revisa tu carpeta de correo "
 "no deseado."
 
-#: .\apps\app1\templates\patient_create.html:5
-msgid "Create patient"
-msgstr "Crear paciente"
-
-#: .\apps\app1\templates\patient_create.html:8
-#: .\apps\app1\templates\patient_list.html:41
-msgid "Add new Patient"
-msgstr "Añadir nuevo paciente"
-
-#: .\apps\app1\templates\patient_create.html:19
-#: .\apps\app1\templates\patient_detail.html:18
-#: .\apps\app1\templates\patient_edit.html:19
-#: .\apps\app1\templates\prediction_detail.html:32
-#: .\apps\app1\templates\prediction_edit.html:24
-#: .\apps\app1\templates\prediction_to_train_confirm.html:25
-#: .\apps\app1\templates\prediction_to_train_detail.html:30
-#: .\apps\app1\templates\prediction_to_train_edit.html:23
-msgid "Details"
-msgstr "Detalles"
-
-#: .\apps\app1\templates\patient_create.html:52
-msgid "Add Patient"
-msgstr "Añadir Paciente"
-
-#: .\apps\app1\templates\patient_detail.html:5
-msgid "Patient details"
-msgstr "Detalles de paciente"
-
-#: .\apps\app1\templates\patient_detail.html:8
-msgid "Patient Information"
-msgstr "Información del paciente"
-
-#: .\apps\app1\templates\patient_detail.html:62
-#: .\apps\app1\templates\patient_edit.html:61
-#: .\apps\app1\templates\prediction_list.html:23
-#: .\apps\app1\templates\prediction_to_train_list.html:25
-msgid "Back to Patients"
-msgstr "Volver a Pacientes"
-
-#: .\apps\app1\templates\patient_detail.html:68
-msgid "Check Predictions"
-msgstr "Revisar predicciones"
-
-#: .\apps\app1\templates\patient_edit.html:5
-msgid "Edit patient"
-msgstr "Editar paciente"
-
-#: .\apps\app1\templates\patient_edit.html:8
-msgid "Edit Patient"
-msgstr "Editar paciente"
-
-#: .\apps\app1\templates\patient_edit.html:66
-msgid "Update Patient"
-msgstr "Actualizar paciente"
-
-#: .\apps\app1\templates\patient_list.html:5
-msgid "Patients list"
-msgstr "Lista de pacientes"
-
-#: .\apps\app1\templates\patient_list.html:8
-msgid "Patients List"
-msgstr "Lista de pacientes"
-
-#: .\apps\app1\templates\patient_list.html:21
-#: .\apps\app1\templates\prediction_list.html:17
-#: .\apps\app1\templates\prediction_to_train_list.html:19
-msgid "Filter"
-msgstr "Filtrar"
-
-#: .\apps\app1\templates\patient_list.html:35
-msgid "Last Prediction"
-msgstr "Última predicción"
-
-#: .\apps\app1\templates\patient_list.html:36
-#: .\apps\app1\templates\prediction_list.html:44
-msgid "Probability of HD"
-msgstr "Probabilidad de enfermedad cardíaca"
-
-#: .\apps\app1\templates\patient_list.html:37
-msgid "List of predictions"
-msgstr "Lista de Predicciones"
-
-#: .\apps\app1\templates\patient_list.html:88
-#: .\apps\app1\templates\prediction.html:102
-#: .\apps\app1\templates\prediction_create.html:8
-#: .\apps\app1\templates\prediction_create.html:98
-#: .\apps\app1\templates\prediction_edit.html:107
-msgid "Make Prediction"
-msgstr "Realizar predicción"
-
-#: .\apps\app1\templates\prediction.html:5
-#: .\apps\app1\templates\prediction.html:72
-#: .\apps\app1\templates\prediction_create.html:74
-#: .\apps\app1\templates\prediction_detail.html:87
-#: .\apps\app1\templates\prediction_edit.html:83
-#: .\apps\app1\templates\prediction_list.html:43
-#: .\apps\app1\templates\prediction_to_train_confirm.html:80
-#: .\apps\app1\templates\prediction_to_train_detail.html:84
-#: .\apps\app1\templates\prediction_to_train_edit.html:78
-#: .\apps\app1\templates\prediction_to_train_list.html:41
-msgid "Prediction"
-msgstr "Predicción"
-
-#: .\apps\app1\templates\prediction.html:8
-msgid "Heart Disease Prediction"
-msgstr "Predicción de enfermedad cardíaca"
-
-#: .\apps\app1\templates\prediction.html:12
-msgid "Please enter details"
-msgstr "Por favor, ingresa los detalles"
-
-#: .\apps\app1\templates\prediction.html:92
-msgid "Probability of heart disease"
-msgstr "Probabilidad de enfermedad cardíaca"
-
-#: .\apps\app1\templates\prediction_create.html:5
-msgid "Create prediction"
-msgstr "Crear predicción"
-
-#: .\apps\app1\templates\prediction_create.html:14
-#: .\apps\app1\templates\prediction_detail.html:15
-#: .\apps\app1\templates\prediction_edit.html:14
-#: .\apps\app1\templates\prediction_list.html:30
-#: .\apps\app1\templates\prediction_to_train_confirm.html:15
-#: .\apps\app1\templates\prediction_to_train_detail.html:13
-#: .\apps\app1\templates\prediction_to_train_edit.html:13
-msgid "Patient"
-msgstr "Paciente"
-
-#: .\apps\app1\templates\prediction_create.html:93
-#: .\apps\app1\templates\prediction_detail.html:108
-#: .\apps\app1\templates\prediction_edit.html:102
-#: .\apps\app1\templates\prediction_to_train_confirm.html:97
-#: .\apps\app1\templates\prediction_to_train_detail.html:100
-#: .\apps\app1\templates\prediction_to_train_edit.html:94
-msgid "Back to list"
-msgstr "Volver a la lista"
-
-#: .\apps\app1\templates\prediction_detail.html:5
-msgid "Prediction detail"
-msgstr "Detalles de predicción"
-
-#: .\apps\app1\templates\prediction_detail.html:8
-msgid "Prediction Detail"
-msgstr "Detalles de predicción"
-
-#: .\apps\app1\templates\prediction_detail.html:25
-#: .\apps\app1\templates\prediction_detail.html:114
-msgid "Add prediction to model training"
-msgstr "Añadir predicción a entrenamiento del modelo"
-
-#: .\apps\app1\templates\prediction_edit.html:5
-msgid "Edit prediction"
-msgstr "Editar predicción"
-
-#: .\apps\app1\templates\prediction_edit.html:8
-msgid "Edit Prediction"
-msgstr "Editar predicción"
-
-#: .\apps\app1\templates\prediction_list.html:5
-msgid "Predictions list"
-msgstr "Lista de predicciones"
-
-#: .\apps\app1\templates\prediction_list.html:8
-msgid "List of Predictions"
-msgstr "Lista de Predicciones"
-
-#: .\apps\app1\templates\prediction_list.html:42
-#: .\apps\app1\templates\prediction_to_train_list.html:40
-msgid "ML Model"
-msgstr "Modelo de ML"
-
-#: .\apps\app1\templates\prediction_list.html:47
-msgid "Add new Prediction"
-msgstr "Añadir nueva predicción"
-
-#: .\apps\app1\templates\prediction_to_train_confirm.html:5
-#: .\apps\app1\templates\prediction_to_train_confirm.html:8
-msgid "Confirm prediction to train"
-msgstr "Confirmar prediccion para entrenar"
-
-#: .\apps\app1\templates\prediction_to_train_confirm.html:11
-msgid "Are you sure youn want to train the model with this prediction?"
-msgstr "¿Estás seguro de que deseas entrenar el modelo con esta predicción?"
-
-#: .\apps\app1\templates\prediction_to_train_confirm.html:12
-msgid "This action cannot be undone so make sure all details are correct."
-msgstr ""
-"Esta acción no se puede deshacer, así que asegúrate que los detalles sean "
-"correctos."
-
-#: .\apps\app1\templates\prediction_to_train_confirm.html:102
-msgid "Train Model"
-msgstr "Entrenar Modelo"
-
-#: .\apps\app1\templates\prediction_to_train_detail.html:5
-msgid "Prediction to train detail"
-msgstr "Detalles de predicción para entrenamiento"
-
-#: .\apps\app1\templates\prediction_to_train_detail.html:8
-msgid "Prediction to train Detail"
-msgstr "Detalles de predicción para entrenamiento"
-
-#: .\apps\app1\templates\prediction_to_train_detail.html:23
-#: .\apps\app1\templates\prediction_to_train_detail.html:106
-msgid "Train Model with this prediction"
-msgstr "Entrenar modelo con esta predicción"
-
-#: .\apps\app1\templates\prediction_to_train_edit.html:5
-msgid "Edit prediction to train"
-msgstr "Editar predicción para entrenameinto"
-
-#: .\apps\app1\templates\prediction_to_train_edit.html:8
-msgid "Edit Prediction to Train"
-msgstr "Editar predicción para entrenameinto"
-
-#: .\apps\app1\templates\prediction_to_train_edit.html:99
-msgid "Save Prediction"
-msgstr "Guardar predicción"
-
-#: .\apps\app1\templates\prediction_to_train_list.html:5
-msgid "Predictions to train list"
-msgstr "Lista de predicciones para entrenar"
-
-#: .\apps\app1\templates\prediction_to_train_list.html:8
-msgid "List of Predictions to train"
-msgstr "Lista de predicciones para entrenar"
-
-#: .\apps\app1\templates\register.html:4 .\apps\app1\templates\register.html:16
+#: .\apps\app1\templates\register.html:6
 msgid "Register"
 msgstr "Registrar"
 
-#: .\apps\app1\templates\register.html:35
+#: .\apps\app1\templates\register.html:18
 msgid "Register new account"
 msgstr "Registrar nueva cuenta"
 
-#: .\apps\app1\templates\register.html:55
+#: .\apps\app1\templates\register.html:38
 msgid "Create Account"
 msgstr "Crear cuenta"
 
-#: .\apps\app1\templates\register.html:59
+#: .\apps\app1\templates\register.html:42
 msgid "Already have an account?"
 msgstr "¿Ya posees una cuenta?"
 
-#: .\apps\app1\templates\register.html:85
+#: .\apps\app1\templates\register.html:62
+msgid "First Name"
+msgstr "Nombre"
+
+#: .\apps\app1\templates\register.html:63
+msgid "Last Name"
+msgstr "Apellido"
+
+#: .\apps\app1\templates\register.html:65
 msgid "Email"
 msgstr "Email"
 
-#: .\apps\app1\templates\register.html:87
+#: .\apps\app1\templates\register.html:67
 msgid "Confirm Password"
 msgstr "Confirmar contraseña"
 
-#: .\apps\app1\views.py:52
+#: .\apps\app1\views.py:24
 msgid "Account was created for "
 msgstr "Se creó una cuenta para "
 
-#: .\apps\app1\views.py:69
+#: .\apps\app1\views.py:41
 msgid "Username or Password is incorrect"
 msgstr "Usuario o contraseña incorrectos"
 
-#: .\apps\app1\views.py:87
+#: .\apps\app1\views.py:59
 msgid "Account was updated for "
 msgstr "Se actualizó una cuenta para "
 
-#: .\apps\app1\views.py:387
-msgid "Could not add prediction. It was already used to train the model!"
-msgstr ""
-"No se puedo añadir la predicción. ¡Ya fue usada previamente para entrenar el "
-"modelo!"
+#: .\apps\app1\views.py:81
+msgid "Sex_F"
+msgstr "Sexo (F)"
+
+#: .\apps\app1\views.py:81
+msgid "Sex_M"
+msgstr "Sexo (M)"
+
+#: .\apps\app1\views.py:82
+msgid "ChestPainType_ASY"
+msgstr "Dolor torácico (Asintomático)"
+
+#: .\apps\app1\views.py:82
+msgid "ChestPainType_ATA"
+msgstr "Dolor torácico (Angina atípica)"
+
+#: .\apps\app1\views.py:82
+msgid "ChestPainType_NAP"
+msgstr "Dolor torácico (No anginoso)"
+
+#: .\apps\app1\views.py:82
+msgid "ChestPainType_TA"
+msgstr "Dolor torácico (Angina típica)"
+
+#: .\apps\app1\views.py:82
+msgid "RestingECG_LVH"
+msgstr "Electrocardiograma en reposo (LVH)"
+
+#: .\apps\app1\views.py:83
+msgid "RestingECG_Normal"
+msgstr "Electrocardiograma en reposo (Normal)"
+
+#: .\apps\app1\views.py:83
+msgid "RestingECG_ST"
+msgstr "Electrocardiograma en reposo (ST)"
+
+#: .\apps\app1\views.py:84
+msgid "ExerciseAngina_N"
+msgstr "Angina por ejercicio (No)"
+
+#: .\apps\app1\views.py:84
+msgid "ExerciseAngina_Y"
+msgstr "Angina por ejercicio (Sí)"
+
+#: .\apps\app1\views.py:85
+msgid "ST_Slope_Down"
+msgstr "Pendiente ST (Abajo)"
+
+#: .\apps\app1\views.py:85
+msgid "ST_Slope_Flat"
+msgstr "Pendiente ST (Plana)"
+
+#: .\apps\app1\views.py:85
+msgid "ST_Slope_Up"
+msgstr "Pendiente ST (Arriba)"
+
+#: .\apps\app1\views.py:86
+msgid "Age"
+msgstr "Edad"
+
+#: .\apps\app1\views.py:86
+msgid "RestingBP"
+msgstr "Presion arterial"
+
+#: .\apps\app1\views.py:86
+msgid "Cholesterol"
+msgstr "Colesterol"
+
+#: .\apps\app1\views.py:87
+msgid "FastingBS"
+msgstr "Glucemia ayunas"
+
+#: .\apps\app1\views.py:87
+msgid "MaxHR"
+msgstr "Ritmo cardíaco máximo"
+
+#: .\apps\app1\views.py:87
+msgid "Oldpeak"
+msgstr "Depresión segmento ST"
+
+#~ msgid "Name"
+#~ msgstr "Nombre"
+
+#~ msgid "Id"
+#~ msgstr "Identificacion"
+
+#~ msgid "Probability > than"
+#~ msgstr "Probabilidad > a"
+
+#~ msgid "Date"
+#~ msgstr "Fecha"
+
+#~ msgid "Last name"
+#~ msgstr "Apellido"
+
+#~ msgid "ID Number"
+#~ msgstr "Número de identificación"
+
+#~ msgid "City"
+#~ msgstr "Ciudad"
+
+#~ msgid "Adress"
+#~ msgstr "Dirección"
+
+#~ msgid "Phone Number"
+#~ msgstr "Numero telefónico"
+
+#~ msgid "Height (cm)"
+#~ msgstr "Altura (cm)"
+
+#~ msgid "Weight (kg)"
+#~ msgstr "Peso (kg)"
+
+#~ msgid "Sex"
+#~ msgstr "Sexo"
+
+#~ msgid "Resting blood pressure"
+#~ msgstr "Presión arterial en reposo"
+
+#~ msgid "Fasting blood sugar"
+#~ msgstr "Azúcar en sangre en ayunas"
+
+#~ msgid "Resting electrocardiogram results"
+#~ msgstr "Resultados del electrocardiograma en reposo"
+
+#~ msgid "Maximum heart rate achieved"
+#~ msgstr "Frecuencia cardíaca máxima alcanzada"
+
+#~ msgid "ECG ST Segment"
+#~ msgstr "Segmento ST del electrocardiograma"
+
+#~ msgid "Heart Disease"
+#~ msgstr "Enfermedad cardíaca"
+
+#~ msgid "Probability of heart disease (%)"
+#~ msgstr "Probabilidad de enfermedad cardíaca (%)"
+
+#~ msgid "Machine learning model"
+#~ msgstr "Modelo de machine learning"
+
+#~ msgid "Age of the patient in years"
+#~ msgstr "Edad del paciente en años"
+
+#~ msgid "Sex of the patient"
+#~ msgstr "Sexo del paciente"
+
+#~ msgid "Type of chest pain"
+#~ msgstr "Tipo de dolor de pecho"
+
+#~ msgid "Resting blood pressure measured in: mm/Hg"
+#~ msgstr "Presión arterial en reposo medida en: mm/Hg"
+
+#~ msgid "Serum cholesterol measured in mm/dl"
+#~ msgstr "Colesterol sérico medido en mm/dl"
+
+#~ msgid "Fasting blood sugar, wheter it is greater than 120 mg/dl or not"
+#~ msgstr "Azúcar en sangre en ayunas, si es superior a 120 mg/dl o no"
+
+#~ msgid ""
+#~ "Resting electrocardiogram results: \n"
+#~ "Normal: Normal ECG\n"
+#~ "ST: Having ST-T wave abnormality (T wave inversions and or ST elevation "
+#~ "or depression of > 0.05 mV)\n"
+#~ "LVH: Showing probable or definite left ventricular hypertrophy by Estes' "
+#~ "criteria"
+#~ msgstr ""
+#~ "Resultados del electrocardiograma en reposo: \n"
+#~ "Normal: Electrocardiograma normal\n"
+#~ "ST: Con una anomalía de la onda ST-T (inversiones de la onda T o "
+#~ "elevación depresión del ST > 0,05 mV)\n"
+#~ "LVH: Muestra hipertrofia ventricular izquierda probable o definitiva "
+#~ "según el criterio de Estes"
+
+#~ msgid ""
+#~ "Maximum amount of heart beats achieved per minute under maximum stress"
+#~ msgstr "Cantidad máxima de latidos cardíacos por minuto bajo estrés máximo"
+
+#~ msgid "Wheter the patient has exercise-induced angina or not"
+#~ msgstr "Si el paciente tiene angina de pecho inducida por ejercicio o no"
+
+#~ msgid ""
+#~ "ST depression.\n"
+#~ "The height difference (in milimiters) between the J point and the "
+#~ "baseline (the PR segment)"
+#~ msgstr ""
+#~ "Depresión del segmento ST.\n"
+#~ "La diferencia de altura (en milímetros) entre el punto J y la línea base "
+#~ "(el segmento PR)"
+
+#~ msgid ""
+#~ "The slope of the peak exercise ST segment:\n"
+#~ "UP: Upslowing\n"
+#~ "FLAT: Flat\n"
+#~ "DOWN: Downslowing"
+#~ msgstr ""
+#~ "La pendiente del segmento ST de ejercicio máximo:\n"
+#~ "ARRIBA: Creciente\n"
+#~ "PLANO: Constante\n"
+#~ "ABAJO: Decreciente"
+
+#~ msgid "Machine learning model to use for prediction"
+#~ msgstr "Modelo de machine learning a utilizar para la predicción"
+
+#~ msgid "Creation date"
+#~ msgstr "Fecha de creación"
+
+#~ msgid "Save as new prediction"
+#~ msgstr "Guardar como nueva predicción"
+
+#~ msgid "Female"
+#~ msgstr "Femenino"
+
+#~ msgid "Male"
+#~ msgstr "Masculino"
+
+#~ msgid "Asymptomatic"
+#~ msgstr "Asintomático"
+
+#~ msgid "Atypical Angina"
+#~ msgstr "Angina atípica"
+
+#~ msgid "Non-Anginal Pain"
+#~ msgstr "Dolor no anginoso"
+
+#~ msgid "Typical Angina"
+#~ msgstr "Angina típica"
+
+#~ msgid "DOWN"
+#~ msgstr "ABAJO"
+
+#~ msgid "FLAT"
+#~ msgstr "PLANO"
+
+#~ msgid "UP"
+#~ msgstr "ARRIBA"
+
+#~ msgid "Blood sugar <= 120 mg/dl"
+#~ msgstr "Azúcar en sangre <= 120 mg/dl"
+
+#~ msgid "Blood sugar > 120 mg/dl"
+#~ msgstr "Azúcar en sangre > 120 mg/dl"
+
+#~ msgid "Yes"
+#~ msgstr "Sí"
+
+#~ msgid "Single Model"
+#~ msgstr "Modelo Simple"
+
+#~ msgid "Ensemble Models"
+#~ msgstr "Conjunto de Modelos"
+
+#~ msgid "Password Reset"
+#~ msgstr "Reestablecer contraseña"
+
+#~ msgid "Password Reset Complete"
+#~ msgstr "Reestablecimiento de contraseña completo"
+
+#~ msgid "Enter new password"
+#~ msgstr "Ingresa tu contraseña"
+
+#~ msgid "Password Reset Sent"
+#~ msgstr "Restablecimiento de contraseña enviado"
+
+#~ msgid "Create patient"
+#~ msgstr "Crear paciente"
+
+#~ msgid "Add new Patient"
+#~ msgstr "Añadir nuevo paciente"
+
+#~ msgid "Details"
+#~ msgstr "Detalles"
+
+#~ msgid "Add Patient"
+#~ msgstr "Añadir Paciente"
+
+#~ msgid "Patient details"
+#~ msgstr "Detalles de paciente"
+
+#~ msgid "Patient Information"
+#~ msgstr "Información del paciente"
+
+#~ msgid "Back to Patients"
+#~ msgstr "Volver a Pacientes"
+
+#~ msgid "Check Predictions"
+#~ msgstr "Revisar predicciones"
+
+#~ msgid "Edit patient"
+#~ msgstr "Editar paciente"
+
+#~ msgid "Edit Patient"
+#~ msgstr "Editar paciente"
+
+#~ msgid "Update Patient"
+#~ msgstr "Actualizar paciente"
+
+#~ msgid "Patients list"
+#~ msgstr "Lista de pacientes"
+
+#~ msgid "Patients List"
+#~ msgstr "Lista de pacientes"
+
+#~ msgid "Filter"
+#~ msgstr "Filtrar"
+
+#~ msgid "Last Prediction"
+#~ msgstr "Última predicción"
+
+#~ msgid "Probability of HD"
+#~ msgstr "Probabilidad de enfermedad cardíaca"
+
+#~ msgid "List of predictions"
+#~ msgstr "Lista de Predicciones"
+
+#~ msgid "Make Prediction"
+#~ msgstr "Realizar predicción"
+
+#~ msgid "Prediction"
+#~ msgstr "Predicción"
+
+#~ msgid "Heart Disease Prediction"
+#~ msgstr "Predicción de enfermedad cardíaca"
+
+#~ msgid "Please enter details"
+#~ msgstr "Por favor, ingresa los detalles"
+
+#~ msgid "Probability of heart disease"
+#~ msgstr "Probabilidad de enfermedad cardíaca"
+
+#~ msgid "Create prediction"
+#~ msgstr "Crear predicción"
+
+#~ msgid "Patient"
+#~ msgstr "Paciente"
+
+#~ msgid "Back to list"
+#~ msgstr "Volver a la lista"
+
+#~ msgid "Prediction detail"
+#~ msgstr "Detalles de predicción"
+
+#~ msgid "Prediction Detail"
+#~ msgstr "Detalles de predicción"
+
+#~ msgid "Add prediction to model training"
+#~ msgstr "Añadir predicción a entrenamiento del modelo"
+
+#~ msgid "Edit prediction"
+#~ msgstr "Editar predicción"
+
+#~ msgid "Edit Prediction"
+#~ msgstr "Editar predicción"
+
+#~ msgid "Predictions list"
+#~ msgstr "Lista de predicciones"
+
+#~ msgid "List of Predictions"
+#~ msgstr "Lista de Predicciones"
+
+#~ msgid "ML Model"
+#~ msgstr "Modelo de ML"
+
+#~ msgid "Add new Prediction"
+#~ msgstr "Añadir nueva predicción"
+
+#~ msgid "Confirm prediction to train"
+#~ msgstr "Confirmar prediccion para entrenar"
+
+#~ msgid "Are you sure youn want to train the model with this prediction?"
+#~ msgstr "¿Estás seguro de que deseas entrenar el modelo con esta predicción?"
+
+#~ msgid "This action cannot be undone so make sure all details are correct."
+#~ msgstr ""
+#~ "Esta acción no se puede deshacer, así que asegúrate que los detalles sean "
+#~ "correctos."
+
+#~ msgid "Train Model"
+#~ msgstr "Entrenar Modelo"
+
+#~ msgid "Prediction to train detail"
+#~ msgstr "Detalles de predicción para entrenamiento"
+
+#~ msgid "Prediction to train Detail"
+#~ msgstr "Detalles de predicción para entrenamiento"
+
+#~ msgid "Train Model with this prediction"
+#~ msgstr "Entrenar modelo con esta predicción"
+
+#~ msgid "Edit prediction to train"
+#~ msgstr "Editar predicción para entrenameinto"
+
+#~ msgid "Edit Prediction to Train"
+#~ msgstr "Editar predicción para entrenameinto"
+
+#~ msgid "Save Prediction"
+#~ msgstr "Guardar predicción"
+
+#~ msgid "Predictions to train list"
+#~ msgstr "Lista de predicciones para entrenar"
+
+#~ msgid "List of Predictions to train"
+#~ msgstr "Lista de predicciones para entrenar"
+
+#~ msgid "Could not add prediction. It was already used to train the model!"
+#~ msgstr ""
+#~ "No se puedo añadir la predicción. ¡Ya fue usada previamente para entrenar "
+#~ "el modelo!"
 
 #~ msgid "Name:"
 #~ msgstr "Nombre"

@@ -1,0 +1,150 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-06-06 11:14-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\apps\app_patient\filters.py:9 .\apps\app_patient\filters.py:16
+#: .\apps\app_patient\templates\patient_list.html:32
+msgid "Name"
+msgstr "Nombre"
+
+#: .\apps\app_patient\filters.py:10 .\apps\app_patient\filters.py:22
+msgid "Id"
+msgstr "Identificación"
+
+#: .\apps\app_patient\filters.py:11 .\apps\app_patient\filters.py:28
+msgid "Probability > than"
+msgstr "Probabilidad > a"
+
+#: .\apps\app_patient\forms.py:12 .\apps\app_patient\forms.py:46
+msgid "First Name"
+msgstr "Nombre"
+
+#: .\apps\app_patient\forms.py:13 .\apps\app_patient\forms.py:47
+msgid "Last Name"
+msgstr "Apellido"
+
+#: .\apps\app_patient\forms.py:14 .\apps\app_patient\forms.py:48
+#: .\apps\app_patient\templates\patient_list.html:34
+msgid "ID Number"
+msgstr "Número de identificación"
+
+#: .\apps\app_patient\forms.py:15 .\apps\app_patient\forms.py:49
+msgid "City"
+msgstr "Ciudad"
+
+#: .\apps\app_patient\forms.py:16 .\apps\app_patient\forms.py:50
+msgid "Adress"
+msgstr "Dirección"
+
+#: .\apps\app_patient\forms.py:17 .\apps\app_patient\forms.py:51
+msgid "Phone Number"
+msgstr "Teléfono"
+
+#: .\apps\app_patient\forms.py:18 .\apps\app_patient\forms.py:52
+msgid "Height (cm)"
+msgstr "Altura (cm)"
+
+#: .\apps\app_patient\forms.py:19 .\apps\app_patient\forms.py:53
+msgid "Weight (kg)"
+msgstr "Peso (kg)"
+
+#: .\apps\app_patient\models.py:7
+#: .\apps\app_patient\templates\patient_list.html:55
+msgid "Yes"
+msgstr "Sí"
+
+#: .\apps\app_patient\templates\patient_create.html:5
+msgid "Create patient"
+msgstr "Crear paciente"
+
+#: .\apps\app_patient\templates\patient_create.html:8
+#: .\apps\app_patient\templates\patient_list.html:41
+msgid "Add new Patient"
+msgstr "Añadir nuevo paciente"
+
+#: .\apps\app_patient\templates\patient_create.html:19
+#: .\apps\app_patient\templates\patient_detail.html:18
+#: .\apps\app_patient\templates\patient_edit.html:19
+msgid "Details"
+msgstr "Detalles"
+
+#: .\apps\app_patient\templates\patient_create.html:52
+msgid "Add Patient"
+msgstr "Añadir paciente"
+
+#: .\apps\app_patient\templates\patient_detail.html:5
+msgid "Patient details"
+msgstr "Detalles de paciente"
+
+#: .\apps\app_patient\templates\patient_detail.html:8
+msgid "Patient Information"
+msgstr "Información de paciente"
+
+#: .\apps\app_patient\templates\patient_detail.html:62
+#: .\apps\app_patient\templates\patient_edit.html:61
+msgid "Back to Patients"
+msgstr "Volver a pacientes"
+
+#: .\apps\app_patient\templates\patient_detail.html:68
+msgid "Check Predictions"
+msgstr "Revisar predicciones"
+
+#: .\apps\app_patient\templates\patient_edit.html:5
+msgid "Edit patient"
+msgstr "Editar paciente"
+
+#: .\apps\app_patient\templates\patient_edit.html:8
+msgid "Edit Patient"
+msgstr "Editar paciente"
+
+#: .\apps\app_patient\templates\patient_edit.html:66
+msgid "Update Patient"
+msgstr "Actualizar paciente"
+
+#: .\apps\app_patient\templates\patient_list.html:5
+msgid "Patients list"
+msgstr "Lista de pacientes"
+
+#: .\apps\app_patient\templates\patient_list.html:8
+msgid "Patients List"
+msgstr "Lista de pacientes"
+
+#: .\apps\app_patient\templates\patient_list.html:21
+msgid "Filter"
+msgstr "Filtrar"
+
+#: .\apps\app_patient\templates\patient_list.html:33
+msgid "Last name"
+msgstr "Apellido"
+
+#: .\apps\app_patient\templates\patient_list.html:35
+msgid "Last Prediction"
+msgstr "Última predicción"
+
+#: .\apps\app_patient\templates\patient_list.html:36
+msgid "Probability of HD"
+msgstr "Probabilidad de enfermedad cardíaca"
+
+#: .\apps\app_patient\templates\patient_list.html:37
+msgid "List of predictions"
+msgstr "Lista de predicciones"
+
+#: .\apps\app_patient\templates\patient_list.html:88
+msgid "Make Prediction"
+msgstr "Realizar predicción"

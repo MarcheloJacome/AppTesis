@@ -1,0 +1,349 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-06-06 11:14-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\apps\app_training_prediction\filters.py:13
+#: .\apps\app_training_prediction\filters.py:20
+#: .\apps\app_training_prediction\templates\prediction_to_train_list.html:39
+msgid "Date"
+msgstr "Fecha"
+
+#: .\apps\app_training_prediction\filters.py:14
+#: .\apps\app_training_prediction\filters.py:25
+#: .\apps\app_training_prediction\templates\prediction_to_train_list.html:37
+msgid "Name"
+msgstr "Nombre"
+
+#: .\apps\app_training_prediction\filters.py:15
+#: .\apps\app_training_prediction\filters.py:31
+#: .\apps\app_training_prediction\templates\prediction_to_train_list.html:38
+msgid "Last name"
+msgstr "Apellido"
+
+#: .\apps\app_training_prediction\forms.py:25
+#: .\apps\app_training_prediction\forms.py:88
+msgid "Creation date"
+msgstr "Fecha de creación"
+
+#: .\apps\app_training_prediction\forms.py:26
+#: .\apps\app_training_prediction\forms.py:89
+msgid "Age"
+msgstr "Edad"
+
+#: .\apps\app_training_prediction\forms.py:27
+#: .\apps\app_training_prediction\forms.py:90
+msgid "Sex"
+msgstr "Sexo"
+
+#: .\apps\app_training_prediction\forms.py:28
+#: .\apps\app_training_prediction\forms.py:91
+msgid "Chest pain type"
+msgstr "Tipo de dolor torácico"
+
+#: .\apps\app_training_prediction\forms.py:29
+#: .\apps\app_training_prediction\forms.py:92
+msgid "Resting blood pressure"
+msgstr "Presión arterial en reposo"
+
+#: .\apps\app_training_prediction\forms.py:30
+#: .\apps\app_training_prediction\forms.py:93
+msgid "Serum cholesterol"
+msgstr "Colesterol sérico"
+
+#: .\apps\app_training_prediction\forms.py:31
+#: .\apps\app_training_prediction\forms.py:94
+msgid "Fasting blood sugar"
+msgstr "Glucemia en ayunas"
+
+#: .\apps\app_training_prediction\forms.py:33
+#: .\apps\app_training_prediction\forms.py:96
+msgid "Resting electrocardiogram results"
+msgstr "Resultados del electrocardiograma en reposo"
+
+#: .\apps\app_training_prediction\forms.py:34
+#: .\apps\app_training_prediction\forms.py:97
+msgid "Maximum heart rate achieved"
+msgstr "Frecuencia cardíaca máxima alcanzada"
+
+#: .\apps\app_training_prediction\forms.py:35
+#: .\apps\app_training_prediction\forms.py:98
+msgid "Exercise-induced angina"
+msgstr "Angina torácica inducida por ejercicio"
+
+#: .\apps\app_training_prediction\forms.py:36
+#: .\apps\app_training_prediction\forms.py:99
+msgid "ECG ST Segment"
+msgstr "Segmento ST del electrocardiograma"
+
+#: .\apps\app_training_prediction\forms.py:37
+#: .\apps\app_training_prediction\forms.py:100
+msgid "ST Slope"
+msgstr "Pendiente del segmento ST"
+
+#: .\apps\app_training_prediction\forms.py:38
+#: .\apps\app_training_prediction\forms.py:101
+#: .\apps\app_training_prediction\forms.py:138
+msgid "Heart Disease"
+msgstr "Enfermedad cardíaca"
+
+#: .\apps\app_training_prediction\forms.py:39
+#: .\apps\app_training_prediction\forms.py:102
+msgid "Machine learning model"
+msgstr "Modelo de machine learning"
+
+#: .\apps\app_training_prediction\forms.py:42
+#: .\apps\app_training_prediction\forms.py:105
+msgid "Age of the patient in years"
+msgstr "Edad del paciente en años"
+
+#: .\apps\app_training_prediction\forms.py:43
+#: .\apps\app_training_prediction\forms.py:106
+msgid "Sex of the patient"
+msgstr "Sexo del paciente"
+
+#: .\apps\app_training_prediction\forms.py:45
+#: .\apps\app_training_prediction\forms.py:108
+msgid "Type of chest pain"
+msgstr "Tipo de dolor torácico"
+
+#: .\apps\app_training_prediction\forms.py:47
+#: .\apps\app_training_prediction\forms.py:110
+msgid "Resting blood pressure measured in: mm/Hg"
+msgstr "Presión arterial en reposo medida en: mm/Hg"
+
+#: .\apps\app_training_prediction\forms.py:49
+#: .\apps\app_training_prediction\forms.py:112
+msgid "Serum cholesterol measured in mm/dl"
+msgstr "Colesterol sérico medido en mm/dl"
+
+#: .\apps\app_training_prediction\forms.py:51
+#: .\apps\app_training_prediction\forms.py:114
+msgid "Fasting blood sugar, wheter it is greater than 120 mg/dl or not"
+msgstr "Glucemia en ayunas, si es superior a 120 mg/dl o no"
+
+#: .\apps\app_training_prediction\forms.py:53
+#: .\apps\app_training_prediction\forms.py:116
+msgid ""
+"Resting electrocardiogram results: \n"
+"Normal: Normal ECG\n"
+"ST: Having ST-T wave abnormality (T wave inversions and or ST elevation or "
+"depression of > 0.05 mV)\n"
+"LVH: Showing probable or definite left ventricular hypertrophy by Estes' "
+"criteria"
+msgstr ""
+"Resultados del electrocardiograma en reposo: \n"
+"Normal: Electrocardiograma normal\n"
+"ST: Con una anomalía de la onda ST-T (inversiones de la onda T o elevación "
+"depresión del ST > 0,05 mV)\n"
+"LVH: Muestra hipertrofia ventricular izquierda probable o definitiva según "
+"el criterio de Estes"
+
+#: .\apps\app_training_prediction\forms.py:55
+#: .\apps\app_training_prediction\forms.py:118
+msgid "Maximum amount of heart beats achieved per minute under maximum stress"
+msgstr "Cantidad máxima de latidos cardíacos por minuto bajo estrés máximo"
+
+#: .\apps\app_training_prediction\forms.py:57
+#: .\apps\app_training_prediction\forms.py:120
+msgid "Wheter the patient has exercise-induced angina or not"
+msgstr "Si el paciente tiene angina de pecho inducida por ejercicio o no"
+
+#: .\apps\app_training_prediction\forms.py:59
+#: .\apps\app_training_prediction\forms.py:122
+msgid ""
+"ST depression.\n"
+"The height difference (in milimiters) between the J point and the baseline "
+"(the PR segment)"
+msgstr ""
+"Depresión del segmento ST.\n"
+"La diferencia de altura (en milímetros) entre el punto J y la línea base (el "
+"segmento PR)"
+
+#: .\apps\app_training_prediction\forms.py:61
+#: .\apps\app_training_prediction\forms.py:124
+msgid ""
+"The slope of the peak exercise ST segment:\n"
+"UP: Upslowing\n"
+"FLAT: Flat\n"
+"DOWN: Downslowing"
+msgstr ""
+"La pendiente del segmento ST de ejercicio máximo:\n"
+"ARRIBA: Creciente\n"
+"PLANO: Constante\n"
+"ABAJO: Decreciente"
+
+#: .\apps\app_training_prediction\forms.py:63
+#: .\apps\app_training_prediction\forms.py:126
+msgid "Machine learning model to use for prediction"
+msgstr "Modelo de machine learning a utilizar para la predicción"
+
+#: .\apps\app_training_prediction\models.py:6
+msgid "Female"
+msgstr "Femenino"
+
+#: .\apps\app_training_prediction\models.py:7
+msgid "Male"
+msgstr "Masculino"
+
+#: .\apps\app_training_prediction\models.py:11
+msgid "Asymptomatic"
+msgstr "Asintomático"
+
+#: .\apps\app_training_prediction\models.py:12
+msgid "Atypical Angina"
+msgstr "Angina atípica"
+
+#: .\apps\app_training_prediction\models.py:13
+msgid "Non-Anginal Pain"
+msgstr "Dolor no anginoso"
+
+#: .\apps\app_training_prediction\models.py:14
+msgid "Typical Angina"
+msgstr "Angina típica"
+
+#: .\apps\app_training_prediction\models.py:24
+msgid "DOWN"
+msgstr "ABAJO"
+
+#: .\apps\app_training_prediction\models.py:25
+msgid "FLAT"
+msgstr "PLANO"
+
+#: .\apps\app_training_prediction\models.py:26
+msgid "UP"
+msgstr "ARRIBA"
+
+#: .\apps\app_training_prediction\models.py:30
+msgid "Blood sugar <= 120 mg/dl"
+msgstr "Azúcar en sangre <= 120 mg/dl"
+
+#: .\apps\app_training_prediction\models.py:31
+msgid "Blood sugar > 120 mg/dl"
+msgstr "Azúcar en sangre > 120 mg/dl"
+
+#: .\apps\app_training_prediction\models.py:36
+#: .\apps\app_training_prediction\models.py:42
+#: .\apps\app_training_prediction\templates\prediction_to_train_list.html:59
+msgid "Yes"
+msgstr "Sí"
+
+#: .\apps\app_training_prediction\models.py:46
+#: .\apps\app_training_prediction\templates\prediction_to_train_list.html:52
+msgid "Single Model"
+msgstr "Modelo Simple"
+
+#: .\apps\app_training_prediction\models.py:47
+#: .\apps\app_training_prediction\templates\prediction_to_train_list.html:54
+msgid "Ensemble Models"
+msgstr "Conjunto de Modelos"
+
+#: .\apps\app_training_prediction\templates\prediction_to_train_confirm.html:5
+#: .\apps\app_training_prediction\templates\prediction_to_train_confirm.html:8
+msgid "Confirm prediction to train"
+msgstr "Confirmar prediccion para entrenar"
+
+#: .\apps\app_training_prediction\templates\prediction_to_train_confirm.html:11
+msgid "Are you sure youn want to train the model with this prediction?"
+msgstr "¿Estás seguro de que deseas entrenar el modelo con esta predicción?"
+
+#: .\apps\app_training_prediction\templates\prediction_to_train_confirm.html:12
+msgid "This action cannot be undone so make sure all details are correct."
+msgstr ""
+"Esta acción no se puede deshacer, así que asegúrate que los detalles sean "
+"correctos."
+
+#: .\apps\app_training_prediction\templates\prediction_to_train_confirm.html:15
+#: .\apps\app_training_prediction\templates\prediction_to_train_detail.html:13
+#: .\apps\app_training_prediction\templates\prediction_to_train_edit.html:13
+msgid "Patient"
+msgstr "Paciente"
+
+#: .\apps\app_training_prediction\templates\prediction_to_train_confirm.html:25
+#: .\apps\app_training_prediction\templates\prediction_to_train_detail.html:30
+#: .\apps\app_training_prediction\templates\prediction_to_train_edit.html:23
+msgid "Details"
+msgstr "Detalles"
+
+#: .\apps\app_training_prediction\templates\prediction_to_train_confirm.html:80
+#: .\apps\app_training_prediction\templates\prediction_to_train_detail.html:84
+#: .\apps\app_training_prediction\templates\prediction_to_train_edit.html:78
+#: .\apps\app_training_prediction\templates\prediction_to_train_list.html:41
+msgid "Prediction"
+msgstr "Predicción"
+
+#: .\apps\app_training_prediction\templates\prediction_to_train_confirm.html:97
+#: .\apps\app_training_prediction\templates\prediction_to_train_detail.html:100
+#: .\apps\app_training_prediction\templates\prediction_to_train_edit.html:94
+msgid "Back to list"
+msgstr "Volver a la lista"
+
+#: .\apps\app_training_prediction\templates\prediction_to_train_confirm.html:102
+msgid "Train Model"
+msgstr "Entrenar modelo"
+
+#: .\apps\app_training_prediction\templates\prediction_to_train_detail.html:5
+msgid "Prediction to train detail"
+msgstr "Detalles de predicción para entrenamiento"
+
+#: .\apps\app_training_prediction\templates\prediction_to_train_detail.html:8
+msgid "Prediction to train Detail"
+msgstr "Detalles de predicción para entrenamiento"
+
+#: .\apps\app_training_prediction\templates\prediction_to_train_detail.html:23
+#: .\apps\app_training_prediction\templates\prediction_to_train_detail.html:106
+msgid "Train Model with this prediction"
+msgstr "Entrenar modelo con esta predicción"
+
+#: .\apps\app_training_prediction\templates\prediction_to_train_edit.html:5
+msgid "Edit prediction to train"
+msgstr "Editar predicción para entrenameinto"
+
+#: .\apps\app_training_prediction\templates\prediction_to_train_edit.html:8
+msgid "Edit Prediction to Train"
+msgstr "Editar predicción para entrenameinto"
+
+#: .\apps\app_training_prediction\templates\prediction_to_train_edit.html:99
+msgid "Save Prediction"
+msgstr "Guardar predicción"
+
+#: .\apps\app_training_prediction\templates\prediction_to_train_list.html:5
+msgid "Predictions to train list"
+msgstr "Lista de predicciones para entrenar"
+
+#: .\apps\app_training_prediction\templates\prediction_to_train_list.html:8
+msgid "List of Predictions to train"
+msgstr "Lista de predicciones para entrenar"
+
+#: .\apps\app_training_prediction\templates\prediction_to_train_list.html:19
+msgid "Filter"
+msgstr "Filtrar"
+
+#: .\apps\app_training_prediction\templates\prediction_to_train_list.html:25
+msgid "Back to Patients"
+msgstr "Volver a pacientes"
+
+#: .\apps\app_training_prediction\templates\prediction_to_train_list.html:40
+msgid "ML Model"
+msgstr "Modelo de ML"
+
+#: .\apps\app_training_prediction\views.py:25
+msgid "Could not add prediction. It was already used to train the model!"
+msgstr ""
+"No se puedo añadir la predicción. ¡Ya fue usada previamente para entrenar el "
+"modelo!"

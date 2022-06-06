@@ -28,7 +28,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['tesis-deployment-appservice.azurewebsites.net','127.0.0.1']
 CSRF_TRUSTED_ORIGINS = ['http://tesis-deployment-appservice.azurewebsites.net','https://www.tesis-deployment-appservice.azurewebsites.net']
-#CSRF_TRUSTED_ORIGINS = ['http://tesis-deployment-appservice.azurewebsites.net','https://www.tesis-deployment-appservice.azurewebsites.net','tesis-deployment-appservice.azurewebsites.net']
+#CSRF_TRUSTED_ORIGINS = ['https://tesis-deployment-appservice.azurewebsites.net','https://www.tesis-deployment-appservice.azurewebsites.net','tesis-deployment-appservice.azurewebsites.net']
 # Application definition
 
 INSTALLED_APPS = [
@@ -111,7 +111,6 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'tesisDeployDB',
         'USER': 'adminPostgreeTesis@tesis-deployment-server',
-        #'PASSWORD': 'Sitemanage2022',
         'PASSWORD': os.getenv("DB_PASSWORD"),
         'HOST': 'tesis-deployment-server.postgres.database.azure.com',
         'PORT': '5432',
@@ -173,9 +172,6 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.sendgrid.net'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-#EMAIL_HOST_USER = 'apikey'
 EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER")
-#EMAIL_HOST_PASSWORD = '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'
 EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD")
-#DEFAULT_FROM_EMAIL = 'tesis4810@outlook.com'
 DEFAULT_FROM_EMAIL = os.getenv("DEFAULT_FROM_EMAIL")

@@ -19,14 +19,18 @@ from django.urls import path, include
 from django.contrib.staticfiles.storage import staticfiles_storage
 from django.views.generic.base import RedirectView
 from django.conf.urls.i18n import i18n_patterns
-#from django.conf.urls import url
-urlpatterns = [
-    path('favicon.ico', RedirectView.as_view(url=staticfiles_storage.url("images/favicon.ico"))),   
-]
-urlpatterns += i18n_patterns(
-    path('admin/', admin.site.urls),
+from django.conf import settings
+from django.conf.urls.static import static
+#from django.conf.urls import url 
+urlpatterns = i18n_patterns(
+    path('admin/', admin.site.urls),  
     path('',include('apps.app_patient.urls')),
     path('',include('apps.app_prediction.urls')),
     path('',include('apps.app_training_prediction.urls')),
     path('',include('apps.app1.urls')),
-)
+) 
+urlpatterns += [ 
+    path('favicon.ico', RedirectView.as_view(url=staticfiles_storage.url("images/favicon.ico"))),
+] #+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+#urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

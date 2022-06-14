@@ -8,6 +8,7 @@ from django.contrib.auth.decorators import login_required
 import numpy as np
 import pandas as pd
 import joblib
+import datetime
 
 
 non_proc_labels = ['Age', 'Sex', 'ChestPainType', 'RestingBP', 'Cholesterol', 'FastingBS',
@@ -46,6 +47,31 @@ def addPredictionToTrain(request, pk):
 
 @login_required(login_url="/login")
 def predictionToTrainList(request):
+    ##############Delete later
+    """
+    data = pd.read_csv("apps/app1/static/app1/Data/heart.csv")
+    for i in range(len(data)):
+        new_Pred =PredictionToTrain.objects.create(
+            date_created = datetime.date.today(),
+            age = data.iloc[i][0],
+            sex = data.iloc[i][1],
+            chestPainType = data.iloc[i][2],
+            restingBP = data.iloc[i][3],
+            cholesterol = data.iloc[i][4],
+            fastingBS = data.iloc[i][5],
+            restingECG = data.iloc[i][6],
+            maxHR = data.iloc[i][7],
+            exerciseAngina = data.iloc[i][8],
+            oldpeak = data.iloc[i][9],
+            sT_Slope = data.iloc[i][10],
+            heartDisease = data.iloc[i][11],
+            aiModel = 0,
+            prediction = None,
+            was_used = True
+        )
+        print(new_Pred)
+    """
+    ##############Delete later
     user = request.user
     pred_list = PredictionToTrain.objects.filter(
         prediction__Patient__user=user,

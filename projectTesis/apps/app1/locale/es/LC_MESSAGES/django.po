@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-06-06 11:14-0500\n"
+"POT-Creation-Date: 2022-06-13 19:43-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,6 +17,77 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\apps\app1\forms.py:21
+msgid "Yes"
+msgstr "Sí"
+
+#: .\apps\app1\forms.py:22
+msgid "All"
+msgstr "Todos"
+
+#: .\apps\app1\forms.py:25 .\apps\app1\forms.py:42 .\apps\app1\views.py:91
+#: .\apps\app1\views.py:136 .\apps\app1\views.py:155 .\apps\app1\views.py:176
+msgid "Age"
+msgstr "Edad"
+
+#: .\apps\app1\forms.py:26 .\apps\app1\forms.py:45 .\apps\app1\views.py:91
+#: .\apps\app1\views.py:139
+msgid "RestingBP"
+msgstr "Presion arterial"
+
+#: .\apps\app1\forms.py:27 .\apps\app1\forms.py:46 .\apps\app1\views.py:91
+#: .\apps\app1\views.py:140
+msgid "Cholesterol"
+msgstr "Colesterol"
+
+#: .\apps\app1\forms.py:28 .\apps\app1\forms.py:49 .\apps\app1\views.py:92
+#: .\apps\app1\views.py:143
+msgid "MaxHR"
+msgstr "Ritmo cardíaco máximo"
+
+#: .\apps\app1\forms.py:29 .\apps\app1\forms.py:51 .\apps\app1\views.py:92
+#: .\apps\app1\views.py:145
+msgid "Oldpeak"
+msgstr "Depresión segmento ST"
+
+#: .\apps\app1\forms.py:33 .\apps\app1\forms.py:43 .\apps\app1\views.py:137
+#: .\apps\app1\views.py:156
+msgid "Sex"
+msgstr "Sexo"
+
+#: .\apps\app1\forms.py:34 .\apps\app1\forms.py:44 .\apps\app1\views.py:138
+msgid "ChestPainType"
+msgstr "Dolor torácico"
+
+#: .\apps\app1\forms.py:35 .\apps\app1\forms.py:47 .\apps\app1\views.py:92
+#: .\apps\app1\views.py:141
+msgid "FastingBS"
+msgstr "Glucemia ayunas"
+
+#: .\apps\app1\forms.py:36 .\apps\app1\forms.py:48 .\apps\app1\views.py:142
+msgid "RestingECG"
+msgstr "Electrocardiograma en reposo"
+
+#: .\apps\app1\forms.py:37 .\apps\app1\forms.py:50 .\apps\app1\views.py:144
+msgid "ExerciseAngina"
+msgstr "Angina por ejercicio"
+
+#: .\apps\app1\forms.py:38 .\apps\app1\forms.py:52 .\apps\app1\views.py:146
+msgid "ST_Slope"
+msgstr "Pendiente ST"
+
+#: .\apps\app1\forms.py:58 .\apps\app1\forms.py:69
+msgid "Heart Disease"
+msgstr "Enfermedad cardíaca"
+
+#: .\apps\app1\forms.py:59 .\apps\app1\forms.py:70
+msgid "Variable (X Axis)"
+msgstr "Variable (Eje X)"
+
+#: .\apps\app1\forms.py:60
+msgid "Groups"
+msgstr "Grupos"
 
 #: .\apps\app1\templates\about_ai_models.html:6
 msgid "About ML Models"
@@ -508,6 +579,54 @@ msgstr "Cambiar contraseña"
 msgid "Update Password"
 msgstr "Actualizar contraseña"
 
+#: .\apps\app1\templates\data_analytics.html:5
+#: .\apps\app1\templates\data_analytics.html:8
+#: .\apps\app1\templates\navbar.html:31
+msgid "Data Analytics"
+msgstr "Análisis de datos"
+
+#: .\apps\app1\templates\data_analytics.html:12
+msgid ""
+"In this section you will be able to perform a visual analysis on the data "
+"that was used to train the model and the subsequently added data. If you "
+"want to check more information about the dataset and its features click "
+msgstr ""
+"En esta sección podrás realizar un análisis visual de los datos que se "
+"utilizaron para entrenar el modelo y los datos agregados posteriormente. Si "
+"deseas consultar más información sobre el conjunto de datos y sus "
+"características, haz clic "
+
+#: .\apps\app1\templates\data_analytics.html:12
+msgid "here"
+msgstr "aquí"
+
+#: .\apps\app1\templates\data_analytics.html:13
+msgid ""
+"The following histogram lets you navigate through variables for the x axis, "
+"which are the numerical features of the dataset; the groups , which are the "
+"categorical features of the dataset and the output class."
+msgstr ""
+"El siguiente histograma te permite navegar a través de variables para el eje "
+"x, que son las características numéricas del conjunto de datos; los grupos, "
+"que son las características categóricas del conjunto de datos y la clase de "
+"salida."
+
+#: .\apps\app1\templates\data_analytics.html:30
+#: .\apps\app1\templates\data_analytics.html:52
+msgid "Apply"
+msgstr "Aplicar"
+
+#: .\apps\app1\templates\data_analytics.html:40
+msgid ""
+"The following histogram lets you navigate through the variables for the x "
+"axis, wich are all the features in the dataset, and the output class, "
+"analyze the correlation between each feature and the output class."
+msgstr ""
+"El siguiente histograma te permite navegar a través de las variables del eje "
+"x, que son todas las características en el conjunto de datos y la clase de "
+"salida, de forma que puedas analizar la correlación entre cada "
+"característica con la clase de salida."
+
 #: .\apps\app1\templates\edit_user.html:5
 msgid "Edit user"
 msgstr "Editar usuario"
@@ -588,6 +707,8 @@ msgstr ""
 "árboles de decisión dentro del modelo."
 
 #: .\apps\app1\templates\feature_importance.html:40
+#, fuzzy, python-format
+#| msgid "Feature Importance %%"
 msgid "Feature Importance %%"
 msgstr "Importancia de característica %"
 
@@ -648,23 +769,23 @@ msgstr "Conjunto de Datos"
 msgid "Feature importance"
 msgstr "Importancia de las características"
 
-#: .\apps\app1\templates\navbar.html:37
+#: .\apps\app1\templates\navbar.html:40
 msgid "Hello"
 msgstr "Hola"
 
-#: .\apps\app1\templates\navbar.html:41
+#: .\apps\app1\templates\navbar.html:44
 msgid "Guest"
 msgstr "Invitado/a"
 
-#: .\apps\app1\templates\navbar.html:46
+#: .\apps\app1\templates\navbar.html:49
 msgid "Edit Profile"
 msgstr "Editar perfil"
 
-#: .\apps\app1\templates\navbar.html:47
+#: .\apps\app1\templates\navbar.html:50
 msgid "Logout"
 msgstr "Cerrar sesión"
 
-#: .\apps\app1\templates\navbar.html:51
+#: .\apps\app1\templates\navbar.html:54
 #: .\apps\app1\templates\password_reset_done.html:20
 #: .\apps\app1\templates\register.html:43
 msgid "Log In"
@@ -757,97 +878,81 @@ msgstr "Email"
 msgid "Confirm Password"
 msgstr "Confirmar contraseña"
 
-#: .\apps\app1\views.py:24
+#: .\apps\app1\views.py:29
 msgid "Account was created for "
 msgstr "Se creó una cuenta para "
 
-#: .\apps\app1\views.py:41
+#: .\apps\app1\views.py:46
 msgid "Username or Password is incorrect"
 msgstr "Usuario o contraseña incorrectos"
 
-#: .\apps\app1\views.py:59
+#: .\apps\app1\views.py:64
 msgid "Account was updated for "
 msgstr "Se actualizó una cuenta para "
 
-#: .\apps\app1\views.py:81
+#: .\apps\app1\views.py:86
 msgid "Sex_F"
 msgstr "Sexo (F)"
 
-#: .\apps\app1\views.py:81
+#: .\apps\app1\views.py:86
 msgid "Sex_M"
 msgstr "Sexo (M)"
 
-#: .\apps\app1\views.py:82
+#: .\apps\app1\views.py:87
 msgid "ChestPainType_ASY"
 msgstr "Dolor torácico (Asintomático)"
 
-#: .\apps\app1\views.py:82
+#: .\apps\app1\views.py:87
 msgid "ChestPainType_ATA"
 msgstr "Dolor torácico (Angina atípica)"
 
-#: .\apps\app1\views.py:82
+#: .\apps\app1\views.py:87
 msgid "ChestPainType_NAP"
 msgstr "Dolor torácico (No anginoso)"
 
-#: .\apps\app1\views.py:82
+#: .\apps\app1\views.py:87
 msgid "ChestPainType_TA"
 msgstr "Dolor torácico (Angina típica)"
 
-#: .\apps\app1\views.py:82
+#: .\apps\app1\views.py:87
 msgid "RestingECG_LVH"
 msgstr "Electrocardiograma en reposo (LVH)"
 
-#: .\apps\app1\views.py:83
+#: .\apps\app1\views.py:88
 msgid "RestingECG_Normal"
 msgstr "Electrocardiograma en reposo (Normal)"
 
-#: .\apps\app1\views.py:83
+#: .\apps\app1\views.py:88
 msgid "RestingECG_ST"
 msgstr "Electrocardiograma en reposo (ST)"
 
-#: .\apps\app1\views.py:84
+#: .\apps\app1\views.py:89
 msgid "ExerciseAngina_N"
 msgstr "Angina por ejercicio (No)"
 
-#: .\apps\app1\views.py:84
+#: .\apps\app1\views.py:89
 msgid "ExerciseAngina_Y"
 msgstr "Angina por ejercicio (Sí)"
 
-#: .\apps\app1\views.py:85
+#: .\apps\app1\views.py:90
 msgid "ST_Slope_Down"
 msgstr "Pendiente ST (Abajo)"
 
-#: .\apps\app1\views.py:85
+#: .\apps\app1\views.py:90
 msgid "ST_Slope_Flat"
 msgstr "Pendiente ST (Plana)"
 
-#: .\apps\app1\views.py:85
+#: .\apps\app1\views.py:90
 msgid "ST_Slope_Up"
 msgstr "Pendiente ST (Arriba)"
 
-#: .\apps\app1\views.py:86
-msgid "Age"
-msgstr "Edad"
+#: .\apps\app1\views.py:147 .\apps\app1\views.py:163 .\apps\app1\views.py:181
+msgid "HeartDisease"
+msgstr "Enfermedad cardíaca"
 
-#: .\apps\app1\views.py:86
-msgid "RestingBP"
-msgstr "Presion arterial"
-
-#: .\apps\app1\views.py:86
-msgid "Cholesterol"
-msgstr "Colesterol"
-
-#: .\apps\app1\views.py:87
-msgid "FastingBS"
-msgstr "Glucemia ayunas"
-
-#: .\apps\app1\views.py:87
-msgid "MaxHR"
-msgstr "Ritmo cardíaco máximo"
-
-#: .\apps\app1\views.py:87
-msgid "Oldpeak"
-msgstr "Depresión segmento ST"
+#: .\apps\app1\views.py:168 .\apps\app1\views.py:186
+msgid "Heart Disease Output (Total)"
+msgstr "Salida: Enfermedad cardíaca (Total)"
 
 #~ msgid "Name"
 #~ msgstr "Nombre"
@@ -882,9 +987,6 @@ msgstr "Depresión segmento ST"
 #~ msgid "Weight (kg)"
 #~ msgstr "Peso (kg)"
 
-#~ msgid "Sex"
-#~ msgstr "Sexo"
-
 #~ msgid "Resting blood pressure"
 #~ msgstr "Presión arterial en reposo"
 
@@ -899,9 +1001,6 @@ msgstr "Depresión segmento ST"
 
 #~ msgid "ECG ST Segment"
 #~ msgstr "Segmento ST del electrocardiograma"
-
-#~ msgid "Heart Disease"
-#~ msgstr "Enfermedad cardíaca"
 
 #~ msgid "Probability of heart disease (%)"
 #~ msgstr "Probabilidad de enfermedad cardíaca (%)"
@@ -1010,9 +1109,6 @@ msgstr "Depresión segmento ST"
 
 #~ msgid "Blood sugar > 120 mg/dl"
 #~ msgstr "Azúcar en sangre > 120 mg/dl"
-
-#~ msgid "Yes"
-#~ msgstr "Sí"
 
 #~ msgid "Single Model"
 #~ msgstr "Modelo Simple"

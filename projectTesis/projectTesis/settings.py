@@ -25,14 +25,16 @@ SECRET_KEY = '45c+k*(=b5)e_2eozcld$h7pfcx)3v1n@g$35(tbimo&md5%bk'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 #DEBUG = False
-
-ALLOWED_HOSTS = ['tesis-deployment-appservice.azurewebsites.net','127.0.0.1']
-CSRF_TRUSTED_ORIGINS = ['http://tesis-deployment-appservice.azurewebsites.net','https://www.tesis-deployment-appservice.azurewebsites.net']
+#ALLOWED_HOSTS = ['*']
+#CSRF_TRUSTED_ORIGINS = ['*']
+#ALLOWED_HOSTS = ['tesis-deployment-appservice.azurewebsites.net','127.0.0.1']
+#CSRF_TRUSTED_ORIGINS = ['http://hearthelpapp-deploy.herokuapp.com','https://www.hearthelpapp-deploy.herokuapp.com','hearthelpapp-deploy.herokuapp.com']
+#CSRF_TRUSTED_ORIGINS = ['http://tesis-deployment-appservice.azurewebsites.net','https://www.tesis-deployment-appservice.azurewebsites.net']
 #CSRF_TRUSTED_ORIGINS = ['https://tesis-deployment-appservice.azurewebsites.net','https://www.tesis-deployment-appservice.azurewebsites.net','tesis-deployment-appservice.azurewebsites.net']
 # Application definition
 
 INSTALLED_APPS = [
-    "whitenoise.runserver_nostatic",
+    'whitenoise.runserver_nostatic',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -105,7 +107,7 @@ DATABASES = {
     }
 }
 """
-
+"""
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -119,6 +121,18 @@ DATABASES = {
         }
     }
 }
+"""
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'dfqvr67okvf6bc',
+        'USER': os.getenv("DB_USER"),
+        'PASSWORD': os.getenv("DB_PASSWORD"),
+        'HOST': 'ec2-54-204-56-171.compute-1.amazonaws.com',
+        'PORT': '5432',
+    }
+}
+
 
 
 # Password validation
@@ -159,6 +173,7 @@ LOCALE_PATHS = (BASE_DIR + 'locale/', )
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
+STATIC_TMP = os.path.join('BASE_DIR', 'static')
 STATIC_URL = '/static/'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 STATIC_ROOT = BASE_DIR + '/' + 'staticfiles'
@@ -169,9 +184,9 @@ STATICFILES_DIRS = [
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.sendgrid.net'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
+EMAIL_HOST = 'in-v3.mailjet.com'
+EMAIL_PORT = 465
+EMAIL_USE_SSL = True
 EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER")
 EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD")
 DEFAULT_FROM_EMAIL = os.getenv("DEFAULT_FROM_EMAIL")

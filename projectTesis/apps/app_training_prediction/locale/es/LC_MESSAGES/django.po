@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-06-06 11:14-0500\n"
+"POT-Creation-Date: 2022-06-13 19:43-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -342,7 +342,7 @@ msgstr "Volver a pacientes"
 msgid "ML Model"
 msgstr "Modelo de ML"
 
-#: .\apps\app_training_prediction\views.py:25
+#: .\apps\app_training_prediction\views.py:26
 msgid "Could not add prediction. It was already used to train the model!"
 msgstr ""
 "No se puedo añadir la predicción. ¡Ya fue usada previamente para entrenar el "

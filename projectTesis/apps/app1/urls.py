@@ -29,4 +29,5 @@ urlpatterns = [
     path('feature_importance/', featureImportance, name="feature_importance"),
     path('about_ai_models/', aboutAIModels, name="about_ai_models"),
     path('about_dataset/', aboutDataset, name="about_dataset"),
+    path('data_analytics/', data_analytics, name="data_analytics"),
 ]

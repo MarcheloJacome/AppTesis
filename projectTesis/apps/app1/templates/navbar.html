@@ -27,6 +27,9 @@
               <li><a class="nav-link link-dark" href="{% url 'about_ai_models' %}">{% trans "ML Models"%}</a></li>
               <li><a class="nav-link link-dark" href="{% url 'about_dataset' %}">{% trans "Dataset"%}</a></li>
               <li><a class="nav-link link-dark" href="{% url 'feature_importance' %}">{% trans "Feature importance"%}</a></li>
+              {% if request.user.is_authenticated %}
+              <li><a class="nav-link link-dark" href="{% url 'data_analytics' %}">{% trans "Data Analytics"%}</a></li>
+              {% endif %}
             </ul>
           </span>
         </li>

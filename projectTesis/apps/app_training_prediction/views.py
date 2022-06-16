@@ -49,7 +49,7 @@ def addPredictionToTrain(request, pk):
 def predictionToTrainList(request):
     ##############Delete later
     """
-    data = pd.read_csv("apps/app1/static/app1/Data/heart.csv")
+    data = pd.read_csv("apps/app1/static/app1/Data/heart_updated.csv")
     for i in range(len(data)):
         new_Pred =PredictionToTrain.objects.create(
             date_created = datetime.date.today(),

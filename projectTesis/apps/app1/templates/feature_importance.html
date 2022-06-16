@@ -9,8 +9,8 @@
 <p class="lead font-italic"></p>
 <style type ="text/css">
     .chartBox{
-        width: 90%;
-        height: 90%;
+        width: 60%;
+        height: 60%;
     }
 </style>
 {% endblock title %}
@@ -33,13 +33,18 @@
     $(document).ready(function () {
         var ctx = document.getElementById('myChart').getContext('2d');
         var myChart = new Chart(ctx, {
-            type: 'bar',
+            type: 'doughnut',
             data: {
                 labels: [{% for lab in labels %}'{{lab}}',{% endfor %}], 
         datasets: [{
-            label: '{% trans "Feature Importance %"%}',
+            label: '{{main_label}}',
             data: [{% for feature in f_importances %} {{ feature }}, {% endfor %}],
         backgroundColor: [
+        'rgba(76, 171, 177, 0.7)',
+        'rgba(8, 54, 48, 0.7)',
+        'rgba(255, 149, 98, 0.7)',
+        'rgba(150, 90, 52, 0.7)',
+        'rgba(38, 160, 73, 0.3)',
         'rgba(255, 99, 132, 0.2)',
         'rgba(54, 162, 235, 0.2)',
         'rgba(255, 206, 86, 0.2)',
@@ -48,6 +53,11 @@
         'rgba(255, 159, 64, 0.2)'
     ],
         borderColor: [
+        'rgba(76, 171, 177, 1)',
+        'rgba(8, 54, 48, 1)',
+        'rgba(255, 149, 98, 1)',
+        'rgba(150, 90, 52, 1)',
+        'rgba(38, 160, 73, 1)',
         'rgba(255, 99, 132, 1)',
         'rgba(54, 162, 235, 1)',
         'rgba(255, 206, 86, 1)',
@@ -64,6 +74,16 @@
             y: {
                 beginAtZero: true
             }
+        },
+        plugins:{
+            tooltip:{
+                callbacks:{
+                    title: function(context){
+                        console.log(context[0].label);
+                        return "{{main_label}}";
+                    }
+                }
+            },
         }
     }
     });

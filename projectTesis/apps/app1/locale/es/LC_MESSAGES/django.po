@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-06-13 19:43-0500\n"
+"POT-Creation-Date: 2022-06-16 13:17-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,54 +26,54 @@ msgstr "Sí"
 msgid "All"
 msgstr "Todos"
 
-#: .\apps\app1\forms.py:25 .\apps\app1\forms.py:42 .\apps\app1\views.py:91
-#: .\apps\app1\views.py:136 .\apps\app1\views.py:155 .\apps\app1\views.py:176
+#: .\apps\app1\forms.py:25 .\apps\app1\forms.py:42 .\apps\app1\views.py:90
+#: .\apps\app1\views.py:151 .\apps\app1\views.py:170 .\apps\app1\views.py:191
 msgid "Age"
 msgstr "Edad"
 
-#: .\apps\app1\forms.py:26 .\apps\app1\forms.py:45 .\apps\app1\views.py:91
-#: .\apps\app1\views.py:139
+#: .\apps\app1\forms.py:26 .\apps\app1\forms.py:45 .\apps\app1\views.py:90
+#: .\apps\app1\views.py:154
 msgid "RestingBP"
 msgstr "Presion arterial"
 
-#: .\apps\app1\forms.py:27 .\apps\app1\forms.py:46 .\apps\app1\views.py:91
-#: .\apps\app1\views.py:140
+#: .\apps\app1\forms.py:27 .\apps\app1\forms.py:46 .\apps\app1\views.py:90
+#: .\apps\app1\views.py:155
 msgid "Cholesterol"
 msgstr "Colesterol"
 
-#: .\apps\app1\forms.py:28 .\apps\app1\forms.py:49 .\apps\app1\views.py:92
-#: .\apps\app1\views.py:143
+#: .\apps\app1\forms.py:28 .\apps\app1\forms.py:49 .\apps\app1\views.py:91
+#: .\apps\app1\views.py:158
 msgid "MaxHR"
 msgstr "Ritmo cardíaco máximo"
 
-#: .\apps\app1\forms.py:29 .\apps\app1\forms.py:51 .\apps\app1\views.py:92
-#: .\apps\app1\views.py:145
+#: .\apps\app1\forms.py:29 .\apps\app1\forms.py:51 .\apps\app1\views.py:91
+#: .\apps\app1\views.py:160
 msgid "Oldpeak"
 msgstr "Depresión segmento ST"
 
-#: .\apps\app1\forms.py:33 .\apps\app1\forms.py:43 .\apps\app1\views.py:137
-#: .\apps\app1\views.py:156
+#: .\apps\app1\forms.py:33 .\apps\app1\forms.py:43 .\apps\app1\views.py:152
+#: .\apps\app1\views.py:171
 msgid "Sex"
 msgstr "Sexo"
 
-#: .\apps\app1\forms.py:34 .\apps\app1\forms.py:44 .\apps\app1\views.py:138
+#: .\apps\app1\forms.py:34 .\apps\app1\forms.py:44 .\apps\app1\views.py:153
 msgid "ChestPainType"
 msgstr "Dolor torácico"
 
-#: .\apps\app1\forms.py:35 .\apps\app1\forms.py:47 .\apps\app1\views.py:92
-#: .\apps\app1\views.py:141
+#: .\apps\app1\forms.py:35 .\apps\app1\forms.py:47 .\apps\app1\views.py:91
+#: .\apps\app1\views.py:156
 msgid "FastingBS"
 msgstr "Glucemia ayunas"
 
-#: .\apps\app1\forms.py:36 .\apps\app1\forms.py:48 .\apps\app1\views.py:142
+#: .\apps\app1\forms.py:36 .\apps\app1\forms.py:48 .\apps\app1\views.py:157
 msgid "RestingECG"
 msgstr "Electrocardiograma en reposo"
 
-#: .\apps\app1\forms.py:37 .\apps\app1\forms.py:50 .\apps\app1\views.py:144
+#: .\apps\app1\forms.py:37 .\apps\app1\forms.py:50 .\apps\app1\views.py:159
 msgid "ExerciseAngina"
 msgstr "Angina por ejercicio"
 
-#: .\apps\app1\forms.py:38 .\apps\app1\forms.py:52 .\apps\app1\views.py:146
+#: .\apps\app1\forms.py:38 .\apps\app1\forms.py:52 .\apps\app1\views.py:161
 msgid "ST_Slope"
 msgstr "Pendiente ST"
 
@@ -348,9 +348,6 @@ msgid "Obtained parameters for single model"
 msgstr "Paámetros obtenidos para el modelo simple"
 
 #: .\apps\app1\templates\about_ai_models.html:67
-#, fuzzy, python-format
-#| msgid ""
-#| "A weighed average accuracy of 87 %% was obtained with these parameters."
 msgid "A weighed average accuracy of 87 %% was obtained with these parameters."
 msgstr "Con estos parámetros se obtuvo una precisión media ponderada del 87%."
 
@@ -359,9 +356,6 @@ msgid "Obtained parameters for ensemble models"
 msgstr "Paámetros obtenidos para el conjunto de modelos"
 
 #: .\apps\app1\templates\about_ai_models.html:75
-#, fuzzy, python-format
-#| msgid ""
-#| "A weighed average accuracy of 87.51 %% was obtained with these parameters."
 msgid ""
 "A weighed average accuracy of 87.51 %% was obtained with these parameters."
 msgstr ""
@@ -706,22 +700,16 @@ msgstr ""
 "Las importancias de las características luego se promedian en todos los "
 "árboles de decisión dentro del modelo."
 
-#: .\apps\app1\templates\feature_importance.html:40
-#, fuzzy, python-format
-#| msgid "Feature Importance %%"
-msgid "Feature Importance %%"
-msgstr "Importancia de característica %"
-
 #: .\apps\app1\templates\login.html:18
 msgid "Please login to your account"
 msgstr "Por favor, ingresa con tu cuenta"
 
 #: .\apps\app1\templates\login.html:20 .\apps\app1\templates\login.html:22
-#: .\apps\app1\templates\register.html:64
+#: .\apps\app1\templates\register.html:62
 msgid "Username"
 msgstr "Nombre de usuario"
 
-#: .\apps\app1\templates\login.html:26 .\apps\app1\templates\register.html:66
+#: .\apps\app1\templates\login.html:26 .\apps\app1\templates\register.html:64
 msgid "Password"
 msgstr "Contraseña"
 
@@ -740,6 +728,28 @@ msgstr "¿No posees una cuenta?"
 #: .\apps\app1\templates\login.html:37
 msgid "Create new"
 msgstr "Crear nueva"
+
+#: .\apps\app1\templates\login.html:40
+msgid "Or"
+msgstr "O"
+
+#: .\apps\app1\templates\login.html:40
+msgid "continue as guest."
+msgstr "continuar como invitado."
+
+#: .\apps\app1\templates\login.html:47 .\apps\app1\templates\register.html:50
+msgid "The heart-friendly app"
+msgstr "La aplicación amigable con el corazón"
+
+#: .\apps\app1\templates\login.html:48 .\apps\app1\templates\register.html:51
+msgid ""
+"Heart Help is an application which main goal is use a machine learning model "
+"to be able to predict the presence of heart disease in an individual based "
+"on its various known health markers"
+msgstr ""
+"Heart Help es una aplicación cuyo principal objetivo es utilizar un modelo de machine learning "
+"para poder predecir la presencia de enfermedades cardíacas en un individuo en función "
+"de sus diversos marcadores de salud conocidos"
 
 #: .\apps\app1\templates\navbar.html:11
 msgid "Home"
@@ -862,95 +872,99 @@ msgstr "Crear cuenta"
 msgid "Already have an account?"
 msgstr "¿Ya posees una cuenta?"
 
-#: .\apps\app1\templates\register.html:62
+#: .\apps\app1\templates\register.html:60
 msgid "First Name"
 msgstr "Nombre"
 
-#: .\apps\app1\templates\register.html:63
+#: .\apps\app1\templates\register.html:61
 msgid "Last Name"
 msgstr "Apellido"
 
-#: .\apps\app1\templates\register.html:65
+#: .\apps\app1\templates\register.html:63
 msgid "Email"
 msgstr "Email"
 
-#: .\apps\app1\templates\register.html:67
+#: .\apps\app1\templates\register.html:65
 msgid "Confirm Password"
 msgstr "Confirmar contraseña"
 
-#: .\apps\app1\views.py:29
+#: .\apps\app1\views.py:28
 msgid "Account was created for "
 msgstr "Se creó una cuenta para "
 
-#: .\apps\app1\views.py:46
+#: .\apps\app1\views.py:45
 msgid "Username or Password is incorrect"
 msgstr "Usuario o contraseña incorrectos"
 
-#: .\apps\app1\views.py:64
+#: .\apps\app1\views.py:63
 msgid "Account was updated for "
 msgstr "Se actualizó una cuenta para "
 
-#: .\apps\app1\views.py:86
+#: .\apps\app1\views.py:85
 msgid "Sex_F"
 msgstr "Sexo (F)"
 
-#: .\apps\app1\views.py:86
+#: .\apps\app1\views.py:85
 msgid "Sex_M"
 msgstr "Sexo (M)"
 
-#: .\apps\app1\views.py:87
+#: .\apps\app1\views.py:86
 msgid "ChestPainType_ASY"
 msgstr "Dolor torácico (Asintomático)"
 
-#: .\apps\app1\views.py:87
+#: .\apps\app1\views.py:86
 msgid "ChestPainType_ATA"
 msgstr "Dolor torácico (Angina atípica)"
 
-#: .\apps\app1\views.py:87
+#: .\apps\app1\views.py:86
 msgid "ChestPainType_NAP"
 msgstr "Dolor torácico (No anginoso)"
 
-#: .\apps\app1\views.py:87
+#: .\apps\app1\views.py:86
 msgid "ChestPainType_TA"
 msgstr "Dolor torácico (Angina típica)"
 
-#: .\apps\app1\views.py:87
+#: .\apps\app1\views.py:86
 msgid "RestingECG_LVH"
 msgstr "Electrocardiograma en reposo (LVH)"
 
-#: .\apps\app1\views.py:88
+#: .\apps\app1\views.py:87
 msgid "RestingECG_Normal"
 msgstr "Electrocardiograma en reposo (Normal)"
 
-#: .\apps\app1\views.py:88
+#: .\apps\app1\views.py:87
 msgid "RestingECG_ST"
 msgstr "Electrocardiograma en reposo (ST)"
 
-#: .\apps\app1\views.py:89
+#: .\apps\app1\views.py:88
 msgid "ExerciseAngina_N"
 msgstr "Angina por ejercicio (No)"
 
-#: .\apps\app1\views.py:89
+#: .\apps\app1\views.py:88
 msgid "ExerciseAngina_Y"
 msgstr "Angina por ejercicio (Sí)"
 
-#: .\apps\app1\views.py:90
+#: .\apps\app1\views.py:89
 msgid "ST_Slope_Down"
 msgstr "Pendiente ST (Abajo)"
 
-#: .\apps\app1\views.py:90
+#: .\apps\app1\views.py:89
 msgid "ST_Slope_Flat"
 msgstr "Pendiente ST (Plana)"
 
-#: .\apps\app1\views.py:90
+#: .\apps\app1\views.py:89
 msgid "ST_Slope_Up"
 msgstr "Pendiente ST (Arriba)"
 
-#: .\apps\app1\views.py:147 .\apps\app1\views.py:163 .\apps\app1\views.py:181
+#: .\apps\app1\views.py:109
+msgid "Feature Importance %"
+msgstr "Importancia de característica %"
+
+#: .\apps\app1\views.py:162 .\apps\app1\views.py:178 .\apps\app1\views.py:196
 msgid "HeartDisease"
 msgstr "Enfermedad cardíaca"
 
-#: .\apps\app1\views.py:168 .\apps\app1\views.py:186
+#: .\apps\app1\views.py:183 .\apps\app1\views.py:201
 msgid "Heart Disease Output (Total)"
 msgstr "Salida: Enfermedad cardíaca (Total)"
 

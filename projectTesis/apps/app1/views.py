@@ -91,9 +91,22 @@ def featureImportance(request):
        _('FastingBS'), _('MaxHR'), _('Oldpeak')]
     xgb_class = joblib.load('aiModels/XGBClassifier.pkl')
     f_importances = np.round(xgb_class.feature_importances_*100,2)
-    labels = proc_labels
-    context = {'f_importances':f_importances,
-                'labels':labels}
+
+    feat_dict = {}
+    for i in range(len(f_importances)):
+        feat_dict[proc_labels[i]] = f_importances[i]
+    feat_dict
+    sorted_feat_dict = {k: v for k, v in sorted(feat_dict.items(), key=lambda item: item[1])}
+    sort_f_importances = []
+    labels = []
+    for key in feat_dict:
+        if feat_dict[key] > 0:
+            sort_f_importances += [feat_dict[key]]
+            labels += [key]
+    main_label = _('Feature Importance %')
+    context = {'f_importances':sort_f_importances,
+                'labels':labels,
+                'main_label':main_label}
     return render(request, 'feature_importance.html',context)
 
 def aboutAIModels(request):

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-06-16 13:17-0500\n"
+"POT-Creation-Date: 2022-06-17 16:19-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -58,13 +58,13 @@ msgstr "Tipo de dolor torácico"
 
 #: .\apps\app_training_prediction\forms.py:29
 #: .\apps\app_training_prediction\forms.py:92
-msgid "Resting blood pressure"
-msgstr "Presión arterial en reposo"
+msgid "Resting systolic blood pressure (mm/Hg)"
+msgstr "Presión arterial sistólica en reposo (mm/Hg)"
 
 #: .\apps\app_training_prediction\forms.py:30
 #: .\apps\app_training_prediction\forms.py:93
-msgid "Serum cholesterol"
-msgstr "Colesterol sérico"
+msgid "Serum cholesterol (mm/dl)"
+msgstr "Colesterol sérico (mm/dl)"
 
 #: .\apps\app_training_prediction\forms.py:31
 #: .\apps\app_training_prediction\forms.py:94
@@ -88,8 +88,8 @@ msgstr "Angina torácica inducida por ejercicio"
 
 #: .\apps\app_training_prediction\forms.py:36
 #: .\apps\app_training_prediction\forms.py:99
-msgid "ECG ST Segment"
-msgstr "Segmento ST del electrocardiograma"
+msgid "ECG ST Segment (milimeters)"
+msgstr "Segmento ST del electrocardiograma (milímetros)"
 
 #: .\apps\app_training_prediction\forms.py:37
 #: .\apps\app_training_prediction\forms.py:100
@@ -124,8 +124,8 @@ msgstr "Tipo de dolor torácico"
 
 #: .\apps\app_training_prediction\forms.py:47
 #: .\apps\app_training_prediction\forms.py:110
-msgid "Resting blood pressure measured in: mm/Hg"
-msgstr "Presión arterial en reposo medida en: mm/Hg"
+msgid "Resting systolic blood pressure measured in: mm/Hg"
+msgstr "Presión arterial sistólica en reposo, medida en: mm/Hg"
 
 #: .\apps\app_training_prediction\forms.py:49
 #: .\apps\app_training_prediction\forms.py:112
@@ -178,12 +178,12 @@ msgstr ""
 #: .\apps\app_training_prediction\forms.py:61
 #: .\apps\app_training_prediction\forms.py:124
 msgid ""
-"The slope of the peak exercise ST segment:\n"
+"The slope of the ST segment during ECG stress test:\n"
 "UP: Upslowing\n"
 "FLAT: Flat\n"
 "DOWN: Downslowing"
 msgstr ""
-"La pendiente del segmento ST de ejercicio máximo:\n"
+"La pendiente del segmento ST durante la prueba de esfuerzo cardíaco:\n"
 "ARRIBA: Creciente\n"
 "PLANO: Constante\n"
 "ABAJO: Decreciente"

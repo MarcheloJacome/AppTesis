@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-06-16 13:17-0500\n"
+"POT-Creation-Date: 2022-06-17 16:19-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,54 +26,70 @@ msgstr "Sí"
 msgid "All"
 msgstr "Todos"
 
-#: .\apps\app1\forms.py:25 .\apps\app1\forms.py:42 .\apps\app1\views.py:90
-#: .\apps\app1\views.py:151 .\apps\app1\views.py:170 .\apps\app1\views.py:191
+#: .\apps\app1\forms.py:25 .\apps\app1\forms.py:42
+#: .\apps\app1\templates\about_dataset.html:70 .\apps\app1\views.py:90
+#: .\apps\app1\views.py:116 .\apps\app1\views.py:131 .\apps\app1\views.py:157
+#: .\apps\app1\views.py:176 .\apps\app1\views.py:197
 msgid "Age"
 msgstr "Edad"
 
-#: .\apps\app1\forms.py:26 .\apps\app1\forms.py:45 .\apps\app1\views.py:90
-#: .\apps\app1\views.py:154
+#: .\apps\app1\forms.py:26 .\apps\app1\forms.py:45
+#: .\apps\app1\templates\about_dataset.html:73 .\apps\app1\views.py:90
+#: .\apps\app1\views.py:116 .\apps\app1\views.py:131 .\apps\app1\views.py:160
 msgid "RestingBP"
 msgstr "Presion arterial"
 
-#: .\apps\app1\forms.py:27 .\apps\app1\forms.py:46 .\apps\app1\views.py:90
-#: .\apps\app1\views.py:155
+#: .\apps\app1\forms.py:27 .\apps\app1\forms.py:46
+#: .\apps\app1\templates\about_dataset.html:74 .\apps\app1\views.py:90
+#: .\apps\app1\views.py:116 .\apps\app1\views.py:131 .\apps\app1\views.py:161
 msgid "Cholesterol"
 msgstr "Colesterol"
 
-#: .\apps\app1\forms.py:28 .\apps\app1\forms.py:49 .\apps\app1\views.py:91
-#: .\apps\app1\views.py:158
+#: .\apps\app1\forms.py:28 .\apps\app1\forms.py:49
+#: .\apps\app1\templates\about_dataset.html:77 .\apps\app1\views.py:91
+#: .\apps\app1\views.py:117 .\apps\app1\views.py:132 .\apps\app1\views.py:164
 msgid "MaxHR"
 msgstr "Ritmo cardíaco máximo"
 
-#: .\apps\app1\forms.py:29 .\apps\app1\forms.py:51 .\apps\app1\views.py:91
-#: .\apps\app1\views.py:160
+#: .\apps\app1\forms.py:29 .\apps\app1\forms.py:51
+#: .\apps\app1\templates\about_dataset.html:79 .\apps\app1\views.py:91
+#: .\apps\app1\views.py:117 .\apps\app1\views.py:132 .\apps\app1\views.py:166
 msgid "Oldpeak"
 msgstr "Depresión segmento ST"
 
-#: .\apps\app1\forms.py:33 .\apps\app1\forms.py:43 .\apps\app1\views.py:152
-#: .\apps\app1\views.py:171
+#: .\apps\app1\forms.py:33 .\apps\app1\forms.py:43
+#: .\apps\app1\templates\about_dataset.html:71 .\apps\app1\views.py:116
+#: .\apps\app1\views.py:158 .\apps\app1\views.py:177
 msgid "Sex"
 msgstr "Sexo"
 
-#: .\apps\app1\forms.py:34 .\apps\app1\forms.py:44 .\apps\app1\views.py:153
+#: .\apps\app1\forms.py:34 .\apps\app1\forms.py:44
+#: .\apps\app1\templates\about_dataset.html:72 .\apps\app1\views.py:116
+#: .\apps\app1\views.py:159
 msgid "ChestPainType"
 msgstr "Dolor torácico"
 
-#: .\apps\app1\forms.py:35 .\apps\app1\forms.py:47 .\apps\app1\views.py:91
-#: .\apps\app1\views.py:156
+#: .\apps\app1\forms.py:35 .\apps\app1\forms.py:47
+#: .\apps\app1\templates\about_dataset.html:75 .\apps\app1\views.py:91
+#: .\apps\app1\views.py:116 .\apps\app1\views.py:132 .\apps\app1\views.py:162
 msgid "FastingBS"
 msgstr "Glucemia ayunas"
 
-#: .\apps\app1\forms.py:36 .\apps\app1\forms.py:48 .\apps\app1\views.py:157
+#: .\apps\app1\forms.py:36 .\apps\app1\forms.py:48
+#: .\apps\app1\templates\about_dataset.html:76 .\apps\app1\views.py:117
+#: .\apps\app1\views.py:163
 msgid "RestingECG"
 msgstr "Electrocardiograma en reposo"
 
-#: .\apps\app1\forms.py:37 .\apps\app1\forms.py:50 .\apps\app1\views.py:159
+#: .\apps\app1\forms.py:37 .\apps\app1\forms.py:50
+#: .\apps\app1\templates\about_dataset.html:78 .\apps\app1\views.py:117
+#: .\apps\app1\views.py:165
 msgid "ExerciseAngina"
 msgstr "Angina por ejercicio"
 
-#: .\apps\app1\forms.py:38 .\apps\app1\forms.py:52 .\apps\app1\views.py:161
+#: .\apps\app1\forms.py:38 .\apps\app1\forms.py:52
+#: .\apps\app1\templates\about_dataset.html:80 .\apps\app1\views.py:117
+#: .\apps\app1\views.py:167
 msgid "ST_Slope"
 msgstr "Pendiente ST"
 
@@ -489,11 +505,17 @@ msgstr ""
 
 #: .\apps\app1\templates\about_dataset.html:80
 msgid ""
-" the slope of the peak exercise ST segment (Up: upsloping, Flat: flat, Down: "
-"downsloping)."
+" the slope of the ST segment during ECG stress test (Up: upsloping, Flat: "
+"flat, Down: downsloping)."
 msgstr ""
-" la pendiente del segmento ST de ejercicio máximo (Up: creciente, Flat: "
+" la pendiente del segmento ST durante la prueba de esfuerzo cardíaco (Up: creciente, Flat: "
 "constante, Down: decreciente)."
+
+#: .\apps\app1\templates\about_dataset.html:81 .\apps\app1\views.py:117
+#: .\apps\app1\views.py:133 .\apps\app1\views.py:168 .\apps\app1\views.py:184
+#: .\apps\app1\views.py:202
+msgid "HeartDisease"
+msgstr "Enfermedad cardíaca"
 
 #: .\apps\app1\templates\about_dataset.html:81
 msgid " output class (1: heart disease, 0: Normal)."
@@ -747,9 +769,10 @@ msgid ""
 "to be able to predict the presence of heart disease in an individual based "
 "on its various known health markers"
 msgstr ""
-"Heart Help es una aplicación cuyo principal objetivo es utilizar un modelo de machine learning "
-"para poder predecir la presencia de enfermedades cardíacas en un individuo en función "
-"de sus diversos marcadores de salud conocidos"
+"Heart Help es una aplicación cuyo principal objetivo es utilizar un modelo "
+"de machine learning para poder predecir la presencia de enfermedades "
+"cardíacas en un individuo en función de sus diversos marcadores de salud "
+"conocidos"
 
 #: .\apps\app1\templates\navbar.html:11
 msgid "Home"
@@ -900,71 +923,67 @@ msgstr "Usuario o contraseña incorrectos"
 msgid "Account was updated for "
 msgstr "Se actualizó una cuenta para "
 
-#: .\apps\app1\views.py:85
+#: .\apps\app1\views.py:85 .\apps\app1\views.py:126
 msgid "Sex_F"
 msgstr "Sexo (F)"
 
-#: .\apps\app1\views.py:85
+#: .\apps\app1\views.py:85 .\apps\app1\views.py:126
 msgid "Sex_M"
 msgstr "Sexo (M)"
 
-#: .\apps\app1\views.py:86
+#: .\apps\app1\views.py:86 .\apps\app1\views.py:127
 msgid "ChestPainType_ASY"
 msgstr "Dolor torácico (Asintomático)"
 
-#: .\apps\app1\views.py:86
+#: .\apps\app1\views.py:86 .\apps\app1\views.py:127
 msgid "ChestPainType_ATA"
 msgstr "Dolor torácico (Angina atípica)"
 
-#: .\apps\app1\views.py:86
+#: .\apps\app1\views.py:86 .\apps\app1\views.py:127
 msgid "ChestPainType_NAP"
 msgstr "Dolor torácico (No anginoso)"
 
-#: .\apps\app1\views.py:86
+#: .\apps\app1\views.py:86 .\apps\app1\views.py:127
 msgid "ChestPainType_TA"
 msgstr "Dolor torácico (Angina típica)"
 
-#: .\apps\app1\views.py:86
+#: .\apps\app1\views.py:86 .\apps\app1\views.py:127
 msgid "RestingECG_LVH"
 msgstr "Electrocardiograma en reposo (LVH)"
 
-#: .\apps\app1\views.py:87
+#: .\apps\app1\views.py:87 .\apps\app1\views.py:128
 msgid "RestingECG_Normal"
 msgstr "Electrocardiograma en reposo (Normal)"
 
-#: .\apps\app1\views.py:87
+#: .\apps\app1\views.py:87 .\apps\app1\views.py:128
 msgid "RestingECG_ST"
 msgstr "Electrocardiograma en reposo (ST)"
 
-#: .\apps\app1\views.py:88
+#: .\apps\app1\views.py:88 .\apps\app1\views.py:129
 msgid "ExerciseAngina_N"
 msgstr "Angina por ejercicio (No)"
 
-#: .\apps\app1\views.py:88
+#: .\apps\app1\views.py:88 .\apps\app1\views.py:129
 msgid "ExerciseAngina_Y"
 msgstr "Angina por ejercicio (Sí)"
 
-#: .\apps\app1\views.py:89
+#: .\apps\app1\views.py:89 .\apps\app1\views.py:130
 msgid "ST_Slope_Down"
 msgstr "Pendiente ST (Abajo)"
 
-#: .\apps\app1\views.py:89
+#: .\apps\app1\views.py:89 .\apps\app1\views.py:130
 msgid "ST_Slope_Flat"
 msgstr "Pendiente ST (Plana)"
 
-#: .\apps\app1\views.py:89
+#: .\apps\app1\views.py:89 .\apps\app1\views.py:130
 msgid "ST_Slope_Up"
 msgstr "Pendiente ST (Arriba)"
 
-#: .\apps\app1\views.py:109
+#: .\apps\app1\views.py:106
 msgid "Feature Importance %"
 msgstr "Importancia de característica %"
 
-#: .\apps\app1\views.py:162 .\apps\app1\views.py:178 .\apps\app1\views.py:196
-msgid "HeartDisease"
-msgstr "Enfermedad cardíaca"
-
-#: .\apps\app1\views.py:183 .\apps\app1\views.py:201
+#: .\apps\app1\views.py:189 .\apps\app1\views.py:207
 msgid "Heart Disease Output (Total)"
 msgstr "Salida: Enfermedad cardíaca (Total)"
 

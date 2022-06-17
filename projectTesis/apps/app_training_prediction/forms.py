@@ -26,14 +26,14 @@ class DetailPredictionToTrainForm(forms.ModelForm):
         self.fields['age'].label = _('Age')
         self.fields['sex'].label = _('Sex')
         self.fields['chestPainType'].label = _('Chest pain type')
-        self.fields['restingBP'].label = _('Resting blood pressure')
-        self.fields['cholesterol'].label = _('Serum cholesterol')
+        self.fields['restingBP'].label = _('Resting systolic blood pressure (mm/Hg)')
+        self.fields['cholesterol'].label = _('Serum cholesterol (mm/dl)')
         self.fields['fastingBS'].label = _('Fasting blood sugar')
         self.fields['restingECG'].label = _(
             "Resting electrocardiogram results")
         self.fields['maxHR'].label = _('Maximum heart rate achieved')
         self.fields['exerciseAngina'].label = _('Exercise-induced angina')
-        self.fields['oldpeak'].label = _("ECG ST Segment")
+        self.fields['oldpeak'].label = _("ECG ST Segment (milimeters)")
         self.fields['sT_Slope'].label = _('ST Slope')
         self.fields['heartDisease'].label = _('Heart Disease')
         self.fields['aiModel'].label = _('Machine learning model')
@@ -44,7 +44,7 @@ class DetailPredictionToTrainForm(forms.ModelForm):
         self.fields['chestPainType'].widget.attrs['title'] = _(
             'Type of chest pain')
         self.fields['restingBP'].widget.attrs['title'] = _(
-            'Resting blood pressure measured in: mm/Hg')
+            'Resting systolic blood pressure measured in: mm/Hg')
         self.fields['cholesterol'].widget.attrs['title'] = _(
             'Serum cholesterol measured in mm/dl')
         self.fields['fastingBS'].widget.attrs['title'] = _(
@@ -58,7 +58,7 @@ class DetailPredictionToTrainForm(forms.ModelForm):
         self.fields['oldpeak'].widget.attrs['title'] = _(
             "ST depression.\nThe height difference (in milimiters) between the J point and the baseline (the PR segment)")
         self.fields['sT_Slope'].widget.attrs['title'] = _(
-            'The slope of the peak exercise ST segment:\nUP: Upslowing\nFLAT: Flat\nDOWN: Downslowing')
+            'The slope of the ST segment during ECG stress test:\nUP: Upslowing\nFLAT: Flat\nDOWN: Downslowing')
         self.fields['aiModel'].widget.attrs['title'] = _(
             'Machine learning model to use for prediction')
 
@@ -89,14 +89,14 @@ class EditPredictionToTrainForm(forms.ModelForm):
         self.fields['age'].label = _('Age')
         self.fields['sex'].label = _('Sex')
         self.fields['chestPainType'].label = _('Chest pain type')
-        self.fields['restingBP'].label = _('Resting blood pressure')
-        self.fields['cholesterol'].label = _('Serum cholesterol')
+        self.fields['restingBP'].label = _('Resting systolic blood pressure (mm/Hg)')
+        self.fields['cholesterol'].label = _('Serum cholesterol (mm/dl)')
         self.fields['fastingBS'].label = _('Fasting blood sugar')
         self.fields['restingECG'].label = _(
             "Resting electrocardiogram results")
         self.fields['maxHR'].label = _('Maximum heart rate achieved')
         self.fields['exerciseAngina'].label = _('Exercise-induced angina')
-        self.fields['oldpeak'].label = _("ECG ST Segment")
+        self.fields['oldpeak'].label = _("ECG ST Segment (milimeters)")
         self.fields['sT_Slope'].label = _('ST Slope')
         self.fields['heartDisease'].label = _('Heart Disease')
         self.fields['aiModel'].label = _('Machine learning model')
@@ -107,7 +107,7 @@ class EditPredictionToTrainForm(forms.ModelForm):
         self.fields['chestPainType'].widget.attrs['title'] = _(
             'Type of chest pain')
         self.fields['restingBP'].widget.attrs['title'] = _(
-            'Resting blood pressure measured in: mm/Hg')
+            'Resting systolic blood pressure measured in: mm/Hg')
         self.fields['cholesterol'].widget.attrs['title'] = _(
             'Serum cholesterol measured in mm/dl')
         self.fields['fastingBS'].widget.attrs['title'] = _(
@@ -121,7 +121,7 @@ class EditPredictionToTrainForm(forms.ModelForm):
         self.fields['oldpeak'].widget.attrs['title'] = _(
             "ST depression.\nThe height difference (in milimiters) between the J point and the baseline (the PR segment)")
         self.fields['sT_Slope'].widget.attrs['title'] = _(
-            'The slope of the peak exercise ST segment:\nUP: Upslowing\nFLAT: Flat\nDOWN: Downslowing')
+            'The slope of the ST segment during ECG stress test:\nUP: Upslowing\nFLAT: Flat\nDOWN: Downslowing')
         self.fields['aiModel'].widget.attrs['title'] = _(
             'Machine learning model to use for prediction')
 

@@ -67,18 +67,18 @@
       <div class="col">
 
         <h4>{% trans "Feature description"%}</h4>
-        <p class="fs-5"><span class="fw-bold">-Age:</span>{% trans " age of the patient in years."%}</p>
-        <p class="fs-5"><span class="fw-bold">-Sex:</span>{% trans " sex of the patient (M: Male, F: Female)."%}</p>
-        <p class="fs-5"><span class="fw-bold">-ChestPainType:</span>{% trans " chest pain type (TA: Typical Angina, ATA: Atypical Angina, NAP: Non-Anginal Pain, ASY: Asymptomatic)."%}</p>
-        <p class="fs-5"><span class="fw-bold">-RestingBP:</span>{% trans " resting blood pressure measured in (mm/Hg)."%}</p>
-        <p class="fs-5"><span class="fw-bold">-Cholesterol:</span>{% trans " serum cholesterol measured in (mm/Hg)."%}</p>
-        <p class="fs-5"><span class="fw-bold">-FastingBS:</span>{% trans " fasting blood sugar (1: if FastingBS > 120 mg/dl, 0: if FastingBS <= 120 mg/dl)."%}</p>
-        <p class="fs-5"><span class="fw-bold">-RestingECG:</span>{% trans " resting electrocardiogram results (Normal: Normal, ST: having ST-T wave abnormality (T wave inversions and/or ST elevation or depression of > 0.05 mV), LVH: showing probable or definite left ventricular hypertrophy by Estes' criteria)."%}</p>
-        <p class="fs-5"><span class="fw-bold">-MaxHR:</span>{% trans " maximum amount of heart beats achieved per minute under maximum stress."%}</p>
-        <p class="fs-5"><span class="fw-bold">-ExerciseAngina:</span>{% trans " exercise-induced angina (Y: Yes, N: No)."%}</p>
-        <p class="fs-5"><span class="fw-bold">-Oldeak:</span>{% trans " ST depression. The height difference (in milimiters) between the J point and the baseline (the PR segment)."%}</p>
-        <p class="fs-5"><span class="fw-bold">-ST_Slope:</span>{% trans " the slope of the peak exercise ST segment (Up: upsloping, Flat: flat, Down: downsloping)."%}</p>
-        <p class="fs-5"><span class="fw-bold">-HeartDisease:</span>{% trans " output class (1: heart disease, 0: Normal)."%}</p> 
+        <p class="fs-5"><span class="fw-bold">-{% trans 'Age' %}:</span>{% trans " age of the patient in years."%}</p>
+        <p class="fs-5"><span class="fw-bold">-{%trans 'Sex'%}:</span>{% trans " sex of the patient (M: Male, F: Female)."%}</p>
+        <p class="fs-5"><span class="fw-bold">-{%trans 'ChestPainType'%}:</span>{% trans " chest pain type (TA: Typical Angina, ATA: Atypical Angina, NAP: Non-Anginal Pain, ASY: Asymptomatic)."%}</p>
+        <p class="fs-5"><span class="fw-bold">-{%trans 'RestingBP'%}:</span>{% trans " resting blood pressure measured in (mm/Hg)."%}</p>
+        <p class="fs-5"><span class="fw-bold">-{%trans 'Cholesterol'%}:</span>{% trans " serum cholesterol measured in (mm/Hg)."%}</p>
+        <p class="fs-5"><span class="fw-bold">-{%trans 'FastingBS'%}:</span>{% trans " fasting blood sugar (1: if FastingBS > 120 mg/dl, 0: if FastingBS <= 120 mg/dl)."%}</p>
+        <p class="fs-5"><span class="fw-bold">-{%trans 'RestingECG'%}:</span>{% trans " resting electrocardiogram results (Normal: Normal, ST: having ST-T wave abnormality (T wave inversions and/or ST elevation or depression of > 0.05 mV), LVH: showing probable or definite left ventricular hypertrophy by Estes' criteria)."%}</p>
+        <p class="fs-5"><span class="fw-bold">-{%trans 'MaxHR'%}:</span>{% trans " maximum amount of heart beats achieved per minute under maximum stress."%}</p>
+        <p class="fs-5"><span class="fw-bold">-{%trans 'ExerciseAngina'%}:</span>{% trans " exercise-induced angina (Y: Yes, N: No)."%}</p>
+        <p class="fs-5"><span class="fw-bold">-{%trans 'Oldpeak'%}:</span>{% trans " ST depression. The height difference (in milimiters) between the J point and the baseline (the PR segment)."%}</p>
+        <p class="fs-5"><span class="fw-bold">-{%trans 'ST_Slope'%}:</span>{% trans " the slope of the ST segment during ECG stress test (Up: upsloping, Flat: flat, Down: downsloping)."%}</p>
+        <p class="fs-5"><span class="fw-bold">-{%trans 'HeartDisease'%}:</span>{% trans " output class (1: heart disease, 0: Normal)."%}</p> 
       </div>
     </div>
 </div>
@@ -92,10 +92,10 @@
 <p class="fs-5">{% trans "The result of applying “one hot encoding” to the original dataset will look like the following:"%}</p>
 &nbsp
 <div class="container table-responsive" style="overflow-x:auto;">
-    <table class="table table-striped table-bordered table-sm" width="100%">
+    <table class="table table-striped table-bordered table-lg" width="100%">
         <thead>
             <tr>
-                {% for lab in proc_labels %}
+                {% for lab in template_proc_labels %}
                 <th>{{lab}}</th>
                 {% endfor %}
             </tr>

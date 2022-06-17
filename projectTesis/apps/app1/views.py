@@ -113,8 +113,8 @@ def aboutAIModels(request):
     return render(request, 'about_ai_models.html')
 
 def aboutDataset(request):
-    non_proc_lab = ['Age', 'Sex', 'ChestPainType', 'RestingBP', 'Cholesterol', 'FastingBS',
-        'RestingECG', 'MaxHR', 'ExerciseAngina', 'Oldpeak', 'ST_Slope', 'HeartDisease']
+    non_proc_lab = [_('Age'), _('Sex'), _('ChestPainType'), _('RestingBP'), _('Cholesterol'), _('FastingBS'),
+        _('RestingECG'), _('MaxHR'), _('ExerciseAngina'), _('Oldpeak'), _('ST_Slope'), _('HeartDisease')]
     proc_labels = ['Sex_F', 'Sex_M',
         'ChestPainType_ASY','ChestPainType_ATA','ChestPainType_NAP','ChestPainType_TA', 'RestingECG_LVH',
         'RestingECG_Normal', 'RestingECG_ST',
@@ -123,6 +123,14 @@ def aboutDataset(request):
         'Age', 'RestingBP', 'Cholesterol',
         'FastingBS', 'MaxHR', 'Oldpeak',
         'HeartDisease']
+    template_proc_labels = [_('Sex_F'), _('Sex_M'),
+        _('ChestPainType_ASY'),_('ChestPainType_ATA'),_('ChestPainType_NAP'),_('ChestPainType_TA'), _('RestingECG_LVH'),
+        _('RestingECG_Normal'), _('RestingECG_ST'),
+        _('ExerciseAngina_N'),_('ExerciseAngina_Y'), 
+        _('ST_Slope_Down'),_('ST_Slope_Flat'), _('ST_Slope_Up'),
+        _('Age'), _('RestingBP'), _('Cholesterol'),
+        _('FastingBS'), _('MaxHR'), _('Oldpeak'),
+        _('HeartDisease')]
     df = pd.read_csv("apps/app1/static/app1/Data/heart.csv")
     df = df.head(20)
     json_rec = df.reset_index().to_json(orient='records')
@@ -137,7 +145,8 @@ def aboutDataset(request):
     context = {"arr":arr,
               "non_proc_lab":non_proc_lab,
               "arr_encoded":arr_encoded,
-              "proc_labels":proc_labels}
+              "proc_labels":proc_labels,
+              "template_proc_labels":template_proc_labels}
     return render(request, 'about_dataset.html',context)
 
 @login_required(login_url="/login")

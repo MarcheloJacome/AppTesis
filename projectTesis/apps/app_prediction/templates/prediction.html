@@ -10,6 +10,7 @@
 {% endblock title %}
 {% block content%}
 <h3>{% trans "Please enter details"%}:</h3>
+<p class="fs-5">{% trans "Hold the pointer over each filed for details. If you want to know more information about each field, check out the" %} <a href="about_dataset">{% trans 'datasaet'%}</a> {% trans 'in the "About" section'%}.</p>
 <br>
 <form method="post" enctype="multipart/form-data" action="">
     {% csrf_token %}

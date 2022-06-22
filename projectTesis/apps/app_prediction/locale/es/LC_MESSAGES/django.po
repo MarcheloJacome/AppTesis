@@ -270,7 +270,7 @@ msgid ""
 "Hold the pointer over each filed for details. If you want to know more "
 "information about each field, check out the"
 msgstr ""
-"Manten el puntero sobre cada campo para obtener detalles. Si deseas obtener más "
+"Manten el puntero sobre cada campo para obtener detalles. Si deseas obtener "
 "más información sobre cada campo, consulta el"
 
 #: .\apps\app_prediction\templates\prediction.html:13

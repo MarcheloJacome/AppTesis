@@ -139,17 +139,11 @@ def predictionToTrainConfirm(request, pk):
         transformed_tempx = ohEncoder.transform(tempx_pd)
         sScaler = joblib.load('aiModels/SScaler.pkl')
         sc_transformed_tempx = sScaler.transform(transformed_tempx) 
-        #aimod = prediction.aiModel
-        #if aimod == 0:
-            #xgb_class = joblib.load('aiModels/XGBClassifier.pkl')
         mlp_classifier = joblib.load('aiModels/MLPClassifier.pkl')
         mlp_classifier.partial_fit(sc_transformed_tempx,tempy)
         joblib.dump(mlp_classifier,'AiModels\MLPClassifier.pkl')
         prediction.was_used = True
         prediction.save()
         return redirect('prediction_to_train_list')
-        #else:
-            #svClassifier = joblib.load('aiModels/SVClassifier.pkl')
-            #svClassifier.fit(sc_transformed_tempx,tempy)
     context = {"patient":patient,"form":form}
     return render(request, 'prediction_to_train_confirm.html',context)

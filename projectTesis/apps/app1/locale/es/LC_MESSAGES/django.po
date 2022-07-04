@@ -203,7 +203,7 @@ msgstr ""
 
 #: .\apps\app1\templates\about_ai_models.html:27
 msgid "Ensemble models : Soft Voting Ensemble Models"
-msgstr "Conjunto de modelos: Conjunto de modelos de votación suave"
+msgstr "Conjunto de modelos: Conjunto de modelos de votación blanda"
 
 #: .\apps\app1\templates\about_ai_models.html:29
 msgid ""
@@ -211,9 +211,9 @@ msgid ""
 "models built with a given learning algorithm in order to improve "
 "generalizability / robustness over a single model."
 msgstr ""
-"El objetivo del conjunto de models es combinar las predicciones de varios "
+"El objetivo del conjunto de modelos es combinar las predicciones de varios "
 "estimadores base construidos con un algoritmo de aprendizaje dado para "
-"mejorar la generalizabilidad / robustez sobre un solo estimador."
+"mejorar la generalizabilidad y robustez sobre un solo estimador."
 
 #: .\apps\app1\templates\about_ai_models.html:30
 msgid "Voting Classifier"
@@ -229,7 +229,7 @@ msgid ""
 msgstr ""
 "La idea detrás del VotingClassifier es combinar conceptualmente diferentes "
 "clasificadores de machine learning y el uso de un voto mayoritario o el "
-"promedio de las probabilidades predichas (voto suave) para predecir las "
+"promedio de las probabilidades predichas (voto blando) para predecir las "
 "etiquetas de la clase. Dicho clasificador puede ser útil para un conjunto de "
 "modelos igualmente buenos con el objetivo de equilibrar sus debilidades "
 "individuales."

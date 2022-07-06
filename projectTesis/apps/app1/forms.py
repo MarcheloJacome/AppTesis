@@ -52,6 +52,17 @@ bar_choices = (
     (_('ST_Slope'), _('ST_Slope')),
 )
 
+class DataAnalyticsBoxForm(forms.Form):
+    def __init__(self, *args, **kwargs):
+        super(DataAnalyticsBoxForm, self).__init__(*args, **kwargs)   
+        self.fields['output_box'].label = _('Heart Disease')
+        self.fields['x_label_box'].label = _('Variable (X Axis)')
+        self.fields['hue_box'].label = _('Groups')  
+
+    output_box = forms.ChoiceField(choices=hd_choices, required=False)
+    x_label_box = forms.ChoiceField(choices=x_label_choices, required=False)
+    hue_box = forms.ChoiceField(choices=hue_choices, required=False)
+
 class DataAnalyticsHistForm(forms.Form):
     def __init__(self, *args, **kwargs):
         super(DataAnalyticsHistForm, self).__init__(*args, **kwargs)   

@@ -9,8 +9,8 @@
 <p class="lead font-italic"></p>
 <style type ="text/css">
     .chartBox{
-        width: 60%;
-        height: 60%;
+        width: 70%;
+        height: 70%;
     }
 </style>
 {% endblock title %}
@@ -33,7 +33,7 @@
     $(document).ready(function () {
         var ctx = document.getElementById('myChart').getContext('2d');
         var myChart = new Chart(ctx, {
-            type: 'doughnut',
+            type: 'bar',
             data: {
                 labels: [{% for lab in labels %}'{{lab}}',{% endfor %}], 
         datasets: [{

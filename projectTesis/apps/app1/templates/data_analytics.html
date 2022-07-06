@@ -10,6 +10,32 @@
 {% endblock title %}
 {% block content%}
 <p class="fs-5">{% trans "In this section you will be able to perform a visual analysis on the data that was used to train the model and the subsequently added data. If you want to check more information about the dataset and its features click "%}<a href={% url 'about_dataset' %} class="fs-5">{% trans "here"%}</a>.</p>
+<p class="fs-5">{% trans "The following boxplot provides a standardized way of displaying the distribution of data based on a five number summary : minimum, first quartile (Q1), median, third quartile (Q3), and maximum. It lets you navigate through variables for the x axis, which are the numerical features of the dataset; the groups , which are the categorical features of the dataset and the output class."%}</p>
+&nbsp
+<form action="" method="GET">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                {{form_box.x_label_box|as_crispy_field}}
+            </div>
+            <div class="col-md-6">
+                {{form_box.hue_box|as_crispy_field}}
+            </div>
+        </div>
+        <div class="row align-items-center">
+            <div class="col-md-12">
+                {{form_box.output_box|as_crispy_field}}
+            </div>
+        </div>
+    </div>
+</form>
+    {% autoescape off %}
+    <div id="box_plot_id">
+        {{plot_div_box}}
+    </div>   
+    {% endautoescape %}
+&nbsp
+&nbsp
 <p class="fs-5">{% trans "The following histogram lets you navigate through variables for the x axis, which are the numerical features of the dataset; the groups , which are the categorical features of the dataset and the output class."%}</p>
 &nbsp
 <form action="" method="GET">
@@ -23,17 +49,16 @@
             </div>
         </div>
         <div class="row align-items-center">
-            <div class="col-md-10">
+            <div class="col-md-12">
                 {{form_hist.output|as_crispy_field}}
-            </div>
-            <div class="d-grid gap-1 col-md-2 mx-auto">
-                <button class="btn btn-success" type="submit">{% trans "Apply"%}</button>
             </div>
         </div>
     </div>
 </form>
     {% autoescape off %}
+    <div id="hist_1_plot_id">
         {{plot_div_hist}}
+    </div>
     {% endautoescape %}
 &nbsp
 &nbsp
@@ -42,19 +67,173 @@
 <form action="" method="GET">
     <div class="container">
         <div class="row align-items-center">
-            <div class="col-md-5">
+            <div class="col-md-6">
                 {{form_bar.output_bar|as_crispy_field}}
             </div>
-            <div class="col-md-5">
+            <div class="col-md-6">
                 {{form_bar.x_label_bar|as_crispy_field}}
-            </div>
-            <div class="d-grid gap-1 col-md-2 mx-auto">
-                <button class="btn btn-success btn-md" type="submit">{% trans "Apply"%}</button>
             </div>
         </div>
     </div>
 </form>
     {% autoescape off %}
+    <div id="hist_2_plot_id">
         {{plot_div_bar}}
+    </div>
     {% endautoescape %}
 {% endblock content%}
+{% block scripts %}
+<script>
+    //Box Plot
+    $("#id_x_label_box").change(function () {
+      var x_label_box = $(this).val();
+      var output_box = $("#id_output_box").val();
+      var hue_box = $("#id_hue_box").val();
+      $.ajax({
+        url: '{% url "data_analytics" %}',
+        type: 'GET',
+        data: {
+          'x_label_box': x_label_box,
+          'hue_box': hue_box,
+          'output_box': output_box,
+        },
+        dataType: 'json',
+        success: function (response) {
+            console.log(response.gantt_plot_box);
+            $("#box_plot_id").html(response.gantt_plot_box);
+          }
+      });
+    });
+    $("#id_output_box").change(function () {
+        var x_label_box = $("#id_x_label_box").val();
+        var output_box = $(this).val();
+        var hue_box = $("#id_hue_box").val();
+        $.ajax({
+          url: '{% url "data_analytics" %}',
+          type: 'GET',
+          data: {
+            'x_label_box': x_label_box,
+            'hue_box': hue_box,
+            'output_box': output_box,
+          },
+          dataType: 'json',
+          success: function (response) {
+              console.log(response.gantt_plot_box);
+              $("#box_plot_id").html(response.gantt_plot_box);
+            }
+        });
+      });
+      $("#id_hue_box").change(function () {
+        var x_label_box = $("#id_x_label_box").val();
+        var output_box = $("#id_output_box").val();
+        var hue_box = $(this).val();
+        $.ajax({
+          url: '{% url "data_analytics" %}',
+          type: 'GET',
+          data: {
+            'x_label_box': x_label_box,
+            'hue_box': hue_box,
+            'output_box': output_box,
+          },
+          dataType: 'json',
+          success: function (response) {
+              console.log(response.gantt_plot_box);
+              $("#box_plot_id").html(response.gantt_plot_box);
+            }
+        });
+      });
+      //First Histogram
+      $("#id_x_label").change(function () {
+        var x_label = $(this).val();
+        var output = $("#id_output").val();
+        var hue = $("#id_hue").val();
+        $.ajax({
+          url: '{% url "data_analytics" %}',
+          type: 'GET',
+          data: {
+            'x_label': x_label,
+            'hue': hue,
+            'output': output,
+          },
+          dataType: 'json',
+          success: function (response) {
+              console.log(response.gantt_plot_hist);
+              $("#hist_1_plot_id").html(response.gantt_plot_hist);
+            }
+        });
+      });
+      $("#id_output").change(function () {
+        var x_label = $("#id_x_label").val();
+        var output = $(this).val();
+        var hue = $("#id_hue").val();
+        $.ajax({
+          url: '{% url "data_analytics" %}',
+          type: 'GET',
+          data: {
+            'x_label': x_label,
+            'hue': hue,
+            'output': output,
+          },
+          dataType: 'json',
+          success: function (response) {
+              console.log(response.gantt_plot_hist);
+              $("#hist_1_plot_id").html(response.gantt_plot_hist);
+            }
+        });
+      });
+      $("#id_hue").change(function () {
+        var x_label = $("#id_x_label").val();
+        var output = $("#id_output").val();
+        var hue = $(this).val();
+        $.ajax({
+          url: '{% url "data_analytics" %}',
+          type: 'GET',
+          data: {
+            'x_label': x_label,
+            'hue': hue,
+            'output': output,
+          },
+          dataType: 'json',
+          success: function (response) {
+              console.log(response.gantt_plot_hist);
+              $("#hist_1_plot_id").html(response.gantt_plot_hist);
+            }
+        });
+      });
+    //Second Histogram
+    $("#id_x_label_bar").change(function () {
+        var x_label_bar = $(this).val();
+        var output_bar = $("#id_output_bar").val();
+        $.ajax({
+          url: '{% url "data_analytics" %}',
+          type: 'GET',
+          data: {
+            'x_label_bar': x_label_bar,
+            'output_bar': output_bar,
+          },
+          dataType: 'json',
+          success: function (response) {
+              console.log(response.gantt_plot_bar);
+              $("#hist_2_plot_id").html(response.gantt_plot_bar);
+            }
+        });
+      });
+      $("#id_output_bar").change(function () {
+        var x_label_bar = $("#id_x_label_bar").val();
+        var output_bar = $(this).val();
+        $.ajax({
+          url: '{% url "data_analytics" %}',
+          type: 'GET',
+          data: {
+            'x_label_bar': x_label_bar,
+            'output_bar': output_bar,
+          },
+          dataType: 'json',
+          success: function (response) {
+              console.log(response.gantt_plot_bar);
+              $("#hist_2_plot_id").html(response.gantt_plot_bar);
+            }
+        });
+      });
+  </script>
+{% endblock scripts %}

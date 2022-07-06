@@ -1,10 +1,11 @@
 from django.shortcuts import render, redirect
-from .forms import CreateUserForm, EditUserForm, DataAnalyticsHistForm,DataAnalyticsBarsForm
+from .forms import CreateUserForm, EditUserForm, DataAnalyticsHistForm,DataAnalyticsBarsForm,DataAnalyticsBoxForm
 from django.contrib.auth.forms import PasswordChangeForm
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout, update_session_auth_hash
 from django.utils.translation import gettext as _
 from django.contrib.auth.decorators import login_required
+from django.http import JsonResponse
 from apps.app_training_prediction.models import PredictionToTrain
 import pandas as pd
 import numpy as np
@@ -99,7 +100,7 @@ def featureImportance(request):
     sorted_feat_dict = {k: v for k, v in sorted(feat_dict.items(), key=lambda item: item[1])}
     sort_f_importances = []
     labels = []
-    for key in feat_dict:
+    for key in sorted_feat_dict:
         if feat_dict[key] > 0:
             sort_f_importances += [feat_dict[key]]
             labels += [key]
@@ -169,6 +170,29 @@ def data_analytics(request):
         } for i in qs
     ]
     df = pd.DataFrame(predictions_data)
+    #BoxPLot
+    output_box = request.GET.get('output_box')
+    x_label_box = request.GET.get('x_label_box')
+    hue_box = request.GET.get('hue_box')
+    box_output = 0
+    box_x = _('Age')
+    box_hue = _('Sex')
+    if output_box:
+        box_output = output_box
+    if x_label_box:
+        box_x = x_label_box
+    if hue_box:
+        box_hue = hue_box
+    df_box = df[df[_('HeartDisease')]==int(box_output)]
+    if int(box_output) == 3:
+        df_box = df
+    fig_box = px.box(df_box, x=box_x,color=box_hue,
+                         notched=True, hover_data=df.columns).update_layout(
+                             yaxis_title=_('Heart Disease Output (Total)'),
+                             height=700
+                         )
+    gantt_plot_box = plot(fig_box, output_type="div") 
+    #1st Histogram
     output_hist = request.GET.get('output')
     x_label_hist = request.GET.get('x_label')
     hue_hist = request.GET.get('hue')
@@ -190,7 +214,7 @@ def data_analytics(request):
                              height=700
                          )
     gantt_plot_hist = plot(fig_hist, output_type="div")
-
+    #2nd Histogram
     output_bar = request.GET.get('output_bar')
     x_label_bar = request.GET.get('x_label_bar')
     bar_output = 0
@@ -209,8 +233,77 @@ def data_analytics(request):
                          )
     gantt_plot_bar = plot(fig_bar, output_type="div")
 
-    context = {'plot_div_hist': gantt_plot_hist,
+    context = {'plot_div_box':gantt_plot_box,
+               'plot_div_hist': gantt_plot_hist,
                'plot_div_bar': gantt_plot_bar,
+               'form_box':DataAnalyticsBoxForm(request.GET),
                'form_bar':DataAnalyticsBarsForm(request.GET),
                'form_hist':DataAnalyticsHistForm(request.GET)}
+    if request.headers.get('x-requested-with') == 'XMLHttpRequest':
+        #BoxPlot
+        output_box = request.GET.get('output_box')
+        x_label_box = request.GET.get('x_label_box')
+        hue_box = request.GET.get('hue_box')
+        box_output = 0
+        box_x = _('Age')
+        box_hue = _('Sex')
+        if output_box:
+            box_output = output_box
+        if x_label_box:
+            box_x = x_label_box
+        if hue_box:
+            box_hue = hue_box
+        df_box = df[df[_('HeartDisease')]==int(box_output)]
+        if int(box_output) == 3:
+            df_box = df
+        fig_box = px.box(df_box, x=box_x,color=box_hue,
+                            notched=True, hover_data=df.columns).update_layout(
+                                yaxis_title=_('Heart Disease Output (Total)'),
+                                height=700
+                            )
+        gantt_plot_box = plot(fig_box, output_type="div") 
+        #1st Histogram
+        output_hist = request.GET.get('output')
+        x_label_hist = request.GET.get('x_label')
+        hue_hist = request.GET.get('hue')
+        hist_output = 0
+        hist_x = _('Age')
+        hist_hue = _('Sex')
+        if output_hist:
+            hist_output = output_hist
+        if x_label_hist:
+            hist_x = x_label_hist
+        if hue_hist:
+            hist_hue = hue_hist
+        df_hist = df[df[_('HeartDisease')]==int(hist_output)]
+        if int(hist_output) == 3:
+            df_hist = df
+        fig_hist = px.histogram(df_hist, x=hist_x,color=hist_hue,
+                            marginal="rug", hover_data=df.columns).update_layout(
+                                yaxis_title=_('Heart Disease Output (Total)'),
+                                height=700
+                            )
+        gantt_plot_hist = plot(fig_hist, output_type="div")
+        #2nd Histogram
+        output_bar = request.GET.get('output_bar')
+        x_label_bar = request.GET.get('x_label_bar')
+        bar_output = 0
+        bar_x = _('Age')
+        if output_bar:
+            bar_output = output_bar
+        if x_label_bar:
+            bar_x = x_label_bar
+        df_bar = df[df[_('HeartDisease')]==int(bar_output)]
+        if int(bar_output) == 3:
+            df_bar = df
+        fig_bar = px.histogram(df_bar, x=bar_x,
+                            marginal="rug", hover_data=df.columns).update_layout(
+                                yaxis_title=_('Heart Disease Output (Total)'),
+                                height=700
+                            )
+        gantt_plot_bar = plot(fig_bar, output_type="div")
+        response = {'gantt_plot_box':gantt_plot_box,
+               'gantt_plot_hist': gantt_plot_hist,
+               'gantt_plot_bar': gantt_plot_bar}
+        return JsonResponse(response,safe=False)
     return render(request, 'data_analytics.html',context)

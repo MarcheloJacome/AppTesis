@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-05 18:56-0500\n"
+"POT-Creation-Date: 2022-07-10 00:33-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -363,21 +363,19 @@ msgstr "conjunto de modelos"
 
 #: .\apps\app1\templates\about_ai_models.html:62
 msgid "Obtained parameters for single model"
-msgstr "Paámetros obtenidos para el modelo simple"
+msgstr "Parámetros obtenidos para el modelo simple"
 
-#: .\apps\app1\templates\about_ai_models.html:67
-msgid "A weighed average accuracy of 87 %% was obtained with these parameters."
-msgstr "Con estos parámetros se obtuvo una precisión media ponderada del 87%."
+#: .\apps\app1\templates\about_ai_models.html:69
+msgid "Hyper parameter"
+msgstr "Hiper parámetro"
 
 #: .\apps\app1\templates\about_ai_models.html:70
-msgid "Obtained parameters for ensemble models"
-msgstr "Paámetros obtenidos para el conjunto de modelos"
+msgid "Obtained value"
+msgstr "Valor obtenido"
 
-#: .\apps\app1\templates\about_ai_models.html:75
-msgid ""
-"A weighed average accuracy of 87.51 %% was obtained with these parameters."
-msgstr ""
-"Con estos parámetros se obtuvo una precisión media ponderada del 87.51%."
+#: .\apps\app1\templates\about_ai_models.html:97
+msgid "A weighed average accuracy of 87 %% was obtained with these parameters."
+msgstr "Con estos parámetros se obtuvo una precisión media ponderada del 87%."
 
 #: .\apps\app1\templates\about_dataset.html:5
 msgid "About Dataset"
@@ -628,12 +626,12 @@ msgid ""
 "of the dataset; the groups , which are the categorical features of the "
 "dataset and the output class."
 msgstr ""
-"El siguiente diagrama de caja proporciona una forma estandarizada de mostrar la "
-"distribución de datos basada en un resumen de cinco números: mínimo, primer "
-"cuartil (Q1), mediana, tercer cuartil (Q3) y máximo. Te permite "
-"navegar a través de variables para el eje x, que son las características numéricas "
-"del conjunto de datos; los grupos, que son las características categóricas del "
-"conjunto de datos y la clase de salida."
+"El siguiente diagrama de caja proporciona una forma estandarizada de mostrar "
+"la distribución de datos basada en un resumen de cinco números: mínimo, "
+"primer cuartil (Q1), mediana, tercer cuartil (Q3) y máximo. Te permite "
+"navegar a través de variables para el eje x, que son las características "
+"numéricas del conjunto de datos; los grupos, que son las características "
+"categóricas del conjunto de datos y la clase de salida."
 
 #: .\apps\app1\templates\data_analytics.html:39
 msgid ""
@@ -1001,6 +999,14 @@ msgstr "Importancia de característica %"
 #: .\apps\app1\views.py:261 .\apps\app1\views.py:283 .\apps\app1\views.py:301
 msgid "Heart Disease Output (Total)"
 msgstr "Salida: Enfermedad cardíaca (Total)"
+
+#~ msgid "Obtained parameters for ensemble models"
+#~ msgstr "Parámetros obtenidos para el conjunto de modelos"
+
+#~ msgid ""
+#~ "A weighed average accuracy of 87.51 %% was obtained with these parameters."
+#~ msgstr ""
+#~ "Con estos parámetros se obtuvo una precisión media ponderada del 87.51%."
 
 #~ msgid "Apply"
 #~ msgstr "Aplicar"

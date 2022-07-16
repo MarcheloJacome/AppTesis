@@ -97,7 +97,7 @@ def featureImportance(request):
     for i in range(len(f_importances)):
         feat_dict[proc_labels[i]] = f_importances[i]
     feat_dict
-    sorted_feat_dict = {k: v for k, v in sorted(feat_dict.items(), key=lambda item: item[1])}
+    sorted_feat_dict = {k: v for k, v in sorted(feat_dict.items(), key=lambda item: item[1],reverse=True)}
     sort_f_importances = []
     labels = []
     for key in sorted_feat_dict:

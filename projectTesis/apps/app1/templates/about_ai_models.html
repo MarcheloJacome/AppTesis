@@ -62,17 +62,39 @@
 <h3 class="text-center">{% trans "Obtained parameters for single model"%}</h3>
 &nbsp
 <div class="text-center">
-    <img src="{% static 'app1/images/mlp_class_params.png' %}"
-      style="width: 70%;" alt="mlp_class_params">
+  <div class="container table-responsive" style="overflow-x:auto;">
+    <table class="table table-striped table-bordered table-sm" width="70%">
+        <thead>
+            <tr>
+                <th>{% trans "Hyper parameter"%}</th>
+                <th>{% trans "Obtained value"%}</th>
+            </tr>
+        </thead>
+        <tbody >
+            <tr >
+                <th>activation</th>
+                <th>relu</th>
+            </tr>
+            <tr>
+              <th>hidden_layer_sizes</th>
+              <th>10</th>
+            </tr>
+            <tr>
+              <th>learning_rate</th>
+              <th>constant</th>
+            </tr>
+            <tr>
+              <th>random_state</th>
+              <th>0</th>
+            </tr>
+            <tr>
+              <th>solver</th>
+              <th>sgd</th>
+            </tr>
+        </tbody>
+    </table>
+  </div>
     <p class="fs-6">{% trans "A weighed average accuracy of 87 % was obtained with these parameters."%}</p>
-</div>
-&nbsp
-<h3 class="text-center">{% trans "Obtained parameters for ensemble models"%}</h3>
-&nbsp
-<div class="text-center">
-    <img src="{% static 'app1/images/sv_class_params.png' %}"
-      style="width: 70%;" alt="sv_class_params">
-    <p class="fs-6">{% trans "A weighed average accuracy of 87.51 % was obtained with these parameters."%}</p>
 </div>
 {% endblock content%}
 

@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '45c+k*(=b5)e_2eozcld$h7pfcx)3v1n@g$35(tbimo&md5%bk'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-#DEBUG = False
-#ALLOWED_HOSTS = ['*']
+#DEBUG = True
+DEBUG = False
+ALLOWED_HOSTS = ['*']
 #CSRF_TRUSTED_ORIGINS = ['*']
 #ALLOWED_HOSTS = ['tesis-deployment-appservice.azurewebsites.net','127.0.0.1']
 #CSRF_TRUSTED_ORIGINS = ['http://hearthelpapp-deploy.herokuapp.com','https://www.hearthelpapp-deploy.herokuapp.com','hearthelpapp-deploy.herokuapp.com']
